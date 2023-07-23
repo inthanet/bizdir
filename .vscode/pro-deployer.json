@@ -1,0 +1,28 @@
+{
+	"enableStatusBarItem": true,
+	"enableQuickPick": true,
+	"uploadOnSave": false,
+	"autoDelete": true,
+	"checkGitignore": false,
+	"activeTargets": [
+		"BIZDIR"
+	],
+	"concurrency": 5,
+	"ignore": [
+		".git/**/*",
+		".vscode/**/*"
+	],
+	"targets": [
+		{
+			"name": "BIZDIR",
+			"type": "ftp",
+			"host": "217.76.50.61",
+			"port": 21,
+			"user": "bizdir",
+			"password": "7y!EtmLM@LsC",
+			"dir": "/public_html",
+			"transferDataType": "binary"
+		}
+
+	]
+}
