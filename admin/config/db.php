@@ -31,7 +31,7 @@ $timezone = "Asia/Calcutta";
 if (function_exists('date_default_timezone_set')) date_default_timezone_set($timezone);
 $curDate = date('Y-m-d H:i:s');
 
-# TABLE PREFIX #
+# TABLE PREFIX # //<!--ui -->
 define('TBL', 'ww_');
 
 $sql = "SELECT * FROM " .getTablePrefix('footer'). " WHERE footer_id = 1";
