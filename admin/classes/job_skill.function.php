@@ -5,7 +5,7 @@ function getAllJobSkill()
 {
     global $conn;
 
-    $sql = "SELECT * FROM " . TBL . "job_skill ORDER BY category_id DESC";
+    $sql = "SELECT * FROM " . COUNTRY_PREFIX . "job_skill ORDER BY category_id DESC";
     $rs = mysqli_query($conn, $sql);
     return $rs;
 
@@ -16,7 +16,7 @@ function getAllJobSkillPos()
 {
     global $conn;
 
-    $sql = "SELECT * FROM " . TBL . "job_skill ORDER BY category_filter_pos_id ASC";
+    $sql = "SELECT * FROM " . COUNTRY_PREFIX . "job_skill ORDER BY category_filter_pos_id ASC";
     $rs = mysqli_query($conn, $sql);
     return $rs;
 
@@ -27,7 +27,7 @@ function getAllActiveJobSkillPos()
 {
     global $conn;
 
-    $sql = "SELECT * FROM " . TBL . "job_skill WHERE category_filter = 0 ORDER BY category_filter_pos_id ASC";
+    $sql = "SELECT * FROM " . COUNTRY_PREFIX . "job_skill WHERE category_filter = 0 ORDER BY category_filter_pos_id ASC";
     $rs = mysqli_query($conn, $sql);
     return $rs;
 
@@ -38,7 +38,7 @@ function getJobSkill($arg)
 {
     global $conn;
 
-    $sql = "SELECT * FROM  " . TBL . "job_skill where category_id='".$arg."'";
+    $sql = "SELECT * FROM  " . COUNTRY_PREFIX . "job_skill where category_id='".$arg."'";
     $rs = mysqli_query($conn, $sql);
     $row = mysqli_fetch_array($rs);
     return $row;
@@ -50,7 +50,7 @@ function getNameJobSkill($arg)
 {
     global $conn;
 
-    $sql = "SELECT * FROM  " . TBL . "job_skill where category_name='".$arg."'";
+    $sql = "SELECT * FROM  " . COUNTRY_PREFIX . "job_skill where category_name='".$arg."'";
     $rs = mysqli_query($conn, $sql);
     $row = mysqli_fetch_array($rs);
     return $row;
@@ -62,7 +62,7 @@ function getSlugJobSkill($arg)
 {
     global $conn;
 
-    $sql = "SELECT * FROM  " . TBL . "job_skill where category_slug='".$arg."'";
+    $sql = "SELECT * FROM  " . COUNTRY_PREFIX . "job_skill where category_slug='".$arg."'";
     $rs = mysqli_query($conn, $sql);
     $row = mysqli_fetch_array($rs);
     return $row;
@@ -74,7 +74,7 @@ function getJobSkillName($arg)
 {
     global $conn;
 
-    $sql = "SELECT category_name FROM  " . TBL . "job_skill where category_id='".$arg."'";
+    $sql = "SELECT category_name FROM  " . COUNTRY_PREFIX . "job_skill where category_id='".$arg."'";
     $rs = mysqli_query($conn, $sql);
     $row = mysqli_fetch_array($rs);
     return $row[0];
@@ -86,7 +86,7 @@ function getJobSkillSlug($arg)
 {
     global $conn;
 
-    $sql = "SELECT category_slug FROM  " . TBL . "job_skill where category_id='".$arg."'";
+    $sql = "SELECT category_slug FROM  " . COUNTRY_PREFIX . "job_skill where category_id='".$arg."'";
     $rs = mysqli_query($conn, $sql);
     $row = mysqli_fetch_array($rs);
     return $row[0];
@@ -98,7 +98,7 @@ function getCountJobSkill()
 {
     global $conn;
 
-    $sql = "SELECT * FROM " . TBL . "job_skill ORDER BY category_id DESC";
+    $sql = "SELECT * FROM " . COUNTRY_PREFIX . "job_skill ORDER BY category_id DESC";
     $rs = mysqli_query($conn, $sql);
     $row = mysqli_num_rows($rs);
     return $row;

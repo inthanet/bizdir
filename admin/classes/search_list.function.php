@@ -5,7 +5,7 @@ function getAllSearch()
 {
     global $conn;
 
-    $sql = "SELECT * FROM " . TBL . "search_list ORDER BY search_list_position ASC";
+    $sql = "SELECT * FROM " . COUNTRY_PREFIX . "search_list ORDER BY search_list_position ASC";
     $rs = mysqli_query($conn, $sql);
     return $rs;
 
@@ -16,7 +16,7 @@ function getAllSearchType($arg)
 {
     global $conn;
 
-    $sql = "SELECT * FROM " . TBL . "search_list where page_type = '" . $arg . "' ORDER BY search_list_id DESC";
+    $sql = "SELECT * FROM " . COUNTRY_PREFIX . "search_list where page_type = '" . $arg . "' ORDER BY search_list_id DESC";
     $rs = mysqli_query($conn, $sql);
     return $rs;
 
@@ -27,7 +27,7 @@ function getSearch($arg)
 {
     global $conn;
 
-    $sql = "SELECT * FROM " . TBL . "search_list where search_list_id = '" . $arg . "'";
+    $sql = "SELECT * FROM " . COUNTRY_PREFIX . "search_list where search_list_id = '" . $arg . "'";
     $rs = mysqli_query($conn, $sql);
     $row = mysqli_fetch_array($rs);
     return $row;

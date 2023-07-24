@@ -105,7 +105,7 @@ include "header.php";
                                                 $plan_type_id = 1;
                                             }
                                             $plan_type = "SELECT *
-										FROM " . TBL . "plan_type WHERE plan_type_status='Active'
+										FROM " . COUNTRY_PREFIX . "plan_type WHERE plan_type_status='Active'
 
 										ORDER BY plan_type_id ASC";
 

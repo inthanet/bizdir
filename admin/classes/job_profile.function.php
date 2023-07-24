@@ -5,7 +5,7 @@ function getAllJobProfile()
 {
     global $conn;
 
-    $sql = "SELECT * FROM " . TBL . "job_profile ORDER BY job_profile_id DESC";
+    $sql = "SELECT * FROM " . COUNTRY_PREFIX . "job_profile ORDER BY job_profile_id DESC";
     $rs = mysqli_query($conn, $sql);
     return $rs;
 
@@ -17,7 +17,7 @@ function getJobProfile($arg)
 {
     global $conn;
 
-    $sql = "SELECT * FROM  " . TBL . "job_profile where job_profile_id='".$arg."'";
+    $sql = "SELECT * FROM  " . COUNTRY_PREFIX . "job_profile where job_profile_id='".$arg."'";
     $rs = mysqli_query($conn, $sql);
     $row = mysqli_fetch_array($rs);
     return $row;
@@ -29,7 +29,7 @@ function getJobProfileCode($arg)
 {
     global $conn;
 
-    $sql = "SELECT * FROM  " . TBL . "job_profile where job_profile_code='".$arg."'";
+    $sql = "SELECT * FROM  " . COUNTRY_PREFIX . "job_profile where job_profile_code='".$arg."'";
     $rs = mysqli_query($conn, $sql);
     $row = mysqli_fetch_array($rs);
     return $row;
@@ -41,7 +41,7 @@ function getJobProfileSlug($arg)
 {
     global $conn;
 
-    $sql = "SELECT * FROM  " . TBL . "job_profile where job_profile_slug = '". $arg ."'";
+    $sql = "SELECT * FROM  " . COUNTRY_PREFIX . "job_profile where job_profile_slug = '". $arg ."'";
     $rs = mysqli_query($conn, $sql);
     $row = mysqli_fetch_array($rs);
     return $row;
@@ -53,7 +53,7 @@ function getUserJobProfile($arg)
 {
     global $conn;
 
-    $sql = "SELECT * FROM  " . TBL . "job_profile where user_id='" . $arg . "'";
+    $sql = "SELECT * FROM  " . COUNTRY_PREFIX . "job_profile where user_id='" . $arg . "'";
     $rs = mysqli_query($conn, $sql);
     $row = mysqli_fetch_array($rs);
     return $row;
@@ -65,7 +65,7 @@ function getAllCategoryJobProfileLimit($arg,$arg1)
 {
     global $conn;
 
-    $sql = "SELECT * FROM " . TBL . "job_profile WHERE category_id= '$arg' AND job_profile_id !='" . $arg1 . "' ORDER BY job_profile_id DESC LIMIT 5";
+    $sql = "SELECT * FROM " . COUNTRY_PREFIX . "job_profile WHERE category_id= '$arg' AND job_profile_id !='" . $arg1 . "' ORDER BY job_profile_id DESC LIMIT 5";
     $rs = mysqli_query($conn, $sql);
     return $rs;
 
@@ -76,7 +76,7 @@ function getCountJobProfile()
 {
     global $conn;
 
-    $sql = "SELECT * FROM " . TBL . "job_profile ORDER BY job_profile_id DESC";
+    $sql = "SELECT * FROM " . COUNTRY_PREFIX . "job_profile ORDER BY job_profile_id DESC";
     $rs = mysqli_query($conn, $sql);
     $row = mysqli_num_rows($rs);
     return $row;

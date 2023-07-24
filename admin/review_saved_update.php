@@ -23,7 +23,7 @@ if (isset($_GET['reviewreviewreviewreviewreviewreview'])) {
     }
 
 
-    $sql = mysqli_query($conn, "UPDATE  " . TBL . "reviews SET  review_save='" . $new_status . "'
+    $sql = mysqli_query($conn, "UPDATE  " . COUNTRY_PREFIX . "reviews SET  review_save='" . $new_status . "'
      where review_id='" . $review_id . "'");
 
 

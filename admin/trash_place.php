@@ -15,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $place_banner_image_old = $_POST["place_banner_image_old"];
         $place_gallery_image_old = $_POST["place_gallery_image_old"];
         $place_qry =
-            " DELETE FROM  " . TBL . "places WHERE place_id='" . $place_id . "'";
+            " DELETE FROM  " . COUNTRY_PREFIX . "places WHERE place_id='" . $place_id . "'";
 
 
         $place_res = mysqli_query($conn,$place_qry);
@@ -31,7 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
             //Query to delete the page view starts
 
-            $page_view_qry = "DELETE FROM  " . TBL . "page_views where place_id='" . $place_id . "'";
+            $page_view_qry = "DELETE FROM  " . COUNTRY_PREFIX . "page_views where place_id='" . $place_id . "'";
 
             $page_view_res = mysqli_query($conn,$page_view_qry);
 

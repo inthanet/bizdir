@@ -32,7 +32,7 @@ if (isset($_POST['payment_submit'])) {
 //************ Category Name Already Exist Check Starts ***************
 
 
-        $payment_name_exist_check = mysqli_query($conn, "SELECT * FROM " . TBL . "expert_payments  WHERE payment_name='" . $payment_name . "' ");
+        $payment_name_exist_check = mysqli_query($conn, "SELECT * FROM " . COUNTRY_PREFIX . "expert_payments  WHERE payment_name='" . $payment_name . "' ");
 
         if (mysqli_num_rows($payment_name_exist_check) > 0) {
 
@@ -46,7 +46,7 @@ if (isset($_POST['payment_submit'])) {
         }
 
 
-        $sql = mysqli_query($conn, "INSERT INTO  " . TBL . "expert_payments (payment_name,payment_status,payment_cdt)
+        $sql = mysqli_query($conn, "INSERT INTO  " . COUNTRY_PREFIX . "expert_payments (payment_name,payment_status,payment_cdt)
 VALUES ('$payment_name','$payment_status','$curDate')");
 
     }

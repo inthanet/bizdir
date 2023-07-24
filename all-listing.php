@@ -140,7 +140,7 @@ if (isset($_REQUEST['ratings']) && !empty($_REQUEST['ratings'])) {
         $WHERE[] = '(t2.price_rating = ' . $get_ratings . ')';
     }
 
-    $inner = "INNER JOIN `" . TBL . "reviews` AS t2 ON t1.listing_id = t2.listing_id";
+    $inner = "INNER JOIN `" . COUNTRY_PREFIX . "reviews` AS t2 ON t1.listing_id = t2.listing_id";
 }
 
 if (isset($_REQUEST['feature']) && !empty($_REQUEST['feature'])) {
@@ -157,8 +157,8 @@ if (isset($_REQUEST['feature']) && !empty($_REQUEST['feature'])) {
     }
     //Trending Check starts
     if ($get_feature == 'trending') {
-       // $order = " ORDER BY (select count(t5.listing_id) from `" . TBL . "page_views`) DESC,";
-        $inner = "INNER JOIN `" . TBL . "page_views` AS t5 ON t1.listing_id = t5.listing_id";
+       // $order = " ORDER BY (select count(t5.listing_id) from `" . COUNTRY_PREFIX . "page_views`) DESC,";
+        $inner = "INNER JOIN `" . COUNTRY_PREFIX . "page_views` AS t5 ON t1.listing_id = t5.listing_id";
     }
     //Offers Check starts
     if ($get_feature == 'offers') {
@@ -185,7 +185,7 @@ if (!empty($w)) {
     $q = 'WHERE ';
 }
 
-//$query = mysqli_query($conn, "SELECT DISTINCT  t1 . * , t4.user_plan FROM " . TBL . "listings AS t1 LEFT JOIN " . TBL . "users AS t4 ON t1.user_id = t4.user_id $inner $w $q listing_status= 'Active' AND listing_is_delete != '2' $order t1.display_position DESC, t4.user_plan DESC,t1.listing_id DESC ");
+//$query = mysqli_query($conn, "SELECT DISTINCT  t1 . * , t4.user_plan FROM " . COUNTRY_PREFIX . "listings AS t1 LEFT JOIN " . TBL . "users AS t4 ON t1.user_id = t4.user_id $inner $w $q listing_status= 'Active' AND listing_is_delete != '2' $order t1.display_position DESC, t4.user_plan DESC,t1.listing_id DESC ");
 
 //viki filter ends
 
@@ -266,13 +266,13 @@ if (isset($query['city']) && !empty($query['city'])) {
                                     <div class="near-ser-list top-ser-secti-prov">
                                         <ul>
                                             <?php
-                                            $nearby_listsql = "SELECT " . TBL . "listings.*, " . TBL . "users.user_plan FROM " . TBL . "listings
+                                            $nearby_listsql = "SELECT " . COUNTRY_PREFIX . "listings.*, " . TBL . "users.user_plan FROM " . COUNTRY_PREFIX . "listings
 
-                                            LEFT JOIN " . TBL . "users ON " . TBL . "listings.user_id = " . TBL . "users.user_id  WHERE " . TBL . "listings.listing_status= 'Active'
+                                            LEFT JOIN " . TBL . "users ON " . COUNTRY_PREFIX . "listings.user_id = " . TBL . "users.user_id  WHERE " . COUNTRY_PREFIX . "listings.listing_status= 'Active'
 
-                                            AND " . TBL . "listings.listing_is_delete != '2' $category_search_query $sub_category_search_query
+                                            AND " . COUNTRY_PREFIX . "listings.listing_is_delete != '2' $category_search_query $sub_category_search_query
 
-                                            ORDER BY " . TBL . "users.user_plan DESC," . TBL . "listings.listing_id DESC LIMIT 5 ";
+                                            ORDER BY " . TBL . "users.user_plan DESC," . COUNTRY_PREFIX . "listings.listing_id DESC LIMIT 5 ";
 
                                             $nearby_listrs = mysqli_query($conn, $nearby_listsql);
                                             while ($nearby_listrow = mysqli_fetch_array($nearby_listrs)) {
@@ -736,14 +736,14 @@ if (isset($query['city']) && !empty($query['city'])) {
                         <div class="listng-res">
 
                             <?php
-                            $listsql = "SELECT DISTINCT  t1 . * , t4.user_plan FROM " . TBL . "listings AS t1 LEFT JOIN " . TBL . "users AS t4 ON t1.user_id = t4.user_id $inner $w $q t1.listing_status= 'Active' AND t1.listing_is_delete != '2' $order t1.display_position DESC, t4.user_plan DESC,t1.listing_id DESC ";
-                            //                        "SELECT " . TBL . "listings.*, " . TBL . "users.user_plan FROM " . TBL . "listings as t1
+                            $listsql = "SELECT DISTINCT  t1 . * , t4.user_plan FROM " . COUNTRY_PREFIX . "listings AS t1 LEFT JOIN " . TBL . "users AS t4 ON t1.user_id = t4.user_id $inner $w $q t1.listing_status= 'Active' AND t1.listing_is_delete != '2' $order t1.display_position DESC, t4.user_plan DESC,t1.listing_id DESC ";
+                            //                        "SELECT " . COUNTRY_PREFIX . "listings.*, " . TBL . "users.user_plan FROM " . COUNTRY_PREFIX . "listings as t1
                             //
-                            // LEFT JOIN " . TBL . "users ON " . TBL . "listings.user_id = " . TBL . "users.user_id  WHERE " . TBL . "listings.listing_status= 'Active'
+                            // LEFT JOIN " . TBL . "users ON " . COUNTRY_PREFIX . "listings.user_id = " . TBL . "users.user_id  WHERE " . COUNTRY_PREFIX . "listings.listing_status= 'Active'
                             //
-                            // AND " . TBL . "listings.listing_is_delete != '2' $category_search_query $sub_category_search_query $city_search_query
+                            // AND " . COUNTRY_PREFIX . "listings.listing_is_delete != '2' $category_search_query $sub_category_search_query $city_search_query
                             //
-                            // ORDER BY " . TBL . "listings.display_position DESC," . TBL . "users.user_plan DESC," . TBL . "listings.listing_id DESC";
+                            // ORDER BY " . COUNTRY_PREFIX . "listings.display_position DESC," . TBL . "users.user_plan DESC," . COUNTRY_PREFIX . "listings.listing_id DESC";
 
                             $listrs = mysqli_query($conn, $listsql);
                             $total_listings = mysqli_num_rows($listrs);
@@ -1592,13 +1592,13 @@ if ($cat_search_row['category_google_schema'] != NULL) {
     //
     <!-- REVIEW SCHEMA -->
     <?php
-    $listsql_review_schema = "SELECT " . TBL . "listings.*, " . TBL . "users.user_plan FROM " . TBL . "listings
+    $listsql_review_schema = "SELECT " . COUNTRY_PREFIX . "listings.*, " . TBL . "users.user_plan FROM " . COUNTRY_PREFIX . "listings
                             
- LEFT JOIN " . TBL . "users ON " . TBL . "listings.user_id = " . TBL . "users.user_id  WHERE " . TBL . "listings.listing_status= 'Active' 
+ LEFT JOIN " . TBL . "users ON " . COUNTRY_PREFIX . "listings.user_id = " . TBL . "users.user_id  WHERE " . COUNTRY_PREFIX . "listings.listing_status= 'Active' 
  
- AND " . TBL . "listings.listing_is_delete != '2' $category_search_query $sub_category_search_query $city_search_query 
+ AND " . COUNTRY_PREFIX . "listings.listing_is_delete != '2' $category_search_query $sub_category_search_query $city_search_query 
  
- ORDER BY " . TBL . "users.user_plan DESC," . TBL . "listings.listing_id DESC LIMIT 1";
+ ORDER BY " . TBL . "users.user_plan DESC," . COUNTRY_PREFIX . "listings.listing_id DESC LIMIT 1";
 
     $listrs_review_schema = mysqli_query($conn, $listsql_review_schema);
 
@@ -1713,13 +1713,13 @@ if ($cat_search_row['category_google_schema'] != NULL) {
     	"itemListElement" : [
 
     	<?php
-    $listsql_list_item_schema = "SELECT " . TBL . "listings.*, " . TBL . "users.user_plan FROM " . TBL . "listings
+    $listsql_list_item_schema = "SELECT " . COUNTRY_PREFIX . "listings.*, " . TBL . "users.user_plan FROM " . COUNTRY_PREFIX . "listings
                             
- LEFT JOIN " . TBL . "users ON " . TBL . "listings.user_id = " . TBL . "users.user_id  WHERE " . TBL . "listings.listing_status= 'Active' 
+ LEFT JOIN " . TBL . "users ON " . COUNTRY_PREFIX . "listings.user_id = " . TBL . "users.user_id  WHERE " . COUNTRY_PREFIX . "listings.listing_status= 'Active' 
  
- AND " . TBL . "listings.listing_is_delete != '2' $category_search_query $sub_category_search_query $city_search_query 
+ AND " . COUNTRY_PREFIX . "listings.listing_is_delete != '2' $category_search_query $sub_category_search_query $city_search_query 
  
- ORDER BY " . TBL . "users.user_plan DESC," . TBL . "listings.listing_id DESC LIMIT 10";
+ ORDER BY " . TBL . "users.user_plan DESC," . COUNTRY_PREFIX . "listings.listing_id DESC LIMIT 10";
 
     $listrs_list_item_schema = mysqli_query($conn, $listsql_list_item_schema);
     $si = 1;

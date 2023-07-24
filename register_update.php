@@ -61,7 +61,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
             $user_plan = $_POST["user_plan"];
 
-            $plan_type = "SELECT * FROM " . TBL . "plan_type WHERE plan_type_status='Active' AND plan_type_id = '$user_plan'";
+            $plan_type = "SELECT * FROM " . COUNTRY_PREFIX . "plan_type WHERE plan_type_status='Active' AND plan_type_id = '$user_plan'";
 
             $rs_plan_type = mysqli_query($conn, $plan_type);
             $plan_type_row = mysqli_fetch_array($rs_plan_type);

@@ -59,8 +59,8 @@ if ($check_all == 'on') {
 
 // Popular Check starts
     if ($check_popular == 'on') {
-        $order = " ORDER BY (select count(t5.listing_id) from `" . TBL . "page_views`) DESC,";
-        $inner = "INNER JOIN `" . TBL . "page_views` AS t5  ON t1.listing_id = t5.listing_id";
+        $order = " ORDER BY (select count(t5.listing_id) from `" . COUNTRY_PREFIX . "page_views`) DESC,";
+        $inner = "INNER JOIN `" . COUNTRY_PREFIX . "page_views` AS t5  ON t1.listing_id = t5.listing_id";
 
     }
 
@@ -155,7 +155,7 @@ if (!empty($rating_check)) {
         $WHERE[] = '(t2.price_rating = ' . $rating_check . ')';
     }
 
-    $inner = "INNER JOIN `" . TBL . "reviews` AS t2 ON t1.listing_id = t2.listing_id";
+    $inner = "INNER JOIN `" . COUNTRY_PREFIX . "reviews` AS t2 ON t1.listing_id = t2.listing_id";
 
 }
 
@@ -169,7 +169,7 @@ if (!empty($w)) {
     $q = 'WHERE ';
 }
 
-$query = mysqli_query($conn, "SELECT DISTINCT  t1 . * , t4.user_plan FROM " . TBL . "listings AS t1 LEFT JOIN " . TBL . "users AS t4 ON t1.user_id = t4.user_id $inner $w $q listing_status= 'Active' AND listing_is_delete != '2' $order t1.display_position DESC, t4.user_plan DESC,t1.listing_id DESC ");
+$query = mysqli_query($conn, "SELECT DISTINCT  t1 . * , t4.user_plan FROM " . COUNTRY_PREFIX . "listings AS t1 LEFT JOIN " . TBL . "users AS t4 ON t1.user_id = t4.user_id $inner $w $q listing_status= 'Active' AND listing_is_delete != '2' $order t1.display_position DESC, t4.user_plan DESC,t1.listing_id DESC ");
 
 $total_count_listings = mysqli_num_rows($query);
 ?>

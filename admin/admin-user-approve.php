@@ -24,25 +24,25 @@ if(isset($_GET['userstatususerstatususerstatususerstatususerstatus'])){
 
             //Update listings status
             $listing_qry =
-                "UPDATE  " . TBL . "listings SET listing_status ='" . $status . "' where user_id='" . $user_id . "'";
+                "UPDATE  " . COUNTRY_PREFIX . "listings SET listing_status ='" . $status . "' where user_id='" . $user_id . "'";
 
             $listing_res = mysqli_query($conn,$listing_qry);
 
             //Update Event status
             $event_qry =
-                "UPDATE  " . TBL . "events SET event_status ='" . $status . "' where user_id='" . $user_id . "'";
+                "UPDATE  " . COUNTRY_PREFIX . "events SET event_status ='" . $status . "' where user_id='" . $user_id . "'";
 
             $event_res = mysqli_query($conn,$event_qry);
 
             //Update Blog status
             $blog_qry =
-                "UPDATE  " . TBL . "blogs SET blog_status ='" . $status . "' where user_id='" . $user_id . "'";
+                "UPDATE  " . COUNTRY_PREFIX . "blogs SET blog_status ='" . $status . "' where user_id='" . $user_id . "'";
 
             $blog_res = mysqli_query($conn,$blog_qry);
 
             //Update Product status
             $product_qry =
-                "UPDATE  " . TBL . "products SET product_status ='" . $status . "' where user_id='" . $user_id . "'";
+                "UPDATE  " . COUNTRY_PREFIX . "products SET product_status ='" . $status . "' where user_id='" . $user_id . "'";
 
             $product_res = mysqli_query($conn,$product_qry);
 

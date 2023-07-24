@@ -454,7 +454,7 @@ if ($current_home_page == '1') {
                             <li>
                                 <div class="pri-box">
                                     <div class="c2">
-                                        <h4><?php echo $plan_type_row['plan_type_name']; ?><?php echo $BIZBOOK['PLAN']; ?></h4>
+                                        <h4><?php echo $plan_type_row['plan_type_name']; ?> <?php echo $BIZBOOK['PLAN']; ?></h4>
 
                                         <?php if ($plan_type_row['plan_type_id'] == 1) { ?>
                                             <p><?php echo $BIZBOOK['PRICING_GETTING_STARTED']; ?></p>

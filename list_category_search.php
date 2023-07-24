@@ -15,19 +15,19 @@ $display_json3 = array();
 $display_json4 = array();
 $display_json5 = array();
 //get matched data from skills table
-//$qry ="SELECT * FROM " . TBL . "listings ORDER BY listing_name ASC";
+//$qry ="SELECT * FROM " . COUNTRY_PREFIX . "listings ORDER BY listing_name ASC";
 
-$qry ="SELECT listing_name FROM " . TBL . "listings WHERE listing_status= 'Active' AND listing_is_delete != '2'  limit 1000"; //Listing Table Fetch
+$qry ="SELECT listing_name FROM " . COUNTRY_PREFIX . "listings WHERE listing_status= 'Active' AND listing_is_delete != '2'  limit 1000"; //Listing Table Fetch
 
-$qry1 ="SELECT category_name FROM " . TBL . "categories";  //Category Table Fetch
+$qry1 ="SELECT category_name FROM " . COUNTRY_PREFIX . "categories";  //Category Table Fetch
 
-$qry2 ="SELECT * FROM " . TBL . "events  WHERE event_type= 'All' AND event_status= 'Active'"; //Event Table Fetch
+$qry2 ="SELECT * FROM " . COUNTRY_PREFIX . "events  WHERE event_type= 'All' AND event_status= 'Active'"; //Event Table Fetch
 
-$qry3 ="SELECT * FROM " . TBL . "blogs WHERE blog_status= 'Active'"; //Blog Table Fetch
+$qry3 ="SELECT * FROM " . COUNTRY_PREFIX . "blogs WHERE blog_status= 'Active'"; //Blog Table Fetch
 
-$qry4 ="SELECT * FROM " . TBL . "products WHERE product_status= 'Active'"; //Product Table Fetch
+$qry4 ="SELECT * FROM " . COUNTRY_PREFIX . "products WHERE product_status= 'Active'"; //Product Table Fetch
 
-$qry5 ="SELECT * FROM " . TBL . "jobs WHERE job_status= 'Active'"; //Job Table Fetch
+$qry5 ="SELECT * FROM " . COUNTRY_PREFIX . "jobs WHERE job_status= 'Active'"; //Job Table Fetch
 
 $query = mysqli_query($conn,$qry);
 while ($row = mysqli_fetch_array($query)) {

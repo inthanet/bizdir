@@ -202,7 +202,7 @@ if (!empty($w)) {
 $footer_row = getAllFooter();
 
 
-$query = mysqli_query($conn, "SELECT DISTINCT  t1 . * FROM  " . TBL . "jobs  AS t1 $inner $w $q job_status= 'Active' ORDER BY job_id DESC ");
+$query = mysqli_query($conn, "SELECT DISTINCT  t1 . * FROM  " . COUNTRY_PREFIX . "jobs  AS t1 $inner $w $q job_status= 'Active' ORDER BY job_id DESC ");
 ?>
 
 <style>

@@ -19,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 //************ Expert City Name Already Exist Check Starts ***************
 
 
-        $country_name_exist_check = mysqli_query($conn, "SELECT * FROM " . TBL . "expert_cities  WHERE country_name='" . $country_name . "' AND country_id != $country_id ");
+        $country_name_exist_check = mysqli_query($conn, "SELECT * FROM " . COUNTRY_PREFIX . "expert_cities  WHERE country_name='" . $country_name . "' AND country_id != $country_id ");
 
         if (mysqli_num_rows($country_name_exist_check) > 0) {
 
@@ -34,7 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 //************ Expert City Name Already Exist Check Ends ***************
 
-        $sql = mysqli_query($conn, "UPDATE  " . TBL . "expert_cities SET country_name='" . $country_name . "'
+        $sql = mysqli_query($conn, "UPDATE  " . COUNTRY_PREFIX . "expert_cities SET country_name='" . $country_name . "'
      where country_id='" . $country_id . "'");
 
         if ($sql) {

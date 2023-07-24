@@ -10,7 +10,7 @@ if (file_exists('expert-config-info.php')) {
 
 
 //get matched data from expert categories table
-$categories_qry = "SELECT * FROM " . TBL . "expert_categories WHERE category_slug = '$select_search' ";
+$categories_qry = "SELECT * FROM " . COUNTRY_PREFIX . "expert_categories WHERE category_slug = '$select_search' ";
 
 $categories_query = mysqli_query($conn,$categories_qry);
 
@@ -18,7 +18,7 @@ if (mysqli_num_rows($categories_query) > 0) {
 
     //get matched data from cities table starts
 
-    $cities_qry = "SELECT * FROM " . TBL . "expert_cities WHERE country_id = '$select_city'";
+    $cities_qry = "SELECT * FROM " . COUNTRY_PREFIX . "expert_cities WHERE country_id = '$select_city'";
     $cities_query = mysqli_query($conn, $cities_qry);
     $cities_row = mysqli_fetch_array($cities_query);
 

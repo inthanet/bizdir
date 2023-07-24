@@ -5,7 +5,7 @@ function getAllReviews()
 {
     global $conn;
 
-    $sql = "SELECT * FROM " . TBL . "reviews ORDER BY review_cdt DESC";
+    $sql = "SELECT * FROM " . COUNTRY_PREFIX . "reviews ORDER BY review_cdt DESC";
     $rs = mysqli_query($conn, $sql);
     return $rs;
 
@@ -16,7 +16,7 @@ function getAllSavedReviews()
 {
     global $conn;
 
-    $sql = "SELECT * FROM " . TBL . "reviews WHERE review_save = 1";
+    $sql = "SELECT * FROM " . COUNTRY_PREFIX . "reviews WHERE review_save = 1";
     $rs = mysqli_query($conn, $sql);
     return $rs;
 
@@ -27,7 +27,7 @@ function getAllListingReviews($arg)
 {
     global $conn;
 
-    $sql = "SELECT * FROM " . TBL . "reviews  WHERE listing_id = '$arg' AND review_status= 'Active' ORDER BY review_cdt DESC ";
+    $sql = "SELECT * FROM " . COUNTRY_PREFIX . "reviews  WHERE listing_id = '$arg' AND review_status= 'Active' ORDER BY review_cdt DESC ";
     $rs = mysqli_query($conn, $sql);
     return $rs;
 
@@ -38,7 +38,7 @@ function getTenActiveReviews()
 {
     global $conn;
 
-    $sql = "SELECT * FROM " . TBL . "reviews  WHERE review_status= 'Active' ORDER BY review_cdt DESC LIMIT 10";
+    $sql = "SELECT * FROM " . COUNTRY_PREFIX . "reviews  WHERE review_status= 'Active' ORDER BY review_cdt DESC LIMIT 10";
     $rs = mysqli_query($conn, $sql);
     return $rs;
 
@@ -49,7 +49,7 @@ function getCountListingReview($arg)
 {
     global $conn;
 
-    $sql = "SELECT * FROM " . TBL . "reviews  WHERE listing_id = '$arg' AND review_status= 'Active'";
+    $sql = "SELECT * FROM " . COUNTRY_PREFIX . "reviews  WHERE listing_id = '$arg' AND review_status= 'Active'";
     $rs = mysqli_query($conn, $sql);
     $row = mysqli_num_rows($rs);
     return $row;
@@ -61,7 +61,7 @@ function getAllReceivedReviews($arg)
 {
     global $conn;
 
-    $sql = "SELECT * FROM " . TBL . "reviews  WHERE listing_user_id = '$arg' AND review_status='Active' ORDER BY review_cdt DESC ";
+    $sql = "SELECT * FROM " . COUNTRY_PREFIX . "reviews  WHERE listing_user_id = '$arg' AND review_status='Active' ORDER BY review_cdt DESC ";
     $rs = mysqli_query($conn, $sql);
     return $rs;
 
@@ -72,7 +72,7 @@ function getAllSentReviews($arg)
 {
     global $conn;
 
-    $sql = "SELECT * FROM " . TBL . "reviews  WHERE review_user_id = '$arg' AND review_status='Active' ORDER BY review_cdt DESC";
+    $sql = "SELECT * FROM " . COUNTRY_PREFIX . "reviews  WHERE review_user_id = '$arg' AND review_status='Active' ORDER BY review_cdt DESC";
     $rs = mysqli_query($conn, $sql);
     return $rs;
 
@@ -83,7 +83,7 @@ function getCountReview()
 {
     global $conn;
 
-    $sql = "SELECT * FROM  " . TBL . "reviews ";
+    $sql = "SELECT * FROM  " . COUNTRY_PREFIX . "reviews ";
     $rs = mysqli_query($conn, $sql);
     $row = mysqli_num_rows($rs);
     return $row;
@@ -95,7 +95,7 @@ function getCountReceivedReview($arg)
 {
     global $conn;
 
-    $sql = $sql = "SELECT * FROM " . TBL . "reviews  WHERE listing_user_id = '$arg' AND review_status='Active'";
+    $sql = $sql = "SELECT * FROM " . COUNTRY_PREFIX . "reviews  WHERE listing_user_id = '$arg' AND review_status='Active'";
     $rs = mysqli_query($conn, $sql);
     $row = mysqli_num_rows($rs);
     return $row;
@@ -107,7 +107,7 @@ function getCountSentReview($arg)
 {
     global $conn;
 
-    $sql = $sql = "SELECT * FROM " . TBL . "reviews  WHERE review_user_id = '$arg' AND review_status='Active'";
+    $sql = $sql = "SELECT * FROM " . COUNTRY_PREFIX . "reviews  WHERE review_user_id = '$arg' AND review_status='Active'";
     $rs = mysqli_query($conn, $sql);
     $row = mysqli_num_rows($rs);
     return $row;
@@ -119,7 +119,7 @@ function getListingReview($arg)
 {
     global $conn;
 
-    $sql = "SELECT COUNT(*) AS rate_cnt, SUM(price_rating) AS total_rate FROM " . TBL . "reviews WHERE listing_id = '$arg' AND review_status='Active'";
+    $sql = "SELECT COUNT(*) AS rate_cnt, SUM(price_rating) AS total_rate FROM " . COUNTRY_PREFIX . "reviews WHERE listing_id = '$arg' AND review_status='Active'";
     $rs = mysqli_query($conn, $sql);
     $row = mysqli_num_rows($rs);
     return $rs;
@@ -131,7 +131,7 @@ function getAllUserListingDateReviews($arg,$arg1)
 {
     global $conn;
 
-    $sql = "SELECT * FROM " . TBL . "reviews  WHERE listing_user_id = '$arg' AND review_status='Active' AND review_cdt > '$arg1'  ORDER BY review_cdt DESC ";
+    $sql = "SELECT * FROM " . COUNTRY_PREFIX . "reviews  WHERE listing_user_id = '$arg' AND review_status='Active' AND review_cdt > '$arg1'  ORDER BY review_cdt DESC ";
     $rs = mysqli_query($conn, $sql);
     return $rs;
 
@@ -142,7 +142,7 @@ function getCountAllUserListingDateReviews($arg,$arg1)
 {
     global $conn;
 
-    $sql = "SELECT * FROM " . TBL . "reviews  WHERE listing_user_id = '$arg' AND review_status='Active' AND review_cdt > '$arg1'  ORDER BY review_cdt DESC ";
+    $sql = "SELECT * FROM " . COUNTRY_PREFIX . "reviews  WHERE listing_user_id = '$arg' AND review_status='Active' AND review_cdt > '$arg1'  ORDER BY review_cdt DESC ";
     $rs = mysqli_query($conn, $sql);
     $row = mysqli_num_rows($rs);
     return $row;

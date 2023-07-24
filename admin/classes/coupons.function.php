@@ -5,7 +5,7 @@ function getAllCoupons()
 {
     global $conn;
 
-    $sql = "SELECT * FROM " . TBL . "coupons ORDER BY coupon_id DESC";
+    $sql = "SELECT * FROM " . COUNTRY_PREFIX . "coupons ORDER BY coupon_id DESC";
     $rs = mysqli_query($conn, $sql);
     return $rs;
 
@@ -16,7 +16,7 @@ function getAllActiveCoupons()
 {
     global $conn;
 
-    $sql = "SELECT * FROM " . TBL . "coupons WHERE coupon_status= 'Active' ORDER BY coupon_id ASC";;
+    $sql = "SELECT * FROM " . COUNTRY_PREFIX . "coupons WHERE coupon_status= 'Active' ORDER BY coupon_id ASC";;
     $rs = mysqli_query($conn, $sql);
     return $rs;
 
@@ -28,7 +28,7 @@ function getAllUserCoupons($arg)
 {
     global $conn;
 
-    $sql = "SELECT * FROM " . TBL . "coupons  WHERE coupon_user_id= '$arg' ORDER BY coupon_id DESC";
+    $sql = "SELECT * FROM " . COUNTRY_PREFIX . "coupons  WHERE coupon_user_id= '$arg' ORDER BY coupon_id DESC";
     $rs = mysqli_query($conn, $sql);
     return $rs;
 
@@ -62,7 +62,7 @@ function getCoupon($arg)
 {
     global $conn;
 
-    $sql = "SELECT * FROM  " . TBL . "coupons where coupon_id='" . $arg . "'";
+    $sql = "SELECT * FROM  " . COUNTRY_PREFIX . "coupons where coupon_id='" . $arg . "'";
     $rs = mysqli_query($conn, $sql);
     $row = mysqli_fetch_array($rs);
     return $row;
@@ -75,7 +75,7 @@ function getAllCurrentCoupons()
 {
     global $conn;
 
-    $sql = "SELECT * FROM " . TBL . "coupons  WHERE  coupon_start_date <= CURDATE() ORDER BY coupon_id DESC";
+    $sql = "SELECT * FROM " . COUNTRY_PREFIX . "coupons  WHERE  coupon_start_date <= CURDATE() ORDER BY coupon_id DESC";
     $rs = mysqli_query($conn, $sql);
     return $rs;
 
@@ -86,7 +86,7 @@ function getExceptCoupon($arg)
 {
     global $conn;
 
-    $sql = "SELECT * FROM  " . TBL . "coupons WHERE coupon_status= 'Active' AND coupon_id !='" . $arg . "'";
+    $sql = "SELECT * FROM  " . COUNTRY_PREFIX . "coupons WHERE coupon_status= 'Active' AND coupon_id !='" . $arg . "'";
     $rs = mysqli_query($conn, $sql);
     return $rs;
 
@@ -97,7 +97,7 @@ function getCountCoupon()
 {
     global $conn;
 
-    $sql = "SELECT * FROM " . TBL . "coupons ORDER BY coupon_id DESC";
+    $sql = "SELECT * FROM " . COUNTRY_PREFIX . "coupons ORDER BY coupon_id DESC";
     $rs = mysqli_query($conn, $sql);
     $row = mysqli_num_rows($rs);
     return $row;
@@ -109,7 +109,7 @@ function getCountUserCoupon($arg)
 {
     global $conn;
 
-    $sql = "SELECT * FROM " . TBL . "coupons  WHERE coupon_user_id= '$arg' ORDER BY coupon_id DESC";
+    $sql = "SELECT * FROM " . COUNTRY_PREFIX . "coupons  WHERE coupon_user_id= '$arg' ORDER BY coupon_id DESC";
     $rs = mysqli_query($conn, $sql);
     $row = mysqli_num_rows($rs);
     return $row;

@@ -29,14 +29,14 @@ if ($request == 2) {
         //Delete user listings from listing table
 
         $list =
-            " DELETE FROM  " . TBL . "listings  WHERE user_id='" . $deleteid . "'";
+            " DELETE FROM  " . COUNTRY_PREFIX . "listings  WHERE user_id='" . $deleteid . "'";
 
         $list_res = mysqli_query($conn, $list);
 
         //Delete user products from product table
 
         $product =
-            " DELETE FROM  " . TBL . "products  WHERE user_id='" . $deleteid . "'";
+            " DELETE FROM  " . COUNTRY_PREFIX . "products  WHERE user_id='" . $deleteid . "'";
 
         $product_res = mysqli_query($conn, $product);
 
@@ -44,7 +44,7 @@ if ($request == 2) {
         //Delete user Events from events table
 
         $events =
-            " DELETE FROM  " . TBL . "events  WHERE user_id='" . $deleteid . "'";
+            " DELETE FROM  " . COUNTRY_PREFIX . "events  WHERE user_id='" . $deleteid . "'";
 
         $events_res = mysqli_query($conn, $events);
 
@@ -52,14 +52,14 @@ if ($request == 2) {
         //Delete user Blogs from Blogs table
 
         $blogs =
-            " DELETE FROM  " . TBL . "blogs  WHERE user_id='" . $deleteid . "'";
+            " DELETE FROM  " . COUNTRY_PREFIX . "blogs  WHERE user_id='" . $deleteid . "'";
 
         $blogs_res = mysqli_query($conn, $blogs);
 
         //Delete user Jobs from jobs table
 
         $jobs =
-            " DELETE FROM  " . TBL . "jobs  WHERE user_id='" . $deleteid . "'";
+            " DELETE FROM  " . COUNTRY_PREFIX . "jobs  WHERE user_id='" . $deleteid . "'";
 
         $jobs_res = mysqli_query($conn, $jobs);
 
@@ -79,13 +79,13 @@ if ($request == 3) {
         //Delete listings from listing table
 
         $list =
-            " DELETE FROM  " . TBL . "listings  WHERE listing_id='" . $deleteid . "'";
+            " DELETE FROM  " . COUNTRY_PREFIX . "listings  WHERE listing_id='" . $deleteid . "'";
 
         $list_res = mysqli_query($conn, $list);
 
         //Query to delete the page view starts
 
-        $page_view_qry = "DELETE FROM  " . TBL . "page_views where listing_id='" . $deleteid . "'";
+        $page_view_qry = "DELETE FROM  " . COUNTRY_PREFIX . "page_views where listing_id='" . $deleteid . "'";
 
         $page_view_res = mysqli_query($conn, $page_view_qry);
 
@@ -106,13 +106,13 @@ if ($request == 4) {
         //Delete user Events from events table
 
         $events =
-            " DELETE FROM  " . TBL . "events  WHERE event_id='" . $deleteid . "'";
+            " DELETE FROM  " . COUNTRY_PREFIX . "events  WHERE event_id='" . $deleteid . "'";
 
         $events_res = mysqli_query($conn, $events);
 
         //Query to delete the page view starts
 
-        $page_view_qry = "DELETE FROM  " . TBL . "page_views where event_id='" . $deleteid . "'";
+        $page_view_qry = "DELETE FROM  " . COUNTRY_PREFIX . "page_views where event_id='" . $deleteid . "'";
 
         $page_view_res = mysqli_query($conn, $page_view_qry);
 
@@ -133,13 +133,13 @@ if ($request == 5) {
         //Delete user Blogs from events table
 
         $blogs =
-            " DELETE FROM  " . TBL . "blogs  WHERE blog_id='" . $deleteid . "'";
+            " DELETE FROM  " . COUNTRY_PREFIX . "blogs  WHERE blog_id='" . $deleteid . "'";
 
         $blogs_res = mysqli_query($conn, $blogs);
 
         //Query to delete the page view starts
 
-        $page_view_qry = "DELETE FROM  " . TBL . "page_views where blog_id='" . $deleteid . "'";
+        $page_view_qry = "DELETE FROM  " . COUNTRY_PREFIX . "page_views where blog_id='" . $deleteid . "'";
 
         $page_view_res = mysqli_query($conn, $page_view_qry);
 
@@ -160,13 +160,13 @@ if ($request == 6) {
         //Delete user products from product table
 
         $product =
-            " DELETE FROM  " . TBL . "products  WHERE product_id='" . $deleteid . "'";
+            " DELETE FROM  " . COUNTRY_PREFIX . "products  WHERE product_id='" . $deleteid . "'";
 
         $product_res = mysqli_query($conn, $product);
 
         //Query to delete the page view starts
 
-        $page_view_qry = "DELETE FROM  " . TBL . "page_views where product_id='" . $deleteid . "'";
+        $page_view_qry = "DELETE FROM  " . COUNTRY_PREFIX . "page_views where product_id='" . $deleteid . "'";
 
         $page_view_res = mysqli_query($conn, $page_view_qry);
 
@@ -187,13 +187,13 @@ if ($request == 7) {
         //Delete user Jobs from jobs table
 
         $job =
-            " DELETE FROM  " . TBL . "jobs  WHERE job_id='" . $deleteid . "'";
+            " DELETE FROM  " . COUNTRY_PREFIX . "jobs  WHERE job_id='" . $deleteid . "'";
 
         $job_res = mysqli_query($conn, $job);
 
         //Query to delete the page view starts
 
-        $page_view_qry = "DELETE FROM  " . TBL . "page_views where job_id='" . $deleteid . "'";
+        $page_view_qry = "DELETE FROM  " . COUNTRY_PREFIX . "page_views where job_id='" . $deleteid . "'";
 
         $page_view_res = mysqli_query($conn, $page_view_qry);
 
@@ -214,13 +214,13 @@ if ($request == 8) {
         //Delete user News from News table
 
         $news =
-            " DELETE FROM  " . TBL . "news  WHERE news_id='" . $deleteid . "'";
+            " DELETE FROM  " . COUNTRY_PREFIX . "news  WHERE news_id='" . $deleteid . "'";
 
         $news_res = mysqli_query($conn, $news);
 
         //Query to delete the page view starts
 
-        $page_view_qry = "DELETE FROM  " . TBL . "page_views where news_id='" . $deleteid . "'";
+        $page_view_qry = "DELETE FROM  " . COUNTRY_PREFIX . "page_views where news_id='" . $deleteid . "'";
 
         $page_view_res = mysqli_query($conn, $page_view_qry);
 
@@ -241,13 +241,13 @@ if ($request == 9) {
         //Delete Places from Places table
 
         $place =
-            " DELETE FROM  " . TBL . "places WHERE place_id='" . $deleteid . "'";
+            " DELETE FROM  " . COUNTRY_PREFIX . "places WHERE place_id='" . $deleteid . "'";
 
         $place_res = mysqli_query($conn, $place);
 
         //Query to delete the page view starts
 
-        $page_view_qry = "DELETE FROM  " . TBL . "page_views where place_id='" . $deleteid . "'";
+        $page_view_qry = "DELETE FROM  " . COUNTRY_PREFIX . "page_views where place_id='" . $deleteid . "'";
 
         $page_view_res = mysqli_query($conn, $page_view_qry);
 

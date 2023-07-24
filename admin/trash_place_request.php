@@ -16,7 +16,7 @@ if(isset($_GET['placerequestplacerequestplacerequestplacerequestplacerequestplac
 
 
     $place_request_qry =
-        "DELETE  FROM " . TBL . "place_request where place_request_id='" . $place_request_id . "'";
+        "DELETE  FROM " . COUNTRY_PREFIX . "place_request where place_request_id='" . $place_request_id . "'";
 
     $place_request_res = mysqli_query($conn,$place_request_qry);
 

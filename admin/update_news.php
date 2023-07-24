@@ -62,7 +62,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             global $conn;
             $newLink = $link;
             do {
-                $checkLink = mysqli_query($conn, "SELECT news_id FROM " . TBL . "news WHERE news_slug = '$newLink' AND news_id != '$news_id'");
+                $checkLink = mysqli_query($conn, "SELECT news_id FROM " . COUNTRY_PREFIX . "news WHERE news_slug = '$newLink' AND news_id != '$news_id'");
                 if (mysqli_num_rows($checkLink) > 0) {
                     $newLink = $link . '' . $counter;
                     $counter++;
@@ -80,7 +80,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         //News URL slug for update ends
 
 
-        $news_res = mysqli_query($conn, "UPDATE  " . TBL . "news SET news_title='" . $news_title . "'
+        $news_res = mysqli_query($conn, "UPDATE  " . COUNTRY_PREFIX . "news SET news_title='" . $news_title . "'
      , news_description='" . $news_description . "', news_image='" . $news_image . "', category_id='" . $category_id . "'
      , news_slug='" . $news_slug . "', seo_title='" . $seo_title . "', city_id='" . $city_id . "'
      , seo_description='" . $seo_description . "', seo_keywords='" . $seo_keywords . "'

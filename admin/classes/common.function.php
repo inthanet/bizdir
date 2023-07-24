@@ -15,10 +15,10 @@ function listingpageview($listing_id)
     global $conn;
     $user_ip = $_SERVER['REMOTE_ADDR'];
 
-    $check_ip = mysqli_query($conn, "SELECT * FROM " . TBL . "page_views  WHERE listing_id = '$listing_id' AND user_ip = '$user_ip' ");
+    $check_ip = mysqli_query($conn, "SELECT * FROM " . COUNTRY_PREFIX . "page_views  WHERE listing_id = '$listing_id' AND user_ip = '$user_ip' ");
 
     if (mysqli_num_rows($check_ip) <= 0) {
-        $insertview = mysqli_query($conn, "INSERT INTO " . TBL . "page_views (`listing_id`, `user_ip`, `page_view_cdt`) values('$listing_id','$user_ip',NOW())");
+        $insertview = mysqli_query($conn, "INSERT INTO " . COUNTRY_PREFIX . "page_views (`listing_id`, `user_ip`, `page_view_cdt`) values('$listing_id','$user_ip',NOW())");
 
         return true;
     }
@@ -32,10 +32,10 @@ function eventpageview($event_id)
     global $conn;
     $user_ip = $_SERVER['REMOTE_ADDR'];
 
-    $check_ip = mysqli_query($conn, "SELECT * FROM " . TBL . "page_views  WHERE event_id = '$event_id' AND user_ip = '$user_ip' ");
+    $check_ip = mysqli_query($conn, "SELECT * FROM " . COUNTRY_PREFIX . "page_views  WHERE event_id = '$event_id' AND user_ip = '$user_ip' ");
 
     if (mysqli_num_rows($check_ip) <= 0) {
-        $insertview = mysqli_query($conn, "INSERT INTO " . TBL . "page_views (`event_id`, `user_ip`, `page_view_cdt`) values('$event_id','$user_ip',NOW())");
+        $insertview = mysqli_query($conn, "INSERT INTO " . COUNTRY_PREFIX . "page_views (`event_id`, `user_ip`, `page_view_cdt`) values('$event_id','$user_ip',NOW())");
 
         return true;
     }
@@ -49,10 +49,10 @@ function blogpageview($blog_id)
     global $conn;
     $user_ip = $_SERVER['REMOTE_ADDR'];
 
-    $check_ip = mysqli_query($conn, "SELECT * FROM " . TBL . "page_views  WHERE blog_id = '$blog_id' AND user_ip = '$user_ip' ");
+    $check_ip = mysqli_query($conn, "SELECT * FROM " . COUNTRY_PREFIX . "page_views  WHERE blog_id = '$blog_id' AND user_ip = '$user_ip' ");
 
     if (mysqli_num_rows($check_ip) <= 0) {
-        $insertview = mysqli_query($conn, "INSERT INTO " . TBL . "page_views (`blog_id`, `user_ip`, `page_view_cdt`) values('$blog_id','$user_ip',NOW())");
+        $insertview = mysqli_query($conn, "INSERT INTO " . COUNTRY_PREFIX . "page_views (`blog_id`, `user_ip`, `page_view_cdt`) values('$blog_id','$user_ip',NOW())");
 
         return true;
     }
@@ -66,10 +66,10 @@ function productpageview($product_id)
     global $conn;
     $user_ip = $_SERVER['REMOTE_ADDR'];
 
-    $check_ip = mysqli_query($conn, "SELECT * FROM " . TBL . "page_views  WHERE product_id = '$product_id' AND user_ip = '$user_ip' ");
+    $check_ip = mysqli_query($conn, "SELECT * FROM " . COUNTRY_PREFIX . "page_views  WHERE product_id = '$product_id' AND user_ip = '$user_ip' ");
 
     if (mysqli_num_rows($check_ip) <= 0) {
-        $insertview = mysqli_query($conn, "INSERT INTO " . TBL . "page_views (`product_id`, `user_ip`, `page_view_cdt`) values('$product_id','$user_ip',NOW())");
+        $insertview = mysqli_query($conn, "INSERT INTO " . COUNTRY_PREFIX . "page_views (`product_id`, `user_ip`, `page_view_cdt`) values('$product_id','$user_ip',NOW())");
 
         return true;
     }
@@ -83,10 +83,10 @@ function seopageview($page_id)
     global $conn;
     $user_ip = $_SERVER['REMOTE_ADDR'];
 
-    $check_ip = mysqli_query($conn, "SELECT * FROM " . TBL . "page_views  WHERE page_id = '$page_id' AND user_ip = '$user_ip' ");
+    $check_ip = mysqli_query($conn, "SELECT * FROM " . COUNTRY_PREFIX . "page_views  WHERE page_id = '$page_id' AND user_ip = '$user_ip' ");
 
     if (mysqli_num_rows($check_ip) <= 0) {
-        $insertview = mysqli_query($conn, "INSERT INTO " . TBL . "page_views (`page_id`, `user_ip`, `page_view_cdt`) values('$page_id','$user_ip',NOW())");
+        $insertview = mysqli_query($conn, "INSERT INTO " . COUNTRY_PREFIX . "page_views (`page_id`, `user_ip`, `page_view_cdt`) values('$page_id','$user_ip',NOW())");
 
         return true;
     }
@@ -100,10 +100,10 @@ function couponpageview($coupon_id)
     global $conn;
     $user_ip = $_SERVER['REMOTE_ADDR'];
 
-    $check_ip = mysqli_query($conn, "SELECT * FROM " . TBL . "page_views  WHERE coupon_id = '$coupon_id' AND user_ip = '$user_ip' ");
+    $check_ip = mysqli_query($conn, "SELECT * FROM " . COUNTRY_PREFIX . "page_views  WHERE coupon_id = '$coupon_id' AND user_ip = '$user_ip' ");
 
     if (mysqli_num_rows($check_ip) <= 0) {
-        $insertview = mysqli_query($conn, "INSERT INTO " . TBL . "page_views (`coupon_id`, `user_ip`, `page_view_cdt`) values('$coupon_id','$user_ip',NOW())");
+        $insertview = mysqli_query($conn, "INSERT INTO " . COUNTRY_PREFIX . "page_views (`coupon_id`, `user_ip`, `page_view_cdt`) values('$coupon_id','$user_ip',NOW())");
 
         return true;
     }
@@ -117,10 +117,10 @@ function categorypageview($category_id)
     global $conn;
     $user_ip = $_SERVER['REMOTE_ADDR'];
 
-    $check_ip = mysqli_query($conn, "SELECT * FROM " . TBL . "page_views  WHERE category_id = '$category_id' AND user_ip = '$user_ip' ");
+    $check_ip = mysqli_query($conn, "SELECT * FROM " . COUNTRY_PREFIX . "page_views  WHERE category_id = '$category_id' AND user_ip = '$user_ip' ");
 
     if (mysqli_num_rows($check_ip) <= 0) {
-        $insertview = mysqli_query($conn, "INSERT INTO " . TBL . "page_views (`category_id`, `user_ip`, `page_view_cdt`) values('$category_id','$user_ip',NOW())");
+        $insertview = mysqli_query($conn, "INSERT INTO " . COUNTRY_PREFIX . "page_views (`category_id`, `user_ip`, `page_view_cdt`) values('$category_id','$user_ip',NOW())");
 
         return true;
     }
@@ -134,10 +134,10 @@ function businesspageview($user_business_id)
     global $conn;
     $user_ip = $_SERVER['REMOTE_ADDR'];
 
-    $check_ip = mysqli_query($conn, "SELECT * FROM " . TBL . "page_views  WHERE user_business_id = '$user_business_id' AND user_ip = '$user_ip' ");
+    $check_ip = mysqli_query($conn, "SELECT * FROM " . COUNTRY_PREFIX . "page_views  WHERE user_business_id = '$user_business_id' AND user_ip = '$user_ip' ");
 
     if (mysqli_num_rows($check_ip) <= 0) {
-        $insertview = mysqli_query($conn, "INSERT INTO " . TBL . "page_views (`user_business_id`, `user_ip`, `page_view_cdt`) values('$user_business_id','$user_ip',NOW())");
+        $insertview = mysqli_query($conn, "INSERT INTO " . COUNTRY_PREFIX . "page_views (`user_business_id`, `user_ip`, `page_view_cdt`) values('$user_business_id','$user_ip',NOW())");
 
         return true;
     }
@@ -151,10 +151,10 @@ function jobpageview($job_id)
     global $conn;
     $user_ip = $_SERVER['REMOTE_ADDR'];
 
-    $check_ip = mysqli_query($conn, "SELECT * FROM " . TBL . "page_views  WHERE job_id = '$job_id' AND user_ip = '$user_ip' ");
+    $check_ip = mysqli_query($conn, "SELECT * FROM " . COUNTRY_PREFIX . "page_views  WHERE job_id = '$job_id' AND user_ip = '$user_ip' ");
 
     if (mysqli_num_rows($check_ip) <= 0) {
-        $insertview = mysqli_query($conn, "INSERT INTO " . TBL . "page_views (`job_id`, `user_ip`, `page_view_cdt`) values('$job_id','$user_ip',NOW())");
+        $insertview = mysqli_query($conn, "INSERT INTO " . COUNTRY_PREFIX . "page_views (`job_id`, `user_ip`, `page_view_cdt`) values('$job_id','$user_ip',NOW())");
 
         return true;
     }
@@ -168,10 +168,10 @@ function jobprofilepageview($job_profile_id)
     global $conn;
     $user_ip = $_SERVER['REMOTE_ADDR'];
 
-    $check_ip = mysqli_query($conn, "SELECT * FROM " . TBL . "page_views  WHERE job_profile_id = '$job_profile_id' AND user_ip = '$user_ip' ");
+    $check_ip = mysqli_query($conn, "SELECT * FROM " . COUNTRY_PREFIX . "page_views  WHERE job_profile_id = '$job_profile_id' AND user_ip = '$user_ip' ");
 
     if (mysqli_num_rows($check_ip) <= 0) {
-        $insertview = mysqli_query($conn, "INSERT INTO " . TBL . "page_views (`job_profile_id`, `user_ip`, `page_view_cdt`) values('$job_profile_id','$user_ip',NOW())");
+        $insertview = mysqli_query($conn, "INSERT INTO " . COUNTRY_PREFIX . "page_views (`job_profile_id`, `user_ip`, `page_view_cdt`) values('$job_profile_id','$user_ip',NOW())");
 
         return true;
     }
@@ -186,10 +186,10 @@ function expertprofilepageview($expert_id)
     global $conn;
     $user_ip = $_SERVER['REMOTE_ADDR'];
 
-    $check_ip = mysqli_query($conn, "SELECT * FROM " . TBL . "page_views  WHERE expert_id = '$expert_id' AND user_ip = '$user_ip' ");
+    $check_ip = mysqli_query($conn, "SELECT * FROM " . COUNTRY_PREFIX . "page_views  WHERE expert_id = '$expert_id' AND user_ip = '$user_ip' ");
 
     if (mysqli_num_rows($check_ip) <= 0) {
-        $insertview = mysqli_query($conn, "INSERT INTO " . TBL . "page_views (`expert_id`, `user_ip`, `page_view_cdt`) values('$expert_id','$user_ip',NOW())");
+        $insertview = mysqli_query($conn, "INSERT INTO " . COUNTRY_PREFIX . "page_views (`expert_id`, `user_ip`, `page_view_cdt`) values('$expert_id','$user_ip',NOW())");
 
         return true;
     }
@@ -203,10 +203,10 @@ function newsdetailpageview($news_id)
     global $conn;
     $user_ip = $_SERVER['REMOTE_ADDR'];
 
-    $check_ip = mysqli_query($conn, "SELECT * FROM " . TBL . "page_views WHERE news_id = '$news_id' AND user_ip = '$user_ip' ");
+    $check_ip = mysqli_query($conn, "SELECT * FROM " . COUNTRY_PREFIX . "page_views WHERE news_id = '$news_id' AND user_ip = '$user_ip' ");
 
     if (mysqli_num_rows($check_ip) <= 0) {
-        $insertview = mysqli_query($conn, "INSERT INTO " . TBL . "page_views (`news_id`, `user_ip`, `page_view_cdt`) values('$news_id','$user_ip',NOW())");
+        $insertview = mysqli_query($conn, "INSERT INTO " . COUNTRY_PREFIX . "page_views (`news_id`, `user_ip`, `page_view_cdt`) values('$news_id','$user_ip',NOW())");
 
         return true;
     }
@@ -220,10 +220,10 @@ function placedetailpageview($news_id)
     global $conn;
     $user_ip = $_SERVER['REMOTE_ADDR'];
 
-    $check_ip = mysqli_query($conn, "SELECT * FROM " . TBL . "page_views WHERE place_id = '$news_id' AND user_ip = '$user_ip' ");
+    $check_ip = mysqli_query($conn, "SELECT * FROM " . COUNTRY_PREFIX . "page_views WHERE place_id = '$news_id' AND user_ip = '$user_ip' ");
 
     if (mysqli_num_rows($check_ip) <= 0) {
-        $insertview = mysqli_query($conn, "INSERT INTO " . TBL . "page_views (`place_id`, `user_ip`, `page_view_cdt`) values('$news_id','$user_ip',NOW())");
+        $insertview = mysqli_query($conn, "INSERT INTO " . COUNTRY_PREFIX . "page_views (`place_id`, `user_ip`, `page_view_cdt`) values('$news_id','$user_ip',NOW())");
 
         return true;
     }
@@ -260,7 +260,7 @@ function httpPost($url, $params)
 function listing_pageview_count($listing_id)
 {
     global $conn;
-    $total_listing_view_count1 = mysqli_query($conn, "SELECT listing_id FROM " . TBL . "page_views  WHERE listing_id = '$listing_id' ");
+    $total_listing_view_count1 = mysqli_query($conn, "SELECT listing_id FROM " . COUNTRY_PREFIX . "page_views  WHERE listing_id = '$listing_id' ");
     $total_listing_view_count = mysqli_num_rows($total_listing_view_count1);
     return $total_listing_view_count;
 }
@@ -270,7 +270,7 @@ function listing_pageview_count($listing_id)
 function event_pageview_count($event_id)
 {
     global $conn;
-    $total_event_view_count1 = mysqli_query($conn, "SELECT event_id FROM " . TBL . "page_views  WHERE event_id = '$event_id' ");
+    $total_event_view_count1 = mysqli_query($conn, "SELECT event_id FROM " . COUNTRY_PREFIX . "page_views  WHERE event_id = '$event_id' ");
     $total_event_view_count = mysqli_num_rows($total_event_view_count1);
     return $total_event_view_count;
 }
@@ -280,7 +280,7 @@ function event_pageview_count($event_id)
 function blog_pageview_count($blog_id)
 {
     global $conn;
-    $total_blog_view_count1 = mysqli_query($conn, "SELECT blog_id FROM " . TBL . "page_views WHERE blog_id = '$blog_id' ");
+    $total_blog_view_count1 = mysqli_query($conn, "SELECT blog_id FROM " . COUNTRY_PREFIX . "page_views WHERE blog_id = '$blog_id' ");
     $total_blog_view_count = mysqli_num_rows($total_blog_view_count1);
     return $total_blog_view_count;
 }
@@ -290,7 +290,7 @@ function blog_pageview_count($blog_id)
 function product_pageview_count($product_id)
 {
     global $conn;
-    $total_product_view_count1 = mysqli_query($conn, "SELECT product_id FROM " . TBL . "page_views  WHERE product_id = '$product_id' ");
+    $total_product_view_count1 = mysqli_query($conn, "SELECT product_id FROM " . COUNTRY_PREFIX . "page_views  WHERE product_id = '$product_id' ");
     $total_product_view_count = mysqli_num_rows($total_product_view_count1);
     return $total_product_view_count;
 }
@@ -300,7 +300,7 @@ function product_pageview_count($product_id)
 function job_pageview_count($job_id)
 {
     global $conn;
-    $total_job_view_count1 = mysqli_query($conn, "SELECT job_id FROM " . TBL . "page_views  WHERE job_id = '$job_id' ");
+    $total_job_view_count1 = mysqli_query($conn, "SELECT job_id FROM " . COUNTRY_PREFIX . "page_views  WHERE job_id = '$job_id' ");
     $total_job_view_count = mysqli_num_rows($total_job_view_count1);
     return $total_job_view_count;
 }
@@ -310,7 +310,7 @@ function job_pageview_count($job_id)
 function job_profile_pageview_count($job_profile_id)
 {
     global $conn;
-    $total_job_view_count1 = mysqli_query($conn, "SELECT job_profile_id FROM " . TBL . "page_views  WHERE job_profile_id = '$job_profile_id' ");
+    $total_job_view_count1 = mysqli_query($conn, "SELECT job_profile_id FROM " . COUNTRY_PREFIX . "page_views  WHERE job_profile_id = '$job_profile_id' ");
     $total_job_view_count = mysqli_num_rows($total_job_view_count1);
     return $total_job_view_count;
 }
@@ -320,7 +320,7 @@ function job_profile_pageview_count($job_profile_id)
 function expert_profile_pageview_count($expert_id)
 {
     global $conn;
-    $total_expert_view_count1 = mysqli_query($conn, "SELECT expert_id FROM " . TBL . "page_views  WHERE expert_id = '$expert_id' ");
+    $total_expert_view_count1 = mysqli_query($conn, "SELECT expert_id FROM " . COUNTRY_PREFIX . "page_views  WHERE expert_id = '$expert_id' ");
     $total_expert_view_count = mysqli_num_rows($total_expert_view_count1);
     return $total_expert_view_count;
 }
@@ -330,7 +330,7 @@ function expert_profile_pageview_count($expert_id)
 function news_detail_pageview_count($news_id)
 {
     global $conn;
-    $total_news_view_count1 = mysqli_query($conn, "SELECT news_id FROM " . TBL . "page_views  WHERE news_id = '$news_id' ");
+    $total_news_view_count1 = mysqli_query($conn, "SELECT news_id FROM " . COUNTRY_PREFIX . "page_views  WHERE news_id = '$news_id' ");
     $total_news_view_count = mysqli_num_rows($total_news_view_count1);
     return $total_news_view_count;
 }
@@ -340,7 +340,7 @@ function news_detail_pageview_count($news_id)
 function place_detail_pageview_count($place_id)
 {
     global $conn;
-    $total_place_view_count1 = mysqli_query($conn, "SELECT place_id FROM " . TBL . "page_views  WHERE place_id = '$place_id' ");
+    $total_place_view_count1 = mysqli_query($conn, "SELECT place_id FROM " . COUNTRY_PREFIX . "page_views  WHERE place_id = '$place_id' ");
     $total_place_view_count = mysqli_num_rows($total_place_view_count1);
     return $total_place_view_count;
 }
@@ -350,7 +350,7 @@ function place_detail_pageview_count($place_id)
 function seopage_pageview_count($page_id)
 {
     global $conn;
-    $total_page_view_count1 = mysqli_query($conn, "SELECT page_id FROM " . TBL . "page_views  WHERE page_id = '$page_id' ");
+    $total_page_view_count1 = mysqli_query($conn, "SELECT page_id FROM " . COUNTRY_PREFIX . "page_views  WHERE page_id = '$page_id' ");
     $total_page_view_count = mysqli_num_rows($total_page_view_count1);
     return $total_page_view_count;
 }
@@ -360,7 +360,7 @@ function seopage_pageview_count($page_id)
 function coupon_pageview_count($coupon_id)
 {
     global $conn;
-    $total_coupon_view_count1 = mysqli_query($conn, "SELECT coupon_id FROM " . TBL . "page_views  WHERE coupon_id = '$coupon_id' ");
+    $total_coupon_view_count1 = mysqli_query($conn, "SELECT coupon_id FROM " . COUNTRY_PREFIX . "page_views  WHERE coupon_id = '$coupon_id' ");
     $total_coupon_view_count = mysqli_num_rows($total_coupon_view_count1);
     return $total_coupon_view_count;
 }
@@ -370,7 +370,7 @@ function coupon_pageview_count($coupon_id)
 function category_pageview_count($category_id)
 {
     global $conn;
-    $total_category_view_count1 = mysqli_query($conn, "SELECT category_id FROM " . TBL . "page_views  WHERE category_id = '$category_id' ");
+    $total_category_view_count1 = mysqli_query($conn, "SELECT category_id FROM " . COUNTRY_PREFIX . "page_views  WHERE category_id = '$category_id' ");
     $total_category_view_count = mysqli_num_rows($total_category_view_count1);
     return $total_category_view_count;
 }
@@ -380,7 +380,7 @@ function category_pageview_count($category_id)
 function business_pageview_count($user_business_id)
 {
     global $conn;
-    $total_business_view_count1 = mysqli_query($conn, "SELECT user_business_id FROM " . TBL . "page_views  WHERE user_business_id = '$user_business_id' ");
+    $total_business_view_count1 = mysqli_query($conn, "SELECT user_business_id FROM " . COUNTRY_PREFIX . "page_views  WHERE user_business_id = '$user_business_id' ");
     $total_business_view_count = mysqli_num_rows($total_business_view_count1);
     return $total_business_view_count;
 }
@@ -391,13 +391,13 @@ function last_week_all_listing_pageview_count($user_id)
 {
     global $conn;
 
-    $total_listing_view_count1 = mysqli_query($conn, "SELECT listing_id FROM " . TBL . "listings  WHERE user_id = '$user_id' AND listing_is_delete != '2'");
+    $total_listing_view_count1 = mysqli_query($conn, "SELECT listing_id FROM " . COUNTRY_PREFIX . "listings  WHERE user_id = '$user_id' AND listing_is_delete != '2'");
 
     $total_listing_view_count_new = 0;
     foreach ($total_listing_view_count1 as $listrow) {
 
         $listing_id = $listrow['listing_id'];
-        $total_listing_view_count1 = mysqli_query($conn, "SELECT listing_id FROM " . TBL . "page_views  WHERE listing_id = '$listing_id' AND page_view_cdt >= DATE(NOW()) - INTERVAL 7 DAY");
+        $total_listing_view_count1 = mysqli_query($conn, "SELECT listing_id FROM " . COUNTRY_PREFIX . "page_views  WHERE listing_id = '$listing_id' AND page_view_cdt >= DATE(NOW()) - INTERVAL 7 DAY");
         $total_listing_view_count = mysqli_num_rows($total_listing_view_count1);
 
         $total_listing_view_count_new += $total_listing_view_count;
@@ -411,13 +411,13 @@ function last_week_all_event_pageview_count($user_id)
 {
     global $conn;
 
-    $total_event_view_count1 = mysqli_query($conn, "SELECT event_id FROM " . TBL . "events WHERE user_id = '$user_id' AND event_type= 'All'");
+    $total_event_view_count1 = mysqli_query($conn, "SELECT event_id FROM " . COUNTRY_PREFIX . "events WHERE user_id = '$user_id' AND event_type= 'All'");
 
     $total_event_view_count_new = 0;
     foreach ($total_event_view_count1 as $eventrow) {
 
         $event_id = $eventrow['event_id'];
-        $total_event_view_count1 = mysqli_query($conn, "SELECT event_id FROM " . TBL . "page_views  WHERE event_id = '$event_id' AND page_view_cdt >= DATE(NOW()) - INTERVAL 7 DAY ");
+        $total_event_view_count1 = mysqli_query($conn, "SELECT event_id FROM " . COUNTRY_PREFIX . "page_views  WHERE event_id = '$event_id' AND page_view_cdt >= DATE(NOW()) - INTERVAL 7 DAY ");
         $total_event_view_count = mysqli_num_rows($total_event_view_count1);
 
         $total_event_view_count_new += $total_event_view_count;
@@ -431,13 +431,13 @@ function last_week_all_blog_pageview_count($user_id)
 {
     global $conn;
 
-    $total_blog_view_count1 = mysqli_query($conn, "SELECT blog_id FROM " . TBL . "blogs WHERE user_id = '$user_id' ");
+    $total_blog_view_count1 = mysqli_query($conn, "SELECT blog_id FROM " . COUNTRY_PREFIX . "blogs WHERE user_id = '$user_id' ");
 
     $total_blog_view_count_new = 0;
     foreach ($total_blog_view_count1 as $blogrow) {
 
         $blog_id = $blogrow['blog_id'];
-        $total_blog_view_count1 = mysqli_query($conn, "SELECT blog_id FROM " . TBL . "page_views WHERE blog_id = '$blog_id' AND page_view_cdt >= DATE(NOW()) - INTERVAL 7 DAY ");
+        $total_blog_view_count1 = mysqli_query($conn, "SELECT blog_id FROM " . COUNTRY_PREFIX . "page_views WHERE blog_id = '$blog_id' AND page_view_cdt >= DATE(NOW()) - INTERVAL 7 DAY ");
         $total_blog_view_count = mysqli_num_rows($total_blog_view_count1);
 
         $total_blog_view_count_new += $total_blog_view_count;
@@ -452,13 +452,13 @@ function last_week_all_product_pageview_count($user_id)
 {
     global $conn;
 
-    $total_product_view_count1 = mysqli_query($conn, "SELECT product_id FROM " . TBL . "products WHERE user_id = '$user_id' AND product_is_delete != '2'");
+    $total_product_view_count1 = mysqli_query($conn, "SELECT product_id FROM " . COUNTRY_PREFIX . "products WHERE user_id = '$user_id' AND product_is_delete != '2'");
 
     $total_product_view_count_new = 0;
     foreach ($total_product_view_count1 as $productrow) {
 
         $product_id = $productrow['product_id'];
-        $total_product_view_count1 = mysqli_query($conn, "SELECT product_id FROM " . TBL . "page_views  WHERE product_id = '$product_id' AND page_view_cdt >= DATE(NOW()) - INTERVAL 7 DAY ");
+        $total_product_view_count1 = mysqli_query($conn, "SELECT product_id FROM " . COUNTRY_PREFIX . "page_views  WHERE product_id = '$product_id' AND page_view_cdt >= DATE(NOW()) - INTERVAL 7 DAY ");
         $total_product_view_count = mysqli_num_rows($total_product_view_count1);
         
         $total_product_view_count_new += $total_product_view_count;
@@ -473,13 +473,13 @@ function last_week_all_messages_count($user_id)
 {
     global $conn;
 
-    $total_chat_link_count1 = mysqli_query($conn, "SELECT chat_link_id FROM " . TBL . "chat_links WHERE sender_id = '$user_id' OR receiver_id = '$user_id' AND chat_link_status = 'Active'");
+    $total_chat_link_count1 = mysqli_query($conn, "SELECT chat_link_id FROM " . COUNTRY_PREFIX . "chat_links WHERE sender_id = '$user_id' OR receiver_id = '$user_id' AND chat_link_status = 'Active'");
 
     $total_chat_link_count_new = 0;
     foreach ($total_chat_link_count1 as $chat_link_row) {
 
         $chat_link_id = $chat_link_row['chat_link_id'];
-        $total_chat_link_count1 = mysqli_query($conn, "SELECT chat_id FROM " . TBL . "chats  WHERE chat_link_id = '$chat_link_id' AND chat_cdt >= DATE(NOW()) - INTERVAL 7 DAY ");
+        $total_chat_link_count1 = mysqli_query($conn, "SELECT chat_id FROM " . COUNTRY_PREFIX . "chats  WHERE chat_link_id = '$chat_link_id' AND chat_cdt >= DATE(NOW()) - INTERVAL 7 DAY ");
         $total_chat_link_count = mysqli_num_rows($total_chat_link_count1);
 
         $total_chat_link_count_new += $total_chat_link_count;
@@ -501,7 +501,7 @@ function trashFolder($val)
 function listing_total_like_count($listing_id)
 {
     global $conn;
-    $total_listing_likes_count1 = mysqli_query($conn, "SELECT listing_id FROM " . TBL . "listing_likes  WHERE listing_id = '$listing_id' ");
+    $total_listing_likes_count1 = mysqli_query($conn, "SELECT listing_id FROM " . COUNTRY_PREFIX . "listing_likes  WHERE listing_id = '$listing_id' ");
     $total_listing_likes_count = mysqli_num_rows($total_listing_likes_count1);
     return $total_listing_likes_count;
 }

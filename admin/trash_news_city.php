@@ -13,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $city_id = $_POST['city_id'];
 
 
-        $city_qry = " DELETE FROM  " . TBL . "news_cities  WHERE city_id='" . $city_id . "'";
+        $city_qry = " DELETE FROM  " . COUNTRY_PREFIX . "news_cities  WHERE city_id='" . $city_id . "'";
 
 
         $city_res = mysqli_query($conn,$city_qry);

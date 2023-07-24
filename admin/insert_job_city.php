@@ -28,7 +28,7 @@ if (isset($_POST['city_submit'])) {
 //************ city Name Already Exist Check Starts ***************
 
 
-            $city_name_exist_check = mysqli_query($conn, "SELECT * FROM " . TBL . "job_cities  WHERE city_name='" . $city_name . "' ");
+            $city_name_exist_check = mysqli_query($conn, "SELECT * FROM " . COUNTRY_PREFIX . "job_cities  WHERE city_name='" . $city_name . "' ");
 
             if (mysqli_num_rows($city_name_exist_check) > 0) {
 
@@ -46,7 +46,7 @@ if (isset($_POST['city_submit'])) {
 
 
 
-        $sql = mysqli_query($conn, "INSERT INTO  " . TBL . "job_cities (city_name,city_cdt)
+        $sql = mysqli_query($conn, "INSERT INTO  " . COUNTRY_PREFIX . "job_cities (city_name,city_cdt)
 VALUES ('$city_name','$curDate')");
 
 

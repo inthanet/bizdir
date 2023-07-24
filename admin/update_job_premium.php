@@ -21,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 //************ Listing Name Already Exist Check Starts ***************
 
         if($job_name_old != $job_name) {
-            $listing_name_exist_check = mysqli_query($conn,"SELECT * FROM " . TBL . "job_popular WHERE job_name='" . $job_name . "' ");
+            $listing_name_exist_check = mysqli_query($conn,"SELECT * FROM " . COUNTRY_PREFIX . "job_popular WHERE job_name='" . $job_name . "' ");
 
 
             if (mysqli_num_rows($listing_name_exist_check) > 0) {
@@ -39,7 +39,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 //************ Listing Name Already Exist Check Ends ***************
 
 
-        $sql = mysqli_query($conn,"UPDATE  " . TBL . "job_popular SET job_name ='" . $job_name . "'
+        $sql = mysqli_query($conn,"UPDATE  " . COUNTRY_PREFIX . "job_popular SET job_name ='" . $job_name . "'
      where job_popular_id='" . $job_popular_id . "'");
 
         if ($sql) {

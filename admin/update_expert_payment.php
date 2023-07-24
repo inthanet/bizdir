@@ -20,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 //************ Category Name Already Exist Check Starts ***************
 
 
-        $payment_name_exist_check = mysqli_query($conn, "SELECT * FROM " . TBL . "expert_payments  WHERE payment_name='" . $payment_name . "' AND payment_id != $payment_id ");
+        $payment_name_exist_check = mysqli_query($conn, "SELECT * FROM " . COUNTRY_PREFIX . "expert_payments  WHERE payment_name='" . $payment_name . "' AND payment_id != $payment_id ");
 
         if (mysqli_num_rows($payment_name_exist_check) > 0) {
 
@@ -35,7 +35,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 //************ Category Name Already Exist Check Ends ***************
 
-        $sql = mysqli_query($conn, "UPDATE  " . TBL . "expert_payments SET payment_name='" . $payment_name . "'
+        $sql = mysqli_query($conn, "UPDATE  " . COUNTRY_PREFIX . "expert_payments SET payment_name='" . $payment_name . "'
         , payment_status='" . $payment_status . "' where payment_id='" . $payment_id . "'");
 
         if ($sql) {

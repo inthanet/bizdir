@@ -21,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $all_featured_filter_status = $_POST['all_featured_filter_status'][$key];
 
 
-            $sql = mysqli_query($conn, "UPDATE  " . TBL . "all_featured_filters SET all_featured_filter_status='" . $all_featured_filter_status . "'
+            $sql = mysqli_query($conn, "UPDATE  " . COUNTRY_PREFIX . "all_featured_filters SET all_featured_filter_status='" . $all_featured_filter_status . "'
             where all_featured_filter_id ='" . $all_featured_filter_id . "'");
 
         }

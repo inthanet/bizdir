@@ -41,7 +41,7 @@ include "dashboard_left_pane.php";
                     $liked_listing_likes_id = $listrow123['listing_likes_id'];
 
                     $listsql = "SELECT * 
-										FROM " . TBL . "listings  WHERE listing_id= '$reviewlisting_id'";
+										FROM " . COUNTRY_PREFIX . "listings  WHERE listing_id= '$reviewlisting_id'";
 
 
                     $listrs = mysqli_query($conn, $listsql);

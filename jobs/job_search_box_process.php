@@ -10,12 +10,12 @@ $select_search = $_REQUEST['select_search'];
 $select_city = $_REQUEST['select_city'];
 
 //get matched data from cities table
-$cities_qry = "SELECT * FROM " . TBL . "job_cities WHERE city_id = '$select_city'";
+$cities_qry = "SELECT * FROM " . COUNTRY_PREFIX . "job_cities WHERE city_id = '$select_city'";
 $cities_query = mysqli_query($conn,$cities_qry);
 
 
 //get matched data from job categories table
-$categories_qry = "SELECT * FROM " . TBL . "job_categories WHERE category_id = '$select_search' ";
+$categories_qry = "SELECT * FROM " . COUNTRY_PREFIX . "job_categories WHERE category_id = '$select_search' ";
 $categories_query = mysqli_query($conn,$categories_qry);
 
 if (mysqli_num_rows($categories_query) > 0 && mysqli_num_rows($cities_query) > 0) {

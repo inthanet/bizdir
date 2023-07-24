@@ -51,7 +51,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $prefix = ',';
         }
 
-        $sub_category_sql = "SELECT * FROM  " . TBL . "job_sub_categories where sub_category_id='" . $sub_category_id . "'";
+        $sub_category_sql = "SELECT * FROM  " . COUNTRY_PREFIX . "job_sub_categories where sub_category_id='" . $sub_category_id . "'";
         $sub_category_rs = mysqli_query($conn, $sub_category_sql);
         $sub_category_row = mysqli_fetch_array($sub_category_rs);
 
@@ -137,7 +137,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         $user_id = $_SESSION['user_id'];
 
-        $job_profile_exist_check = mysqli_query($conn, "SELECT * FROM " . TBL . "job_profile WHERE user_id='" . $user_id . "' ");
+        $job_profile_exist_check = mysqli_query($conn, "SELECT * FROM " . COUNTRY_PREFIX . "job_profile WHERE user_id='" . $user_id . "' ");
 
         if (mysqli_num_rows($job_profile_exist_check) > 0) {
 
@@ -152,7 +152,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 global $conn;
                 $newLink = $link;
                 do{
-                    $checkLink = mysqli_query($conn, "SELECT job_profile_id FROM " . TBL . "job_profile WHERE job_profile_slug = '$newLink' AND job_profile_id != '$job_profile_id'");
+                    $checkLink = mysqli_query($conn, "SELECT job_profile_id FROM " . COUNTRY_PREFIX . "job_profile WHERE job_profile_slug = '$newLink' AND job_profile_id != '$job_profile_id'");
                     if(mysqli_num_rows($checkLink) > 0){
                         $newLink = $link.''.$counter;
                         $counter++;
@@ -170,7 +170,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             //User job profile URL slug for update ends
 
 
-            $job_profile_profile_res = mysqli_query($conn, "UPDATE  " . TBL . "job_profile SET profile_name='" . $profile_name . "'
+            $job_profile_profile_res = mysqli_query($conn, "UPDATE  " . COUNTRY_PREFIX . "job_profile SET profile_name='" . $profile_name . "'
      , current_company='" . $current_company . "', years_of_experience='" . $years_of_experience . "', notice_period='" . $notice_period . "'
      , available_time_start='" . $available_time_start . "', educational_qualification='" . $educational_qualification . "', job_profile_image='" . $job_profile_image . "'
      , cover_image='" . $cover_image . "', job_profile_resume='" . $job_profile_resume . "', skill_set='" . $skill_set . "'
@@ -188,7 +188,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 global $conn;
                 $newLink = $link;
                 do{
-                    $checkLink = mysqli_query($conn, "SELECT job_profile_id FROM " . TBL . "job_profile WHERE job_profile_slug = '$newLink'");
+                    $checkLink = mysqli_query($conn, "SELECT job_profile_id FROM " . COUNTRY_PREFIX . "job_profile WHERE job_profile_slug = '$newLink'");
                     if(mysqli_num_rows($checkLink) > 0){
                         $newLink = $link.''.$counter;
                         $counter++;
@@ -206,7 +206,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
             $job_profile_slug = checkUserJobProfileSlug($profile_name1);
 
-            $job_profile_profile_qry = "INSERT INTO " . TBL . "job_profile 
+            $job_profile_profile_qry = "INSERT INTO " . COUNTRY_PREFIX . "job_profile 
 					(user_id, profile_name, current_company, years_of_experience, notice_period, available_time_start, educational_qualification, cover_image, job_profile_image, job_profile_resume, skill_set
 					, experience_1, experience_2, experience_3, experience_4
 					, education_1, education_2, education_3, education_4
@@ -240,7 +240,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
             $profileID = 'JOB-PROFILE' . $LID;
 
-            $upqry = "UPDATE " . TBL . "job_profile 
+            $upqry = "UPDATE " . COUNTRY_PREFIX . "job_profile 
 					  SET job_profile_code = '$profileID' 
 					  WHERE job_profile_id = $lastID";
 

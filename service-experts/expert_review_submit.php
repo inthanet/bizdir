@@ -22,7 +22,7 @@ $review_status = "Active";
 
 if ($_POST["enquiry_id"] == 0 || $_POST["enquiry_id"] == '') {
 
-    $expert_enquiry_exist_check = mysqli_query($conn, "SELECT * FROM " . TBL . "expert_enquiries WHERE expert_id='" . $expert_id . "' AND expert_user_id='" . $expert_user_id . "'  AND enquiry_sender_id ='" . $review_user_id . "' ORDER BY enquiry_id DESC ");
+    $expert_enquiry_exist_check = mysqli_query($conn, "SELECT * FROM " . COUNTRY_PREFIX . "expert_enquiries WHERE expert_id='" . $expert_id . "' AND expert_user_id='" . $expert_user_id . "'  AND enquiry_sender_id ='" . $review_user_id . "' ORDER BY enquiry_id DESC ");
 
     $expert_enquiry_fetch_row = mysqli_fetch_array($expert_enquiry_exist_check);
 
@@ -33,7 +33,7 @@ if ($_POST["enquiry_id"] == 0 || $_POST["enquiry_id"] == '') {
 }
 
 
-$expert_review_exist_check = mysqli_query($conn, "SELECT * FROM " . TBL . "expert_reviews WHERE expert_id='" . $expert_id . "' AND expert_user_id='" . $expert_user_id . "'  AND review_user_id='" . $review_user_id . "'  AND enquiry_id='" . $enquiry_id . "' ");
+$expert_review_exist_check = mysqli_query($conn, "SELECT * FROM " . COUNTRY_PREFIX . "expert_reviews WHERE expert_id='" . $expert_id . "' AND expert_user_id='" . $expert_user_id . "'  AND review_user_id='" . $review_user_id . "'  AND enquiry_id='" . $enquiry_id . "' ");
 
 if (mysqli_num_rows($expert_review_exist_check) > 0) {
 
@@ -41,14 +41,14 @@ if (mysqli_num_rows($expert_review_exist_check) > 0) {
 
     $review_id = $expert_review_fetch_row['review_id'];
 
-    $review_res = mysqli_query($conn, "UPDATE  " . TBL . "expert_reviews SET expert_rating='" . $expert_rating . "'
+    $review_res = mysqli_query($conn, "UPDATE  " . COUNTRY_PREFIX . "expert_reviews SET expert_rating='" . $expert_rating . "'
      , expert_message='" . $expert_message . "', review_status='" . $review_status . "', review_cdt ='" . $curDate . "'
        where review_id ='" . $review_id . "'");
 
 } else {
 
 
-    $review_qry = "INSERT INTO " . TBL . "expert_reviews
+    $review_qry = "INSERT INTO " . COUNTRY_PREFIX . "expert_reviews
 					(expert_id, expert_user_id, review_user_id, enquiry_id, expert_rating, expert_message, review_status, review_cdt)
 					VALUES 
 					('$expert_id', '$expert_user_id', '$review_user_id', '$enquiry_id', '$expert_rating', '$expert_message','$review_status',  '$curDate')";

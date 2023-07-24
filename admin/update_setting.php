@@ -225,7 +225,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 //
 //                    $countryy_id = $countryy_row['country_id'];
 //
-//                    $statee_rs = mysqli_query($conn, "SELECT * FROM " . TBL . "states WHERE country_id = $countryy_id");
+//                    $statee_rs = mysqli_query($conn, "SELECT * FROM " . COUNTRY_PREFIX . "states WHERE country_id = $countryy_id");
 //
 //                    while ($statee_row = mysqli_fetch_array($statee_rs)) {
 //
@@ -234,7 +234,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 //                        $cityy_rs_del = mysqli_query($conn,"DELETE FROM  " . TBL . "cities where state_id = $statee_id ");
 //                    }
 //
-//                    $statee_rs_del = mysqli_query($conn,"DELETE FROM  " . TBL . "states  where country_id= $countryy_id ");
+//                    $statee_rs_del = mysqli_query($conn,"DELETE FROM  " . COUNTRY_PREFIX . "states  where country_id= $countryy_id ");
 //                }
 //
 //                $countryy_rs_del = mysqli_query($conn,"DELETE FROM  " . TBL . "countries WHERE country_id NOT IN ($admin_countries)");

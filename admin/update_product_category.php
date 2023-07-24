@@ -21,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 //************ Category Name Already Exist Check Starts ***************
 
 
-        $category_name_exist_check = mysqli_query($conn, "SELECT * FROM " . TBL . "product_categories  WHERE category_name='" . $category_name . "' AND category_id != $category_id ");
+        $category_name_exist_check = mysqli_query($conn, "SELECT * FROM " . COUNTRY_PREFIX . "product_categories  WHERE category_name='" . $category_name . "' AND category_id != $category_id ");
 
         if (mysqli_num_rows($category_name_exist_check) > 0) {
 
@@ -64,7 +64,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             global $conn;
             $newLink = $link;
             do {
-                $checkLink = mysqli_query($conn, "SELECT category_id FROM " . TBL . "product_categories WHERE category_slug = '$newLink' AND category_id != '$category_id'");
+                $checkLink = mysqli_query($conn, "SELECT category_id FROM " . COUNTRY_PREFIX . "product_categories WHERE category_slug = '$newLink' AND category_id != '$category_id'");
                 if (mysqli_num_rows($checkLink) > 0) {
                     $newLink = $link . '' . $counter;
                     $counter++;
@@ -80,7 +80,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $category_name1 = trim(preg_replace('/[^A-Za-z0-9]/', ' ', $category_name));
         $category_slug = checkProductttCategorySlug($category_name1, $category_id);
 
-        $sql = mysqli_query($conn, "UPDATE  " . TBL . "product_categories SET category_name='" . $category_name . "', category_status='" . $category_status . "'
+        $sql = mysqli_query($conn, "UPDATE  " . COUNTRY_PREFIX . "product_categories SET category_name='" . $category_name . "', category_status='" . $category_status . "'
      , category_image='" . $category_image . "', category_slug='" . $category_slug . "'
      where category_id='" . $category_id . "'");
 

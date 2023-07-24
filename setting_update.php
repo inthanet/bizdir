@@ -78,14 +78,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             //Delete user listings from listing table
 
             $list =
-                " DELETE FROM  " . TBL . "listings  WHERE user_id='" . $user_id . "'";
+                " DELETE FROM  " . COUNTRY_PREFIX . "listings  WHERE user_id='" . $user_id . "'";
 
             $list_res = mysqli_query($conn,$list);
 
             //Delete user products from product table
 
             $product =
-                " DELETE FROM  " . TBL . "products  WHERE user_id='" . $user_id . "'";
+                " DELETE FROM  " . COUNTRY_PREFIX . "products  WHERE user_id='" . $user_id . "'";
 
             $product_res = mysqli_query($conn,$product);
 
@@ -93,7 +93,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             //Delete user Events from events table
 
             $events =
-                " DELETE FROM  " . TBL . "events  WHERE user_id='" . $user_id . "'";
+                " DELETE FROM  " . COUNTRY_PREFIX . "events  WHERE user_id='" . $user_id . "'";
 
             $events_res = mysqli_query($conn,$events);
 
@@ -101,21 +101,21 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             //Delete user Blogs from blogs table
 
             $blogs =
-                " DELETE FROM  " . TBL . "blogs  WHERE user_id='" . $user_id . "'";
+                " DELETE FROM  " . COUNTRY_PREFIX . "blogs  WHERE user_id='" . $user_id . "'";
 
             $blogs_res = mysqli_query($conn,$blogs);
 
             //Delete user Jobs from jobs table
 
             $jobs =
-                " DELETE FROM  " . TBL . "jobs  WHERE user_id='" . $user_id . "'";
+                " DELETE FROM  " . COUNTRY_PREFIX . "jobs  WHERE user_id='" . $user_id . "'";
 
             $jobs_res = mysqli_query($conn,$jobs);
 
             //Delete user Experts from Experts table
 
             $experts =
-                " DELETE FROM  " . TBL . "experts WHERE user_id='" . $user_id . "'";
+                " DELETE FROM  " . COUNTRY_PREFIX . "experts WHERE user_id='" . $user_id . "'";
 
             $experts_res = mysqli_query($conn,$experts);
 

@@ -107,7 +107,7 @@ if (isset($_GET['category'])) {
                         <?php
                         $si = 1;
 
-                        $placesql = "SELECT * FROM " . TBL . "places $category_search_query ORDER BY place_id DESC";
+                        $placesql = "SELECT * FROM " . COUNTRY_PREFIX . "places $category_search_query ORDER BY place_id DESC";
 
                         $placers = mysqli_query($conn, $placesql);
 

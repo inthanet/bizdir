@@ -12,7 +12,7 @@ $session_user_id = $_SESSION['user_id'];
 
 $user_notification = "select *
 
-    from " . TBL . "listing_likes as s, " . TBL . "reviews as b, " . TBL . "enquiries as c
+    from " . COUNTRY_PREFIX . "listing_likes as s, " . COUNTRY_PREFIX . "reviews as b, " . TBL . "enquiries as c
 
     where b.listing_user_id = s.listing_user_id and b.listing_user_id = c.listing_user_id AND  b.listing_user_id = '$session_user_id' AND c.listing_user_id = '$session_user_id' AND s.listing_user_id = '$session_user_id' ORDER BY c.enquiry_cdt,b.review_cdt DESC LIMIT 5 ";
 

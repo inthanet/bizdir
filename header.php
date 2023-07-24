@@ -720,7 +720,7 @@ if (isset($_GET['preview']) && isset($_GET['q']) && isset($_GET['type']) && isse
                                             <?php } ?>
                                         </select>
                                     </li>
-                                    <li class="sr-cit">
+                                    <li class="sr-cit"> <!--ui -->
                                         <select id="city_check" name="city_check" class="chosen-select">
                                             <option value=""><?php echo $BIZBOOK['SELECT_CITY']; ?></option>
                                             <?php if (isset($_SESSION['google_city_name']) && ($_SESSION['google_city_name']) != NULL) { ?>

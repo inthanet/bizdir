@@ -5,7 +5,7 @@ function getAllChatLinks()
 {
     global $conn;
 
-    $sql = "SELECT * FROM " . TBL . "chat_links ORDER BY chat_link_cdt DESC";
+    $sql = "SELECT * FROM " . COUNTRY_PREFIX . "chat_links ORDER BY chat_link_cdt DESC";
     $rs = mysqli_query($conn, $sql);
     return $rs;
 
@@ -16,7 +16,7 @@ function getChatLink($arg)
 {
     global $conn;
 
-    $sql = "SELECT * FROM " . TBL . "chat_links  WHERE chat_link_id = '$arg' AND chat_link_status= 'Active' ORDER BY chat_link_cdt DESC ";
+    $sql = "SELECT * FROM " . COUNTRY_PREFIX . "chat_links  WHERE chat_link_id = '$arg' AND chat_link_status= 'Active' ORDER BY chat_link_cdt DESC ";
     $rs = mysqli_query($conn, $sql);
     return $rs;
 
@@ -27,7 +27,7 @@ function getAllGivenIdChatLinks($arg)
 {
     global $conn;
 
-    $sql = "SELECT * FROM " . TBL . "chat_links  WHERE receiver_id = '$arg' OR sender_id = '$arg' AND chat_link_status='Active' ORDER BY chat_link_udt DESC ";
+    $sql = "SELECT * FROM " . COUNTRY_PREFIX . "chat_links  WHERE receiver_id = '$arg' OR sender_id = '$arg' AND chat_link_status='Active' ORDER BY chat_link_udt DESC ";
     $rs = mysqli_query($conn, $sql);
     return $rs;
 
@@ -38,7 +38,7 @@ function getAllReceiverChatLinks($arg,$arg1)
 {
     global $conn;
 
-    $sql = "SELECT * FROM " . TBL . "chat_links  WHERE receiver_id = '$arg' AND sender_id = '$arg1' AND chat_link_status='Active' ORDER BY chat_link_cdt DESC ";
+    $sql = "SELECT * FROM " . COUNTRY_PREFIX . "chat_links  WHERE receiver_id = '$arg' AND sender_id = '$arg1' AND chat_link_status='Active' ORDER BY chat_link_cdt DESC ";
     $rs = mysqli_query($conn, $sql);
     return $rs;
 
@@ -49,7 +49,7 @@ function getAllSenderChatLinks($arg,$arg1)
 {
     global $conn;
 
-    $sql = "SELECT * FROM " . TBL . "chat_links  WHERE sender_id = '$arg' AND receiver_id = '$arg1' AND chat_link_status='Active' ORDER BY chat_link_cdt DESC ";
+    $sql = "SELECT * FROM " . COUNTRY_PREFIX . "chat_links  WHERE sender_id = '$arg' AND receiver_id = '$arg1' AND chat_link_status='Active' ORDER BY chat_link_cdt DESC ";
     $rs = mysqli_query($conn, $sql);
     return $rs;
 
@@ -60,7 +60,7 @@ function getCountChatLinks()
 {
     global $conn;
 
-    $sql = "SELECT * FROM  " . TBL . "chat_links ";
+    $sql = "SELECT * FROM  " . COUNTRY_PREFIX . "chat_links ";
     $rs = mysqli_query($conn, $sql);
     $row = mysqli_num_rows($rs);
     return $row;
@@ -72,7 +72,7 @@ function getCountReceiverChatLinks($arg,$arg1)
 {
     global $conn;
 
-    $sql = "SELECT * FROM " . TBL . "chat_links  WHERE receiver_id = '$arg' AND sender_id = '$arg1' AND chat_link_status='Active' ORDER BY chat_link_cdt DESC ";
+    $sql = "SELECT * FROM " . COUNTRY_PREFIX . "chat_links  WHERE receiver_id = '$arg' AND sender_id = '$arg1' AND chat_link_status='Active' ORDER BY chat_link_cdt DESC ";
     $rs = mysqli_query($conn, $sql);
     $row = mysqli_num_rows($rs);
     return $row;
@@ -84,7 +84,7 @@ function getCountSenderChatLinks($arg,$arg1)
 {
     global $conn;
 
-    $sql = "SELECT * FROM " . TBL . "chat_links  WHERE sender_id = '$arg' AND receiver_id = '$arg1' AND chat_link_status='Active' ORDER BY chat_link_cdt DESC ";
+    $sql = "SELECT * FROM " . COUNTRY_PREFIX . "chat_links  WHERE sender_id = '$arg' AND receiver_id = '$arg1' AND chat_link_status='Active' ORDER BY chat_link_cdt DESC ";
     $rs = mysqli_query($conn, $sql);
     $row = mysqli_num_rows($rs);
     return $row;

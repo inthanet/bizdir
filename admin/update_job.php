@@ -155,7 +155,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             global $conn;
             $newLink = $link;
             do {
-                $checkLink = mysqli_query($conn, "SELECT job_id FROM " . TBL . "jobs WHERE job_slug = '$newLink' AND job_id != '$job_id'");
+                $checkLink = mysqli_query($conn, "SELECT job_id FROM " . COUNTRY_PREFIX . "jobs WHERE job_slug = '$newLink' AND job_id != '$job_id'");
                 if (mysqli_num_rows($checkLink) > 0) {
                     $newLink = $link . '' . $counter;
                     $counter++;
@@ -172,7 +172,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 
         $job_qry =
-            "UPDATE  " . TBL . "jobs SET user_id='" . $user_id . "', job_title='" . $job_title . "'
+            "UPDATE  " . COUNTRY_PREFIX . "jobs SET user_id='" . $user_id . "', job_title='" . $job_title . "'
             , category_id='" . $category_id . "', sub_category_id='" . $sub_category_id . "'
             , job_description='" . $job_description . "',job_salary ='" . $job_salary . "'
             , no_of_openings='" . $no_of_openings . "',job_type ='" . $job_type . "'

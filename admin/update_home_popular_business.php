@@ -21,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 //************ Listing Name Already Exist Check Starts ***************
 
         if($listing_id_old != $listing_id) {
-            $listing_name_exist_check = mysqli_query($conn,"SELECT * FROM " . TBL . "featured_listings  WHERE listing_id='" . $listing_id . "' ");
+            $listing_name_exist_check = mysqli_query($conn,"SELECT * FROM " . COUNTRY_PREFIX . "featured_listings  WHERE listing_id='" . $listing_id . "' ");
 
 
             if (mysqli_num_rows($listing_name_exist_check) > 0) {
@@ -39,7 +39,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 //************ Listing Name Already Exist Check Ends ***************
 
 
-        $sql = mysqli_query($conn,"UPDATE  " . TBL . "featured_listings SET listing_id ='" . $listing_id . "'
+        $sql = mysqli_query($conn,"UPDATE  " . COUNTRY_PREFIX . "featured_listings SET listing_id ='" . $listing_id . "'
      where featured_listing_id='" . $featured_listing_id . "'");
 
         if ($sql) {

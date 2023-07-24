@@ -529,10 +529,10 @@ if (!empty($w)) {
                 <div class="col-md-9">
                     <?php
                     //                            $productsql = "SELECT *
-                    //										FROM " . TBL . "products  WHERE product_status= 'Active'
+                    //										FROM " . COUNTRY_PREFIX . "products  WHERE product_status= 'Active'
                     //
                     //										$category_search_query $city_search_query ORDER BY product_id DESC";
-                    $productsql = "SELECT DISTINCT  t1 . * FROM  " . TBL . "products  AS t1 $inner $w $q  product_status= 'Active' ORDER BY product_id DESC ";
+                    $productsql = "SELECT DISTINCT  t1 . * FROM  " . COUNTRY_PREFIX . "products  AS t1 $inner $w $q  product_status= 'Active' ORDER BY product_id DESC ";
 
 
                     $productrs = mysqli_query($conn, $productsql);

@@ -5,7 +5,7 @@ function getAllExpertCategories()
 {
     global $conn;
 
-    $sql = "SELECT * FROM " . TBL . "expert_categories ORDER BY category_id DESC";
+    $sql = "SELECT * FROM " . COUNTRY_PREFIX . "expert_categories ORDER BY category_id DESC";
     $rs = mysqli_query($conn, $sql);
     return $rs;
 
@@ -16,7 +16,7 @@ function getAllExpertCategoriesOrderByExpertsTable()
 {
     global $conn;
 
-    $sql = "SELECT T1.*, COUNT(T2.category_id) AS views FROM " . TBL . "expert_categories AS T1 LEFT JOIN " . TBL . "jobs AS T2 ON T1.category_id = T2.category_id GROUP BY T1.category_id ORDER BY views DESC";
+    $sql = "SELECT T1.*, COUNT(T2.category_id) AS views FROM " . COUNTRY_PREFIX . "expert_categories AS T1 LEFT JOIN " . COUNTRY_PREFIX . "jobs AS T2 ON T1.category_id = T2.category_id GROUP BY T1.category_id ORDER BY views DESC";
     $rs = mysqli_query($conn, $sql);
     return $rs;
 
@@ -27,7 +27,7 @@ function getAllExpertCategoriesOrderByExpertsTableLimit($arg)
 {
     global $conn;
 
-    $sql = "SELECT T1.*, COUNT(T2.category_id) AS views FROM " . TBL . "expert_categories AS T1 LEFT JOIN " . TBL . "jobs AS T2 ON T1.category_id = T2.category_id GROUP BY T1.category_id ORDER BY views DESC LIMIT $arg";
+    $sql = "SELECT T1.*, COUNT(T2.category_id) AS views FROM " . COUNTRY_PREFIX . "expert_categories AS T1 LEFT JOIN " . COUNTRY_PREFIX . "jobs AS T2 ON T1.category_id = T2.category_id GROUP BY T1.category_id ORDER BY views DESC LIMIT $arg";
     $rs = mysqli_query($conn, $sql);
     return $rs;
 
@@ -38,7 +38,7 @@ function getAllExpertCategoriesLimit($arg)
 {
     global $conn;
 
-    $sql = "SELECT * FROM " . TBL . "expert_categories ORDER BY category_id DESC LIMIT $arg";
+    $sql = "SELECT * FROM " . COUNTRY_PREFIX . "expert_categories ORDER BY category_id DESC LIMIT $arg";
     $rs = mysqli_query($conn, $sql);
     return $rs;
 
@@ -49,7 +49,7 @@ function getAllExpertCategoriesPos()
 {
     global $conn;
 
-    $sql = "SELECT * FROM " . TBL . "expert_categories ORDER BY category_filter_pos_id ASC";
+    $sql = "SELECT * FROM " . COUNTRY_PREFIX . "expert_categories ORDER BY category_filter_pos_id ASC";
     $rs = mysqli_query($conn, $sql);
     return $rs;
 
@@ -60,7 +60,7 @@ function getAllActiveExpertCategoriesPos()
 {
     global $conn;
 
-    $sql = "SELECT * FROM " . TBL . "expert_categories WHERE category_filter = 0 ORDER BY category_filter_pos_id ASC";
+    $sql = "SELECT * FROM " . COUNTRY_PREFIX . "expert_categories WHERE category_filter = 0 ORDER BY category_filter_pos_id ASC";
     $rs = mysqli_query($conn, $sql);
     return $rs;
 
@@ -71,7 +71,7 @@ function getExpertCategory($arg)
 {
     global $conn;
 
-    $sql = "SELECT * FROM  " . TBL . "expert_categories where category_id='".$arg."'";
+    $sql = "SELECT * FROM  " . COUNTRY_PREFIX . "expert_categories where category_id='".$arg."'";
     $rs = mysqli_query($conn, $sql);
     $row = mysqli_fetch_array($rs);
     return $row;
@@ -83,7 +83,7 @@ function getExceptAllExpertCategories($arg)
 {
     global $conn;
 
-    $sql = "SELECT * FROM " . TBL . "expert_categories  where category_id != '".$arg."' ORDER BY category_id DESC LIMIT 3";
+    $sql = "SELECT * FROM " . COUNTRY_PREFIX . "expert_categories  where category_id != '".$arg."' ORDER BY category_id DESC LIMIT 3";
     $rs = mysqli_query($conn, $sql);
     return $rs;
 
@@ -94,7 +94,7 @@ function getNameExpertCategory($arg)
 {
     global $conn;
 
-    $sql = "SELECT * FROM  " . TBL . "expert_categories where category_name='".$arg."'";
+    $sql = "SELECT * FROM  " . COUNTRY_PREFIX . "expert_categories where category_name='".$arg."'";
     $rs = mysqli_query($conn, $sql);
     $row = mysqli_fetch_array($rs);
     return $row;
@@ -106,7 +106,7 @@ function getSlugExpertCategory($arg)
 {
     global $conn;
 
-    $sql = "SELECT * FROM  " . TBL . "expert_categories where category_slug='".$arg."'";
+    $sql = "SELECT * FROM  " . COUNTRY_PREFIX . "expert_categories where category_slug='".$arg."'";
     $rs = mysqli_query($conn, $sql);
     $row = mysqli_fetch_array($rs);
     return $row;
@@ -118,7 +118,7 @@ function getExpertCategoryName($arg)
 {
     global $conn;
 
-    $sql = "SELECT category_name FROM  " . TBL . "expert_categories where category_id='".$arg."'";
+    $sql = "SELECT category_name FROM  " . COUNTRY_PREFIX . "expert_categories where category_id='".$arg."'";
     $rs = mysqli_query($conn, $sql);
     $row = mysqli_fetch_array($rs);
     return $row[0];
@@ -130,7 +130,7 @@ function getExpertCategorySlug($arg)
 {
     global $conn;
 
-    $sql = "SELECT category_slug FROM  " . TBL . "expert_categories where category_id='".$arg."'";
+    $sql = "SELECT category_slug FROM  " . COUNTRY_PREFIX . "expert_categories where category_id='".$arg."'";
     $rs = mysqli_query($conn, $sql);
     $row = mysqli_fetch_array($rs);
     return $row[0];
@@ -142,7 +142,7 @@ function getCountExpertCategory()
 {
     global $conn;
 
-    $sql = "SELECT * FROM " . TBL . "expert_categories ORDER BY category_id DESC";
+    $sql = "SELECT * FROM " . COUNTRY_PREFIX . "expert_categories ORDER BY category_id DESC";
     $rs = mysqli_query($conn, $sql);
     $row = mysqli_num_rows($rs);
     return $row;
@@ -154,7 +154,7 @@ function getCountCategoryExpertCategory($arg)
 {
     global $conn;
 
-    $sql = "SELECT * FROM " . TBL . "expert_categories WHERE category_id = '$arg'";
+    $sql = "SELECT * FROM " . COUNTRY_PREFIX . "expert_categories WHERE category_id = '$arg'";
     $rs = mysqli_query($conn, $sql);
     $row = mysqli_num_rows($rs);
     return $row;

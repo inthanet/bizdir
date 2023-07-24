@@ -20,7 +20,7 @@ if(isset($_GET['likedlistinglikedlistinglikedlistinglikedlistinglikedlisting']))
 
 
     $listing_qry =
-        "DELETE  FROM " . TBL . "listing_likes  where listing_likes_id='" . $review_id . "'";
+        "DELETE  FROM " . COUNTRY_PREFIX . "listing_likes  where listing_likes_id='" . $review_id . "'";
 
     $listing_res = mysqli_query($conn,$listing_qry);
 

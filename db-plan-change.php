@@ -53,7 +53,7 @@ if (file_exists('config/user_authentication.php')) {
                                             $plan_type_id = 1;
                                         }
                                         $plan_type = "SELECT *
-										FROM " . TBL . "plan_type WHERE plan_type_status='Active' AND plan_type_id >= $plan_type_id
+										FROM " . COUNTRY_PREFIX . "plan_type WHERE plan_type_status='Active' AND plan_type_id >= $plan_type_id
 
 										ORDER BY plan_type_id ASC";
 

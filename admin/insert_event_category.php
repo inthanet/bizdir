@@ -35,7 +35,7 @@ if (isset($_POST['category_submit'])) {
 //************ Category Name Already Exist Check Starts ***************
 
 
-        $category_name_exist_check = mysqli_query($conn, "SELECT * FROM " . TBL . "event_categories  WHERE category_name='" . $category_name . "' ");
+        $category_name_exist_check = mysqli_query($conn, "SELECT * FROM " . COUNTRY_PREFIX . "event_categories  WHERE category_name='" . $category_name . "' ");
 
         if (mysqli_num_rows($category_name_exist_check) > 0) {
 
@@ -76,7 +76,7 @@ if (isset($_POST['category_submit'])) {
 //            global $conn;
 //            $newLink = $link;
 //            do {
-//                $checkLink = mysqli_query($conn, "SELECT category_id FROM " . TBL . "event_categories WHERE category_slug = '$newLink'");
+//                $checkLink = mysqli_query($conn, "SELECT category_id FROM " . COUNTRY_PREFIX . "event_categories WHERE category_slug = '$newLink'");
 //                if (mysqli_num_rows($checkLink) > 0) {
 //                    $newLink = $link . '' . $counter;
 //                    $counter++;
@@ -93,14 +93,14 @@ if (isset($_POST['category_submit'])) {
 //        $category_slug = checkEventCategorySlug($category_name1);
 
         $counter = 1;
-        $checkLink = mysqli_query($conn, "SELECT category_id FROM " . TBL . "event_categories WHERE category_slug = '$category_name1'");
+        $checkLink = mysqli_query($conn, "SELECT category_id FROM " . COUNTRY_PREFIX . "event_categories WHERE category_slug = '$category_name1'");
         if (mysqli_num_rows($checkLink) > 0) {
             $category_slug = $category_name1 . '' . $counter;
         }else{
             $category_slug = $category_name1;
         }
 
-        $sql = mysqli_query($conn, "INSERT INTO  " . TBL . "event_categories (category_name,category_status,category_image,category_filter_pos_id,category_slug,category_cdt)
+        $sql = mysqli_query($conn, "INSERT INTO  " . COUNTRY_PREFIX . "event_categories (category_name,category_status,category_image,category_filter_pos_id,category_slug,category_cdt)
 VALUES ('$category_name','$category_status','$category_image','$category_filter_pos_id', '$category_slug', '$curDate')");
 
         $LID = mysqli_insert_id($conn);
@@ -120,7 +120,7 @@ VALUES ('$category_name','$category_status','$category_image','$category_filter_
 
         $CATID = 'CAT' . $LID;
 
-        $upqry = mysqli_query($conn, "UPDATE " . TBL . "event_categories
+        $upqry = mysqli_query($conn, "UPDATE " . COUNTRY_PREFIX . "event_categories
 					  SET category_code = '$CATID'
 					  WHERE category_id = $lastID");
 

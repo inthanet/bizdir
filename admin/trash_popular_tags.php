@@ -13,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $popular_tags_id = $_POST["popular_tags_id"];
 
         $product_qry =
-            "DELETE FROM  " . TBL . "popular_tags where popular_tags_id='" . $popular_tags_id . "'";
+            "DELETE FROM  " . COUNTRY_PREFIX . "popular_tags where popular_tags_id='" . $popular_tags_id . "'";
 
 
         $product_res = mysqli_query($conn,$product_qry);

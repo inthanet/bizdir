@@ -6,7 +6,7 @@ function getAllHomePageTopSection()
 {
     global $conn;
 
-    $sql = "SELECT * FROM " . TBL . "homepage_top_section ORDER BY top_section_id ASC";
+    $sql = "SELECT * FROM " . COUNTRY_PREFIX . "homepage_top_section ORDER BY top_section_id ASC";
     $rs = mysqli_query($conn, $sql);
     return $rs;
 
@@ -18,7 +18,7 @@ function getHomePageTopSection($arg)
 {
     global $conn;
 
-    $sql = "SELECT * FROM  " . TBL . "homepage_top_section where top_section_id='" . $arg . "'";
+    $sql = "SELECT * FROM  " . COUNTRY_PREFIX . "homepage_top_section where top_section_id='" . $arg . "'";
     $rs = mysqli_query($conn, $sql);
     $row = mysqli_fetch_array($rs);
     return $row;

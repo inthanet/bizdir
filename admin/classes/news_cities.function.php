@@ -5,7 +5,7 @@ function getAllNewsCities()
 {
     global $conn;
 
-    $sql = "SELECT * FROM " . TBL . "news_cities ORDER BY city_name ASC";
+    $sql = "SELECT * FROM " . COUNTRY_PREFIX . "news_cities ORDER BY city_name ASC";
     $rs = mysqli_query($conn, $sql);
     return $rs;
 
@@ -16,7 +16,7 @@ function getAllNewsCitiesOrderId()
 {
     global $conn;
 
-    $sql = "SELECT * FROM " . TBL . "news_cities ORDER BY city_id DESC";
+    $sql = "SELECT * FROM " . COUNTRY_PREFIX . "news_cities ORDER BY city_id DESC";
     $rs = mysqli_query($conn, $sql);
     return $rs;
 
@@ -27,7 +27,7 @@ function getNewsCity($arg)
 {
     global $conn;
 
-    $sql = "SELECT * FROM  " . TBL . "news_cities where city_id='".$arg."'";
+    $sql = "SELECT * FROM  " . COUNTRY_PREFIX . "news_cities where city_id='".$arg."'";
     $rs = mysqli_query($conn, $sql);
     $row = mysqli_fetch_array($rs);
     return $row;
@@ -39,7 +39,7 @@ function getNewsCityName($arg)
 {
     global $conn;
 
-    $sql = "SELECT * FROM  " . TBL . "news_cities where city_name='".$arg."'";
+    $sql = "SELECT * FROM  " . COUNTRY_PREFIX . "news_cities where city_name='".$arg."'";
     $rs = mysqli_query($conn, $sql);
     $row = mysqli_fetch_array($rs);
     return $row;
@@ -51,7 +51,7 @@ function getCountNewsCity()
 {
     global $conn;
 
-    $sql = "SELECT * FROM " . TBL . "news_cities ORDER BY city_id DESC";
+    $sql = "SELECT * FROM " . COUNTRY_PREFIX . "news_cities ORDER BY city_id DESC";
     $rs = mysqli_query($conn, $sql);
     $row = mysqli_num_rows($rs);
     return $row;

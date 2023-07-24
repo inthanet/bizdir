@@ -135,7 +135,7 @@ if (isset($_SESSION['user_name']) && !empty($_SESSION['user_name'])) {
                                             selected="selected"><?php echo $BIZBOOK['CHOOSE_YOUR_PLAN']; ?></option>
                                     <?php
                                     $plan_type = "SELECT *
-										FROM " . TBL . "plan_type WHERE plan_type_status='Active'
+										FROM " . COUNTRY_PREFIX . "plan_type WHERE plan_type_status='Active'
 
 										ORDER BY plan_type_id ASC";
 

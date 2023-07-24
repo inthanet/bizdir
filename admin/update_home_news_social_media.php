@@ -21,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         
 
 
-        $sql = mysqli_query($conn,"UPDATE  " . TBL . "news_social_media SET social_media_name ='" . $social_media_name . "'
+        $sql = mysqli_query($conn,"UPDATE  " . COUNTRY_PREFIX . "news_social_media SET social_media_name ='" . $social_media_name . "'
         , social_media_count ='" . $social_media_count . "' , social_media_link ='" . $social_media_link . "'
         , social_media_status ='" . $social_media_status . "'
          where social_media_id='" . $social_media_id . "'");

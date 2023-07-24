@@ -254,7 +254,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             global $conn;
             $newLink = $link;
             do {
-                $checkLink = mysqli_query($conn, "SELECT listing_id FROM " . TBL . "listings WHERE listing_slug = '$newLink' AND listing_id != '$listing_id'");
+                $checkLink = mysqli_query($conn, "SELECT listing_id FROM " . COUNTRY_PREFIX . "listings WHERE listing_slug = '$newLink' AND listing_id != '$listing_id'");
                 if (mysqli_num_rows($checkLink) > 0) {
                     $newLink = $link . '' . $counter;
                     $counter++;
@@ -497,7 +497,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 
         $listing_qry =
-            "UPDATE  " . TBL . "listings  SET user_id='" . $user_id . "', category_id='" . $category_id . "', sub_category_id='" . $sub_category_id . "', service_id='" . $service_id . "'
+            "UPDATE  " . COUNTRY_PREFIX . "listings  SET user_id='" . $user_id . "', category_id='" . $category_id . "', sub_category_id='" . $sub_category_id . "', service_id='" . $service_id . "'
             , service_image='" . $service_image . "', listing_type_id='" . $listing_type_id . "', listing_mobile='" . $listing_mobile . "', listing_email='" . $listing_email . "'
             , service_locations='" . $service_locations . "', listing_lat='" . $listing_lat . "', listing_lng='" . $listing_lng . "'
     , listing_website='" . $listing_website . "', listing_whatsapp='" . $listing_whatsapp . "', listing_name='" . $listing_name . "',listing_description='" . $listing_description . "', listing_address='" . $listing_address . "'

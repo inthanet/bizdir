@@ -5,7 +5,7 @@ function getAllCategories()
 {
     global $conn;
 
-    $sql = "SELECT * FROM " . TBL . "categories ORDER BY category_id DESC";
+    $sql = "SELECT * FROM " . COUNTRY_PREFIX . "categories ORDER BY category_id DESC";
     $rs = mysqli_query($conn, $sql);
     return $rs;
 
@@ -16,7 +16,7 @@ function getAllCategoriesPos()
 {
     global $conn;
 
-    $sql = "SELECT * FROM " . TBL . "categories ORDER BY category_filter_pos_id ASC";
+    $sql = "SELECT * FROM " . COUNTRY_PREFIX . "categories ORDER BY category_filter_pos_id ASC";
     $rs = mysqli_query($conn, $sql);
     return $rs;
 
@@ -27,7 +27,7 @@ function getAllActiveCategoriesPos()
 {
     global $conn;
 
-    $sql = "SELECT * FROM " . TBL . "categories WHERE category_filter = 0 ORDER BY category_filter_pos_id ASC";
+    $sql = "SELECT * FROM " . COUNTRY_PREFIX . "categories WHERE category_filter = 0 ORDER BY category_filter_pos_id ASC";
     $rs = mysqli_query($conn, $sql);
     return $rs;
 
@@ -38,7 +38,7 @@ function getCategory($arg)
 {
     global $conn;
 
-    $sql = "SELECT * FROM  " . TBL . "categories where category_id='".$arg."'";
+    $sql = "SELECT * FROM  " . COUNTRY_PREFIX . "categories where category_id='".$arg."'";
     $rs = mysqli_query($conn, $sql);
     $row = mysqli_fetch_array($rs);
     return $row;
@@ -50,7 +50,7 @@ function getNameCategory($arg)
 {
     global $conn;
 
-    $sql = "SELECT * FROM  " . TBL . "categories where category_name='".$arg."'";
+    $sql = "SELECT * FROM  " . COUNTRY_PREFIX . "categories where category_name='".$arg."'";
     $rs = mysqli_query($conn, $sql);
     $row = mysqli_fetch_array($rs);
     return $row;
@@ -62,7 +62,7 @@ function getSlugCategory($arg)
 {
     global $conn;
 
-    $sql = "SELECT * FROM  " . TBL . "categories where category_slug='".$arg."'";
+    $sql = "SELECT * FROM  " . COUNTRY_PREFIX . "categories where category_slug='".$arg."'";
     $rs = mysqli_query($conn, $sql);
     $row = mysqli_fetch_array($rs);
     return $row;
@@ -74,7 +74,7 @@ function getCategoryName($arg)
 {
     global $conn;
 
-    $sql = "SELECT category_name FROM  " . TBL . "categories where category_id='".$arg."'";
+    $sql = "SELECT category_name FROM  " . COUNTRY_PREFIX . "categories where category_id='".$arg."'";
     $rs = mysqli_query($conn, $sql);
     $row = mysqli_fetch_array($rs);
     return $row[0];
@@ -86,7 +86,7 @@ function getCategorySlug($arg)
 {
     global $conn;
 
-    $sql = "SELECT category_slug FROM  " . TBL . "categories where category_id='".$arg."'";
+    $sql = "SELECT category_slug FROM  " . COUNTRY_PREFIX . "categories where category_id='".$arg."'";
     $rs = mysqli_query($conn, $sql);
     $row = mysqli_fetch_array($rs);
     return $row[0];
@@ -98,7 +98,7 @@ function getCountCategory()
 {
     global $conn;
 
-    $sql = "SELECT * FROM " . TBL . "categories ORDER BY category_id DESC";
+    $sql = "SELECT * FROM " . COUNTRY_PREFIX . "categories ORDER BY category_id DESC";
     $rs = mysqli_query($conn, $sql);
     $row = mysqli_num_rows($rs);
     return $row;
@@ -109,7 +109,7 @@ function getSubCountCategory()
 {
     global $conn;
 
-    $sql = "SELECT * FROM " . TBL . "sub_categories ORDER BY sub_category_id DESC";
+    $sql = "SELECT * FROM " . COUNTRY_PREFIX . "sub_categories ORDER BY sub_category_id DESC";
     $rs = mysqli_query($conn, $sql);
     $row = mysqli_num_rows($rs);
     return $row;
@@ -121,7 +121,7 @@ function getCountCategoryCategory($arg)
 {
     global $conn;
 
-    $sql = "SELECT * FROM " . TBL . "categories where category_id='".$arg."'";
+    $sql = "SELECT * FROM " . COUNTRY_PREFIX . "categories where category_id='".$arg."'";
     $rs = mysqli_query($conn, $sql);
     $row = mysqli_num_rows($rs);
     return $row;
@@ -153,7 +153,7 @@ function getCategorySeoScore($arg)
         case category_faq_8_ques when '' then 0 else 1 end +
         case category_faq_8_ans when '' then 0 else 1 end +
         case category_google_schema when '' then 0 else 1 end ) 
-        * 100 / 20 as complete FROM " . TBL . "categories WHERE category_id = $arg";
+        * 100 / 20 as complete FROM " . COUNTRY_PREFIX . "categories WHERE category_id = $arg";
     $rs = mysqli_query($conn, $sql);
     $row = mysqli_fetch_array($rs);
     return $row[0];

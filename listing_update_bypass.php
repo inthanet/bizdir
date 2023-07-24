@@ -72,7 +72,7 @@ if($_SESSION['gallery_image'] != NULL){
 }
 
 $listing_qry =
-    "UPDATE  " . TBL . "listings  SET gallery_image='" . $v_gallery_image . "', google_map='" . $_SESSION['google_map'] . "'
+    "UPDATE  " . COUNTRY_PREFIX . "listings  SET gallery_image='" . $v_gallery_image . "', google_map='" . $_SESSION['google_map'] . "'
     ,listing_video ='" . $_SESSION['listing_video'] . "'
      where listing_id='" . $_SESSION['listing_id'] . "'";
 

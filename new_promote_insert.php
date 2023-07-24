@@ -77,7 +77,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             //to be deleted starts
 
 
-            $lisupqry = "UPDATE " . TBL . "listings 
+            $lisupqry = "UPDATE " . COUNTRY_PREFIX . "listings 
 					  SET display_position = $display_position
 					  ,start_date = '$promote_start_date',end_date = '$promote_end_date'
 					  ,payment = 1

@@ -21,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
 //    Search List Insert Part Starts
 
 
-        $event_qry = "INSERT INTO " . TBL . "search_list 
+        $event_qry = "INSERT INTO " . COUNTRY_PREFIX . "search_list 
 					(search_title, search_tag_line, search_list_link,search_list_position,search_list_status,search_list_cdt) 
 					VALUES 
 					('$search_title', '$search_tag_line', '$search_list_link', '$search_list_position', '$search_list_status', '$curDate')";

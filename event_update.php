@@ -153,7 +153,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             global $conn;
             $newLink = $link;
             do {
-                $checkLink = mysqli_query($conn, "SELECT event_id FROM " . TBL . "events WHERE event_slug = '$newLink' AND event_id != '$event_id'");
+                $checkLink = mysqli_query($conn, "SELECT event_id FROM " . COUNTRY_PREFIX . "events WHERE event_slug = '$newLink' AND event_id != '$event_id'");
                 if (mysqli_num_rows($checkLink) > 0) {
                     $newLink = $link . '' . $counter;
                     $counter++;
@@ -170,7 +170,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $event_slug = checkEventSlug($event_name1, $event_id);
 
         $event_qry =
-            "UPDATE  " . TBL . "events  SET user_id='" . $user_id . "', event_name='" . $event_name . "',event_description='" . $event_description . "', event_email='" . $event_email . "'
+            "UPDATE  " . COUNTRY_PREFIX . "events  SET user_id='" . $user_id . "', event_name='" . $event_name . "',event_description='" . $event_description . "', event_email='" . $event_email . "'
             , event_mobile='" . $event_mobile . "',event_website='" . $event_website . "', event_address='" . $event_address . "'
             ,event_contact_name='" . $event_contact_name . "' ,event_map='" . $event_map . "' , category_id ='" . $category_id . "'
         ,event_start_date='" . $event_start_date . "' , event_time='" . $event_time . "' 

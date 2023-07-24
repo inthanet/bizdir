@@ -29,7 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     $enquiry_status = 200;
 
-    $expert_details = mysqli_query($conn, "SELECT * FROM  " . TBL . "experts where expert_id='" . $expert_id . "'");
+    $expert_details = mysqli_query($conn, "SELECT * FROM  " . COUNTRY_PREFIX . "experts where expert_id='" . $expert_id . "'");
     $expert_details_row = mysqli_fetch_array($expert_details);
 
     $expert_user_id = $expert_details_row['user_id'];  // Expert User Id
@@ -43,7 +43,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 
 
-    $enquiry_res = mysqli_query($conn, "UPDATE  " . TBL . "expert_enquiries SET expert_id='" . $expert_id . "'
+    $enquiry_res = mysqli_query($conn, "UPDATE  " . COUNTRY_PREFIX . "expert_enquiries SET expert_id='" . $expert_id . "'
     , expert_user_id='" . $expert_user_id . "', is_general_id='" . $is_general_id . "'
      where enquiry_id='" . $enquiry_id . "'");
 

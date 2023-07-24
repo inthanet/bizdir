@@ -22,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 //************ Listing Id Already Exist Check Starts ***************
 
 
-        $sub_category_name_exist_check = mysqli_query($conn,"SELECT * FROM " . TBL . "top_service_providers  WHERE top_service_provider_category_id = '" .$top_service_provider_category_id . "' ");
+        $sub_category_name_exist_check = mysqli_query($conn,"SELECT * FROM " . COUNTRY_PREFIX . "top_service_providers  WHERE top_service_provider_category_id = '" .$top_service_provider_category_id . "' ");
 
         if (mysqli_num_rows($sub_category_name_exist_check) > 0) {
 
@@ -39,7 +39,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 // ************ Fetch 5 default listings under given category and insert in top services starts *****************
 
-        $list_sql = "SELECT * FROM " . TBL . "listings  WHERE category_id= '$top_service_provider_category_id' AND listing_is_delete != '2' ORDER BY listing_id DESC LIMIT 5";
+        $list_sql = "SELECT * FROM " . COUNTRY_PREFIX . "listings  WHERE category_id= '$top_service_provider_category_id' AND listing_is_delete != '2' ORDER BY listing_id DESC LIMIT 5";
         $list_sql_rs = mysqli_query($conn, $list_sql);
          while ($listrow = mysqli_fetch_array($list_sql_rs)) {
 
@@ -56,7 +56,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         
 // ************ Fetch 5 default listings under given category and insert in top services ends *****************
 
-        $sql = mysqli_query($conn,"UPDATE  " . TBL . "top_service_providers SET top_service_provider_listings = '" . $top_service_provider_listings. "'
+        $sql = mysqli_query($conn,"UPDATE  " . COUNTRY_PREFIX . "top_service_providers SET top_service_provider_listings = '" . $top_service_provider_listings. "'
      ,top_service_provider_category_id='" . $top_service_provider_category_id . "' where top_service_provider_id='" . $top_service_provider_id . "'");
 
         if ($sql) {

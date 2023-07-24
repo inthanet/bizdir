@@ -5,7 +5,7 @@ function getAllExpertEnquiries()
 {
     global $conn;
 
-    $sql = "SELECT * FROM  " . TBL . "expert_enquiries WHERE is_general_id = 0 ORDER BY enquiry_id DESC";
+    $sql = "SELECT * FROM  " . COUNTRY_PREFIX . "expert_enquiries WHERE is_general_id = 0 ORDER BY enquiry_id DESC";
     $rs = mysqli_query($conn, $sql);
     return $rs;
 
@@ -16,7 +16,7 @@ function getAllExpertGeneralEnquiries()
 {
     global $conn;
 
-    $sql = "SELECT * FROM  " . TBL . "expert_enquiries WHERE is_general_id = 1 ORDER BY enquiry_id DESC";
+    $sql = "SELECT * FROM  " . COUNTRY_PREFIX . "expert_enquiries WHERE is_general_id = 1 ORDER BY enquiry_id DESC";
     $rs = mysqli_query($conn, $sql);
     return $rs;
 
@@ -27,7 +27,7 @@ function getAllTodayExpertEnquiries()
 {
     global $conn;
 
-    $sql = "SELECT * FROM  " . TBL . "expert_enquiries WHERE DATE(enquiry_cdt) = CURDATE() AND is_general_id = 0 ORDER BY enquiry_id DESC";
+    $sql = "SELECT * FROM  " . COUNTRY_PREFIX . "expert_enquiries WHERE DATE(enquiry_cdt) = CURDATE() AND is_general_id = 0 ORDER BY enquiry_id DESC";
     $rs = mysqli_query($conn, $sql);
     return $rs;
 
@@ -38,7 +38,7 @@ function getAllFinishedExpertEnquiries()
 {
     global $conn;
 
-    $sql = "SELECT * FROM  " . TBL . "expert_enquiries WHERE enquiry_status = 500 AND is_general_id = 0 ORDER BY enquiry_id DESC";
+    $sql = "SELECT * FROM  " . COUNTRY_PREFIX . "expert_enquiries WHERE enquiry_status = 500 AND is_general_id = 0 ORDER BY enquiry_id DESC";
     $rs = mysqli_query($conn, $sql);
     return $rs;
 
@@ -49,7 +49,7 @@ function getAllPendingExpertEnquiries()
 {
     global $conn;
 
-    $sql = "SELECT * FROM  " . TBL . "expert_enquiries WHERE enquiry_status IN (400,300) AND is_general_id = 0 ORDER BY enquiry_id DESC";
+    $sql = "SELECT * FROM  " . COUNTRY_PREFIX . "expert_enquiries WHERE enquiry_status IN (400,300) AND is_general_id = 0 ORDER BY enquiry_id DESC";
     $rs = mysqli_query($conn, $sql);
     return $rs;
 
@@ -60,7 +60,7 @@ function getAllCancelExpertEnquiries()
 {
     global $conn;
 
-    $sql = "SELECT * FROM  " . TBL . "expert_enquiries WHERE enquiry_status = 100 AND is_general_id = 0 ORDER BY enquiry_id DESC";
+    $sql = "SELECT * FROM  " . COUNTRY_PREFIX . "expert_enquiries WHERE enquiry_status = 100 AND is_general_id = 0 ORDER BY enquiry_id DESC";
     $rs = mysqli_query($conn, $sql);
     return $rs;
 
@@ -71,7 +71,7 @@ function getAllReportedExpertEnquiries()
 {
     global $conn;
 
-    $sql = "SELECT * FROM  " . TBL . "expert_enquiries WHERE enquiry_status = 600 AND is_general_id = 0 ORDER BY enquiry_id DESC";
+    $sql = "SELECT * FROM  " . COUNTRY_PREFIX . "expert_enquiries WHERE enquiry_status = 600 AND is_general_id = 0 ORDER BY enquiry_id DESC";
     $rs = mysqli_query($conn, $sql);
     return $rs;
 
@@ -82,7 +82,7 @@ function getAllSavedExpertEnquiries()
 {
     global $conn;
 
-    $sql = "SELECT * FROM  " . TBL . "expert_enquiries WHERE payment_status='Pending' AND is_general_id = 0 AND enquiry_save = 1 OR payment_status=' ' ORDER BY enquiry_id DESC";
+    $sql = "SELECT * FROM  " . COUNTRY_PREFIX . "expert_enquiries WHERE payment_status='Pending' AND is_general_id = 0 AND enquiry_save = 1 OR payment_status=' ' ORDER BY enquiry_id DESC";
     $rs = mysqli_query($conn, $sql);
     return $rs;
 
@@ -93,7 +93,7 @@ function getExpertEnquiries($arg)
 {
     global $conn;
 
-    $sql = "SELECT * FROM  " . TBL . "expert_enquiries WHERE enquiry_id = $arg  AND is_general_id = 0 AND payment_status='Pending' OR payment_status=' ' ";
+    $sql = "SELECT * FROM  " . COUNTRY_PREFIX . "expert_enquiries WHERE enquiry_id = $arg  AND is_general_id = 0 AND payment_status='Pending' OR payment_status=' ' ";
     $rs = mysqli_query($conn, $sql);
     $row = mysqli_fetch_array($rs);
     return $row;
@@ -105,7 +105,7 @@ function getUserExpertEnquiries($arg)
 {
     global $conn;
 
-    $sql = "SELECT * FROM  " . TBL . "expert_enquiries WHERE expert_user_id='" . $arg . "' AND is_general_id = 0 AND payment_status='Pending' OR payment_status=' ' ORDER BY enquiry_id DESC";
+    $sql = "SELECT * FROM  " . COUNTRY_PREFIX . "expert_enquiries WHERE expert_user_id='" . $arg . "' AND is_general_id = 0 AND payment_status='Pending' OR payment_status=' ' ORDER BY enquiry_id DESC";
     $rs = mysqli_query($conn, $sql);
     return $rs;
 
@@ -116,7 +116,7 @@ function getSenderUserExpertEnquiries($arg)
 {
     global $conn;
 
-    $sql = "SELECT * FROM  " . TBL . "expert_enquiries WHERE enquiry_sender_id='" . $arg . "' AND is_general_id = 0 AND payment_status='Pending' OR payment_status=' ' ORDER BY enquiry_id DESC";
+    $sql = "SELECT * FROM  " . COUNTRY_PREFIX . "expert_enquiries WHERE enquiry_sender_id='" . $arg . "' AND is_general_id = 0 AND payment_status='Pending' OR payment_status=' ' ORDER BY enquiry_id DESC";
     $rs = mysqli_query($conn, $sql);
     return $rs;
 
@@ -127,7 +127,7 @@ function getCountExpertEnquiries()
 {
     global $conn;
 
-    $sql = "SELECT * FROM  " . TBL . "expert_enquiries WHERE is_general_id = 0 ";
+    $sql = "SELECT * FROM  " . COUNTRY_PREFIX . "expert_enquiries WHERE is_general_id = 0 ";
     $rs = mysqli_query($conn, $sql);
     $row = mysqli_num_rows($rs);
     return $row;
@@ -139,7 +139,7 @@ function getCountUserExpertEnquiries($arg)
 {
     global $conn;
 
-    $sql = "SELECT * FROM " . TBL . "expert_enquiries  WHERE expert_user_id= '$arg' AND is_general_id = 0 ";
+    $sql = "SELECT * FROM " . COUNTRY_PREFIX . "expert_enquiries  WHERE expert_user_id= '$arg' AND is_general_id = 0 ";
     $rs = mysqli_query($conn, $sql);
     $row = mysqli_num_rows($rs);
     return $row;
@@ -151,7 +151,7 @@ function getLastWeekCountUserExpertEnquiries($arg)
 {
     global $conn;
 
-    $sql = "SELECT * FROM " . TBL . "expert_enquiries  WHERE expert_user_id= '$arg' AND is_general_id = 0 AND enquiry_cdt >= DATE(NOW()) - INTERVAL 7 DAY";
+    $sql = "SELECT * FROM " . COUNTRY_PREFIX . "expert_enquiries  WHERE expert_user_id= '$arg' AND is_general_id = 0 AND enquiry_cdt >= DATE(NOW()) - INTERVAL 7 DAY";
     $rs = mysqli_query($conn, $sql);
     $row = mysqli_num_rows($rs);
     return $row;
@@ -164,7 +164,7 @@ function getAllCountExpertEnquiries()
 {
     global $conn;
 
-    $sql = "SELECT * FROM  " . TBL . "expert_enquiries WHERE payment_status='Pending' OR payment_status=' ' AND is_general_id = 0 ORDER BY enquiry_id DESC";
+    $sql = "SELECT * FROM  " . COUNTRY_PREFIX . "expert_enquiries WHERE payment_status='Pending' OR payment_status=' ' AND is_general_id = 0 ORDER BY enquiry_id DESC";
     $rs = mysqli_query($conn, $sql);
     $row = mysqli_num_rows($rs);
     return $row;
@@ -176,7 +176,7 @@ function getAllCountExpertGeneralEnquiries()
 {
     global $conn;
 
-    $sql = "SELECT * FROM  " . TBL . "expert_enquiries WHERE is_general_id = 1 ORDER BY enquiry_id DESC";
+    $sql = "SELECT * FROM  " . COUNTRY_PREFIX . "expert_enquiries WHERE is_general_id = 1 ORDER BY enquiry_id DESC";
     $rs = mysqli_query($conn, $sql);
     $row = mysqli_num_rows($rs);
     return $row;
@@ -187,7 +187,7 @@ function getCountTodayExpertEnquiries()
 {
     global $conn;
 
-    $sql = "SELECT * FROM  " . TBL . "expert_enquiries WHERE date(enquiry_cdt) = CURDATE() AND is_general_id = 0 ORDER BY enquiry_id DESC";
+    $sql = "SELECT * FROM  " . COUNTRY_PREFIX . "expert_enquiries WHERE date(enquiry_cdt) = CURDATE() AND is_general_id = 0 ORDER BY enquiry_id DESC";
     $rs = mysqli_query($conn, $sql);
     $row = mysqli_num_rows($rs);
     return $row;
@@ -199,7 +199,7 @@ function getAllCountFinishedExpertEnquiries()
 {
     global $conn;
 
-    $sql = "SELECT * FROM  " . TBL . "expert_enquiries WHERE enquiry_status = 500 AND is_general_id = 0 ORDER BY enquiry_id DESC";
+    $sql = "SELECT * FROM  " . COUNTRY_PREFIX . "expert_enquiries WHERE enquiry_status = 500 AND is_general_id = 0 ORDER BY enquiry_id DESC";
     $rs = mysqli_query($conn, $sql);
     $row = mysqli_num_rows($rs);
     return $row;
@@ -211,7 +211,7 @@ function getAllCountPendingExpertEnquiries()
 {
     global $conn;
 
-    $sql = "SELECT * FROM  " . TBL . "expert_enquiries WHERE enquiry_status IN (400,300) AND is_general_id = 0 ORDER BY enquiry_id DESC";
+    $sql = "SELECT * FROM  " . COUNTRY_PREFIX . "expert_enquiries WHERE enquiry_status IN (400,300) AND is_general_id = 0 ORDER BY enquiry_id DESC";
     $rs = mysqli_query($conn, $sql);
     $row = mysqli_num_rows($rs);
     return $row;
@@ -223,7 +223,7 @@ function getAllCountCancelExpertEnquiries()
 {
     global $conn;
 
-    $sql = "SELECT * FROM  " . TBL . "expert_enquiries WHERE enquiry_status = 100 AND is_general_id = 0 ORDER BY enquiry_id DESC";
+    $sql = "SELECT * FROM  " . COUNTRY_PREFIX . "expert_enquiries WHERE enquiry_status = 100 AND is_general_id = 0 ORDER BY enquiry_id DESC";
     $rs = mysqli_query($conn, $sql);
     $row = mysqli_num_rows($rs);
     return $row;
@@ -235,7 +235,7 @@ function getAllCountReportedExpertEnquiries()
 {
     global $conn;
 
-    $sql = "SELECT * FROM  " . TBL . "expert_enquiries WHERE enquiry_status = 600 AND is_general_id = 0 ORDER BY enquiry_id DESC";
+    $sql = "SELECT * FROM  " . COUNTRY_PREFIX . "expert_enquiries WHERE enquiry_status = 600 AND is_general_id = 0 ORDER BY enquiry_id DESC";
     $rs = mysqli_query($conn, $sql);
     $row = mysqli_num_rows($rs);
     return $row;
@@ -247,7 +247,7 @@ function getIdCountFinishedExpertEnquiries($arg)
 {
     global $conn;
 
-    $sql = "SELECT * FROM  " . TBL . "expert_enquiries WHERE enquiry_status = 500 AND is_general_id = 0 AND expert_id= '$arg' ORDER BY enquiry_id DESC";
+    $sql = "SELECT * FROM  " . COUNTRY_PREFIX . "expert_enquiries WHERE enquiry_status = 500 AND is_general_id = 0 AND expert_id= '$arg' ORDER BY enquiry_id DESC";
     $rs = mysqli_query($conn, $sql);
     $row = mysqli_num_rows($rs);
     return $row;
@@ -259,7 +259,7 @@ function getCategoryCountFinishedExpertEnquiries($arg)
 {
     global $conn;
 
-    $sql = "SELECT * FROM  " . TBL . "expert_enquiries WHERE enquiry_status = 500 AND is_general_id = 0 AND enquiry_category= '$arg' ORDER BY enquiry_id DESC";
+    $sql = "SELECT * FROM  " . COUNTRY_PREFIX . "expert_enquiries WHERE enquiry_status = 500 AND is_general_id = 0 AND enquiry_category= '$arg' ORDER BY enquiry_id DESC";
     $rs = mysqli_query($conn, $sql);
     $row = mysqli_num_rows($rs);
     return $row;
@@ -271,7 +271,7 @@ function getAllUserExpertDateExpertEnquiries($arg,$arg1)
 {
     global $conn;
 
-    $sql = "SELECT * FROM  " . TBL . "expert_enquiries where expert_user_id='" . $arg . "' AND enquiry_cdt > '$arg1' AND payment_status='Pending' OR payment_status=' ' ORDER BY enquiry_id DESC";
+    $sql = "SELECT * FROM  " . COUNTRY_PREFIX . "expert_enquiries where expert_user_id='" . $arg . "' AND enquiry_cdt > '$arg1' AND payment_status='Pending' OR payment_status=' ' ORDER BY enquiry_id DESC";
     $rs = mysqli_query($conn, $sql);
     return $rs;
 
@@ -282,7 +282,7 @@ function getCountAllUserExpertDateExpertEnquiries($arg,$arg1)
 {
     global $conn;
 
-    $sql = "SELECT * FROM  " . TBL . "expert_enquiries where expert_user_id='" . $arg . "' AND enquiry_cdt > '$arg1' AND payment_status='Pending' OR payment_status=' '  ORDER BY enquiry_id DESC";
+    $sql = "SELECT * FROM  " . COUNTRY_PREFIX . "expert_enquiries where expert_user_id='" . $arg . "' AND enquiry_cdt > '$arg1' AND payment_status='Pending' OR payment_status=' '  ORDER BY enquiry_id DESC";
     $rs = mysqli_query($conn, $sql);
     $row = mysqli_num_rows($rs);
     return $row;

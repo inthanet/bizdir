@@ -23,7 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 //************ Category Name Already Exist Check Starts ***************
 
 
-        $category_name_exist_check = mysqli_query($conn, "SELECT * FROM " . TBL . "place_categories  WHERE category_name='" . $category_name . "' AND category_id != $category_id ");
+        $category_name_exist_check = mysqli_query($conn, "SELECT * FROM " . COUNTRY_PREFIX . "place_categories  WHERE category_name='" . $category_name . "' AND category_id != $category_id ");
 
         if (mysqli_num_rows($category_name_exist_check) > 0) {
 
@@ -44,7 +44,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             global $conn;
             $newLink = $link;
             do {
-                $checkLink = mysqli_query($conn, "SELECT category_id FROM " . TBL . "place_categories WHERE category_slug = '$newLink' AND category_id != '$category_id'");
+                $checkLink = mysqli_query($conn, "SELECT category_id FROM " . COUNTRY_PREFIX . "place_categories WHERE category_slug = '$newLink' AND category_id != '$category_id'");
                 if (mysqli_num_rows($checkLink) > 0) {
                     $newLink = $link . '' . $counter;
                     $counter++;
@@ -61,7 +61,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $category_slug = checkNewsCategorySlug($category_name1, $category_id);
 
 
-        $sql = mysqli_query($conn, "UPDATE  " . TBL . "place_categories SET category_name='" . $category_name . "', category_status='" . $category_status . "'
+        $sql = mysqli_query($conn, "UPDATE  " . COUNTRY_PREFIX . "place_categories SET category_name='" . $category_name . "', category_status='" . $category_status . "'
      , category_image='" . $category_image . "', category_slug='" . $category_slug . "'
      , category_seo_title='" . $category_seo_title . "', category_seo_description='" . $category_seo_description . "'
      , category_seo_keywords='" . $category_seo_keywords . "'

@@ -41,7 +41,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 //        }
 
 
-        $listing_details_sql = "SELECT * FROM  " . TBL . "listings where listing_id='" . $promote_type_id . "'";
+        $listing_details_sql = "SELECT * FROM  " . COUNTRY_PREFIX . "listings where listing_id='" . $promote_type_id . "'";
         $listing_details_rs = mysqli_query($conn, $listing_details_sql);
         $listing_details_row = mysqli_fetch_array($listing_details_rs);
 
@@ -78,7 +78,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
             //to be deleted starts
 
-            $lisupqry = "UPDATE " . TBL . "listings 
+            $lisupqry = "UPDATE " . COUNTRY_PREFIX . "listings 
 					  SET display_position = $display_position
 					  ,start_date = '$promote_start_date',end_date = '$promote_end_date'
 					  ,payment = 1

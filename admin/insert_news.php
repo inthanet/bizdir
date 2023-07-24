@@ -46,7 +46,7 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
             global $conn;
             $newLink = $link;
             do{
-                $checkLink = mysqli_query($conn, "SELECT news_id FROM " . TBL . "news WHERE news_slug = '$newLink'");
+                $checkLink = mysqli_query($conn, "SELECT news_id FROM " . COUNTRY_PREFIX . "news WHERE news_slug = '$newLink'");
                 if(mysqli_num_rows($checkLink) > 0){
                     $newLink = $link.''.$counter;
                     $counter++;
@@ -65,7 +65,7 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
 //    news Insert Part Starts
 
 
-        $news_qry = "INSERT INTO " . TBL . "news 
+        $news_qry = "INSERT INTO " . COUNTRY_PREFIX . "news 
 					(news_title, news_description, news_image, news_status,  category_id, city_id, news_slug, seo_title, seo_description, seo_keywords, news_cdt)
 					VALUES 
 					('$news_title', '$news_description', '$news_image', '$news_status', '$category_id', '$city_id', '$news_slug', '$seo_title', '$seo_description', '$seo_keywords', '$curDate')";

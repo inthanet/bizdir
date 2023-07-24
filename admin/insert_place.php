@@ -94,7 +94,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             global $conn;
             $newLink = $link;
             do {
-                $checkLink = mysqli_query($conn, "SELECT place_id FROM " . TBL . "places WHERE place_slug = '$newLink'");
+                $checkLink = mysqli_query($conn, "SELECT place_id FROM " . COUNTRY_PREFIX . "places WHERE place_slug = '$newLink'");
                 if (mysqli_num_rows($checkLink) > 0) {
                     $newLink = $link . '' . $counter;
                     $counter++;
@@ -145,7 +145,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 //    Place Insert Part Starts
 
-        $place_qry = "INSERT INTO " . TBL . "places
+        $place_qry = "INSERT INTO " . COUNTRY_PREFIX . "places
 					(category_id, place_name, place_tags, place_fee
 					, seo_title, seo_description
 					, seo_keywords, places_news, place_experts
@@ -180,7 +180,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         $PlaceCode = 'PLACE' . $PlaceID;
 
-        $placeupqry = "UPDATE " . TBL . "places
+        $placeupqry = "UPDATE " . COUNTRY_PREFIX . "places
 					  SET place_code = '$PlaceCode'
 					  WHERE place_id = $placelastID";
 

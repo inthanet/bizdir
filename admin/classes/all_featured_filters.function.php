@@ -5,7 +5,7 @@ function getAllFeaturedFilter()
 {
     global $conn;
 
-    $sql = "SELECT * FROM " . TBL . "all_featured_filters ORDER BY all_featured_filter_id ASC";
+    $sql = "SELECT * FROM " . COUNTRY_PREFIX . "all_featured_filters ORDER BY all_featured_filter_id ASC";
     $rs = mysqli_query($conn, $sql);
     return $rs;
 
@@ -16,7 +16,7 @@ function getAllActiveFeaturedFilter()
 {
     global $conn;
 
-    $sql = "SELECT * FROM " . TBL . "all_featured_filters WHERE all_featured_filter_status = 1 ORDER BY all_featured_filter_id ASC";
+    $sql = "SELECT * FROM " . COUNTRY_PREFIX . "all_featured_filters WHERE all_featured_filter_status = 1 ORDER BY all_featured_filter_id ASC";
     $rs = mysqli_query($conn, $sql);
     return $rs;
 
@@ -27,7 +27,7 @@ function getValueFeaturedFilter($arg)
 {
     global $conn;
 
-    $sql = "SELECT * FROM  " . TBL . "all_featured_filters where all_featured_filter_value='".$arg."'";
+    $sql = "SELECT * FROM  " . COUNTRY_PREFIX . "all_featured_filters where all_featured_filter_value='".$arg."'";
     $rs = mysqli_query($conn, $sql);
     $row = mysqli_fetch_array($rs);
     return $row;

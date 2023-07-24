@@ -190,7 +190,7 @@ if (!empty($w)) {
 }
 $footer_row = getAllFooter();
 
-$query = mysqli_query($conn, "SELECT DISTINCT  t1 . * FROM  " . TBL . "products  AS t1 $inner $w $q product_status= 'Active' ORDER BY product_id DESC ");
+$query = mysqli_query($conn, "SELECT DISTINCT  t1 . * FROM  " . COUNTRY_PREFIX . "products  AS t1 $inner $w $q product_status= 'Active' ORDER BY product_id DESC ");
 ?>
 
 <div class="all-list-sh all-product-total">

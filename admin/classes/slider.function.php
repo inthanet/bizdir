@@ -5,7 +5,7 @@ function getAllSlider()
 {
     global $conn;
 
-    $sql = "SELECT * FROM " . TBL . "slider ORDER BY slider_id DESC";
+    $sql = "SELECT * FROM " . COUNTRY_PREFIX . "slider ORDER BY slider_id DESC";
     $rs = mysqli_query($conn, $sql);
     return $rs;
 
@@ -16,7 +16,7 @@ function getSlider($arg)
 {
     global $conn;
 
-    $sql = "SELECT * FROM " . TBL . "slider where slider_id = '" . $arg . "'";
+    $sql = "SELECT * FROM " . COUNTRY_PREFIX . "slider where slider_id = '" . $arg . "'";
     $rs = mysqli_query($conn, $sql);
     $row = mysqli_fetch_array($rs);
     return $row;

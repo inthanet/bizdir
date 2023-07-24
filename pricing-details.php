@@ -142,6 +142,13 @@ include "header.php";
                                             } ?> <?php echo $BIZBOOK['VIDEOS']; ?>
                                         </li>
 
+                                        <li><?php if ($plan_type_row['plan_type_country_count'] == 1000) {
+                                                echo $BIZBOOK['UNLIMITED'];
+                                            } else {
+                                                echo $plan_type_row['plan_type_country_count'];
+                                            } ?> <?php echo $BIZBOOK['COUNTRIES']; ?>
+                                        </li>                                        
+
                                         <li><?php echo $BIZBOOK['CREATE_DUPLICATE_LISTING_LABEL']; ?></li>
 
                                         <?php if ($plan_type_row['plan_type_social'] == 1) { ?>

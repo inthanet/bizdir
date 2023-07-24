@@ -32,7 +32,7 @@ if (isset($_POST['category_submit'])) {
 //************ Category Name Already Exist Check Starts ***************
 
 
-        $category_name_exist_check = mysqli_query($conn, "SELECT * FROM " . TBL . "job_categories  WHERE category_name='" . $category_name . "' ");
+        $category_name_exist_check = mysqli_query($conn, "SELECT * FROM " . COUNTRY_PREFIX . "job_categories  WHERE category_name='" . $category_name . "' ");
 
         if (mysqli_num_rows($category_name_exist_check) > 0) {
 
@@ -51,7 +51,7 @@ if (isset($_POST['category_submit'])) {
         // $category_slug = checkListingCategorySlug($category_name1);
 
         $counter = 1;
-        $checkLink = mysqli_query($conn, "SELECT category_id FROM " . TBL . "job_categories WHERE category_slug = '$category_name1'");
+        $checkLink = mysqli_query($conn, "SELECT category_id FROM " . COUNTRY_PREFIX . "job_categories WHERE category_slug = '$category_name1'");
         if (mysqli_num_rows($checkLink) > 0) {
             $category_slug = $category_name1 . '' . $counter;
         }else{
@@ -59,7 +59,7 @@ if (isset($_POST['category_submit'])) {
         }
 
 
-        $sql = mysqli_query($conn, "INSERT INTO  " . TBL . "job_categories (category_name,category_status,category_image,category_filter_pos_id,category_slug,category_cdt)
+        $sql = mysqli_query($conn, "INSERT INTO  " . COUNTRY_PREFIX . "job_categories (category_name,category_status,category_image,category_filter_pos_id,category_slug,category_cdt)
 VALUES ('$category_name','$category_status','$category_image','$category_filter_pos_id', '$category_slug', '$curDate')");
 
         $LID = mysqli_insert_id($conn);
@@ -79,7 +79,7 @@ VALUES ('$category_name','$category_status','$category_image','$category_filter_
 
         $CATID = 'CAT' . $LID;
 
-        $upqry = mysqli_query($conn, "UPDATE " . TBL . "job_categories
+        $upqry = mysqli_query($conn, "UPDATE " . COUNTRY_PREFIX . "job_categories
 					  SET category_code = '$CATID'
 					  WHERE category_id = $lastID");
 

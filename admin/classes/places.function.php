@@ -5,7 +5,7 @@ function getAllPlaces()
 {
     global $conn;
 
-    $sql = "SELECT * FROM " . TBL . "places ORDER BY place_id DESC";
+    $sql = "SELECT * FROM " . COUNTRY_PREFIX . "places ORDER BY place_id DESC";
     $rs = mysqli_query($conn, $sql);
     return $rs;
 
@@ -16,7 +16,7 @@ function getAllTrashPlaces()
 {
     global $conn;
 
-    $sql = "SELECT * FROM " . TBL . "places ORDER BY place_id DESC";
+    $sql = "SELECT * FROM " . COUNTRY_PREFIX . "places ORDER BY place_id DESC";
     $rs = mysqli_query($conn, $sql);
     return $rs;
 
@@ -27,7 +27,7 @@ function getPlaces($arg)
 {
     global $conn;
 
-    $sql = "SELECT * FROM  " . TBL . "places WHERE place_code='" . $arg . "'";
+    $sql = "SELECT * FROM  " . COUNTRY_PREFIX . "places WHERE place_code='" . $arg . "'";
     $rs = mysqli_query($conn, $sql);
     $row = mysqli_fetch_array($rs);
     return $row;
@@ -39,7 +39,7 @@ function getSlugPlaces($arg)
 {
     global $conn;
 
-    $sql = "SELECT * FROM  " . TBL . "places WHERE place_slug='" . $arg . "'";
+    $sql = "SELECT * FROM  " . COUNTRY_PREFIX . "places WHERE place_slug='" . $arg . "'";
     $rs = mysqli_query($conn, $sql);
     $row = mysqli_fetch_array($rs);
     return $row;
@@ -51,7 +51,7 @@ function getIdPlaces($arg)
 {
     global $conn;
 
-    $sql = "SELECT * FROM  " . TBL . "places WHERE place_id='" . $arg . "'";
+    $sql = "SELECT * FROM  " . COUNTRY_PREFIX . "places WHERE place_id='" . $arg . "'";
     $rs = mysqli_query($conn, $sql);
     $row = mysqli_fetch_array($rs);
     return $row;
@@ -63,7 +63,7 @@ function getAllPlacesUser($arg)
 {
     global $conn;
 
-    $sql = "SELECT * FROM " . TBL . "places  WHERE user_id= '$arg' ORDER BY place_id DESC";
+    $sql = "SELECT * FROM " . COUNTRY_PREFIX . "places  WHERE user_id= '$arg' ORDER BY place_id DESC";
     $rs = mysqli_query($conn, $sql);
     return $rs;
 
@@ -74,7 +74,7 @@ function getAllPlacesCategory($arg)
 {
     global $conn;
 
-    $sql = "SELECT * FROM " . TBL . "places  WHERE category_id= '$arg' ORDER BY place_id DESC";
+    $sql = "SELECT * FROM " . COUNTRY_PREFIX . "places  WHERE category_id= '$arg' ORDER BY place_id DESC";
     $rs = mysqli_query($conn, $sql);
     return $rs;
 
@@ -85,7 +85,7 @@ function getAllPlacesCategoryExceptPlacesId($arg,$arg1)
 {
     global $conn;
 
-    $sql = "SELECT * FROM " . TBL . "places  WHERE category_id= '$arg' AND place_id !='" . $arg1 . "' ORDER BY place_id DESC";
+    $sql = "SELECT * FROM " . COUNTRY_PREFIX . "places  WHERE category_id= '$arg' AND place_id !='" . $arg1 . "' ORDER BY place_id DESC";
     $rs = mysqli_query($conn, $sql);
     return $rs;
 
@@ -96,7 +96,7 @@ function getAllPlacesUserPlaces($arg,$arg1)
 {
     global $conn;
 
-    $sql = "SELECT * FROM " . TBL . "places  WHERE user_id= '$arg' AND place_id = '$arg1'";
+    $sql = "SELECT * FROM " . COUNTRY_PREFIX . "places  WHERE user_id= '$arg' AND place_id = '$arg1'";
     $rs = mysqli_query($conn, $sql);
     $row = mysqli_fetch_array($rs);
     return $row;
@@ -108,7 +108,7 @@ function getAllPlacesPlaces($arg)
 {
     global $conn;
 
-    $sql = "SELECT * FROM " . TBL . "places  WHERE place_id = '$arg'";
+    $sql = "SELECT * FROM " . COUNTRY_PREFIX . "places  WHERE place_id = '$arg'";
     $rs = mysqli_query($conn, $sql);
     $row = mysqli_fetch_array($rs);
     return $row;
@@ -120,7 +120,7 @@ function getCountPlaces()
 {
     global $conn;
 
-    $sql = "SELECT * FROM " . TBL . "places ORDER BY place_id DESC";
+    $sql = "SELECT * FROM " . COUNTRY_PREFIX . "places ORDER BY place_id DESC";
     $rs = mysqli_query($conn, $sql);
     $row = mysqli_num_rows($rs);
     return $row;
@@ -132,7 +132,7 @@ function getCountUserPlaces($arg)
 {
     global $conn;
 
-    $sql = "SELECT * FROM " . TBL . "places  WHERE user_id= '$arg' ORDER BY place_id DESC";
+    $sql = "SELECT * FROM " . COUNTRY_PREFIX . "places  WHERE user_id= '$arg' ORDER BY place_id DESC";
     $rs = mysqli_query($conn, $sql);
     $row = mysqli_num_rows($rs);
     return $row;
@@ -144,7 +144,7 @@ function getCountCategoryPlaces($arg)
 {
     global $conn;
 
-    $sql = "SELECT * FROM " . TBL . "places WHERE category_id = '$arg'";
+    $sql = "SELECT * FROM " . COUNTRY_PREFIX . "places WHERE category_id = '$arg'";
     $rs = mysqli_query($conn, $sql);
     $row = mysqli_num_rows($rs);
     return $row;
@@ -156,7 +156,7 @@ function getCountCountryPlaces($arg)
 {
     global $conn;
 
-    $sql = "SELECT * FROM " . TBL . "places WHERE country_id = '$arg'";
+    $sql = "SELECT * FROM " . COUNTRY_PREFIX . "places WHERE country_id = '$arg'";
     $rs = mysqli_query($conn, $sql);
     $row = mysqli_num_rows($rs);
     return $row;
@@ -168,7 +168,7 @@ function getCountCityPlaces($arg)
 {
     global $conn;
 
-    $sql = "SELECT * FROM " . TBL . "places WHERE city_id = '$arg'";
+    $sql = "SELECT * FROM " . COUNTRY_PREFIX . "places WHERE city_id = '$arg'";
     $rs = mysqli_query($conn, $sql);
     $row = mysqli_num_rows($rs);
     return $row;
@@ -180,7 +180,7 @@ function getCountSubCategoryPlaces($arg)
 {
     global $conn;
 
-    $sql = "SELECT * FROM " . TBL . "places WHERE sub_category_id = '$arg'";
+    $sql = "SELECT * FROM " . COUNTRY_PREFIX . "places WHERE sub_category_id = '$arg'";
     $rs = mysqli_query($conn, $sql);
     $row = mysqli_num_rows($rs);
     return $row;
@@ -192,7 +192,7 @@ function getExceptPlaces($arg)
 {
     global $conn;
 
-    $sql = "SELECT * FROM  " . TBL . "places WHERE  place_id !='" . $arg . "' ";
+    $sql = "SELECT * FROM  " . COUNTRY_PREFIX . "places WHERE  place_id !='" . $arg . "' ";
     $rs = mysqli_query($conn, $sql);
     return $rs;
 
@@ -203,7 +203,7 @@ function getAllTopViewsPremiumActivePlaces()
 {
     global $conn;
 
-    $sql = "SELECT t1.*, COUNT(*) AS total_count FROM " . TBL . "places AS t1 INNER JOIN `" . TBL . "page_views` AS t2  ON t1.place_id = t2.place_id WHERE t1.place_status= 'Active' GROUP BY t1.place_id ORDER BY COUNT(*) DESC LIMIT 10";
+    $sql = "SELECT t1.*, COUNT(*) AS total_count FROM " . COUNTRY_PREFIX . "places AS t1 INNER JOIN `" . COUNTRY_PREFIX . "page_views` AS t2  ON t1.place_id = t2.place_id WHERE t1.place_status= 'Active' GROUP BY t1.place_id ORDER BY COUNT(*) DESC LIMIT 10";
     $rs = mysqli_query($conn, $sql);
     return $rs;
 
@@ -217,7 +217,7 @@ function getPlacesseoScore($arg)
     $sql = "select ( case seo_title when '' then 0 else 1 end +
         case seo_description when '' then 0 else 1 end +
         case seo_keywords when '' then 0 else 1 end )
-        * 100 / 3 as complete FROM " . TBL . "places WHERE place_id = $arg";
+        * 100 / 3 as complete FROM " . COUNTRY_PREFIX . "places WHERE place_id = $arg";
     $rs = mysqli_query($conn, $sql);
     $row = mysqli_fetch_array($rs);
     return $row[0];

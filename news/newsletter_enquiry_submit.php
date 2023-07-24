@@ -19,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
     $subscriber_email_id = $_POST["news_newsletter_subscribe_name"];
 
 
-    $news_subscribers_qry = "INSERT INTO " . TBL . "news_subscribers
+    $news_subscribers_qry = "INSERT INTO " . COUNTRY_PREFIX . "news_subscribers
 					(subscriber_email_id, news_subscribers_cdt)
 					VALUES 
 					('$subscriber_email_id', '$curDate')";

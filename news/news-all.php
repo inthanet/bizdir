@@ -96,7 +96,7 @@ if (isset($_REQUEST['city']) && !empty($_REQUEST['city'])) {
                     </ul>
                 </div>
                 <?php
-                $newssql = "SELECT T1.*  FROM " . TBL . "news AS T1 WHERE T1.news_status= 'Active' $category_search_query $news_location_search_query";
+                $newssql = "SELECT T1.*  FROM " . COUNTRY_PREFIX . "news AS T1 WHERE T1.news_status= 'Active' $category_search_query $news_location_search_query";
 
                 $newsrs = mysqli_query($conn, $newssql);
                 $total_news = mysqli_num_rows($newsrs);

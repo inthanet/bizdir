@@ -34,7 +34,7 @@ if (isset($_REQUEST['sort_by']) && !empty($_REQUEST['sort_by'])) {
 
         $blog_sort_by_search_query = 'GROUP BY T2.blog_id';
         $blog_start_search_query = ', T2.blog_id, COUNT(T2.blog_id) as top';
-        $blog_end_search_query = "INNER JOIN " . TBL . "page_views AS T2 ON T1.blog_id = T2.blog_id";
+        $blog_end_search_query = "INNER JOIN " . COUNTRY_PREFIX . "page_views AS T2 ON T1.blog_id = T2.blog_id";
 
         $blog_sort_by_search_order_query = 'ORDER BY top DESC';
     } else {
@@ -169,7 +169,7 @@ if (isset($_REQUEST['sort_by']) && !empty($_REQUEST['sort_by'])) {
                 <?php
                 $si = 1;
 
-                $blogsql = "SELECT  T1.* $blog_start_search_query FROM " . TBL . "blogs AS T1 $blog_end_search_query WHERE T1.blog_status = 'Active' $category_search_query $blog_sort_by_search_query $blog_sort_by_search_order_query";
+                $blogsql = "SELECT  T1.* $blog_start_search_query FROM " . COUNTRY_PREFIX . "blogs AS T1 $blog_end_search_query WHERE T1.blog_status = 'Active' $category_search_query $blog_sort_by_search_query $blog_sort_by_search_order_query";
 
                 $blogrs = mysqli_query($conn, $blogsql);
                 $total_blogs = mysqli_num_rows($blogrs);

@@ -15,7 +15,7 @@ if($select_search == 0){
 }
 
 //get matched data from place table
-$place_qry = "SELECT * FROM " . TBL . "places WHERE place_id = '$select_search' ";
+$place_qry = "SELECT * FROM " . COUNTRY_PREFIX . "places WHERE place_id = '$select_search' ";
 $place_query = mysqli_query($conn,$place_qry);
 
 if (mysqli_num_rows($place_query) > 0) {

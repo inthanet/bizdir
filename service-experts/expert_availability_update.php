@@ -19,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 
 
-        $enquiry_res = mysqli_query($conn, "UPDATE  " . TBL . "experts SET  expert_availability_status='" . $expert_availability_status . "'
+        $enquiry_res = mysqli_query($conn, "UPDATE  " . COUNTRY_PREFIX . "experts SET  expert_availability_status='" . $expert_availability_status . "'
      ,available_time_start ='" . $available_time_start . "'
      ,available_time_end ='" . $available_time_end . "'
      ,expert_udt ='$curDate'

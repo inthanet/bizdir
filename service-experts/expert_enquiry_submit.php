@@ -61,7 +61,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 
 
-    $enquiry_qry = "INSERT INTO " . TBL . "expert_enquiries
+    $enquiry_qry = "INSERT INTO " . COUNTRY_PREFIX . "expert_enquiries
 					(expert_id,expert_user_id,enquiry_sender_id,is_general_id,enquiry_source,enquiry_name, enquiry_email, enquiry_mobile, appointment_date,appointment_time,enquiry_message, enquiry_location, payment_status, enquiry_category, enquiry_status, enquiry_cdt)
 					VALUES
 					('$expert_id', '$expert_user_id', '$enquiry_sender_id', '$is_general_id', '$enquiry_source','$enquiry_name', '$enquiry_email', '$enquiry_mobile', '$appointment_date', '$appointment_time', '$enquiry_message', '$enquiry_location', '$payment_status', '$enquiry_category', '$enquiry_status', '$curDate')";

@@ -5,7 +5,7 @@ function getAllJobApplied()
 {
     global $conn;
 
-    $sql = "SELECT * FROM " . TBL . "job_applied ORDER BY job_applied_id DESC";
+    $sql = "SELECT * FROM " . COUNTRY_PREFIX . "job_applied ORDER BY job_applied_id DESC";
     $rs = mysqli_query($conn, $sql);
     return $rs;
 
@@ -16,7 +16,7 @@ function getJobApplied($arg)
 {
     global $conn;
 
-    $sql = "SELECT * FROM  " . TBL . "job_applied where job_applied_id='".$arg."'";
+    $sql = "SELECT * FROM  " . COUNTRY_PREFIX . "job_applied where job_applied_id='".$arg."'";
     $rs = mysqli_query($conn, $sql);
     $row = mysqli_fetch_array($rs);
     return $row;
@@ -28,7 +28,7 @@ function getJobAppliedJob($arg)
 {
     global $conn;
 
-    $sql = "SELECT * FROM  " . TBL . "job_applied where job_id='".$arg."'";
+    $sql = "SELECT * FROM  " . COUNTRY_PREFIX . "job_applied where job_id='".$arg."'";
     $rs = mysqli_query($conn, $sql);
     return $rs;
 
@@ -39,7 +39,7 @@ function getJobAppliedJobProfile($arg)
 {
     global $conn;
 
-    $sql = "SELECT * FROM  " . TBL . "job_applied where job_profile_id='".$arg."' ORDER BY job_applied_id DESC";
+    $sql = "SELECT * FROM  " . COUNTRY_PREFIX . "job_applied where job_profile_id='".$arg."' ORDER BY job_applied_id DESC";
     $rs = mysqli_query($conn, $sql);
     return $rs;
 
@@ -50,7 +50,7 @@ function getCountJobAppliedJob($arg)
 {
     global $conn;
 
-    $sql = "SELECT * FROM " . TBL . "job_applied where job_id='".$arg."' ORDER BY job_applied_id DESC";
+    $sql = "SELECT * FROM " . COUNTRY_PREFIX . "job_applied where job_id='".$arg."' ORDER BY job_applied_id DESC";
     $rs = mysqli_query($conn, $sql);
     $row = mysqli_num_rows($rs);
     return $row;
@@ -62,7 +62,7 @@ function getCountJobAppliedProfile($arg)
 {
     global $conn;
 
-    $sql = "SELECT * FROM " . TBL . "job_applied where job_profile_id='".$arg."' ORDER BY job_applied_id DESC";
+    $sql = "SELECT * FROM " . COUNTRY_PREFIX . "job_applied where job_profile_id='".$arg."' ORDER BY job_applied_id DESC";
     $rs = mysqli_query($conn, $sql);
     $row = mysqli_num_rows($rs);
     return $row;
@@ -74,7 +74,7 @@ function getCountJobAppliedProfileJob($arg,$arg1)
 {
     global $conn;
 
-    $sql = "SELECT * FROM " . TBL . "job_applied where job_profile_id='".$arg."' AND job_id='".$arg1."' ORDER BY job_applied_id DESC";
+    $sql = "SELECT * FROM " . COUNTRY_PREFIX . "job_applied where job_profile_id='".$arg."' AND job_id='".$arg1."' ORDER BY job_applied_id DESC";
     $rs = mysqli_query($conn, $sql);
     $row = mysqli_num_rows($rs);
     return $row;
@@ -86,7 +86,7 @@ function getCountJobApplied()
 {
     global $conn;
 
-    $sql = "SELECT * FROM " . TBL . "job_applied ORDER BY job_applied_id DESC";
+    $sql = "SELECT * FROM " . COUNTRY_PREFIX . "job_applied ORDER BY job_applied_id DESC";
     $rs = mysqli_query($conn, $sql);
     $row = mysqli_num_rows($rs);
     return $row;
@@ -98,7 +98,7 @@ function getUserAppliedDateJobProfile($arg,$arg1)
 {
     global $conn;
 
-    $sql = "SELECT * FROM  " . TBL . "job_applied where job_user_id='".$arg."' AND job_applied_cdt > '$arg1' ORDER BY job_applied_id DESC";
+    $sql = "SELECT * FROM  " . COUNTRY_PREFIX . "job_applied where job_user_id='".$arg."' AND job_applied_cdt > '$arg1' ORDER BY job_applied_id DESC";
     $rs = mysqli_query($conn, $sql);
     return $rs;
 
@@ -109,7 +109,7 @@ function getCountUserAppliedDateJobProfile($arg,$arg1)
 {
     global $conn;
 
-    $sql = "SELECT * FROM  " . TBL . "job_applied where job_user_id='".$arg."' AND job_applied_cdt > '$arg1' ORDER BY job_applied_id DESC";
+    $sql = "SELECT * FROM  " . COUNTRY_PREFIX . "job_applied where job_user_id='".$arg."' AND job_applied_cdt > '$arg1' ORDER BY job_applied_id DESC";
     $rs = mysqli_query($conn, $sql);
     $row = mysqli_num_rows($rs);
     return $row;

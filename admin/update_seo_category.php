@@ -48,7 +48,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $category_google_schema = $_POST['category_google_schema'];
 
 
-        $sql = mysqli_query($conn,"UPDATE  " . TBL . "categories SET  category_seo_title='" . $category_seo_title. "'
+        $sql = mysqli_query($conn,"UPDATE  " . COUNTRY_PREFIX . "categories SET  category_seo_title='" . $category_seo_title. "'
         ,category_seo_keywords='" . $category_seo_keywords. "', category_seo_description='" . $category_seo_description . "'
         , category_faq_1_ques='" . $category_faq_1_ques. "', category_faq_1_ans='" . $category_faq_1_ans . "'
         , category_faq_2_ques='" . $category_faq_2_ques. "', category_faq_2_ans='" . $category_faq_2_ans . "'

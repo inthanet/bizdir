@@ -43,7 +43,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
 
 
-        $sql = mysqli_query($conn, "UPDATE  " . TBL . "slider SET  slider_photo='" . $slider_photo . "' , slider_link ='" . $slider_link . "'
+        $sql = mysqli_query($conn, "UPDATE  " . COUNTRY_PREFIX . "slider SET  slider_photo='" . $slider_photo . "' , slider_link ='" . $slider_link . "'
      where slider_id='" . $slider_id . "'");
 
         if ($sql) {

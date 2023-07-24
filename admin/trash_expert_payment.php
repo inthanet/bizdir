@@ -15,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 
         $payment_qry =
-            " DELETE FROM  " . TBL . "expert_payments WHERE payment_id='" . $payment_id . "'";
+            " DELETE FROM  " . COUNTRY_PREFIX . "expert_payments WHERE payment_id='" . $payment_id . "'";
 
 
         $payment_res = mysqli_query($conn,$payment_qry);

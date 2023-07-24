@@ -9,7 +9,7 @@ $paypal_transaction_id  = $_REQUEST['tx']; // PayPal transaction ID
 $amount_paid         = $_REQUEST['amt']; // PayPal received amount
 $item_currency      = $_REQUEST['cc']; // PayPal received currency type
 
-$plan_type_details = mysqli_query($conn,"SELECT * FROM  " . TBL . "plan_type where plan_type_price='" . $amount_paid . "'");
+$plan_type_details = mysqli_query($conn,"SELECT * FROM  " . COUNTRY_PREFIX . "plan_type where plan_type_price='" . $amount_paid . "'");
 $plan_type_details_row = mysqli_fetch_array($plan_type_details);
 
 $plan_type_id = $plan_type_details_row['plan_type_id'];  //Plan Type Id

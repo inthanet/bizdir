@@ -51,7 +51,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                      //===============================================================
 
                     //check whether category already exists in database with same category_name
-                    $catQuery = mysqli_query($conn,"SELECT category_id FROM " . TBL . "categories WHERE category_name = '" . $category_name . "'");
+                    $catQuery = mysqli_query($conn,"SELECT category_id FROM " . COUNTRY_PREFIX . "categories WHERE category_name = '" . $category_name . "'");
                     $catResult = mysqli_fetch_array($catQuery);
 
                     if (mysqli_num_rows($catQuery) > 0) {
@@ -59,7 +59,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         $category_id = $catResult['category_id'];
                     } else {
                         //insert category data into database
-                        $insert_categoryy = mysqli_query($conn,"INSERT INTO " . TBL . "categories (category_name) VALUES ('" . $category_name . "')");
+                        $insert_categoryy = mysqli_query($conn,"INSERT INTO " . COUNTRY_PREFIX . "categories (category_name) VALUES ('" . $category_name . "')");
                         $category_id = mysqli_insert_id($conn);
                     }
 
@@ -78,7 +78,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     // $listing_status = "Pending";
                     $payment_status = "Pending";
 
-                    $listsql = "SELECT listing_id FROM " . TBL . "listings  WHERE listing_name= '$listing_name' AND listing_address = '$listing_address' AND listing_mobile = '$listing_mobile' AND city_id = '$city_id'";
+                    $listsql = "SELECT listing_id FROM " . COUNTRY_PREFIX . "listings  WHERE listing_name= '$listing_name' AND listing_address = '$listing_address' AND listing_mobile = '$listing_mobile' AND city_id = '$city_id'";
 
                     $listrs = mysqli_query($conn,$listsql);
 
@@ -87,7 +87,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     //  global $conn;
                     //  $newLink = $link;
                     //    do {
-                    //       $checkLink = mysqli_query($conn, "SELECT listing_id FROM " . TBL . "listings WHERE listing_slug = '$newLink' AND listing_id != '$listing_id'");
+                    //       $checkLink = mysqli_query($conn, "SELECT listing_id FROM " . COUNTRY_PREFIX . "listings WHERE listing_slug = '$newLink' AND listing_id != '$listing_id'");
                     //        if (mysqli_num_rows($checkLink) > 0) {
                     //          $newLink = $link . '' . $counter;
                     //          $counter++;
@@ -105,7 +105,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
                     if (mysqli_num_rows($listrs) <= 0) {
 
-                        $listing_qry = "INSERT INTO " . TBL . "listings 
+                        $listing_qry = "INSERT INTO " . COUNTRY_PREFIX . "listings 
 					(user_id, listing_type_id, listing_name, listing_address, listing_mobile, country_id, state_id, city_id, category_id, listing_status, listing_slug
 					, payment_status, listing_cdt) 
 					VALUES 
@@ -130,7 +130,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
                         $ListCode = 'LIST' . $ListingID;
 
-                        $lisupqry = "UPDATE " . TBL . "listings 
+                        $lisupqry = "UPDATE " . COUNTRY_PREFIX . "listings 
 					  SET listing_code = '$ListCode' 
 					  WHERE listing_id = $listlastID";
 

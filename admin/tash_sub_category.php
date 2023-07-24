@@ -15,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 
         $sub_category_qry =
-            " DELETE FROM  " . TBL . "sub_categories  WHERE sub_category_id='" . $sub_category_id . "'";
+            " DELETE FROM  " . COUNTRY_PREFIX . "sub_categories  WHERE sub_category_id='" . $sub_category_id . "'";
 
 
         $sub_category_res = mysqli_query($conn,$sub_category_qry);

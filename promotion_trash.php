@@ -41,7 +41,7 @@ if (isset($_GET['code'])) {
         if ($promote_type_value == 1) {
 
 
-                $lisupqry = "UPDATE  " . TBL . "listings SET display_position=100,start_date='0000-00-00',end_date='0000-00-00',payment=0
+                $lisupqry = "UPDATE  " . COUNTRY_PREFIX . "listings SET display_position=100,start_date='0000-00-00',end_date='0000-00-00',payment=0
 					  WHERE listing_id = $promote_type_id";
 
                 $lisupres = mysqli_query($conn, $lisupqry);
@@ -52,13 +52,13 @@ if (isset($_GET['code'])) {
             if ($display_position > 100) {
 
 
-                $lisupqry = "DELETE FROM  " . TBL . "top_events  where event_name = '$promote_type_id' AND display_position != 1";
+                $lisupqry = "DELETE FROM  " . COUNTRY_PREFIX . "top_events  where event_name = '$promote_type_id' AND display_position != 1";
 
                 $lisupres = mysqli_query($conn, $lisupqry);
 
             } else {
 
-                $lisupqry = "UPDATE  " . TBL . "events SET display_position=100,
+                $lisupqry = "UPDATE  " . COUNTRY_PREFIX . "events SET display_position=100,
     start_date='0000-00-00',end_date='0000-00-00',payment=0 WHERE event_id = $promote_type_id";
 
                 $lisupres = mysqli_query($conn, $lisupqry);
@@ -66,7 +66,7 @@ if (isset($_GET['code'])) {
 
         } elseif ($promote_type_value == 3) {
 
-            $lisupqry = "UPDATE  " . TBL . "blogs SET display_position=100,
+            $lisupqry = "UPDATE  " . COUNTRY_PREFIX . "blogs SET display_position=100,
     start_date='0000-00-00',end_date='0000-00-00',payment=0
 					  WHERE blog_id = $promote_type_id";
 
@@ -77,13 +77,13 @@ if (isset($_GET['code'])) {
             if ($display_position > 100) {
 
 
-                $lisupqry = "DELETE FROM  " . TBL . "trend_categories  where category_name = '$promote_type_id' AND display_position != 1";
+                $lisupqry = "DELETE FROM  " . COUNTRY_PREFIX . "trend_categories  where category_name = '$promote_type_id' AND display_position != 1";
 
                 $lisupres = mysqli_query($conn, $lisupqry);
 
             } else {
 
-                $lisupqry = "UPDATE  " . TBL . "products SET display_position=100,
+                $lisupqry = "UPDATE  " . COUNTRY_PREFIX . "products SET display_position=100,
     start_date='0000-00-00',end_date='0000-00-00',payment=0
 					  WHERE product_id = $promote_type_id";
 

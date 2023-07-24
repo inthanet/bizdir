@@ -89,7 +89,7 @@ if (isset($_REQUEST['calendar-date']) && !empty($_REQUEST['calendar-date'])  && 
 
 //$event_sort_by_search_query = 'GROUP BY T2.event_id';
 //$event_start_search_query = ', T2.event_id, COUNT(T2.event_id) as top';
-//$event_end_search_query = "INNER JOIN " . TBL . "page_views AS T2 ON T1.event_id = T2.event_id";
+//$event_end_search_query = "INNER JOIN " . COUNTRY_PREFIX . "page_views AS T2 ON T1.event_id = T2.event_id";
 
 ?>
 
@@ -246,7 +246,7 @@ if (isset($_REQUEST['calendar-date']) && !empty($_REQUEST['calendar-date'])  && 
                 <?php
                 $si = 1;
 
-                $eventsql = "SELECT * FROM " . TBL . "events as T1 $event_end_search_query WHERE T1.event_status= 'Active' $category_search_query $events_location_search_query $event_sort_by_query $event_sort_by_search_query $event_sort_by_search_order_query";
+                $eventsql = "SELECT * FROM " . COUNTRY_PREFIX . "events as T1 $event_end_search_query WHERE T1.event_status= 'Active' $category_search_query $events_location_search_query $event_sort_by_query $event_sort_by_search_query $event_sort_by_search_order_query";
 
                 $eventrs = mysqli_query($conn, $eventsql);
                 $total_events = mysqli_num_rows($eventrs);

@@ -19,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
 //    Ebook Insert Part Starts
 
 
-        $sql_qry = "INSERT INTO " . TBL . "popular_tags 
+        $sql_qry = "INSERT INTO " . COUNTRY_PREFIX . "popular_tags 
 					(popular_tags_name, popular_tags_link, popular_tags_status, popular_tags_cdt) 
 					VALUES 
 					('$popular_tags_name', '$popular_tags_link', '$popular_tags_status', '$curDate')";

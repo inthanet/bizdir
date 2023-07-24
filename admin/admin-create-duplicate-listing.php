@@ -28,7 +28,7 @@ include "header.php";
                                                         required="required">
                                                     <option value="" disabled selected>Listing Name</option>
                                                     <?php
-                                                    $listsql = "SELECT * FROM " . TBL . "listings  WHERE  listing_is_delete != '2' ORDER BY listing_id DESC";
+                                                    $listsql = "SELECT * FROM " . COUNTRY_PREFIX . "listings  WHERE  listing_is_delete != '2' ORDER BY listing_id DESC";
 
                                                     $listrs = mysqli_query($conn,$listsql);
 

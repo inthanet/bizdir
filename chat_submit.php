@@ -36,7 +36,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
            //New Chat Link Insert starts
 
-        $chat_links_qry = "INSERT INTO " . TBL . "chat_links 
+        $chat_links_qry = "INSERT INTO " . COUNTRY_PREFIX . "chat_links 
 					(sender_id,receiver_id,chat_link_status,chat_link_udt,chat_link_cdt) 
 					VALUES 
 					('$chat_from_user','$chat_to_user','$chat_link_status', '$curDate', '$curDate')";
@@ -50,7 +50,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
    //New Chat Insert starts
 
-    $chat_qry = "INSERT INTO " . TBL . "chats 
+    $chat_qry = "INSERT INTO " . COUNTRY_PREFIX . "chats 
 					(chat_link_id,chat_user_id,chat_message,chat_status,chat_cdt) 
 					VALUES 
 					('$chat_link_id','$chat_from_user','$chat_message', '$chat_link_status', '$curDate')";
@@ -62,7 +62,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     //Update Chat Link Update Date starts
 
-    $chattt_link_qry = "UPDATE  " . TBL . "chat_links  SET chat_link_udt ='" . $curDate . "' where chat_link_id='" . $chat_link_id . "'";
+    $chattt_link_qry = "UPDATE  " . COUNTRY_PREFIX . "chat_links  SET chat_link_udt ='" . $curDate . "' where chat_link_id='" . $chat_link_id . "'";
 
     $chattt_link_res = mysqli_query($conn,$chattt_link_qry);
 

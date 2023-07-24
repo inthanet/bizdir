@@ -128,7 +128,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             global $conn;
             $newLink = $link;
             do{
-                $checkLink = mysqli_query($conn, "SELECT blog_id FROM " . TBL . "blogs WHERE blog_slug = '$newLink' AND blog_id != '$blog_id'");
+                $checkLink = mysqli_query($conn, "SELECT blog_id FROM " . COUNTRY_PREFIX . "blogs WHERE blog_slug = '$newLink' AND blog_id != '$blog_id'");
                 if(mysqli_num_rows($checkLink) > 0){
                     $newLink = $link.''.$counter;
                     $counter++;
@@ -145,7 +145,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $blog_slug = checkBlogSlug($blog_name1,$blog_id);
 
 
- $blog_qry = "UPDATE  " . TBL . "blogs  SET user_id='" . $user_id . "', blog_name='" . $blog_name . "'
+ $blog_qry = "UPDATE  " . COUNTRY_PREFIX . "blogs  SET user_id='" . $user_id . "', blog_name='" . $blog_name . "'
       ,blog_description='" . $blog_description . "', category_id='" . $category_id . "',
       blog_image='" . $blog_image . "', blog_status='" . $blog_status . "',  isenquiry='" . $isenquiry . "'
      , blog_slug='" . $blog_slug . "' where blog_id='" . $blog_id . "'";

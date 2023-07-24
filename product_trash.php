@@ -14,7 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $gallery_image_old = $_POST["gallery_image_old"];
 
         $product_qry =
-            "DELETE FROM  " . TBL . "products  where product_id='" . $product_id . "'";
+            "DELETE FROM  " . COUNTRY_PREFIX . "products  where product_id='" . $product_id . "'";
 
 
         $product_res = mysqli_query($conn,$product_qry);
@@ -25,7 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             unlink('images/products/'.$gallery_image_old);  //Delete the Product Gallery image
             //Query to delete the page view starts
 
-            $page_view_qry = "DELETE FROM  " . TBL . "page_views where product_id='" . $product_id . "'";
+            $page_view_qry = "DELETE FROM  " . COUNTRY_PREFIX . "page_views where product_id='" . $product_id . "'";
 
             $page_view_res = mysqli_query($conn,$page_view_qry);
 

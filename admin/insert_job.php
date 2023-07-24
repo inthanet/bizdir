@@ -149,7 +149,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             global $conn;
             $newLink = $link;
             do {
-                $checkLink = mysqli_query($conn, "SELECT job_id FROM " . TBL . "jobs WHERE job_slug = '$newLink'");
+                $checkLink = mysqli_query($conn, "SELECT job_id FROM " . COUNTRY_PREFIX . "jobs WHERE job_slug = '$newLink'");
                 if (mysqli_num_rows($checkLink) > 0) {
                     $newLink = $link . '' . $counter;
                     $counter++;
@@ -166,7 +166,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 //    Job Insert Part Starts
 
-        $job_qry = "INSERT INTO " . TBL . "jobs 
+        $job_qry = "INSERT INTO " . COUNTRY_PREFIX . "jobs 
 					(user_id, category_id, sub_category_id, job_title, job_description
 					, job_salary, no_of_openings, job_type, job_interview_date
 					, years_of_experience, job_interview_time, job_role, educational_qualification
@@ -202,7 +202,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         $ProdCode = 'JOB' . $jobID;
 
-        $jobupqry = "UPDATE " . TBL . "jobs 
+        $jobupqry = "UPDATE " . COUNTRY_PREFIX . "jobs 
 					  SET job_code = '$ProdCode' 
 					  WHERE job_id = $listlastID";
 

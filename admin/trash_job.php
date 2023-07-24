@@ -13,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $job_id = $_POST["job_id"];
         $company_logo_old = $_POST["company_logo_old"];
 
-        $job_qry = "DELETE FROM  " . TBL . "jobs where job_id='" . $job_id . "'";
+        $job_qry = "DELETE FROM  " . COUNTRY_PREFIX . "jobs where job_id='" . $job_id . "'";
 
         $job_res = mysqli_query($conn,$job_qry);
 
@@ -23,7 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             unlink('../jobs/images/jobs/'.$company_logo_old);  //Delete the Job Company image
             //Query to delete the page view starts
 
-            $page_view_qry = "DELETE FROM  " . TBL . "page_views where job_id='" . $job_id . "'";
+            $page_view_qry = "DELETE FROM  " . COUNTRY_PREFIX . "page_views where job_id='" . $job_id . "'";
 
             $page_view_res = mysqli_query($conn,$page_view_qry);
 

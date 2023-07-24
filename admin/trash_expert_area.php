@@ -15,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 
         $city_qry =
-            " DELETE FROM  " . TBL . "expert_areas  WHERE city_id='" . $city_id . "'";
+            " DELETE FROM  " . COUNTRY_PREFIX . "expert_areas  WHERE city_id='" . $city_id . "'";
 
 
         $city_res = mysqli_query($conn,$city_qry);

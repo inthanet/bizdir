@@ -52,7 +52,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 
         $coupon_qry =
-            "UPDATE  " . TBL . "coupons  SET coupon_user_id='" . $coupon_user_id . "', coupon_name='" . $coupon_name . "'
+            "UPDATE  " . COUNTRY_PREFIX . "coupons  SET coupon_user_id='" . $coupon_user_id . "', coupon_name='" . $coupon_name . "'
             , coupon_code='" . $coupon_code . "', coupon_link='" . $coupon_link . "'
             , coupon_start_date='" . $coupon_start_date . "', coupon_end_date='" . $coupon_end_date . "'
             , coupon_photo='" . $coupon_photo . "', coupon_status='" . $coupon_status . "'  where coupon_id='" . $coupon_id . "'";

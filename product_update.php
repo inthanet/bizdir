@@ -180,7 +180,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             global $conn;
             $newLink = $link;
             do{
-                $checkLink = mysqli_query($conn, "SELECT product_id FROM " . TBL . "products WHERE product_slug = '$newLink' AND product_id != '$product_id'");
+                $checkLink = mysqli_query($conn, "SELECT product_id FROM " . COUNTRY_PREFIX . "products WHERE product_slug = '$newLink' AND product_id != '$product_id'");
                 if(mysqli_num_rows($checkLink) > 0){
                     $newLink = $link.''.$counter;
                     $counter++;
@@ -197,7 +197,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 
         $product_qry =
-            "UPDATE  " . TBL . "products  SET user_id='" . $user_id . "', product_name='" . $product_name . "'
+            "UPDATE  " . COUNTRY_PREFIX . "products  SET user_id='" . $user_id . "', product_name='" . $product_name . "'
             ,product_description='" . $product_description . "', product_price='" . $product_price . "'
             ,category_id='" . $category_id . "', sub_category_id='" . $sub_category_id . "'
             , product_price_offer='" . $product_price_offer . "',product_payment_link='" . $product_payment_link . "'

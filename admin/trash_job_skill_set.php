@@ -15,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 
         $category_qry =
-            " DELETE FROM  " . TBL . "job_skill WHERE category_id='" . $category_id . "'";
+            " DELETE FROM  " . COUNTRY_PREFIX . "job_skill WHERE category_id='" . $category_id . "'";
 
 
         $category_res = mysqli_query($conn,$category_qry);

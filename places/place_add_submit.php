@@ -44,7 +44,7 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
 
 
 
-    $enquiry_qry = "INSERT INTO " . TBL . "place_request
+    $enquiry_qry = "INSERT INTO " . COUNTRY_PREFIX . "place_request
 					(place_description,enquiry_name, enquiry_email, enquiry_mobile, place_name, place_address, place_request_status, place_request_sender_id, place_request_cdt)
 					VALUES
 					('$place_description','$enquiry_name', '$enquiry_email', '$enquiry_mobile', '$place_name', '$place_address', '$place_request_status', '$place_request_sender_id', '$curDate')";

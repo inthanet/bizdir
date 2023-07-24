@@ -5,7 +5,7 @@ function getAllPages()
 {
     global $conn;
 
-    $sql = "SELECT * FROM " . TBL . "pages ORDER BY page_id ASC";
+    $sql = "SELECT * FROM " . COUNTRY_PREFIX . "pages ORDER BY page_id ASC";
     $rs = mysqli_query($conn, $sql);
     return $rs;
 
@@ -16,7 +16,7 @@ function getAllPagesType($arg)
 {
     global $conn;
 
-    $sql = "SELECT * FROM " . TBL . "pages where page_type = '" . $arg . "' ORDER BY page_id DESC";
+    $sql = "SELECT * FROM " . COUNTRY_PREFIX . "pages where page_type = '" . $arg . "' ORDER BY page_id DESC";
     $rs = mysqli_query($conn, $sql);
     return $rs;
 
@@ -27,7 +27,7 @@ function getPage($arg)
 {
     global $conn;
 
-    $sql = "SELECT * FROM " . TBL . "pages where page_id = '" . $arg . "'";
+    $sql = "SELECT * FROM " . COUNTRY_PREFIX . "pages where page_id = '" . $arg . "'";
     $rs = mysqli_query($conn, $sql);
     $row = mysqli_fetch_array($rs);
     return $row;
@@ -39,7 +39,7 @@ function getActivePageSlug($arg,$arg1)
 {
     global $conn;
 
-    $sql = "SELECT * FROM  " . TBL . "pages where page_slug='" . $arg1 . "' AND page_type='" . $arg . "' AND page_status = 'Publish'";
+    $sql = "SELECT * FROM  " . COUNTRY_PREFIX . "pages where page_slug='" . $arg1 . "' AND page_type='" . $arg . "' AND page_status = 'Publish'";
     $rs = mysqli_query($conn, $sql);
     $row = mysqli_fetch_array($rs);
     return $row;
@@ -51,7 +51,7 @@ function getActivePageSlugwithoutStatus($arg,$arg1)
 {
     global $conn;
 
-    $sql = "SELECT * FROM  " . TBL . "pages where page_slug='" . $arg1 . "' AND page_type='" . $arg . "'";
+    $sql = "SELECT * FROM  " . COUNTRY_PREFIX . "pages where page_slug='" . $arg1 . "' AND page_type='" . $arg . "'";
     $rs = mysqli_query($conn, $sql);
     $row = mysqli_fetch_array($rs);
     return $row;

@@ -5,7 +5,7 @@ function getAllListing()
 {
     global $conn;
 
-    $sql = "SELECT * FROM " . TBL . "listings  WHERE  listing_is_delete != '2' ORDER BY listing_id DESC";
+    $sql = "SELECT * FROM " . COUNTRY_PREFIX . "listings  WHERE  listing_is_delete != '2' ORDER BY listing_id DESC";
     $rs = mysqli_query($conn, $sql);
     return $rs;
 
@@ -16,7 +16,7 @@ function getAllTrashListing()
 {
     global $conn;
 
-    $sql = "SELECT * FROM " . TBL . "listings  WHERE  listing_is_delete = '2' ORDER BY listing_id DESC";
+    $sql = "SELECT * FROM " . COUNTRY_PREFIX . "listings  WHERE  listing_is_delete = '2' ORDER BY listing_id DESC";
     $rs = mysqli_query($conn, $sql);
     return $rs;
 
@@ -27,7 +27,7 @@ function getListing($arg)
 {
     global $conn;
 
-    $sql = "SELECT * FROM  " . TBL . "listings where listing_code='" . $arg . "'";
+    $sql = "SELECT * FROM  " . COUNTRY_PREFIX . "listings where listing_code='" . $arg . "'";
     $rs = mysqli_query($conn, $sql);
     $row = mysqli_fetch_array($rs);
     return $row;
@@ -39,7 +39,7 @@ function getSlugListing($arg)
 {
     global $conn;
 
-    $sql = "SELECT * FROM  " . TBL . "listings where listing_slug='" . $arg . "'";
+    $sql = "SELECT * FROM  " . COUNTRY_PREFIX . "listings where listing_slug='" . $arg . "'";
     $rs = mysqli_query($conn, $sql);
     $row = mysqli_fetch_array($rs);
     return $row;
@@ -51,7 +51,7 @@ function getIdListing($arg)
 {
     global $conn;
 
-    $sql = "SELECT * FROM  " . TBL . "listings where listing_id='" . $arg . "'";
+    $sql = "SELECT * FROM  " . COUNTRY_PREFIX . "listings where listing_id='" . $arg . "'";
     $rs = mysqli_query($conn, $sql);
     $row = mysqli_fetch_array($rs);
     return $row;
@@ -63,7 +63,7 @@ function getAllListingUser($arg)
 {
     global $conn;
 
-    $sql = "SELECT * FROM " . TBL . "listings  WHERE user_id= '$arg' AND listing_is_delete != '2' ORDER BY listing_id DESC";
+    $sql = "SELECT * FROM " . COUNTRY_PREFIX . "listings  WHERE user_id= '$arg' AND listing_is_delete != '2' ORDER BY listing_id DESC";
     $rs = mysqli_query($conn, $sql);
     return $rs;
 
@@ -74,7 +74,7 @@ function getAllListingCategory($arg)
 {
     global $conn;
 
-    $sql = "SELECT * FROM " . TBL . "listings  WHERE category_id= '$arg' AND listing_is_delete != '2' ORDER BY listing_id DESC";
+    $sql = "SELECT * FROM " . COUNTRY_PREFIX . "listings  WHERE category_id= '$arg' AND listing_is_delete != '2' ORDER BY listing_id DESC";
     $rs = mysqli_query($conn, $sql);
     return $rs;
 
@@ -85,7 +85,7 @@ function getAllListingUserListing($arg,$arg1)
 {
     global $conn;
 
-    $sql = "SELECT * FROM " . TBL . "listings  WHERE user_id= '$arg' AND listing_is_delete != '2' AND listing_id = '$arg1'";
+    $sql = "SELECT * FROM " . COUNTRY_PREFIX . "listings  WHERE user_id= '$arg' AND listing_is_delete != '2' AND listing_id = '$arg1'";
     $rs = mysqli_query($conn, $sql);
     $row = mysqli_fetch_array($rs);
     return $row;
@@ -97,7 +97,7 @@ function getAllListingListing($arg)
 {
     global $conn;
 
-    $sql = "SELECT * FROM " . TBL . "listings  WHERE  listing_is_delete != '2' AND listing_id = '$arg'";
+    $sql = "SELECT * FROM " . COUNTRY_PREFIX . "listings  WHERE  listing_is_delete != '2' AND listing_id = '$arg'";
     $rs = mysqli_query($conn, $sql);
     $row = mysqli_fetch_array($rs);
     return $row;
@@ -109,7 +109,7 @@ function getAllNotNullServiceListing()
 {
     global $conn;
 
-    $sql = "SELECT * FROM " . TBL . "listings  WHERE  listing_is_delete != '2' AND service_image != '' ORDER BY listing_id DESC";
+    $sql = "SELECT * FROM " . COUNTRY_PREFIX . "listings  WHERE  listing_is_delete != '2' AND service_image != '' ORDER BY listing_id DESC";
     $rs = mysqli_query($conn, $sql);
     return $rs;
 
@@ -120,7 +120,7 @@ function getAllNotNullGalleryListing()
 {
     global $conn;
 
-    $sql = "SELECT * FROM " . TBL . "listings  WHERE  listing_is_delete != '2' AND gallery_image != '' ORDER BY listing_id DESC";
+    $sql = "SELECT * FROM " . COUNTRY_PREFIX . "listings  WHERE  listing_is_delete != '2' AND gallery_image != '' ORDER BY listing_id DESC";
     $rs = mysqli_query($conn, $sql);
     return $rs;
 
@@ -131,7 +131,7 @@ function getCountListing()
 {
     global $conn;
 
-    $sql = "SELECT * FROM " . TBL . "listings  WHERE listing_is_delete != '2' ORDER BY listing_id DESC";
+    $sql = "SELECT * FROM " . COUNTRY_PREFIX . "listings  WHERE listing_is_delete != '2' ORDER BY listing_id DESC";
     $rs = mysqli_query($conn, $sql);
     $row = mysqli_num_rows($rs);
     return $row;
@@ -143,7 +143,7 @@ function getCountUserListing($arg)
 {
     global $conn;
 
-    $sql = "SELECT * FROM " . TBL . "listings  WHERE user_id= '$arg' AND listing_is_delete != '2' ORDER BY listing_id DESC";
+    $sql = "SELECT * FROM " . COUNTRY_PREFIX . "listings  WHERE user_id= '$arg' AND listing_is_delete != '2' ORDER BY listing_id DESC";
     $rs = mysqli_query($conn, $sql);
     $row = mysqli_num_rows($rs);
     return $row;
@@ -155,7 +155,7 @@ function getCountCategoryListing($arg)
 {
     global $conn;
 
-    $sql = "SELECT * FROM " . TBL . "listings WHERE listing_is_delete != '2' AND category_id = '$arg' AND listing_status= 'Active'";
+    $sql = "SELECT * FROM " . COUNTRY_PREFIX . "listings WHERE listing_is_delete != '2' AND category_id = '$arg' AND listing_status= 'Active'";
     $rs = mysqli_query($conn, $sql);
     $row = mysqli_num_rows($rs);
     return $row;
@@ -167,7 +167,7 @@ function getCountCountryListing($arg)
 {
     global $conn;
 
-    $sql = "SELECT * FROM " . TBL . "listings WHERE  listing_is_delete != '2' AND country_id = '$arg'";
+    $sql = "SELECT * FROM " . COUNTRY_PREFIX . "listings WHERE  listing_is_delete != '2' AND country_id = '$arg'";
     $rs = mysqli_query($conn, $sql);
     $row = mysqli_num_rows($rs);
     return $row;
@@ -179,7 +179,7 @@ function getCountCityListing($arg)
 {
     global $conn;
 
-    $sql = "SELECT * FROM " . TBL . "listings WHERE  listing_is_delete != '2' AND city_id = '$arg'";
+    $sql = "SELECT * FROM " . COUNTRY_PREFIX . "listings WHERE  listing_is_delete != '2' AND city_id = '$arg'";
     $rs = mysqli_query($conn, $sql);
     $row = mysqli_num_rows($rs);
     return $row;
@@ -191,7 +191,7 @@ function getAllListingCities()
 {
     global $conn;
 
-    $sql = "SELECT city_id FROM " . TBL . "listings  WHERE listing_is_delete != '2' AND city_id != 0 GROUP BY city_id";
+    $sql = "SELECT city_id FROM " . COUNTRY_PREFIX . "listings  WHERE listing_is_delete != '2' AND city_id != 0 GROUP BY city_id";
     $rs = mysqli_query($conn, $sql);
     $row = mysqli_fetch_array($rs);
     return $rs;
@@ -203,7 +203,7 @@ function getAllListingPageCities()
 {
     global $conn;
 
-    $sql = "SELECT city_id FROM  " . TBL . "listings WHERE  listing_is_delete != '2' AND city_id != 0 ORDER BY city_id ASC";
+    $sql = "SELECT city_id FROM  " . COUNTRY_PREFIX . "listings WHERE  listing_is_delete != '2' AND city_id != 0 ORDER BY city_id ASC";
 
     $rs = mysqli_query($conn, $sql);
     $row = mysqli_fetch_array($rs);
@@ -216,7 +216,7 @@ function getCountSubCategoryListing($arg)
 {
     global $conn;
 
-    $sql = "SELECT * FROM " . TBL . "listings WHERE listing_is_delete != '2' AND find_in_set('$arg',sub_category_id) AND listing_status= 'Active'";
+    $sql = "SELECT * FROM " . COUNTRY_PREFIX . "listings WHERE listing_is_delete != '2' AND find_in_set('$arg',sub_category_id) AND listing_status= 'Active'";
     $rs = mysqli_query($conn, $sql);
     $row = mysqli_num_rows($rs);
     return $row;
@@ -228,7 +228,7 @@ function getExceptListingCategoryListing($arg,$arg1)
 {
     global $conn;
 
-    $sql = "SELECT T1.* FROM " . TBL . "listings  AS T1 LEFT JOIN " . TBL . "users AS T2 ON T1.user_id = T2.user_id WHERE T1.category_id= '$arg' AND T1.listing_is_delete != '2' AND T1.listing_id != '$arg1' AND T2.user_plan IN (2,3,4) ORDER BY T1.listing_id DESC LIMIT 9";
+    $sql = "SELECT T1.* FROM " . COUNTRY_PREFIX . "listings  AS T1 LEFT JOIN " . TBL . "users AS T2 ON T1.user_id = T2.user_id WHERE T1.category_id= '$arg' AND T1.listing_is_delete != '2' AND T1.listing_id != '$arg1' AND T2.user_plan IN (2,3,4) ORDER BY T1.listing_id DESC LIMIT 9";
     $rs = mysqli_query($conn, $sql);
     return $rs;
 
@@ -243,7 +243,7 @@ function getListingSeoScore($arg)
     $sql = "select ( case seo_title when '' then 0 else 1 end +
         case seo_description when '' then 0 else 1 end +
         case seo_keywords when '' then 0 else 1 end ) 
-        * 100 / 3 as complete FROM " . TBL . "listings WHERE listing_id = $arg";
+        * 100 / 3 as complete FROM " . COUNTRY_PREFIX . "listings WHERE listing_id = $arg";
     $rs = mysqli_query($conn, $sql);
     $row = mysqli_fetch_array($rs);
     return $row[0];

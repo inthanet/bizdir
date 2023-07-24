@@ -95,7 +95,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             global $conn;
             $newLink = $link;
             do {
-                $checkLink = mysqli_query($conn, "SELECT place_id FROM " . TBL . "places WHERE place_slug = '$newLink' AND place_id != '$place_id'");
+                $checkLink = mysqli_query($conn, "SELECT place_id FROM " . COUNTRY_PREFIX . "places WHERE place_slug = '$newLink' AND place_id != '$place_id'");
                 if (mysqli_num_rows($checkLink) > 0) {
                     $newLink = $link . '' . $counter;
                     $counter++;
@@ -154,7 +154,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 
         $place_qry =
-            "UPDATE  " . TBL . "places  SET category_id='" . $category_id . "'
+            "UPDATE  " . COUNTRY_PREFIX . "places  SET category_id='" . $category_id . "'
             , place_name='" . $place_name . "'
             , place_tags='" . $place_tags . "', place_fee='" . $place_fee . "'
             , seo_title='" . $seo_title . "', seo_description='" . $seo_description . "'

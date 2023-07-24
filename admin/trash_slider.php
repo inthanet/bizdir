@@ -14,7 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $slider_photo_old = $_POST['slider_photo_old'];
 
         $ads_qry =
-            "DELETE FROM  " . TBL . "slider  where slider_id='" . $slider_id . "'";
+            "DELETE FROM  " . COUNTRY_PREFIX . "slider  where slider_id='" . $slider_id . "'";
 
 
         $ads_res = mysqli_query($conn,$ads_qry);

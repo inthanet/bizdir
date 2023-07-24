@@ -177,7 +177,7 @@ if (!empty($w)) {
 } else {
     $q = 'WHERE ';
 }
-$sql1 = mysqli_query($conn, "SELECT t1 . listing_lat, t1 . listing_lng FROM  " . TBL . "listings  AS t1 $inner $w $q listing_status= 'Active' AND listing_is_delete != '2' ORDER BY listing_id DESC ");
+$sql1 = mysqli_query($conn, "SELECT t1 . listing_lat, t1 . listing_lng FROM  " . COUNTRY_PREFIX . "listings  AS t1 $inner $w $q listing_status= 'Active' AND listing_is_delete != '2' ORDER BY listing_id DESC ");
 while ($row1 = mysqli_fetch_array($sql1)) {
 
     $lat[] = $row1['listing_lat'];

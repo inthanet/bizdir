@@ -18,7 +18,7 @@ if( isset($_POST) && $isNum == true ){
     $order = 0;
 
         foreach ( $orderArr as $item) {
-            $product_qry = "UPDATE  " . TBL . "search_list  SET search_list_position='" . $order . "' where search_list_id='" . $item . "'";
+            $product_qry = "UPDATE  " . COUNTRY_PREFIX . "search_list  SET search_list_position='" . $order . "' where search_list_id='" . $item . "'";
 
             $product_res = mysqli_query($conn,$product_qry);
 

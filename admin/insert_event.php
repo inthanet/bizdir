@@ -88,7 +88,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             global $conn;
             $newLink = $link;
             do {
-                $checkLink = mysqli_query($conn, "SELECT event_id FROM " . TBL . "events WHERE event_slug = '$newLink'");
+                $checkLink = mysqli_query($conn, "SELECT event_id FROM " . COUNTRY_PREFIX . "events WHERE event_slug = '$newLink'");
                 if (mysqli_num_rows($checkLink) > 0) {
                     $newLink = $link . '' . $counter;
                     $counter++;
@@ -108,7 +108,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 //    Event Insert Part Starts
 
 
-        $event_qry = "INSERT INTO " . TBL . "events 
+        $event_qry = "INSERT INTO " . COUNTRY_PREFIX . "events 
 					(user_id, city_id, country_id, event_name, event_description,event_email,event_mobile,event_website, event_address, category_id
 					,event_contact_name, event_map, event_start_date, event_time, event_image, event_status, event_type, isenquiry, event_slug, event_cdt) 
 					VALUES 

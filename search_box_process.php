@@ -152,27 +152,27 @@ if ($explor_select == 1) {              //Listing Category search
 } else {
 
 //get matched data from categories table
-    $categories_qry = "SELECT * FROM " . TBL . "categories WHERE category_name = '$select_search' ";
+    $categories_qry = "SELECT * FROM " . COUNTRY_PREFIX . "categories WHERE category_name = '$select_search' ";
     $categories_query = mysqli_query($conn, $categories_qry);
 
 //get matched data from listings table
-    $listings_qry = "SELECT * FROM " . TBL . "listings WHERE listing_name = '$select_search' AND listing_status= 'Active' AND listing_is_delete != '2' ";
+    $listings_qry = "SELECT * FROM " . COUNTRY_PREFIX . "listings WHERE listing_name = '$select_search' AND listing_status= 'Active' AND listing_is_delete != '2' ";
     $listings_query = mysqli_query($conn, $listings_qry);
 
 //get matched data from events table
-    $event_qry = "SELECT * FROM " . TBL . "events WHERE event_name = '$select_search' AND event_status= 'Active'";
+    $event_qry = "SELECT * FROM " . COUNTRY_PREFIX . "events WHERE event_name = '$select_search' AND event_status= 'Active'";
     $event_query = mysqli_query($conn, $event_qry);
 
 //get matched data from blog table
-    $blog_qry = "SELECT * FROM " . TBL . "blogs WHERE blog_name = '$select_search' AND blog_status= 'Active'";
+    $blog_qry = "SELECT * FROM " . COUNTRY_PREFIX . "blogs WHERE blog_name = '$select_search' AND blog_status= 'Active'";
     $blog_query = mysqli_query($conn, $blog_qry);
 
 //get matched data from product table
-    $product_qry = "SELECT * FROM " . TBL . "products WHERE product_name = '$select_search' AND product_status= 'Active'";
+    $product_qry = "SELECT * FROM " . COUNTRY_PREFIX . "products WHERE product_name = '$select_search' AND product_status= 'Active'";
     $product_query = mysqli_query($conn, $product_qry);
 
 //get matched data from job table
-    $job_qry = "SELECT * FROM " . TBL . "jobs WHERE job_title = '$select_search' AND job_status= 'Active'";
+    $job_qry = "SELECT * FROM " . COUNTRY_PREFIX . "jobs WHERE job_title = '$select_search' AND job_status= 'Active'";
     $job_query = mysqli_query($conn, $job_qry);
 
     if (mysqli_num_rows($categories_query) > 0) {

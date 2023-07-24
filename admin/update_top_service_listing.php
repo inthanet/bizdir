@@ -22,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 //************ Listing Id Already Exist Check Starts ***************
 
 
-        $sub_category_name_exist_check = mysqli_query($conn,"SELECT * FROM " . TBL . "top_service_providers  WHERE FIND_IN_SET('" .$top_service_provider_listings . "',top_service_provider_listings) AND top_service_provider_category_id = '$top_service_provider_category_id' ");
+        $sub_category_name_exist_check = mysqli_query($conn,"SELECT * FROM " . COUNTRY_PREFIX . "top_service_providers  WHERE FIND_IN_SET('" .$top_service_provider_listings . "',top_service_provider_listings) AND top_service_provider_category_id = '$top_service_provider_category_id' ");
 
         if (mysqli_num_rows($sub_category_name_exist_check) > 0) {
 
@@ -63,7 +63,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
  // ************** Convert Array To String ends ********************
 
-        $sql = mysqli_query($conn,"UPDATE  " . TBL . "top_service_providers SET top_service_provider_listings = '$top_service_provider_listings1'
+        $sql = mysqli_query($conn,"UPDATE  " . COUNTRY_PREFIX . "top_service_providers SET top_service_provider_listings = '$top_service_provider_listings1'
      where top_service_provider_category_id='" . $top_service_provider_category_id . "'");
         
         if ($sql) {

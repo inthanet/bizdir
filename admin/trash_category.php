@@ -15,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $category_image = $_POST['category_image_old'];
 
         $category_qry =
-            " DELETE FROM  " . TBL . "categories  WHERE category_id='" . $category_id . "'";
+            " DELETE FROM  " . COUNTRY_PREFIX . "categories  WHERE category_id='" . $category_id . "'";
 
 
         $category_res = mysqli_query($conn,$category_qry);
@@ -25,7 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             unlink('../images/services/'.$category_image);  //Delete the category image
             //Query to delete the page view starts
 
-            $page_view_qry = "DELETE FROM  " . TBL . "page_views where category_id='" . $category_id . "'";
+            $page_view_qry = "DELETE FROM  " . COUNTRY_PREFIX . "page_views where category_id='" . $category_id . "'";
 
             $page_view_res = mysqli_query($conn,$page_view_qry);
 

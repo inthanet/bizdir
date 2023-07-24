@@ -60,6 +60,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $plan_type_videos = 1;
         }
 
+        $plan_type_country_count != NULL || !empty($_POST['plan_type_country_count']) ? $_POST['plan_type_country_count'] : 1;        
+
         $plan_type_maps1 = $_POST['plan_type_maps'];
         if($plan_type_maps1 != NULL || !empty($plan_type_maps1)){
             $plan_type_maps = 1;
@@ -141,11 +143,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 //        }else{
 //            $plan_type_videos = 1;
 //        }
+        
+
+    $plan_type_country_count =  $_POST['plan_type_country_count'];
 
 
-
-
-        $sql = mysqli_query($conn,"UPDATE  " . TBL . "plan_type SET plan_type_name='" . $plan_type_name . "', plan_type_price='" . $plan_type_price. "'
+     $sql = mysqli_query($conn,"UPDATE  " . COUNTRY_PREFIX . "plan_type SET plan_type_name='" . $plan_type_name . "', plan_type_price='" . $plan_type_price. "'
      , plan_type_duration='" . $plan_type_duration . "', plan_type_description='" . $plan_type_description . "', plan_type_contact='" . $plan_type_contact. "'
      , plan_type_listing_count='" . $plan_type_listing_count . "', plan_type_product_count='" . $plan_type_product_count . "', plan_type_event_count='" . $plan_type_event_count . "'
      , plan_type_blog_count='" . $plan_type_blog_count. "', plan_type_job_count='" . $plan_type_job_count. "', plan_type_coupon_count='" . $plan_type_coupon_count. "'
@@ -155,7 +158,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
      , plan_type_maps='" . $plan_type_maps . "', plan_type_threedview='" . $plan_type_threedview . "', plan_type_services='" . $plan_type_services. "'
      , plan_type_services_count='" . $plan_type_services_count . "' , plan_type_offers='" . $plan_type_offers . "', plan_type_offers_count='" . $plan_type_offers_count . "'
      , plan_type_photos='" . $plan_type_photos. "' , plan_type_photos_count='" . $plan_type_photos_count . "', plan_type_status='" . $plan_type_status . "'
-     where plan_type_id='" . $plan_type_id . "'");
+     , plan_type_country_count='" . $plan_type_country_count. "' where plan_type_id='" . $plan_type_id . "'");
 
         if ($sql) {
 

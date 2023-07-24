@@ -5,7 +5,7 @@ function getAllNewsTrending()
 {
     global $conn;
 
-    $sql = "SELECT * FROM " . TBL . "news_trending ORDER BY trending_news_pos_id ASC";
+    $sql = "SELECT * FROM " . COUNTRY_PREFIX . "news_trending ORDER BY trending_news_pos_id ASC";
     $rs = mysqli_query($conn, $sql);
     return $rs;
 
@@ -16,7 +16,7 @@ function getNewsTrending($arg)
 {
     global $conn;
 
-    $sql = "SELECT * FROM  " . TBL . "news_trending where trending_news_id='".$arg."'";
+    $sql = "SELECT * FROM  " . COUNTRY_PREFIX . "news_trending where trending_news_id='".$arg."'";
     $rs = mysqli_query($conn, $sql);
     $row = mysqli_fetch_array($rs);
     return $row;

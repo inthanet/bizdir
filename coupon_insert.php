@@ -47,7 +47,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 // Coupon Insert Part Starts
 
 
-        $coupon_qry = "INSERT INTO " . TBL . "coupons 
+        $coupon_qry = "INSERT INTO " . COUNTRY_PREFIX . "coupons 
 					(coupon_user_id, coupon_name, coupon_code,coupon_link,coupon_photo,coupon_start_date,coupon_end_date
 					,coupon_status, coupon_cdt) 
 					VALUES 

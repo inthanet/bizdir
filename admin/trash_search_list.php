@@ -12,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         $search_list_id = $_POST["search_list_id"];
 
-        $product_qry = "DELETE FROM  " . TBL . "search_list where search_list_id='" . $search_list_id . "'";
+        $product_qry = "DELETE FROM  " . COUNTRY_PREFIX . "search_list where search_list_id='" . $search_list_id . "'";
 
 
         $product_res = mysqli_query($conn,$product_qry);

@@ -13,7 +13,7 @@ if(isset($_GET['newssubscribersnewssubscribersnewssubscribersnewssubscribersnews
 
 
     $news_subscribers_qry =
-        "DELETE  FROM " . TBL . "news_subscribers  where news_subscribers_id='" . $news_subscribers_id . "'";
+        "DELETE  FROM " . COUNTRY_PREFIX . "news_subscribers  where news_subscribers_id='" . $news_subscribers_id . "'";
 
     $news_subscribers_res = mysqli_query($conn,$news_subscribers_qry);
 

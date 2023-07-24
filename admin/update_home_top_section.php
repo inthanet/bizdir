@@ -45,7 +45,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 
         $event_qry =
-            "UPDATE  " . TBL . "homepage_top_section  SET top_section_title='" . $top_section_title . "'
+            "UPDATE  " . COUNTRY_PREFIX . "homepage_top_section  SET top_section_title='" . $top_section_title . "'
             , top_section_description='" . $top_section_description . "', top_section_link_text='" . $top_section_link_text . "'
             , top_section_link='" . $top_section_link . "', top_section_image='" . $top_section_image . "' 
             where top_section_id='" . $top_section_id . "'";

@@ -23,7 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 //************ Category Name Already Exist Check Starts ***************
 
         if ($category_name != $category_name_old) {
-            $category_name_exist_check = mysqli_query($conn, "SELECT * FROM " . TBL . "trend_categories  WHERE category_name='" . $category_name . "' ");
+            $category_name_exist_check = mysqli_query($conn, "SELECT * FROM " . COUNTRY_PREFIX . "trend_categories  WHERE category_name='" . $category_name . "' ");
 
 
             if (mysqli_num_rows($category_name_exist_check) > 0) {
@@ -86,7 +86,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
 
 
-        $sql = mysqli_query($conn, "UPDATE  " . TBL . "trend_categories SET category_name='" . $category_name . "', category_status='" . $category_status . "'
+        $sql = mysqli_query($conn, "UPDATE  " . COUNTRY_PREFIX . "trend_categories SET category_name='" . $category_name . "', category_status='" . $category_status . "'
      , category_image='" . $category_image . "', category_bg_image='" . $category_bg_image . "'
      where category_id='" . $category_id . "'");
 

@@ -5,7 +5,7 @@ function getAllNewsSlider()
 {
     global $conn;
 
-    $sql = "SELECT * FROM " . TBL . "news_slider ORDER BY news_slider_pos_id ASC";
+    $sql = "SELECT * FROM " . COUNTRY_PREFIX . "news_slider ORDER BY news_slider_pos_id ASC";
     $rs = mysqli_query($conn, $sql);
     return $rs;
 
@@ -16,7 +16,7 @@ function getNewsSlider($arg)
 {
     global $conn;
 
-    $sql = "SELECT * FROM  " . TBL . "news_slider where news_slider_id='".$arg."'";
+    $sql = "SELECT * FROM  " . COUNTRY_PREFIX . "news_slider where news_slider_id='".$arg."'";
     $rs = mysqli_query($conn, $sql);
     $row = mysqli_fetch_array($rs);
     return $row;

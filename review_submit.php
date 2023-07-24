@@ -27,7 +27,7 @@ $review_message = addslashes($_POST["review_message"]);
 $review_status = "Active";
 
 
-$review_qry = "INSERT INTO " . TBL . "reviews 
+$review_qry = "INSERT INTO " . COUNTRY_PREFIX . "reviews 
 					(listing_id, listing_user_id, review_user_id, price_rating, customer_service_rating, staff_rating, overall_rating, review_name, review_email, review_mobile, review_city, review_message, review_status, review_cdt) 
 					VALUES 
 					('$listing_id', '$listing_user_id', '$review_user_id','$price_rating','$customer_service_rating','$staff_rating','$overall_rating','$review_name', '$review_email', '$review_mobile', '$review_city', '$review_message','$review_status',  '$curDate')";

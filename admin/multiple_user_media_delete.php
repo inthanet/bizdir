@@ -17,7 +17,7 @@ foreach ($deleteids_arr as $deleteid) {
 
     if ($a == "list_prof") {
 
-        $listing_qry = "UPDATE  " . TBL . "listings SET profile_image='" . $null . "' where listing_id='" . $c . "'";
+        $listing_qry = "UPDATE  " . COUNTRY_PREFIX . "listings SET profile_image='" . $null . "' where listing_id='" . $c . "'";
 
         $listing_res = mysqli_query($conn, $listing_qry);
 
@@ -30,7 +30,7 @@ foreach ($deleteids_arr as $deleteid) {
 
     if ($a == "event") {
 
-        $event_qry = "UPDATE  " . TBL . "events SET event_image='" . $null . "' where event_id='" . $c . "'";
+        $event_qry = "UPDATE  " . COUNTRY_PREFIX . "events SET event_image='" . $null . "' where event_id='" . $c . "'";
 
         $event_res = mysqli_query($conn, $event_qry);
 
@@ -43,7 +43,7 @@ foreach ($deleteids_arr as $deleteid) {
 
     if ($a == "product") {
 
-        $product_qry = "UPDATE " . TBL . "products SET `gallery_image` = TRIM(BOTH ',' FROM REPLACE(CONCAT(',', `gallery_image`, ','), ',$b,', ','))
+        $product_qry = "UPDATE " . COUNTRY_PREFIX . "products SET `gallery_image` = TRIM(BOTH ',' FROM REPLACE(CONCAT(',', `gallery_image`, ','), ',$b,', ','))
        WHERE FIND_IN_SET('$b', `gallery_image`) AND product_id ='" . $c . "'";
 
         $product_res = mysqli_query($conn, $product_qry);
@@ -57,7 +57,7 @@ foreach ($deleteids_arr as $deleteid) {
 
     if ($a == "expert") {
 
-        $expert_qry = "UPDATE  " . TBL . "experts SET profile_image='" . $null . "' where expert_id='" . $c . "'";
+        $expert_qry = "UPDATE  " . COUNTRY_PREFIX . "experts SET profile_image='" . $null . "' where expert_id='" . $c . "'";
 
         $expert_res = mysqli_query($conn, $expert_qry);
 
@@ -70,7 +70,7 @@ foreach ($deleteids_arr as $deleteid) {
 
     if ($a == "job") {
 
-        $job_qry = "UPDATE  " . TBL . "jobs SET company_logo='" . $null . "' where job_id='" . $c . "'";
+        $job_qry = "UPDATE  " . COUNTRY_PREFIX . "jobs SET company_logo='" . $null . "' where job_id='" . $c . "'";
 
         $job_res = mysqli_query($conn, $job_qry);
 
@@ -83,7 +83,7 @@ foreach ($deleteids_arr as $deleteid) {
 
     if ($a == "coupon") {
 
-        $coupon_qry = "UPDATE  " . TBL . "coupons SET coupon_photo='" . $null . "' where coupon_id='" . $c . "'";
+        $coupon_qry = "UPDATE  " . COUNTRY_PREFIX . "coupons SET coupon_photo='" . $null . "' where coupon_id='" . $c . "'";
 
         $coupon_res = mysqli_query($conn, $coupon_qry);
 
@@ -109,7 +109,7 @@ foreach ($deleteids_arr as $deleteid) {
 
     if ($a == "blog") {
 
-        $blog_qry = "UPDATE  " . TBL . "blogs SET blog_image='" . $null . "' where blog_id='" . $c . "'";
+        $blog_qry = "UPDATE  " . COUNTRY_PREFIX . "blogs SET blog_image='" . $null . "' where blog_id='" . $c . "'";
 
         $blog_res = mysqli_query($conn, $blog_qry);
 
@@ -135,7 +135,7 @@ foreach ($deleteids_arr as $deleteid) {
 
     if ($a == "listing_service") {
 
-        $listing_service_qry = "UPDATE " . TBL . "listings SET `service_image` = TRIM(BOTH ',' FROM REPLACE(CONCAT(',', `service_image`, ','), ',$b,', ','))
+        $listing_service_qry = "UPDATE " . COUNTRY_PREFIX . "listings SET `service_image` = TRIM(BOTH ',' FROM REPLACE(CONCAT(',', `service_image`, ','), ',$b,', ','))
        WHERE FIND_IN_SET('$b', `service_image`) AND listing_id ='" . $c . "'";
 
         $listing_service_res = mysqli_query($conn, $listing_service_qry);
@@ -149,7 +149,7 @@ foreach ($deleteids_arr as $deleteid) {
 
     if ($a == "listing_gallery") {
 
-        $listing_gallery_qry = "UPDATE " . TBL . "listings SET `gallery_image` = TRIM(BOTH ',' FROM REPLACE(CONCAT(',', `gallery_image`, ','), ',$b,', ','))
+        $listing_gallery_qry = "UPDATE " . COUNTRY_PREFIX . "listings SET `gallery_image` = TRIM(BOTH ',' FROM REPLACE(CONCAT(',', `gallery_image`, ','), ',$b,', ','))
        WHERE FIND_IN_SET('$b', `gallery_image`) AND listing_id ='" . $c . "'";
 
         $listing_gallery_res = mysqli_query($conn, $listing_gallery_qry);

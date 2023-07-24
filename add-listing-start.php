@@ -61,7 +61,7 @@ if ($listing_count_user >= $plan_type_listing_count) {
                                                     selected><?php echo $BIZBOOK['LISTING_NAME']; ?></option>
                                             <?php
                                             $user_id = $_SESSION['user_id'];
-                                            $listsql = "SELECT * FROM " . TBL . "listings  WHERE  listing_is_delete != '2' AND user_id = $user_id  ORDER BY listing_id DESC";
+                                            $listsql = "SELECT * FROM " . COUNTRY_PREFIX . "listings  WHERE  listing_is_delete != '2' AND user_id = $user_id  ORDER BY listing_id DESC";
 
                                             $listrs = mysqli_query($conn, $listsql);
 

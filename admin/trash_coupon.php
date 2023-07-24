@@ -12,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         $coupon_id = $_POST["coupon_id"];
 
-        $coupon_qry = "DELETE FROM  " . TBL . "coupons  where coupon_id='" . $coupon_id . "'";
+        $coupon_qry = "DELETE FROM  " . COUNTRY_PREFIX . "coupons  where coupon_id='" . $coupon_id . "'";
 
 
         $coupon_res = mysqli_query($conn,$coupon_qry);
@@ -22,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
            //Query to delete the page view starts
 
-            $page_view_qry = "DELETE FROM  " . TBL . "page_views where coupon_id='" . $coupon_id . "'";
+            $page_view_qry = "DELETE FROM  " . COUNTRY_PREFIX . "page_views where coupon_id='" . $coupon_id . "'";
 
             $page_view_res = mysqli_query($conn,$page_view_qry);
 

@@ -21,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $search_list_link = $_POST["search_list_link"];
 
 
-        $product_qry = "UPDATE  " . TBL . "search_list  SET search_title='" . $search_title . "', search_tag_line='" . $search_tag_line . "'
+        $product_qry = "UPDATE  " . COUNTRY_PREFIX . "search_list  SET search_title='" . $search_title . "', search_tag_line='" . $search_tag_line . "'
             ,search_list_link='" . $search_list_link . "' where search_list_id='" . $search_list_id . "'";
 
 

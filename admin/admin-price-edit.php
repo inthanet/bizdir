@@ -314,6 +314,23 @@ include "header.php";
                                     </div>
                                 </td>
                             </tr>
+
+                            <td>Multi Country Directories</td>
+                                <td>
+                                    <div class="form-group">
+                                        <select type="number" id="plan_type_country_count"
+                                                name="plan_type_country_count" class="chosen-select form-control">
+                                            <option <?php if($row['plan_type_country_count']== 1){ echo "selected"; } ?> value="1">1</option>
+                                            <option <?php if($row['plan_type_country_count']== 2){ echo "selected"; } ?> value="2">2</option>
+                                            <option <?php if($row['plan_type_country_count']== 5){ echo "selected"; } ?> value="5">5</option>
+                                            <option <?php if($row['plan_type_country_count']== 10){ echo "selected"; } ?> value="10">10</option>
+                                            <option <?php if($row['plan_type_country_count']== 25){ echo "selected"; } ?> value="25">25</option>
+                                            <option <?php if($row['plan_type_country_count']== 999){ echo "selected"; } ?> value="1000">Unlimited</option>
+                                        </select>
+                                    </div>
+                                </td>
+                            </tr>
+
                             <tr>
                                 <td>Review control</td>
                                 <td>

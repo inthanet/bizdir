@@ -102,7 +102,7 @@ if (isset($_GET['category'])) {
                 <?php
                 $si = 1;
 
-                $eventsql = "SELECT * FROM " . TBL . "events WHERE event_status= 'Active' $category_search_query ORDER BY event_id ASC";
+                $eventsql = "SELECT * FROM " . COUNTRY_PREFIX . "events WHERE event_status= 'Active' $category_search_query ORDER BY event_id ASC";
 
                 $eventrs = mysqli_query($conn, $eventsql);
 

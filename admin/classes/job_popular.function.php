@@ -5,7 +5,7 @@ function getAllJobPopular()
 {
     global $conn;
 
-    $sql = "SELECT * FROM " . TBL . "job_popular ORDER BY job_popular_id ASC";
+    $sql = "SELECT * FROM " . COUNTRY_PREFIX . "job_popular ORDER BY job_popular_id ASC";
     $rs = mysqli_query($conn, $sql);
     return $rs;
 
@@ -16,7 +16,7 @@ function getJobPopular($arg)
 {
     global $conn;
 
-    $sql = "SELECT * FROM  " . TBL . "job_popular where job_popular_id = '".$arg."'";
+    $sql = "SELECT * FROM  " . COUNTRY_PREFIX . "job_popular where job_popular_id = '".$arg."'";
     $rs = mysqli_query($conn, $sql);
     $row = mysqli_fetch_array($rs);
     return $row;

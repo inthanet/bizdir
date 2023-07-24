@@ -37,7 +37,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
 
 
-        $qry = "INSERT INTO " . TBL . "slider
+        $qry = "INSERT INTO " . COUNTRY_PREFIX . "slider
 					(slider_photo, slider_link, slider_cdt) 
 					VALUES ('$slider_photo' , '$slider_link', '$curDate')";
 

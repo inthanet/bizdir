@@ -20,13 +20,13 @@ if ((getCountCategoryCategory($category_id) <= 0) || $category_id == NULL){
 
     <ul>
         <?php
-        $nearby_listsql = "SELECT " . TBL . "listings.*, " . TBL . "users.user_plan FROM " . TBL . "listings
+        $nearby_listsql = "SELECT " . COUNTRY_PREFIX . "listings.*, " . TBL . "users.user_plan FROM " . COUNTRY_PREFIX . "listings
 
-                                            LEFT JOIN " . TBL . "users ON " . TBL . "listings.user_id = " . TBL . "users.user_id  WHERE " . TBL . "listings.listing_status= 'Active'
+                                            LEFT JOIN " . TBL . "users ON " . COUNTRY_PREFIX . "listings.user_id = " . TBL . "users.user_id  WHERE " . COUNTRY_PREFIX . "listings.listing_status= 'Active'
 
-                                            AND " . TBL . "listings.listing_is_delete != '2' $category_search_query $sub_category_search_query
+                                            AND " . COUNTRY_PREFIX . "listings.listing_is_delete != '2' $category_search_query $sub_category_search_query
 
-                                            ORDER BY " . TBL . "users.user_plan DESC," . TBL . "listings.listing_id DESC LIMIT 5 ";
+                                            ORDER BY " . TBL . "users.user_plan DESC," . COUNTRY_PREFIX . "listings.listing_id DESC LIMIT 5 ";
 
         $nearby_listrs = mysqli_query($conn, $nearby_listsql);
         while ($nearby_listrow = mysqli_fetch_array($nearby_listrs)) {

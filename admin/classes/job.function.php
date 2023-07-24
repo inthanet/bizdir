@@ -5,7 +5,7 @@ function getAllJob()
 {
     global $conn;
 
-    $sql = "SELECT * FROM " . TBL . "jobs ORDER BY job_id DESC";
+    $sql = "SELECT * FROM " . COUNTRY_PREFIX . "jobs ORDER BY job_id DESC";
     $rs = mysqli_query($conn, $sql);
     return $rs;
 
@@ -16,7 +16,7 @@ function getAllJobLimit($arg)
 {
     global $conn;
 
-    $sql = "SELECT * FROM " . TBL . "jobs ORDER BY job_id DESC LIMIT $arg ";
+    $sql = "SELECT * FROM " . COUNTRY_PREFIX . "jobs ORDER BY job_id DESC LIMIT $arg ";
     $rs = mysqli_query($conn, $sql);
     return $rs;
 
@@ -27,7 +27,7 @@ function getAllCategoryJobLimit($arg,$arg1)
 {
     global $conn;
 
-    $sql = "SELECT * FROM " . TBL . "jobs WHERE category_id= '$arg' AND job_id !='" . $arg1 . "' ORDER BY job_id DESC LIMIT 10";
+    $sql = "SELECT * FROM " . COUNTRY_PREFIX . "jobs WHERE category_id= '$arg' AND job_id !='" . $arg1 . "' ORDER BY job_id DESC LIMIT 10";
     $rs = mysqli_query($conn, $sql);
     return $rs;
 
@@ -38,7 +38,7 @@ function getAllCategoryJobLimit5($arg)
 {
     global $conn;
 
-    $sql = "SELECT * FROM " . TBL . "jobs WHERE category_id= '$arg' ORDER BY job_id DESC LIMIT 5";
+    $sql = "SELECT * FROM " . COUNTRY_PREFIX . "jobs WHERE category_id= '$arg' ORDER BY job_id DESC LIMIT 5";
     $rs = mysqli_query($conn, $sql);
     return $rs;
 
@@ -49,7 +49,7 @@ function getAllJobGroupByCity()
 {
     global $conn;
 
-    $sql = "SELECT * FROM " . TBL . "jobs GROUP BY job_location";
+    $sql = "SELECT * FROM " . COUNTRY_PREFIX . "jobs GROUP BY job_location";
     $rs = mysqli_query($conn, $sql);
     return $rs;
 
@@ -60,7 +60,7 @@ function getJob($arg)
 {
     global $conn;
 
-    $sql = "SELECT * FROM  " . TBL . "jobs WHERE job_code='" . $arg . "'";
+    $sql = "SELECT * FROM  " . COUNTRY_PREFIX . "jobs WHERE job_code='" . $arg . "'";
     $rs = mysqli_query($conn, $sql);
     $row = mysqli_fetch_array($rs);
     return $row;
@@ -72,7 +72,7 @@ function getSlugJob($arg)
 {
     global $conn;
 
-    $sql = "SELECT * FROM  " . TBL . "jobs WHERE job_slug='" . $arg . "'";
+    $sql = "SELECT * FROM  " . COUNTRY_PREFIX . "jobs WHERE job_slug='" . $arg . "'";
     $rs = mysqli_query($conn, $sql);
     $row = mysqli_fetch_array($rs);
     return $row;
@@ -84,7 +84,7 @@ function getIdJob($arg)
 {
     global $conn;
 
-    $sql = "SELECT * FROM  " . TBL . "jobs WHERE job_id='" . $arg . "'";
+    $sql = "SELECT * FROM  " . COUNTRY_PREFIX . "jobs WHERE job_id='" . $arg . "'";
     $rs = mysqli_query($conn, $sql);
     $row = mysqli_fetch_array($rs);
     return $row;
@@ -96,7 +96,7 @@ function getAllJobUser($arg)
 {
     global $conn;
 
-    $sql = "SELECT * FROM " . TBL . "jobs  WHERE user_id= '$arg' ORDER BY job_id DESC";
+    $sql = "SELECT * FROM " . COUNTRY_PREFIX . "jobs  WHERE user_id= '$arg' ORDER BY job_id DESC";
     $rs = mysqli_query($conn, $sql);
     return $rs;
 
@@ -107,7 +107,7 @@ function getAllJobCategory($arg)
 {
     global $conn;
 
-    $sql = "SELECT * FROM " . TBL . "jobs  WHERE category_id= '$arg' ORDER BY job_id DESC";
+    $sql = "SELECT * FROM " . COUNTRY_PREFIX . "jobs  WHERE category_id= '$arg' ORDER BY job_id DESC";
     $rs = mysqli_query($conn, $sql);
     return $rs;
 
@@ -118,7 +118,7 @@ function getAllJobUserJob($arg,$arg1)
 {
     global $conn;
 
-    $sql = "SELECT * FROM " . TBL . "jobs  WHERE user_id= '$arg' AND job_id = '$arg1'";
+    $sql = "SELECT * FROM " . COUNTRY_PREFIX . "jobs  WHERE user_id= '$arg' AND job_id = '$arg1'";
     $rs = mysqli_query($conn, $sql);
     $row = mysqli_fetch_array($rs);
     return $row;
@@ -130,7 +130,7 @@ function getAllJobJob($arg)
 {
     global $conn;
 
-    $sql = "SELECT * FROM " . TBL . "jobs  WHERE job_id = '$arg'";
+    $sql = "SELECT * FROM " . COUNTRY_PREFIX . "jobs  WHERE job_id = '$arg'";
     $rs = mysqli_query($conn, $sql);
     $row = mysqli_fetch_array($rs);
     return $row;
@@ -142,7 +142,7 @@ function getCountJob()
 {
     global $conn;
 
-    $sql = "SELECT * FROM " . TBL . "jobs WHERE job_status= 'Active' ORDER BY job_id DESC";
+    $sql = "SELECT * FROM " . COUNTRY_PREFIX . "jobs WHERE job_status= 'Active' ORDER BY job_id DESC";
     $rs = mysqli_query($conn, $sql);
     $row = mysqli_num_rows($rs);
     return $row;
@@ -154,7 +154,7 @@ function getCountJobCompanyName()
 {
     global $conn;
 
-    $sql = "SELECT * FROM " . TBL . "jobs GROUP BY job_company_name AND job_status= 'Active'";
+    $sql = "SELECT * FROM " . COUNTRY_PREFIX . "jobs GROUP BY job_company_name AND job_status= 'Active'";
     $rs = mysqli_query($conn, $sql);
     $row = mysqli_num_rows($rs);
     return $row;
@@ -166,7 +166,7 @@ function getCountUserJob($arg)
 {
     global $conn;
 
-    $sql = "SELECT * FROM " . TBL . "jobs  WHERE user_id= '$arg' AND job_status= 'Active' ORDER BY job_id DESC";
+    $sql = "SELECT * FROM " . COUNTRY_PREFIX . "jobs  WHERE user_id= '$arg' AND job_status= 'Active' ORDER BY job_id DESC";
     $rs = mysqli_query($conn, $sql);
     $row = mysqli_num_rows($rs);
     return $row;
@@ -178,7 +178,7 @@ function getCountCategoryJob($arg)
 {
     global $conn;
 
-    $sql = "SELECT * FROM " . TBL . "jobs WHERE category_id = '$arg' AND job_status= 'Active'";
+    $sql = "SELECT * FROM " . COUNTRY_PREFIX . "jobs WHERE category_id = '$arg' AND job_status= 'Active'";
     $rs = mysqli_query($conn, $sql);
     $row = mysqli_num_rows($rs);
     return $row;
@@ -190,7 +190,7 @@ function getCountSubCategoryJob($arg)
 {
     global $conn;
 
-    $sql = "SELECT * FROM " . TBL . "jobs WHERE sub_category_id = '$arg' AND job_status= 'Active'";
+    $sql = "SELECT * FROM " . COUNTRY_PREFIX . "jobs WHERE sub_category_id = '$arg' AND job_status= 'Active'";
     $rs = mysqli_query($conn, $sql);
     $row = mysqli_num_rows($rs);
     return $row;
@@ -202,7 +202,7 @@ function getExceptJob($arg)
 {
     global $conn;
 
-    $sql = "SELECT * FROM  " . TBL . "jobs WHERE job_status= 'Active' AND job_id !='" . $arg . "' LIMIT 3";
+    $sql = "SELECT * FROM  " . COUNTRY_PREFIX . "jobs WHERE job_status= 'Active' AND job_id !='" . $arg . "' LIMIT 3";
     $rs = mysqli_query($conn, $sql);
     return $rs;
 
@@ -216,7 +216,7 @@ function getJobSeoScore($arg)
     $sql = "select ( case seo_title when '' then 0 else 1 end +
         case seo_description when '' then 0 else 1 end +
         case seo_keywords when '' then 0 else 1 end ) 
-        * 100 / 3 as complete FROM " . TBL . "jobs WHERE job_id = $arg";
+        * 100 / 3 as complete FROM " . COUNTRY_PREFIX . "jobs WHERE job_id = $arg";
     $rs = mysqli_query($conn, $sql);
     $row = mysqli_fetch_array($rs);
     return $row[0];

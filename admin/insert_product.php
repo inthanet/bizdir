@@ -167,7 +167,7 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
             global $conn;
             $newLink = $link;
             do{
-                $checkLink = mysqli_query($conn, "SELECT product_id FROM " . TBL . "products WHERE product_slug = '$newLink'");
+                $checkLink = mysqli_query($conn, "SELECT product_id FROM " . COUNTRY_PREFIX . "products WHERE product_slug = '$newLink'");
                 if(mysqli_num_rows($checkLink) > 0){
                     $newLink = $link.''.$counter;
                     $counter++;
@@ -185,7 +185,7 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
 
 //    Product Insert Part Starts
 
-        $product_qry = "INSERT INTO " . TBL . "products 
+        $product_qry = "INSERT INTO " . COUNTRY_PREFIX . "products 
 					(user_id, category_id, sub_category_id, product_name, product_description
 					, gallery_image, product_price, product_price_offer, product_payment_link, product_tags, product_highlights, product_status
 					, product_info_question , product_info_answer, payment_status, product_slug, product_cdt) 
@@ -213,7 +213,7 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
 
         $ProdCode = 'PROD' . $productID;
 
-        $produpqry = "UPDATE " . TBL . "products 
+        $produpqry = "UPDATE " . COUNTRY_PREFIX . "products 
 					  SET product_code = '$ProdCode' 
 					  WHERE product_id = $listlastID";
 

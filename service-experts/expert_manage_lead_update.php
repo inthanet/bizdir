@@ -20,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     $appointment_date =  date("Y-m-d", strtotime($appointment_date1) );
 
-    $enquiry_res = mysqli_query($conn, "UPDATE  " . TBL . "expert_enquiries SET  appointment_time ='" . $appointment_time . "'
+    $enquiry_res = mysqli_query($conn, "UPDATE  " . COUNTRY_PREFIX . "expert_enquiries SET  appointment_time ='" . $appointment_time . "'
      ,appointment_date ='" . $appointment_date . "'
      ,enquiry_status ='" . $enquiry_status . "'
      ,enquiry_udt = '$curDate'

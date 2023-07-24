@@ -8,7 +8,7 @@ if (file_exists('config/info.php')) {
 $country_id = $_POST['country_id'];
 
 //get matched data from State table
-$state_sql = "SELECT * FROM  " . TBL . "states where country_id='" . $country_id . "'";
+$state_sql = "SELECT * FROM  " . COUNTRY_PREFIX . "states where country_id='" . $country_id . "'";
 $state_rs = mysqli_query($conn, $state_sql);
 
 $state_row_count = mysqli_num_rows($state_rs);

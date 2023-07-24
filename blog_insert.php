@@ -122,7 +122,7 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
             global $conn;
             $newLink = $link;
             do{
-                $checkLink = mysqli_query($conn, "SELECT blog_id FROM " . TBL . "blogs WHERE blog_slug = '$newLink'");
+                $checkLink = mysqli_query($conn, "SELECT blog_id FROM " . COUNTRY_PREFIX . "blogs WHERE blog_slug = '$newLink'");
                 if(mysqli_num_rows($checkLink) > 0){
                     $newLink = $link.''.$counter;
                     $counter++;
@@ -141,7 +141,7 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
 //    blog Insert Part Starts
 
 
-        $blog_qry = "INSERT INTO " . TBL . "blogs 
+        $blog_qry = "INSERT INTO " . COUNTRY_PREFIX . "blogs 
 					(user_id, blog_name, category_id, blog_description, blog_image, blog_status,  isenquiry, blog_slug, blog_cdt)
 					VALUES 
 					('$user_id', '$blog_name', '$category_id', '$blog_description', '$blog_image', '$blog_status', '$isenquiry', '$blog_slug', '$curDate')";

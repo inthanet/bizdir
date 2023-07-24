@@ -155,7 +155,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $user_plan = $user_exist_fetchrow['user_plan'];
 
 
-        $expert_profile_exist_check = mysqli_query($conn, "SELECT * FROM " . TBL . "experts  WHERE user_id='" . $user_id . "' ");
+        $expert_profile_exist_check = mysqli_query($conn, "SELECT * FROM " . COUNTRY_PREFIX . "experts  WHERE user_id='" . $user_id . "' ");
 
         if (mysqli_num_rows($expert_profile_exist_check) > 0) {
 
@@ -170,7 +170,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 global $conn;
                 $newLink = $link;
                 do{
-                    $checkLink = mysqli_query($conn, "SELECT expert_id FROM " . TBL . "experts WHERE expert_slug = '$newLink' AND expert_id != '$expert_id'");
+                    $checkLink = mysqli_query($conn, "SELECT expert_id FROM " . COUNTRY_PREFIX . "experts WHERE expert_slug = '$newLink' AND expert_id != '$expert_id'");
                     if(mysqli_num_rows($checkLink) > 0){
                         $newLink = $link.''.$counter;
                         $counter++;
@@ -188,7 +188,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             //Service Expert profile URL slug for update ends
 
 
-            $expert_profile_res = mysqli_query($conn, "UPDATE  " . TBL . "experts SET profile_name='" . $profile_name . "'
+            $expert_profile_res = mysqli_query($conn, "UPDATE  " . COUNTRY_PREFIX . "experts SET profile_name='" . $profile_name . "'
      , city_id='" . $city_id . "', years_of_experience='" . $years_of_experience . "', base_fare='" . $base_fare . "'
      , available_time_start='" . $available_time_start . "', available_time_end='" . $available_time_end . "'
      , profile_image='" . $profile_image . "', cover_image='" . $cover_image . "'
@@ -212,7 +212,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 global $conn;
                 $newLink = $link;
                 do{
-                    $checkLink = mysqli_query($conn, "SELECT expert_id FROM " . TBL . "experts WHERE expert_slug = '$newLink'");
+                    $checkLink = mysqli_query($conn, "SELECT expert_id FROM " . COUNTRY_PREFIX . "experts WHERE expert_slug = '$newLink'");
                     if(mysqli_num_rows($checkLink) > 0){
                         $newLink = $link.''.$counter;
                         $counter++;
@@ -230,7 +230,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
             $expert_slug = checkUserServiceExpertSlug($profile_name1);
 
-            $expert_profile_profile_qry = "INSERT INTO " . TBL . "experts
+            $expert_profile_profile_qry = "INSERT INTO " . COUNTRY_PREFIX . "experts
 					(user_id, profile_name, city_id, years_of_experience, base_fare, available_time_start
 					, available_time_end, profile_image, cover_image, id_proof, area_id, user_plan
 					, experience_1, experience_2, experience_3, experience_4
@@ -266,7 +266,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
             $profileID = 'EXPERT-SERVICE' . $LID;
 
-            $upqry = "UPDATE " . TBL . "experts
+            $upqry = "UPDATE " . COUNTRY_PREFIX . "experts
 					  SET expert_code = '$profileID'
 					  WHERE expert_id = $lastID";
 

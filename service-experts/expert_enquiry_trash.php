@@ -17,7 +17,7 @@ if(isset($_GET['messageenquirymessageenquirymessageenquirymessageenquiry'])){
 
 
     $listing_qry =
-        "DELETE  FROM " . TBL . "expert_enquiries where enquiry_id='" . $enquiry_id . "'";
+        "DELETE  FROM " . COUNTRY_PREFIX . "expert_enquiries where enquiry_id='" . $enquiry_id . "'";
 
     $listing_res = mysqli_query($conn,$listing_qry);
 

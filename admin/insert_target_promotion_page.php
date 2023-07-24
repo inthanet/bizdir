@@ -35,7 +35,7 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
             global $conn;
             $newLink = $link;
             do{
-                $checkLink = mysqli_query($conn, "SELECT page_id FROM " . TBL . "pages WHERE page_slug = '$newLink' AND page_type = 1");
+                $checkLink = mysqli_query($conn, "SELECT page_id FROM " . COUNTRY_PREFIX . "pages WHERE page_slug = '$newLink' AND page_type = 1");
                 if(mysqli_num_rows($checkLink) > 0){
                     $newLink = $link.''.$counter;
                     $counter++;
@@ -55,7 +55,7 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
 //    General insert Part Starts
 
 
-        $sql_qry = "INSERT INTO " . TBL . "pages 
+        $sql_qry = "INSERT INTO " . COUNTRY_PREFIX . "pages 
 					(page_type, page_name
 					,page_seo_title, page_seo_keyword, page_seo_description, page_seo_schema
 					,page_listings, page_slug, page_last_edit, page_cdt) 

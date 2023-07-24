@@ -7,6 +7,8 @@
 # ADMIN FOLDER NAME #
 define('ADMIN_FOLDER_NAME', 'admin');
 
+
+
 # IMAGE DIMENSION #
 define('THUMB_WIDTH', '72'); // Thum image.
 define('THUMB_HEIGHT', '72');
@@ -153,7 +155,8 @@ $data_array['website_url'] = $webpage_full_link;
 
 ##### Page Redirect URl's
 
-$footer_sql = "SELECT * FROM " . TBL . "footer WHERE footer_id = 1";
+//$footer_sql = "SELECT * FROM " . TBL . "footer WHERE footer_id = 1";
+$footer_sql = "SELECT * FROM de_footer WHERE footer_id = 1";
 $footer_rs = mysqli_query($conn, $footer_sql);
 $footer_row = mysqli_fetch_array($footer_rs);
 
@@ -225,7 +228,7 @@ define('TIME_LIST', json_encode($timeArr)); # Time List.
 
 # Auto Update Of Listing Status when it has expiry dates starts
 
-$exp_listsql = "SELECT * FROM " . TBL . "listings  WHERE listing_status= 'Active' AND listing_is_delete != '2' ORDER BY listing_id ASC";
+$exp_listsql = "SELECT * FROM " . COUNTRY_PREFIX . "listings  WHERE listing_status= 'Active' AND listing_is_delete != '2' ORDER BY listing_id ASC";
 
 $exp_listrs = mysqli_query($conn,$exp_listsql);
 
@@ -242,7 +245,7 @@ while ($exp_listrow = mysqli_fetch_array($exp_listrs)) {
 
     if($exp_user_plan != 0){
 
-    $exp_users_plan_type = "SELECT * FROM " . TBL . "plan_type WHERE plan_type_id= '$exp_user_plan'";
+    $exp_users_plan_type = "SELECT * FROM " . COUNTRY_PREFIX . "plan_type WHERE plan_type_id= '$exp_user_plan'";
     $exp_users_plan_type_rs = mysqli_query($conn,$exp_users_plan_type);
 
     $exp_users_plan_type_row = mysqli_fetch_array($exp_users_plan_type_rs);
@@ -251,7 +254,7 @@ while ($exp_listrow = mysqli_fetch_array($exp_listrs)) {
 
     $listing_inactive_status = "Inactive";
 
-    $exp_update_sql = "UPDATE  " . TBL . "listings SET listing_status='$listing_inactive_status'
+    $exp_update_sql = "UPDATE  " . COUNTRY_PREFIX . "listings SET listing_status='$listing_inactive_status'
     where listing_id='$exp_listing_id'
 AND listing_cdt < DATE_SUB(NOW(), INTERVAL $exp_plan_type_duration MONTH)";
 

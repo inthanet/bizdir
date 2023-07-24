@@ -17,7 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $id_proof_old = $_POST["id_proof_old"];
 
         $expert_qry =
-            " DELETE FROM  " . TBL . "experts WHERE expert_id='" . $expert_id . "'";
+            " DELETE FROM  " . COUNTRY_PREFIX . "experts WHERE expert_id='" . $expert_id . "'";
 
 
         $expert_res = mysqli_query($conn,$expert_qry);
@@ -31,7 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
             //Query to delete the page view starts
 
-            $page_view_qry = "DELETE FROM  " . TBL . "page_views where expert_id='" . $expert_id . "'";
+            $page_view_qry = "DELETE FROM  " . COUNTRY_PREFIX . "page_views where expert_id='" . $expert_id . "'";
 
             $page_view_res = mysqli_query($conn,$page_view_qry);
 

@@ -16,7 +16,7 @@ if(isset($_GET['approveclaimrequestapproveclaimrequestapproveclaimrequestapprove
 
 
     $listing_qry =
-        "UPDATE  " . TBL . "listings  SET user_id='" . $sender_id . "' where listing_id='" . $listing_id . "'";
+        "UPDATE  " . COUNTRY_PREFIX . "listings  SET user_id='" . $sender_id . "' where listing_id='" . $listing_id . "'";
 
     $listing_res = mysqli_query($conn,$listing_qry);
 
@@ -29,7 +29,7 @@ if(isset($_GET['approveclaimrequestapproveclaimrequestapproveclaimrequestapprove
     $rs = mysqli_query($conn, $sql);
     $user_row = mysqli_fetch_array($rs);
 
-    $sql1 = "SELECT * FROM  " . TBL . "listings where listing_id='" . $listing_id . "'";
+    $sql1 = "SELECT * FROM  " . COUNTRY_PREFIX . "listings where listing_id='" . $listing_id . "'";
     $rs1 = mysqli_query($conn, $sql1);
     $liiiist_row = mysqli_fetch_array($rs1);
 

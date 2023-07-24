@@ -20,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 
 
-        $sql = mysqli_query($conn, "UPDATE  " . TBL . "seo SET seo_page_title='" . $seo_page_title . "'
+        $sql = mysqli_query($conn, "UPDATE  " . COUNTRY_PREFIX . "seo SET seo_page_title='" . $seo_page_title . "'
         , seo_page_description='" . $seo_page_description . "', seo_page_keywords='" . $seo_page_keywords . "'
         , seo_page_edit_cdt='" . $curDate . "'
      where seo_page_id='" . $seo_page_id . "'");

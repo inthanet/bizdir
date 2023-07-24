@@ -15,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $news_image_old = $_POST["news_image_old"];
 
         $news_qry =
-            " DELETE FROM  " . TBL . "news WHERE news_id='" . $news_id . "'";
+            " DELETE FROM  " . COUNTRY_PREFIX . "news WHERE news_id='" . $news_id . "'";
 
 
         $news_res = mysqli_query($conn,$news_qry);
@@ -27,7 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
             //Query to delete the page view starts
 
-            $page_view_qry = "DELETE FROM  " . TBL . "page_views where news_id='" . $news_id . "'";
+            $page_view_qry = "DELETE FROM  " . COUNTRY_PREFIX . "page_views where news_id='" . $news_id . "'";
 
             $page_view_res = mysqli_query($conn,$page_view_qry);
 

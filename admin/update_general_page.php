@@ -79,7 +79,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             global $conn;
             $newLink = $link;
             do{
-                $checkLink = mysqli_query($conn, "SELECT page_id FROM " . TBL . "pages WHERE page_slug = '$newLink' AND page_id != '$page_id' AND page_type = 2");
+                $checkLink = mysqli_query($conn, "SELECT page_id FROM " . COUNTRY_PREFIX . "pages WHERE page_slug = '$newLink' AND page_id != '$page_id' AND page_type = 2");
                 if(mysqli_num_rows($checkLink) > 0){
                     $newLink = $link.''.$counter;
                     $counter++;
@@ -96,7 +96,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $page_slug = checkPageSlug($page_name1,$page_id);
 
 
-        $sql = mysqli_query($conn,"UPDATE  " . TBL . "pages SET  page_name='" . $page_name. "'
+        $sql = mysqli_query($conn,"UPDATE  " . COUNTRY_PREFIX . "pages SET  page_name='" . $page_name. "'
         , page_template='" . $page_template. "', page_show_listings='" . $page_show_listings . "'
         , page_show_products='" . $page_show_products. "', page_show_events='" . $page_show_events . "'
         , page_show_blogs='" . $page_show_blogs. "', page_show_enquiry='" . $page_show_enquiry . "'

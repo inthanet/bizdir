@@ -29,7 +29,7 @@ if (isset($_POST['city_submit'])) {
 //************ Area Name Already Exist Check Starts ***************
 
 
-            $city_name_exist_check = mysqli_query($conn, "SELECT * FROM " . TBL . "expert_areas  WHERE city_name='" . $city_name . "' AND state_id='" . $country_id . "' ");
+            $city_name_exist_check = mysqli_query($conn, "SELECT * FROM " . COUNTRY_PREFIX . "expert_areas  WHERE city_name='" . $city_name . "' AND state_id='" . $country_id . "' ");
 
             if (mysqli_num_rows($city_name_exist_check) > 0) {
 
@@ -45,7 +45,7 @@ if (isset($_POST['city_submit'])) {
 //************ Area Name Already Exist Check Ends ***************
 
 
-        $sql = mysqli_query($conn, "INSERT INTO  " . TBL . "expert_areas (city_name,state_id,city_cdt)
+        $sql = mysqli_query($conn, "INSERT INTO  " . COUNTRY_PREFIX . "expert_areas (city_name,state_id,city_cdt)
 VALUES ('$city_name','$country_id','$curDate')");
 
 

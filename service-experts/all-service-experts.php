@@ -80,7 +80,7 @@ if (isset($_REQUEST['ratings']) && !empty($_REQUEST['ratings'])) {
     $get_ratings = $_REQUEST['ratings'];
 
     $service_rating_start_query = ', T3.*';
-    $service_rating_end_query = "INNER JOIN `" . TBL . "expert_reviews` AS T3 ON T1.expert_id = T3.expert_id";
+    $service_rating_end_query = "INNER JOIN `" . COUNTRY_PREFIX . "expert_reviews` AS T3 ON T1.expert_id = T3.expert_id";
 
     $service_rating_search_query = 'AND T3.expert_rating = ' . $get_ratings . '';
 
@@ -97,7 +97,7 @@ if (isset($_REQUEST['sort_by']) && !empty($_REQUEST['sort_by'])) {
 
         $service_sort_by_search_query = 'AND T2.enquiry_status = 500 GROUP BY T2.expert_id';
         $service_start_search_query = ', T2.enquiry_id, T2.enquiry_status, COUNT(T2.enquiry_id) as top';
-        $service_end_search_query = "INNER JOIN " . TBL . "expert_enquiries AS T2 ON T1.expert_id = T2.expert_id";
+        $service_end_search_query = "INNER JOIN " . COUNTRY_PREFIX . "expert_enquiries AS T2 ON T1.expert_id = T2.expert_id";
 
         if ($get_rating_order == 'high-first') {
 
@@ -458,7 +458,7 @@ if (isset($_REQUEST['city']) && !empty($_REQUEST['city'])) {
                     <!--END-->
                 </div>
                 <?php
-                $expertssql = "SELECT T1.* $service_start_search_query $service_rating_start_query FROM " . TBL . "experts AS T1 $service_end_search_query $service_rating_end_query WHERE T1.expert_status= 'Active' $category_search_query $service_availability_search_query $expert_location_search_query $service_verified_search_query $service_rating_search_query $service_sort_by_search_query $service_sort_by_search_order_query";
+                $expertssql = "SELECT T1.* $service_start_search_query $service_rating_start_query FROM " . COUNTRY_PREFIX . "experts AS T1 $service_end_search_query $service_rating_end_query WHERE T1.expert_status= 'Active' $category_search_query $service_availability_search_query $expert_location_search_query $service_verified_search_query $service_rating_search_query $service_sort_by_search_query $service_sort_by_search_order_query";
 
                 $expertrs = mysqli_query($conn, $expertssql);
                 $total_experts = mysqli_num_rows($expertrs);

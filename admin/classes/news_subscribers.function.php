@@ -5,7 +5,7 @@ function getAllNewsSubscribers()
 {
     global $conn;
 
-    $sql = "SELECT * FROM " . TBL . "news_subscribers ORDER BY news_subscribers_id DESC";
+    $sql = "SELECT * FROM " . COUNTRY_PREFIX . "news_subscribers ORDER BY news_subscribers_id DESC";
     $rs = mysqli_query($conn, $sql);
     return $rs;
 
@@ -16,7 +16,7 @@ function getNewsSubscribers($arg)
 {
     global $conn;
 
-    $sql = "SELECT * FROM  " . TBL . "news_subscribers where news_subscribers_id='".$arg."'";
+    $sql = "SELECT * FROM  " . COUNTRY_PREFIX . "news_subscribers where news_subscribers_id='".$arg."'";
     $rs = mysqli_query($conn, $sql);
     $row = mysqli_fetch_array($rs);
     return $row;

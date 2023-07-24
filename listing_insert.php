@@ -251,7 +251,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             global $conn;
             $newLink = $link;
             do {
-                $checkLink = mysqli_query($conn, "SELECT listing_id FROM " . TBL . "listings WHERE listing_slug = '$newLink'");
+                $checkLink = mysqli_query($conn, "SELECT listing_id FROM " . COUNTRY_PREFIX . "listings WHERE listing_slug = '$newLink'");
                 if (mysqli_num_rows($checkLink) > 0) {
                     $newLink = $link . '' . $counter;
                     $counter++;
@@ -355,7 +355,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 //    Listing Insert Part Starts
 
-        $listing_qry = "INSERT INTO " . TBL . "listings 
+        $listing_qry = "INSERT INTO " . COUNTRY_PREFIX . "listings 
 					(user_id, category_id, sub_category_id, service_id, service_image, listing_type_id, listing_name, listing_mobile, listing_email
 					, listing_website, listing_whatsapp, listing_description, listing_address, listing_lat, listing_lng, service_locations, country_id, state_id, city_id, profile_image, cover_image
 					, gallery_image, opening_days, opening_time, closing_time, fb_link, twitter_link, gplus_link, google_map
@@ -394,7 +394,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         $ListCode = 'LIST' . $ListingID;
 
-        $lisupqry = "UPDATE " . TBL . "listings 
+        $lisupqry = "UPDATE " . COUNTRY_PREFIX . "listings 
 					  SET listing_code = '$ListCode' 
 					  WHERE listing_id = $listlastID";
 
@@ -405,7 +405,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         //**  To check the given category id is available on top_service_provider_table    ***
 
-        $top_service_sql = "SELECT * FROM  " . TBL . "top_service_providers where top_service_provider_category_id='" . $category_id . "'";
+        $top_service_sql = "SELECT * FROM  " . COUNTRY_PREFIX . "top_service_providers where top_service_provider_category_id='" . $category_id . "'";
         $top_service_sql_rs = mysqli_query($conn, $top_service_sql);
         $top_service_sql_count = mysqli_num_rows($top_service_sql_rs);
 
@@ -427,7 +427,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
                 $top_service_provider_listings_new = implode(',', $parts);
 
-                $top_service_provider_sql = mysqli_query($conn, "UPDATE  " . TBL . "top_service_providers SET top_service_provider_listings = '$top_service_provider_listings_new'
+                $top_service_provider_sql = mysqli_query($conn, "UPDATE  " . COUNTRY_PREFIX . "top_service_providers SET top_service_provider_listings = '$top_service_provider_listings_new'
      where top_service_provider_category_id='" . $top_service_provider_category_id . "'");
 
             }

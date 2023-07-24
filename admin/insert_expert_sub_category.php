@@ -32,7 +32,7 @@ if (isset($_POST['sub_category_submit'])) {
 //************ sub_category Name Already Exist Check Starts ***************
 
 
-        $sub_category_name_exist_check = mysqli_query($conn, "SELECT * FROM " . TBL . "expert_sub_categories  WHERE sub_category_name='" . $sub_category_name . "' ");
+        $sub_category_name_exist_check = mysqli_query($conn, "SELECT * FROM " . COUNTRY_PREFIX . "expert_sub_categories  WHERE sub_category_name='" . $sub_category_name . "' ");
 
         if (mysqli_num_rows($sub_category_name_exist_check) > 0) {
 
@@ -53,7 +53,7 @@ if (isset($_POST['sub_category_submit'])) {
 //            global $conn;
 //            $newLink = $link;
 //            do {
-//                $checkLink = mysqli_query($conn, "SELECT sub_category_id FROM " . TBL . "sub_categories WHERE sub_category_slug = '$newLink'");
+//                $checkLink = mysqli_query($conn, "SELECT sub_category_id FROM " . COUNTRY_PREFIX . "sub_categories WHERE sub_category_slug = '$newLink'");
 //                if (mysqli_num_rows($checkLink) > 0) {
 //                    $newLink = $link . '' . $counter;
 //                   // $counter++;
@@ -69,7 +69,7 @@ if (isset($_POST['sub_category_submit'])) {
         // $sub_category_slug = checkListingSubCategorySlug($sub_category_name1);
 
         $counter = 1;
-        $checkLink = mysqli_query($conn, "SELECT sub_category_id FROM " . TBL . "expert_sub_categories WHERE sub_category_slug = '$sub_category_name1'");
+        $checkLink = mysqli_query($conn, "SELECT sub_category_id FROM " . COUNTRY_PREFIX . "expert_sub_categories WHERE sub_category_slug = '$sub_category_name1'");
         if (mysqli_num_rows($checkLink) > 0) {
             $sub_category_slug = $sub_category_name1 . '' . $counter;
         }else{
@@ -77,7 +77,7 @@ if (isset($_POST['sub_category_submit'])) {
         }
 
 
-        $sql = mysqli_query($conn, "INSERT INTO  " . TBL . "expert_sub_categories (sub_category_name,sub_category_status, sub_category_slug,category_id,sub_category_cdt)
+        $sql = mysqli_query($conn, "INSERT INTO  " . COUNTRY_PREFIX . "expert_sub_categories (sub_category_name,sub_category_status, sub_category_slug,category_id,sub_category_cdt)
 VALUES ('$sub_category_name','$sub_category_status', '$sub_category_slug','$category_id','$curDate')");
 
         $LID = mysqli_insert_id($conn);
@@ -97,7 +97,7 @@ VALUES ('$sub_category_name','$sub_category_status', '$sub_category_slug','$cate
 
         $CATID = 'SUB_CAT' . $LID;
 
-        $upqry = mysqli_query($conn, "UPDATE " . TBL . "expert_sub_categories
+        $upqry = mysqli_query($conn, "UPDATE " . COUNTRY_PREFIX . "expert_sub_categories
 					  SET sub_category_code = '$CATID'
 					  WHERE sub_category_id = $lastID");
 

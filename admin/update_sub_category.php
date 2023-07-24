@@ -23,7 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 //************ Category Name Already Exist Check Starts ***************
 
 
-        $sub_category_name_exist_check = mysqli_query($conn, "SELECT * FROM " . TBL . "sub_categories  WHERE sub_category_name='" . $sub_category_name . "' AND sub_category_id != $sub_category_id ");
+        $sub_category_name_exist_check = mysqli_query($conn, "SELECT * FROM " . COUNTRY_PREFIX . "sub_categories  WHERE sub_category_name='" . $sub_category_name . "' AND sub_category_id != $sub_category_id ");
 
         if (mysqli_num_rows($sub_category_name_exist_check) > 0) {
 
@@ -66,7 +66,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             global $conn;
             $newLink = $link;
             do {
-                $checkLink = mysqli_query($conn, "SELECT sub_category_id FROM " . TBL . "sub_categories WHERE sub_category_slug = '$newLink' AND sub_category_id != '$sub_category_id'");
+                $checkLink = mysqli_query($conn, "SELECT sub_category_id FROM " . COUNTRY_PREFIX . "sub_categories WHERE sub_category_slug = '$newLink' AND sub_category_id != '$sub_category_id'");
                 if (mysqli_num_rows($checkLink) > 0) {
                     $newLink = $link . '' . $counter;
                     $counter++;
@@ -83,7 +83,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $sub_category_slug = checkListinggSubCategorySlug($sub_category_slug1, $sub_category_id);
 
 
-        $sql = mysqli_query($conn, "UPDATE  " . TBL . "sub_categories SET sub_category_name='" . $sub_category_name . "', sub_category_status='" . $sub_category_status . "'
+        $sql = mysqli_query($conn, "UPDATE  " . COUNTRY_PREFIX . "sub_categories SET sub_category_name='" . $sub_category_name . "', sub_category_status='" . $sub_category_status . "'
      , category_id='" . $category_id . "', sub_category_slug='" . $sub_category_slug . "'
      where sub_category_id='" . $sub_category_id . "'");
 

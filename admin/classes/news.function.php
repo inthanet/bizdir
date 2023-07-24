@@ -5,7 +5,7 @@ function getAllNews()
 {
     global $conn;
 
-    $sql = "SELECT * FROM " . TBL . "news ORDER BY news_id DESC";
+    $sql = "SELECT * FROM " . COUNTRY_PREFIX . "news ORDER BY news_id DESC";
     $rs = mysqli_query($conn, $sql);
     return $rs;
 
@@ -16,7 +16,7 @@ function getAllTrashNews()
 {
     global $conn;
 
-    $sql = "SELECT * FROM " . TBL . "news ORDER BY news_id DESC";
+    $sql = "SELECT * FROM " . COUNTRY_PREFIX . "news ORDER BY news_id DESC";
     $rs = mysqli_query($conn, $sql);
     return $rs;
 
@@ -27,7 +27,7 @@ function getNews($arg)
 {
     global $conn;
 
-    $sql = "SELECT * FROM  " . TBL . "news WHERE news_code='" . $arg . "'";
+    $sql = "SELECT * FROM  " . COUNTRY_PREFIX . "news WHERE news_code='" . $arg . "'";
     $rs = mysqli_query($conn, $sql);
     $row = mysqli_fetch_array($rs);
     return $row;
@@ -39,7 +39,7 @@ function getSlugNews($arg)
 {
     global $conn;
 
-    $sql = "SELECT * FROM  " . TBL . "news WHERE news_slug='" . $arg . "'";
+    $sql = "SELECT * FROM  " . COUNTRY_PREFIX . "news WHERE news_slug='" . $arg . "'";
     $rs = mysqli_query($conn, $sql);
     $row = mysqli_fetch_array($rs);
     return $row;
@@ -51,7 +51,7 @@ function getIdNews($arg)
 {
     global $conn;
 
-    $sql = "SELECT * FROM  " . TBL . "news WHERE news_id='" . $arg . "'";
+    $sql = "SELECT * FROM  " . COUNTRY_PREFIX . "news WHERE news_id='" . $arg . "'";
     $rs = mysqli_query($conn, $sql);
     $row = mysqli_fetch_array($rs);
     return $row;
@@ -63,7 +63,7 @@ function getAllNewsUser($arg)
 {
     global $conn;
 
-    $sql = "SELECT * FROM " . TBL . "news  WHERE user_id= '$arg' ORDER BY news_id DESC";
+    $sql = "SELECT * FROM " . COUNTRY_PREFIX . "news  WHERE user_id= '$arg' ORDER BY news_id DESC";
     $rs = mysqli_query($conn, $sql);
     return $rs;
 
@@ -74,7 +74,7 @@ function getAllNewsCategory($arg)
 {
     global $conn;
 
-    $sql = "SELECT * FROM " . TBL . "news  WHERE category_id= '$arg' ORDER BY news_id DESC";
+    $sql = "SELECT * FROM " . COUNTRY_PREFIX . "news  WHERE category_id= '$arg' ORDER BY news_id DESC";
     $rs = mysqli_query($conn, $sql);
     return $rs;
 
@@ -85,7 +85,7 @@ function getAllNewsCategoryExceptNewsId($arg,$arg1)
 {
     global $conn;
 
-    $sql = "SELECT * FROM " . TBL . "news  WHERE category_id= '$arg' AND news_id !='" . $arg1 . "' ORDER BY news_id DESC";
+    $sql = "SELECT * FROM " . COUNTRY_PREFIX . "news  WHERE category_id= '$arg' AND news_id !='" . $arg1 . "' ORDER BY news_id DESC";
     $rs = mysqli_query($conn, $sql);
     return $rs;
 
@@ -96,7 +96,7 @@ function getAllNewsUserNews($arg,$arg1)
 {
     global $conn;
 
-    $sql = "SELECT * FROM " . TBL . "news  WHERE user_id= '$arg' AND news_id = '$arg1'";
+    $sql = "SELECT * FROM " . COUNTRY_PREFIX . "news  WHERE user_id= '$arg' AND news_id = '$arg1'";
     $rs = mysqli_query($conn, $sql);
     $row = mysqli_fetch_array($rs);
     return $row;
@@ -108,7 +108,7 @@ function getAllNewsNews($arg)
 {
     global $conn;
 
-    $sql = "SELECT * FROM " . TBL . "news  WHERE news_id = '$arg'";
+    $sql = "SELECT * FROM " . COUNTRY_PREFIX . "news  WHERE news_id = '$arg'";
     $rs = mysqli_query($conn, $sql);
     $row = mysqli_fetch_array($rs);
     return $row;
@@ -120,7 +120,7 @@ function getCountNews()
 {
     global $conn;
 
-    $sql = "SELECT * FROM " . TBL . "news ORDER BY news_id DESC";
+    $sql = "SELECT * FROM " . COUNTRY_PREFIX . "news ORDER BY news_id DESC";
     $rs = mysqli_query($conn, $sql);
     $row = mysqli_num_rows($rs);
     return $row;
@@ -132,7 +132,7 @@ function getCountUserNews($arg)
 {
     global $conn;
 
-    $sql = "SELECT * FROM " . TBL . "news  WHERE user_id= '$arg' ORDER BY news_id DESC";
+    $sql = "SELECT * FROM " . COUNTRY_PREFIX . "news  WHERE user_id= '$arg' ORDER BY news_id DESC";
     $rs = mysqli_query($conn, $sql);
     $row = mysqli_num_rows($rs);
     return $row;
@@ -144,7 +144,7 @@ function getCountCategoryNews($arg)
 {
     global $conn;
 
-    $sql = "SELECT * FROM " . TBL . "news WHERE category_id = '$arg'";
+    $sql = "SELECT * FROM " . COUNTRY_PREFIX . "news WHERE category_id = '$arg'";
     $rs = mysqli_query($conn, $sql);
     $row = mysqli_num_rows($rs);
     return $row;
@@ -156,7 +156,7 @@ function getCountCountryNews($arg)
 {
     global $conn;
 
-    $sql = "SELECT * FROM " . TBL . "news WHERE country_id = '$arg'";
+    $sql = "SELECT * FROM " . COUNTRY_PREFIX . "news WHERE country_id = '$arg'";
     $rs = mysqli_query($conn, $sql);
     $row = mysqli_num_rows($rs);
     return $row;
@@ -168,7 +168,7 @@ function getCountCityNews($arg)
 {
     global $conn;
 
-    $sql = "SELECT * FROM " . TBL . "news WHERE city_id = '$arg'";
+    $sql = "SELECT * FROM " . COUNTRY_PREFIX . "news WHERE city_id = '$arg'";
     $rs = mysqli_query($conn, $sql);
     $row = mysqli_num_rows($rs);
     return $row;
@@ -180,7 +180,7 @@ function getCountSubCategoryNews($arg)
 {
     global $conn;
 
-    $sql = "SELECT * FROM " . TBL . "news WHERE sub_category_id = '$arg'";
+    $sql = "SELECT * FROM " . COUNTRY_PREFIX . "news WHERE sub_category_id = '$arg'";
     $rs = mysqli_query($conn, $sql);
     $row = mysqli_num_rows($rs);
     return $row;
@@ -192,7 +192,7 @@ function getExceptNews($arg)
 {
     global $conn;
 
-    $sql = "SELECT * FROM  " . TBL . "news WHERE news_status= 'Active' AND news_id !='" . $arg . "' ";
+    $sql = "SELECT * FROM  " . COUNTRY_PREFIX . "news WHERE news_status= 'Active' AND news_id !='" . $arg . "' ";
     $rs = mysqli_query($conn, $sql);
     return $rs;
 
@@ -203,7 +203,7 @@ function getAllTopViewsPremiumActiveNews()
 {
     global $conn;
 
-    $sql = "SELECT t1.*, COUNT(*) AS total_count FROM " . TBL . "news AS t1 INNER JOIN `" . TBL . "page_views` AS t2  ON t1.news_id = t2.news_id WHERE t1.news_status= 'Active' GROUP BY t1.news_id ORDER BY COUNT(*) DESC LIMIT 10";
+    $sql = "SELECT t1.*, COUNT(*) AS total_count FROM " . COUNTRY_PREFIX . "news AS t1 INNER JOIN `" . COUNTRY_PREFIX . "page_views` AS t2  ON t1.news_id = t2.news_id WHERE t1.news_status= 'Active' GROUP BY t1.news_id ORDER BY COUNT(*) DESC LIMIT 10";
     $rs = mysqli_query($conn, $sql);
     return $rs;
 
@@ -217,7 +217,7 @@ function getNewsseoScore($arg)
     $sql = "select ( case seo_title when '' then 0 else 1 end +
         case seo_description when '' then 0 else 1 end +
         case seo_keywords when '' then 0 else 1 end ) 
-        * 100 / 3 as complete FROM " . TBL . "news WHERE news_id = $arg";
+        * 100 / 3 as complete FROM " . COUNTRY_PREFIX . "news WHERE news_id = $arg";
     $rs = mysqli_query($conn, $sql);
     $row = mysqli_fetch_array($rs);
     return $row[0];

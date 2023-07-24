@@ -106,7 +106,7 @@ if ($scheck == NULL && $cat_check == NULL && $sub_cat_check == NULL && $feature_
             $WHERE[] = '(t2.price_rating = ' . $rating_check . ')';
         }
 
-        $inner = "INNER JOIN `" . TBL . "reviews` AS t2 ON t1.listing_id = t2.listing_id";
+        $inner = "INNER JOIN `" . COUNTRY_PREFIX . "reviews` AS t2 ON t1.listing_id = t2.listing_id";
 
     }
 
@@ -168,7 +168,7 @@ if ($scheck == NULL && $cat_check == NULL && $sub_cat_check == NULL && $feature_
         $q = 'WHERE ';
     }
 
-    $sql = mysqli_query($conn, "SELECT DISTINCT  t1 . * FROM  " . TBL . "listings  AS t1 $inner $w $q listing_status= 'Active' AND listing_is_delete != '2' ORDER BY listing_id DESC ");
+    $sql = mysqli_query($conn, "SELECT DISTINCT  t1 . * FROM  " . COUNTRY_PREFIX . "listings  AS t1 $inner $w $q listing_status= 'Active' AND listing_is_delete != '2' ORDER BY listing_id DESC ");
 
 }
 function parseToXML($htmlStr)

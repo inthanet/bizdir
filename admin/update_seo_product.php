@@ -21,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $seo_description = $_POST['seo_description'];
 
 
-        $sql = mysqli_query($conn,"UPDATE  " . TBL . "products SET  seo_title='" . $seo_title. "'
+        $sql = mysqli_query($conn,"UPDATE  " . COUNTRY_PREFIX . "products SET  seo_title='" . $seo_title. "'
         ,seo_keywords='" . $seo_keywords. "', seo_description='" . $seo_description . "'
         where product_id='" . $product_id . "'");
 

@@ -29,7 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     $enquiry_status = 100;
 
-    $enquiry_fetch = mysqli_query($conn, "SELECT * FROM " . TBL . "expert_enquiries WHERE enquiry_id = '$enquiry_id'");
+    $enquiry_fetch = mysqli_query($conn, "SELECT * FROM " . COUNTRY_PREFIX . "expert_enquiries WHERE enquiry_id = '$enquiry_id'");
 
     if (mysqli_num_rows($enquiry_fetch) > 0) {
 
@@ -42,7 +42,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
 
 
-        $enquiry_res = mysqli_query($conn, "UPDATE  " . TBL . "expert_enquiries SET  enquiry_status='" . $enquiry_status . "'
+        $enquiry_res = mysqli_query($conn, "UPDATE  " . COUNTRY_PREFIX . "expert_enquiries SET  enquiry_status='" . $enquiry_status . "'
      ,cancel_reason ='" . $cancel_reason . "'
      where enquiry_id='" . $enquiry_id . "'");
 

@@ -15,7 +15,7 @@ if (isset($_POST['home_slider_news_submit'])) {
 //************ Slider News Already Exist Check Starts ***************
 
 
-            $news_id_exist_check = mysqli_query($conn, "SELECT * FROM " . TBL . "news_slider WHERE news_id='" . $news_id . "'");
+            $news_id_exist_check = mysqli_query($conn, "SELECT * FROM " . COUNTRY_PREFIX . "news_slider WHERE news_id='" . $news_id . "'");
 
             if (mysqli_num_rows($news_id_exist_check) > 0) {
 
@@ -31,7 +31,7 @@ if (isset($_POST['home_slider_news_submit'])) {
 //************ Slider News Already Exist Check Ends ***************
 
 
-        $sql = mysqli_query($conn, "INSERT INTO  " . TBL . "news_slider (news_id,news_slider_pos_id,news_slider_cdt)
+        $sql = mysqli_query($conn, "INSERT INTO  " . COUNTRY_PREFIX . "news_slider (news_id,news_slider_pos_id,news_slider_cdt)
 VALUES ('$news_id','$news_slider_pos_id','$curDate')");
     
 

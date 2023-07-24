@@ -25,7 +25,7 @@ if (isset($_POST['city_submit'])) {
 
         $city_name = $_POST['city_name'][$i];
 
-        $state_sql = "SELECT * FROM  " . TBL . "states where country_id='" . $country_id . "'";
+        $state_sql = "SELECT * FROM  " . COUNTRY_PREFIX . "states where country_id='" . $country_id . "'";
         $state_rs = mysqli_query($conn, $state_sql);
         while ($state_row = mysqli_fetch_array($state_rs)) {
 
@@ -69,7 +69,7 @@ if (isset($_POST['city_submit'])) {
             }
         }
 
-        $state_sql_1 = "SELECT * FROM  " . TBL . "states where country_id='" . $country_id . "' LIMIT 1";
+        $state_sql_1 = "SELECT * FROM  " . COUNTRY_PREFIX . "states where country_id='" . $country_id . "' LIMIT 1";
         $state_rs_1 = mysqli_query($conn, $state_sql_1);
         $state_roww = mysqli_fetch_array($state_rs_1);
 

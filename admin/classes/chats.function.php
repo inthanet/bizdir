@@ -5,7 +5,7 @@ function getAllChats()
 {
     global $conn;
 
-    $sql = "SELECT * FROM " . TBL . "chats ORDER BY chat_cdt DESC";
+    $sql = "SELECT * FROM " . COUNTRY_PREFIX . "chats ORDER BY chat_cdt DESC";
     $rs = mysqli_query($conn, $sql);
     return $rs;
 
@@ -16,7 +16,7 @@ function getChat($arg)
 {
     global $conn;
 
-    $sql = "SELECT * FROM " . TBL . "chats  WHERE chat_id = '$arg' AND chat_status= 'Active' ORDER BY chat_cdt DESC ";
+    $sql = "SELECT * FROM " . COUNTRY_PREFIX . "chats  WHERE chat_id = '$arg' AND chat_status= 'Active' ORDER BY chat_cdt DESC ";
     $rs = mysqli_query($conn, $sql);
     return $rs;
 
@@ -27,7 +27,7 @@ function getAllChatLinkIdChats($arg)
 {
     global $conn;
 
-    $sql = "SELECT * FROM " . TBL . "chats  WHERE chat_link_id = '$arg' AND chat_status='Active' ORDER BY chat_cdt ASC ";
+    $sql = "SELECT * FROM " . COUNTRY_PREFIX . "chats  WHERE chat_link_id = '$arg' AND chat_status='Active' ORDER BY chat_cdt ASC ";
     $rs = mysqli_query($conn, $sql);
     return $rs;
 
@@ -38,7 +38,7 @@ function getLastChatMessageLinkIdChats($arg)
 {
     global $conn;
 
-    $sql = "SELECT * FROM " . TBL . "chats WHERE chat_link_id = '$arg' AND chat_status='Active' ORDER BY chat_cdt DESC LIMIT 1 ";
+    $sql = "SELECT * FROM " . COUNTRY_PREFIX . "chats WHERE chat_link_id = '$arg' AND chat_status='Active' ORDER BY chat_cdt DESC LIMIT 1 ";
     $rs = mysqli_query($conn, $sql);
     return $rs;
 
@@ -49,7 +49,7 @@ function getAllChatUserIdChats($arg)
 {
     global $conn;
 
-    $sql = "SELECT * FROM " . TBL . "chats  WHERE chat_user_id = '$arg' AND chat_status='Active' ORDER BY chat_cdt DESC ";
+    $sql = "SELECT * FROM " . COUNTRY_PREFIX . "chats  WHERE chat_user_id = '$arg' AND chat_status='Active' ORDER BY chat_cdt DESC ";
     $rs = mysqli_query($conn, $sql);
     return $rs;
 
@@ -60,7 +60,7 @@ function getCountChats()
 {
     global $conn;
 
-    $sql = "SELECT * FROM  " . TBL . "chats ";
+    $sql = "SELECT * FROM  " . COUNTRY_PREFIX . "chats ";
     $rs = mysqli_query($conn, $sql);
     $row = mysqli_num_rows($rs);
     return $row;
@@ -72,7 +72,7 @@ function getCountChatLinkIdChats($arg)
 {
     global $conn;
 
-    $sql = "SELECT * FROM " . TBL . "chats  WHERE chat_link_id = '$arg' AND chat_status='Active' ORDER BY chat_cdt DESC ";
+    $sql = "SELECT * FROM " . COUNTRY_PREFIX . "chats  WHERE chat_link_id = '$arg' AND chat_status='Active' ORDER BY chat_cdt DESC ";
     $rs = mysqli_query($conn, $sql);
     $row = mysqli_num_rows($rs);
     return $row;
@@ -84,7 +84,7 @@ function getCountChatUserIdChats($arg)
 {
     global $conn;
 
-    $sql = "SELECT * FROM " . TBL . "chats  WHERE chat_user_id = '$arg' AND chat_status='Active' ORDER BY chat_cdt DESC ";
+    $sql = "SELECT * FROM " . COUNTRY_PREFIX . "chats  WHERE chat_user_id = '$arg' AND chat_status='Active' ORDER BY chat_cdt DESC ";
     $rs = mysqli_query($conn, $sql);
     $row = mysqli_num_rows($rs);
     return $row;

@@ -18,7 +18,7 @@ if( isset($_POST) && $isNum == true ){
     $order = 0;
 
     foreach ( $orderArr as $item) {
-        $category_listing_qry = "UPDATE  " . TBL . "news_slider SET news_slider_pos_id='" . $order . "' where news_slider_id='" . $item . "'";
+        $category_listing_qry = "UPDATE  " . COUNTRY_PREFIX . "news_slider SET news_slider_pos_id='" . $order . "' where news_slider_id='" . $item . "'";
 
         $category_listing_res = mysqli_query($conn,$category_listing_qry);
 

@@ -7,7 +7,7 @@ if(isset($_GET['q'])) {
 
 if($select_search != ''){
 //get matched data from listings table
-    $listings_qry = "SELECT * FROM " . TBL . "listings WHERE listing_description LIKE '%$select_search%' 
+    $listings_qry = "SELECT * FROM " . COUNTRY_PREFIX . "listings WHERE listing_description LIKE '%$select_search%' 
      OR listing_address LIKE '%$select_search%'  OR service_id LIKE '%$select_search%' OR service_1_name LIKE '%$select_search%' 
      OR service_1_detail LIKE '%$select_search%' OR listing_info_question LIKE '%$select_search%' OR listing_info_answer LIKE '%$select_search%'
      OR service_locations LIKE '%$select_search%' OR listing_name LIKE '%$select_search%' 
@@ -15,36 +15,36 @@ if($select_search != ''){
     $listings_query = mysqli_query($conn, $listings_qry);
 } else{
     //get matched data from listings table
-    $listings_qry = "SELECT * FROM " . TBL . "listings WHERE listing_status= 'Active' AND listing_is_delete != '2'  ";
+    $listings_qry = "SELECT * FROM " . COUNTRY_PREFIX . "listings WHERE listing_status= 'Active' AND listing_is_delete != '2'  ";
     $listings_query = mysqli_query($conn, $listings_qry);
 }
 
 //get matched data from events table
-    $event_qry = "SELECT * FROM " . TBL . "events WHERE event_description LIKE '%$select_search%' 
+    $event_qry = "SELECT * FROM " . COUNTRY_PREFIX . "events WHERE event_description LIKE '%$select_search%' 
     OR event_name LIKE '%$select_search%' OR event_address LIKE '%$select_search%' AND event_status= 'Active'";
     $event_query = mysqli_query($conn, $event_qry);
 
 //get matched data from blog table
-    $blog_qry = "SELECT * FROM " . TBL . "blogs WHERE blog_description LIKE '%$select_search%' 
+    $blog_qry = "SELECT * FROM " . COUNTRY_PREFIX . "blogs WHERE blog_description LIKE '%$select_search%' 
     OR blog_name LIKE '%$select_search%' AND blog_status= 'Active'";
     $blog_query = mysqli_query($conn, $blog_qry);
 
 //get matched data from product table
-    $product_qry = "SELECT * FROM " . TBL . "products WHERE product_description LIKE '%$select_search%' 
+    $product_qry = "SELECT * FROM " . COUNTRY_PREFIX . "products WHERE product_description LIKE '%$select_search%' 
     OR product_name LIKE '%$select_search%' OR product_info_question LIKE '%$select_search%' 
     OR product_info_answer LIKE '%$select_search%' OR product_highlights LIKE '%$select_search%' 
     OR product_tags LIKE '%$select_search%' AND product_status= 'Active'";
     $product_query = mysqli_query($conn, $product_qry);
 
 //get matched data from Job table
-    $job_qry = "SELECT * FROM " . TBL . "jobs WHERE job_description LIKE '%$select_search%' 
+    $job_qry = "SELECT * FROM " . COUNTRY_PREFIX . "jobs WHERE job_description LIKE '%$select_search%' 
     OR job_title LIKE '%$select_search%' OR job_small_description LIKE '%$select_search%' 
     OR job_company_name LIKE '%$select_search%' OR skill_set LIKE '%$select_search%' 
     OR contact_person LIKE '%$select_search%' AND job_status= 'Active'";
     $job_query = mysqli_query($conn, $job_qry);
 
     //get matched data from Service Expert table
-    $expert_qry = "SELECT * FROM " . TBL . "experts WHERE profile_name LIKE '%$select_search%' AND expert_status= 'Active'";
+    $expert_qry = "SELECT * FROM " . COUNTRY_PREFIX . "experts WHERE profile_name LIKE '%$select_search%' AND expert_status= 'Active'";
     $expert_query = mysqli_query($conn, $expert_qry);
 }
 ?>

@@ -23,8 +23,6 @@ This file helps you to update or change the text on the website.
 
  *************************************************************************/
 
-//************************* ITCS New Added ***************************
-$BIZBOOK['SELECT_AN_OPTION'] = "Auswahl treffen";
 
 //************************* All Common Texts Starts ***************************
 
@@ -40,27 +38,27 @@ $BIZBOOK['PHONE_NUMBER'] = "Phone number";
 
 $BIZBOOK['MOBILE_NUMBER'] = "Mobile Number";
 
-$BIZBOOK['LISTING'] = "Eintrag";
+$BIZBOOK['LISTING'] = "Listing";
 
-$BIZBOOK['LISTINGS'] = "Einträge";
+$BIZBOOK['LISTINGS'] = "Listings";
 
-$BIZBOOK['ADD_LISTING'] = "Eintrag erstellen";
+$BIZBOOK['ADD_LISTING'] = "Add listing";
 
-$BIZBOOK['ALL_LISTING'] = "Alle Einträge";
+$BIZBOOK['ALL_LISTING'] = "All Listings";
 
-$BIZBOOK['ALL_CATEGORIES'] = "Alle Kategorien";
+$BIZBOOK['ALL_CATEGORIES'] = "All Categories";
 
 $BIZBOOK['EXPLORE'] = "Explore";
 
-$BIZBOOK['ALL_CATEGORY'] = "Alle Kategorien";
+$BIZBOOK['ALL_CATEGORY'] = "All Category";
 
-$BIZBOOK['ALL_SERVICES'] = "Dienstleistungen";
+$BIZBOOK['ALL_SERVICES'] = "All Services";
 
-$BIZBOOK['ALL_REVIEWS'] = "Bewertungen";
+$BIZBOOK['ALL_REVIEWS'] = "All Reviews";
 
-$BIZBOOK['PRODUCTS'] = "Produkte";
+$BIZBOOK['PRODUCTS'] = "Products";
 
-$BIZBOOK['PRODUCT'] = "Produkt";
+$BIZBOOK['PRODUCT'] = "Product";
 
 $BIZBOOK['EVENTS'] = "Events";
 
@@ -106,7 +104,7 @@ $BIZBOOK['MESSAGES'] = "Messages";
 
 $BIZBOOK['MESSAGE'] = "Message";
 
-$BIZBOOK['COUPONS_AND_DEALS'] = "Rabatte & Angebote";
+$BIZBOOK['COUPONS_AND_DEALS'] = "Coupon & deals";
 
 $BIZBOOK['USER'] = "User";
 
@@ -390,7 +388,7 @@ $BIZBOOK['HOM-VI-ALL-SER-EXPERTS'] = "View all service experts";
 
 $BIZBOOK['HOM-VI-ALL-JOB-OPENINGS'] = "View all Job openings";
 
-$BIZBOOK['HOM-VI-KNOW-MORE'] = "DETAILS";
+$BIZBOOK['HOM-VI-KNOW-MORE'] = "Know more";
 
 $BIZBOOK['HOM-EXP-TIT'] = "Explore City";
 
@@ -570,7 +568,7 @@ $BIZBOOK['RECEIVED'] = "Received";
 
 $BIZBOOK['PLAN'] = "PLAN";
 
-$BIZBOOK['FREE'] = "FREI";
+$BIZBOOK['FREE'] = "FREE";
 
 $BIZBOOK['MY_PROFILE'] = "My Profile";
 
@@ -628,7 +626,7 @@ $BIZBOOK['USER_TYPE'] = "User type";
 
 $BIZBOOK['USER_OPTIONS'] = "User options";
 
-$BIZBOOK['CHOOSE_YOUR_PLAN'] = "Wählen Sie Ihren Serviceplan";
+$BIZBOOK['CHOOSE_YOUR_PLAN'] = "Choose your plan";
 
 $BIZBOOK['PLAN_DETAILS'] = "Plan details";
 
@@ -650,13 +648,13 @@ $BIZBOOK['PRICING_TITLE_2'] = "Choose your pricing plan";
 
 $BIZBOOK['PRICING_SUB_TITLE_2'] = "Cras nulla nulla, pulvinar sit amet nunc at, lacinia viverra lectus. Fusce imperdiet ullamcorper metus eu fringilla.";
 
-$BIZBOOK['PRICING_GETTING_STARTED'] = "Kostenfrei Starten";
+$BIZBOOK['PRICING_GETTING_STARTED'] = "For getting started";
 
-$BIZBOOK['PRICING_PERFECT_SMALL_TEAMS'] = "Perfekt für kleine Teams";
+$BIZBOOK['PRICING_PERFECT_SMALL_TEAMS'] = "Perfect for small teams";
 
-$BIZBOOK['PRICING_BEST_VALUE_LARGE'] = "Perfekt für größere Teams";
+$BIZBOOK['PRICING_BEST_VALUE_LARGE'] = "Best value for large teams";
 
-$BIZBOOK['PRICING_MADE_ENTERPRISES'] = "Perfect für Unternehmen";
+$BIZBOOK['PRICING_MADE_ENTERPRISES'] = "Made for enterprises";
 
 $BIZBOOK['PRICING_SINGLE_USER'] = "Single user";
 
@@ -936,7 +934,7 @@ $BIZBOOK['SELECT_YOUR_CITY'] = "Select your Cities";
 
 $BIZBOOK['SELECT_CATEGORY'] = "Select Category";
 
-$BIZBOOK['SELECT_CITY'] = "Stadt auswählen";
+$BIZBOOK['SELECT_CITY'] = "Select City";
 
 $BIZBOOK['ALL_CITIES'] = "All Cities";
 
@@ -1315,7 +1313,7 @@ $BIZBOOK['PROFILE-QUICK-ACCESS-SPAN-8'] = "Join the Community";
 
 //************************* Footer banner ***********
 
-$BIZBOOK['FOOT-BAN-TIT'] = "Starten Sie noch heute<br>mit einem kostenfreien Eintrag";
+$BIZBOOK['FOOT-BAN-TIT'] = "List your business for FREE";
 
 $BIZBOOK['FOOT-BAN-SUB-TIT'] = "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour.";
 
@@ -1796,7 +1794,7 @@ $BIZBOOK['JOB-HOME-JOIN-EMP-CTA'] = "Register for free";
 
 //************************* SERVICE EXPERT PAGE TEXT ***********
 
-$BIZBOOK['SERVICE-EXPERTS'] = "Experten Service";
+$BIZBOOK['SERVICE-EXPERTS'] = "Service Experts";
 
 $BIZBOOK['TOP-SERVICE-EXPERTS'] = "Top Service Experts";
 
@@ -2078,9 +2076,9 @@ $BIZBOOK['NEWS-LATEST-POPULAR'] = "Latest & Popular";
 
 //************************* PLACES PAGE TEXT ***********
 
-$BIZBOOK['PLACE-MENU'] = "Explore Reisen";
+$BIZBOOK['PLACE-MENU'] = "Explore Travel";
 
-$BIZBOOK['PLACE-TRAVEL'] = "Reisen";
+$BIZBOOK['PLACE-TRAVEL'] = "Travel";
 
 $BIZBOOK['PLACE-HOME-H-1'] = "Explore your Travel";
 
@@ -2924,11 +2922,11 @@ $BIZBOOK['pg_terms_tit'] = "Terms of Use";
 
 //************************* NEWS & MAGAZINES ***********
 
-$BIZBOOK['NEWS-MAGA'] = "News & Magazine";
+$BIZBOOK['NEWS-MAGA'] = "News & Magazines";
 
 $BIZBOOK['NEWS'] = "News";
 
-$BIZBOOK['SEARCHBOX_LABEL_SER'] = "Service wählen";
+$BIZBOOK['SEARCHBOX_LABEL_SER'] = "Select Services";
 $BIZBOOK['EXPL-MORE-FEA'] = "Explore our more Services";
 
 //****** HOME PAGE MODULES ***** */

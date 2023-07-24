@@ -20,7 +20,7 @@ if(isset($_GET['jobprofilejobprofilejobprofilejobprofile'])){
 
 
     $listing_qry =
-        "DELETE  FROM " . TBL . "job_profile  where job_profile_id='" . $job_profile_id . "'";
+        "DELETE  FROM " . COUNTRY_PREFIX . "job_profile  where job_profile_id='" . $job_profile_id . "'";
 
     $listing_res = mysqli_query($conn,$listing_qry);
 

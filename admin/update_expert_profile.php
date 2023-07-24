@@ -161,7 +161,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             global $conn;
             $newLink = $link;
             do{
-                $checkLink = mysqli_query($conn, "SELECT expert_id FROM " . TBL . "experts WHERE expert_slug = '$newLink' AND expert_id != '$expert_id'");
+                $checkLink = mysqli_query($conn, "SELECT expert_id FROM " . COUNTRY_PREFIX . "experts WHERE expert_slug = '$newLink' AND expert_id != '$expert_id'");
                 if(mysqli_num_rows($checkLink) > 0){
                     $newLink = $link.''.$counter;
                     $counter++;
@@ -179,7 +179,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         //Service Expert profile URL slug for update ends
 
 
-            $expert_profile_res = mysqli_query($conn, "UPDATE  " . TBL . "experts SET profile_name='" . $profile_name . "'
+            $expert_profile_res = mysqli_query($conn, "UPDATE  " . COUNTRY_PREFIX . "experts SET profile_name='" . $profile_name . "'
      , city_id='" . $city_id . "', years_of_experience='" . $years_of_experience . "', base_fare='" . $base_fare . "'
      , available_time_start='" . $available_time_start . "', available_time_end='" . $available_time_end . "'
      , profile_image='" . $profile_image . "', cover_image='" . $cover_image . "'

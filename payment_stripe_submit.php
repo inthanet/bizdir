@@ -134,7 +134,7 @@ if ($paymenyResponse['amount_refunded'] == 0 && empty($paymenyResponse['failure_
 
 //insert transaction details into database
 
-    $plan_type_details = mysqli_query($conn, "SELECT * FROM  " . TBL . "plan_type where plan_type_price='" . $amountPaid . "'");
+    $plan_type_details = mysqli_query($conn, "SELECT * FROM  " . COUNTRY_PREFIX . "plan_type where plan_type_price='" . $amountPaid . "'");
     $plan_type_details_row = mysqli_fetch_array($plan_type_details);
 
     $plan_type_id = $plan_type_details_row['plan_type_id'];  //Plan Type Id

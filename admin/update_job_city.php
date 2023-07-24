@@ -19,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 //************ city Name Already Exist Check Starts ***************
 
 
-        $city_name_exist_check = mysqli_query($conn,"SELECT * FROM " . TBL . "job_cities  WHERE city_name='" . $city_name . "' AND city_id != $city_id ");
+        $city_name_exist_check = mysqli_query($conn,"SELECT * FROM " . COUNTRY_PREFIX . "job_cities  WHERE city_name='" . $city_name . "' AND city_id != $city_id ");
 
         if (mysqli_num_rows($city_name_exist_check) > 0) {
 
@@ -35,7 +35,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 //************ city Name Already Exist Check Ends ***************
         
 
-        $sql = mysqli_query($conn,"UPDATE  " . TBL . "job_cities SET city_name='" . $city_name . "'
+        $sql = mysqli_query($conn,"UPDATE  " . COUNTRY_PREFIX . "job_cities SET city_name='" . $city_name . "'
      where city_id='" . $city_id . "'");
 
         if ($sql) {

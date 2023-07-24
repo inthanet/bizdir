@@ -30,7 +30,7 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
 
     // To check if applying user has job profile starts
 
-    $job_profile_fetch = mysqli_query($conn, "SELECT * FROM " . TBL . "job_profile  WHERE user_id = $enquiry_sender_id ");
+    $job_profile_fetch = mysqli_query($conn, "SELECT * FROM " . COUNTRY_PREFIX . "job_profile  WHERE user_id = $enquiry_sender_id ");
     $job_profile_fetchrow = mysqli_fetch_array($job_profile_fetch);
 
     $job_profile_id = $job_profile_fetchrow['job_profile_id'];
@@ -45,7 +45,7 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
 
     // To check if user already applied for job profile starts
 
-    $same_job_profile_fetch = mysqli_query($conn, "SELECT * FROM " . TBL . "job_applied  WHERE job_profile_id = '$enquiry_sender_id' AND job_id = '$job_id' ");
+    $same_job_profile_fetch = mysqli_query($conn, "SELECT * FROM " . COUNTRY_PREFIX . "job_applied  WHERE job_profile_id = '$enquiry_sender_id' AND job_id = '$job_id' ");
 
     if(mysqli_num_rows($same_job_profile_fetch) > 0){
 
@@ -55,7 +55,7 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
 
     // To check if user already applied for job profile ends
 
-    $enquiry_qry = "INSERT INTO " . TBL . "job_applied
+    $enquiry_qry = "INSERT INTO " . COUNTRY_PREFIX . "job_applied
 					(job_id, job_user_id, job_profile_id, job_applied_status, job_applied_cdt)
 					VALUES
 					('$job_id', '$job_user_id', '$enquiry_sender_id', '$job_applied_status', '$curDate')";

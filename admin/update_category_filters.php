@@ -22,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $category_filter_pos_id = $_POST['category_filter_pos_id'][$key];
 
 
-            $sql = mysqli_query($conn, "UPDATE  " . TBL . "categories SET category_filter='" . $category_filter . "'
+            $sql = mysqli_query($conn, "UPDATE  " . COUNTRY_PREFIX . "categories SET category_filter='" . $category_filter . "'
         , category_filter_pos_id='" . $category_filter_pos_id . "' where category_id='" . $category_id . "'");
 
         }

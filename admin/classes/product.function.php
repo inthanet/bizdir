@@ -5,7 +5,7 @@ function getAllProduct()
 {
     global $conn;
 
-    $sql = "SELECT * FROM " . TBL . "products ORDER BY product_id DESC";
+    $sql = "SELECT * FROM " . COUNTRY_PREFIX . "products ORDER BY product_id DESC";
     $rs = mysqli_query($conn, $sql);
     return $rs;
 
@@ -16,7 +16,7 @@ function getAllTrashProduct()
 {
     global $conn;
 
-    $sql = "SELECT * FROM " . TBL . "products ORDER BY product_id DESC";
+    $sql = "SELECT * FROM " . COUNTRY_PREFIX . "products ORDER BY product_id DESC";
     $rs = mysqli_query($conn, $sql);
     return $rs;
 
@@ -27,7 +27,7 @@ function getProduct($arg)
 {
     global $conn;
 
-    $sql = "SELECT * FROM  " . TBL . "products WHERE product_code='" . $arg . "'";
+    $sql = "SELECT * FROM  " . COUNTRY_PREFIX . "products WHERE product_code='" . $arg . "'";
     $rs = mysqli_query($conn, $sql);
     $row = mysqli_fetch_array($rs);
     return $row;
@@ -39,7 +39,7 @@ function getSlugProduct($arg)
 {
     global $conn;
 
-    $sql = "SELECT * FROM  " . TBL . "products WHERE product_slug='" . $arg . "'";
+    $sql = "SELECT * FROM  " . COUNTRY_PREFIX . "products WHERE product_slug='" . $arg . "'";
     $rs = mysqli_query($conn, $sql);
     $row = mysqli_fetch_array($rs);
     return $row;
@@ -51,7 +51,7 @@ function getIdProduct($arg)
 {
     global $conn;
 
-    $sql = "SELECT * FROM  " . TBL . "products WHERE product_id='" . $arg . "'";
+    $sql = "SELECT * FROM  " . COUNTRY_PREFIX . "products WHERE product_id='" . $arg . "'";
     $rs = mysqli_query($conn, $sql);
     $row = mysqli_fetch_array($rs);
     return $row;
@@ -63,7 +63,7 @@ function getAllProductUser($arg)
 {
     global $conn;
 
-    $sql = "SELECT * FROM " . TBL . "products  WHERE user_id= '$arg' ORDER BY product_id DESC";
+    $sql = "SELECT * FROM " . COUNTRY_PREFIX . "products  WHERE user_id= '$arg' ORDER BY product_id DESC";
     $rs = mysqli_query($conn, $sql);
     return $rs;
 
@@ -74,7 +74,7 @@ function getAllProductCategory($arg)
 {
     global $conn;
 
-    $sql = "SELECT * FROM " . TBL . "products  WHERE category_id= '$arg' ORDER BY product_id DESC";
+    $sql = "SELECT * FROM " . COUNTRY_PREFIX . "products  WHERE category_id= '$arg' ORDER BY product_id DESC";
     $rs = mysqli_query($conn, $sql);
     return $rs;
 
@@ -85,7 +85,7 @@ function getAllProductUserProduct($arg,$arg1)
 {
     global $conn;
 
-    $sql = "SELECT * FROM " . TBL . "products  WHERE user_id= '$arg' AND product_id = '$arg1'";
+    $sql = "SELECT * FROM " . COUNTRY_PREFIX . "products  WHERE user_id= '$arg' AND product_id = '$arg1'";
     $rs = mysqli_query($conn, $sql);
     $row = mysqli_fetch_array($rs);
     return $row;
@@ -97,7 +97,7 @@ function getAllProductProduct($arg)
 {
     global $conn;
 
-    $sql = "SELECT * FROM " . TBL . "products  WHERE product_id = '$arg'";
+    $sql = "SELECT * FROM " . COUNTRY_PREFIX . "products  WHERE product_id = '$arg'";
     $rs = mysqli_query($conn, $sql);
     $row = mysqli_fetch_array($rs);
     return $row;
@@ -109,7 +109,7 @@ function getCountProduct()
 {
     global $conn;
 
-    $sql = "SELECT * FROM " . TBL . "products ORDER BY product_id DESC";
+    $sql = "SELECT * FROM " . COUNTRY_PREFIX . "products ORDER BY product_id DESC";
     $rs = mysqli_query($conn, $sql);
     $row = mysqli_num_rows($rs);
     return $row;
@@ -121,7 +121,7 @@ function getCountUserProduct($arg)
 {
     global $conn;
 
-    $sql = "SELECT * FROM " . TBL . "products  WHERE user_id= '$arg' ORDER BY product_id DESC";
+    $sql = "SELECT * FROM " . COUNTRY_PREFIX . "products  WHERE user_id= '$arg' ORDER BY product_id DESC";
     $rs = mysqli_query($conn, $sql);
     $row = mysqli_num_rows($rs);
     return $row;
@@ -133,7 +133,7 @@ function getCountCategoryProduct($arg)
 {
     global $conn;
 
-    $sql = "SELECT * FROM " . TBL . "products WHERE category_id = '$arg'";
+    $sql = "SELECT * FROM " . COUNTRY_PREFIX . "products WHERE category_id = '$arg'";
     $rs = mysqli_query($conn, $sql);
     $row = mysqli_num_rows($rs);
     return $row;
@@ -145,7 +145,7 @@ function getCountCountryProduct($arg)
 {
     global $conn;
 
-    $sql = "SELECT * FROM " . TBL . "products WHERE country_id = '$arg'";
+    $sql = "SELECT * FROM " . COUNTRY_PREFIX . "products WHERE country_id = '$arg'";
     $rs = mysqli_query($conn, $sql);
     $row = mysqli_num_rows($rs);
     return $row;
@@ -157,7 +157,7 @@ function getCountCityProduct($arg)
 {
     global $conn;
 
-    $sql = "SELECT * FROM " . TBL . "products WHERE city_id = '$arg'";
+    $sql = "SELECT * FROM " . COUNTRY_PREFIX . "products WHERE city_id = '$arg'";
     $rs = mysqli_query($conn, $sql);
     $row = mysqli_num_rows($rs);
     return $row;
@@ -169,7 +169,7 @@ function getCountSubCategoryProduct($arg)
 {
     global $conn;
 
-    $sql = "SELECT * FROM " . TBL . "products WHERE sub_category_id = '$arg'";
+    $sql = "SELECT * FROM " . COUNTRY_PREFIX . "products WHERE sub_category_id = '$arg'";
     $rs = mysqli_query($conn, $sql);
     $row = mysqli_num_rows($rs);
     return $row;
@@ -181,7 +181,7 @@ function getExceptProduct($arg)
 {
     global $conn;
 
-    $sql = "SELECT * FROM  " . TBL . "products WHERE product_status= 'Active' AND product_id !='" . $arg . "' LIMIT 12";
+    $sql = "SELECT * FROM  " . COUNTRY_PREFIX . "products WHERE product_status= 'Active' AND product_id !='" . $arg . "' LIMIT 12";
     $rs = mysqli_query($conn, $sql);
     return $rs;
 
@@ -195,7 +195,7 @@ function getProductSeoScore($arg)
     $sql = "select ( case seo_title when '' then 0 else 1 end +
         case seo_description when '' then 0 else 1 end +
         case seo_keywords when '' then 0 else 1 end ) 
-        * 100 / 3 as complete FROM " . TBL . "products WHERE product_id = $arg";
+        * 100 / 3 as complete FROM " . COUNTRY_PREFIX . "products WHERE product_id = $arg";
     $rs = mysqli_query($conn, $sql);
     $row = mysqli_fetch_array($rs);
     return $row[0];

@@ -68,7 +68,7 @@ VALUES ('$country_name','$curDate')");
 
         $country_id = mysqli_insert_id($conn);
 
-        $sql2 = mysqli_query($conn, "INSERT INTO  " . TBL . "states (state_name,country_id)
+        $sql2 = mysqli_query($conn, "INSERT INTO  " . COUNTRY_PREFIX . "states (state_name,country_id)
 VALUES ('$country_name','$country_id')");
 
 

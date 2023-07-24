@@ -15,10 +15,10 @@ function pageviewnew($listing_id)
     global $conn;
     $user_ip = $_SERVER['REMOTE_ADDR'];
 
-    $check_ip = mysqli_query($conn,"SELECT * FROM " . TBL . "page_views  WHERE listing_id = '$listing_id' AND user_ip = '$user_ip' ");
+    $check_ip = mysqli_query($conn,"SELECT * FROM " . COUNTRY_PREFIX . "page_views  WHERE listing_id = '$listing_id' AND user_ip = '$user_ip' ");
 
     if (mysqli_num_rows($check_ip) <= 0) {
-        $insertview = mysqli_query($conn,"INSERT INTO " . TBL . "page_views (`listing_id`, `user_ip`, `page_view_cdt`) values('$listing_id','$user_ip',NOW())");
+        $insertview = mysqli_query($conn,"INSERT INTO " . COUNTRY_PREFIX . "page_views (`listing_id`, `user_ip`, `page_view_cdt`) values('$listing_id','$user_ip',NOW())");
 
         return true;
     }
@@ -32,10 +32,10 @@ function sampeventpageview($event_id)
     global $conn;
     $user_ip = $_SERVER['REMOTE_ADDR'];
 
-    $check_ip = mysqli_query($conn,"SELECT * FROM " . TBL . "page_views  WHERE event_id = '$event_id' AND user_ip = '$user_ip' ");
+    $check_ip = mysqli_query($conn,"SELECT * FROM " . COUNTRY_PREFIX . "page_views  WHERE event_id = '$event_id' AND user_ip = '$user_ip' ");
 
     if (mysqli_num_rows($check_ip) <= 0) {
-        $insertview = mysqli_query($conn,"INSERT INTO " . TBL . "page_views (`event_id`, `user_ip`, `page_view_cdt`) values('$event_id','$user_ip',NOW())");
+        $insertview = mysqli_query($conn,"INSERT INTO " . COUNTRY_PREFIX . "page_views (`event_id`, `user_ip`, `page_view_cdt`) values('$event_id','$user_ip',NOW())");
 
         return true;
     }
@@ -49,10 +49,10 @@ function sampblogpageview($blog_id)
     global $conn;
     $user_ip = $_SERVER['REMOTE_ADDR'];
 
-    $check_ip = mysqli_query($conn,"SELECT * FROM " . TBL . "page_views  WHERE blog_id = '$blog_id' AND user_ip = '$user_ip' ");
+    $check_ip = mysqli_query($conn,"SELECT * FROM " . COUNTRY_PREFIX . "page_views  WHERE blog_id = '$blog_id' AND user_ip = '$user_ip' ");
 
     if (mysqli_num_rows($check_ip) <= 0) {
-        $insertview = mysqli_query($conn,"INSERT INTO " . TBL . "page_views (`blog_id`, `user_ip`, `page_view_cdt`) values('$blog_id','$user_ip',NOW())");
+        $insertview = mysqli_query($conn,"INSERT INTO " . COUNTRY_PREFIX . "page_views (`blog_id`, `user_ip`, `page_view_cdt`) values('$blog_id','$user_ip',NOW())");
 
         return true;
     }
@@ -90,7 +90,7 @@ function httpPostNew($url,$params)
 function pageview_countnew($listing_id)
 {
     global $conn;
-    $total_listing_view_count1 = mysqli_query($conn,"SELECT listing_id FROM " . TBL . "page_views  WHERE listing_id = '$listing_id' ");
+    $total_listing_view_count1 = mysqli_query($conn,"SELECT listing_id FROM " . COUNTRY_PREFIX . "page_views  WHERE listing_id = '$listing_id' ");
     $total_listing_view_count = mysqli_num_rows($total_listing_view_count1);
     return $total_listing_view_count;
 }
@@ -100,7 +100,7 @@ function pageview_countnew($listing_id)
 function event_pageview_countnew($event_id)
 {
     global $conn;
-    $total_event_view_count1 = mysqli_query($conn,"SELECT event_id FROM " . TBL . "page_views  WHERE event_id = '$event_id' ");
+    $total_event_view_count1 = mysqli_query($conn,"SELECT event_id FROM " . COUNTRY_PREFIX . "page_views  WHERE event_id = '$event_id' ");
     $total_event_view_count = mysqli_num_rows($total_event_view_count1);
     return $total_event_view_count;
 }
@@ -110,7 +110,7 @@ function event_pageview_countnew($event_id)
 function blog_pageview_countnew($blog_id)
 {
     global $conn;
-    $total_blog_view_count1 = mysqli_query($conn,"SELECT blog_id FROM " . TBL . "page_views  WHERE blog_id = '$blog_id' ");
+    $total_blog_view_count1 = mysqli_query($conn,"SELECT blog_id FROM " . COUNTRY_PREFIX . "page_views  WHERE blog_id = '$blog_id' ");
     $total_blog_view_count = mysqli_num_rows($total_blog_view_count1);
     return $total_blog_view_count;
 }
@@ -127,7 +127,7 @@ function trashFolderNew($val){
 function listing_total_like_countnew($listing_id)
 {
     global $conn;
-    $total_listing_likes_count1 = mysqli_query($conn,"SELECT listing_id FROM " . TBL . "listing_likes  WHERE listing_id = '$listing_id' ");
+    $total_listing_likes_count1 = mysqli_query($conn,"SELECT listing_id FROM " . COUNTRY_PREFIX . "listing_likes  WHERE listing_id = '$listing_id' ");
     $total_listing_likes_count = mysqli_num_rows($total_listing_likes_count1);
     return $total_listing_likes_count;
 }
@@ -176,4 +176,38 @@ function samptimeFormatconverter($date)
 {
     $phpdate = strtotime( $date );
     return date("g:i A",$phpdate);
+}
+
+
+// Function to get the appropriate table prefix based on the subdomain and table name
+if (!function_exists('getTablePrefix')) {
+    function getTablePrefix($tableName) {
+        global $country_table_list;
+
+        // Check if the table name is in the country_table array
+        //$countries = 'all_featured_filters,all_listing_filters,all_texts,blog_categories,blogs,categories,chat_links';
+        $country_tables = explode(',', $country_table_list);
+        
+        if (in_array($tableName, $country_tables)) {
+            
+            // Get the subdomain from the request URL
+            $subdomain = substr($_SERVER['HTTP_HOST'], 0, strpos($_SERVER['HTTP_HOST'], '.'));        
+            
+            
+            // Set the appropriate table prefix based on the subdomain
+            switch ($subdomain) {
+                case 'en':
+                    $tablePrefix = 'en_';
+                    break;
+                case 'de':
+                    $tablePrefix = 'de_';
+                    break;                
+                default:
+                    $tablePrefix = 'ww_';
+            }
+        }
+
+        return $tablePrefix.$tableName;
+    }
+    
 }

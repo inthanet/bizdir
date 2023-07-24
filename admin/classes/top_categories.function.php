@@ -5,7 +5,7 @@ function getAllTopCategories()
 {
     global $conn;
 
-    $sql = "SELECT * FROM " . TBL . "top_categories ORDER BY category_id ASC";
+    $sql = "SELECT * FROM " . COUNTRY_PREFIX . "top_categories ORDER BY category_id ASC";
     $rs = mysqli_query($conn, $sql);
     return $rs;
 
@@ -16,7 +16,7 @@ function getTopCategory($arg)
 {
     global $conn;
 
-    $sql = "SELECT * FROM  " . TBL . "top_categories where category_id='".$arg."'";
+    $sql = "SELECT * FROM  " . COUNTRY_PREFIX . "top_categories where category_id='".$arg."'";
     $rs = mysqli_query($conn, $sql);
     $row = mysqli_fetch_array($rs);
     return $row;

@@ -5,7 +5,7 @@ function getAllCities()
 {
     global $conn;
 
-    $sql = "SELECT * FROM " . TBL . "cities GROUP BY city_name ORDER BY city_id  DESC";
+    $sql = "SELECT * FROM " . COUNTRY_PREFIX . "cities GROUP BY city_name ORDER BY city_id  DESC";
     $rs = mysqli_query($conn, $sql);
     return $rs;
 
@@ -16,7 +16,7 @@ function getCity($arg)
 {
     global $conn;
 
-    $sql = "SELECT * FROM  " . TBL . "cities where city_id='" . $arg . "'";
+    $sql = "SELECT * FROM  " . COUNTRY_PREFIX . "cities where city_id='" . $arg . "'";
     $rs = mysqli_query($conn, $sql);
     $row = mysqli_fetch_array($rs);
     return $row;
@@ -28,7 +28,7 @@ function getCityName($arg)
 {
     global $conn;
 
-    $sql = "SELECT * FROM  " . TBL . "cities where city_name='" . $arg . "'";
+    $sql = "SELECT * FROM  " . COUNTRY_PREFIX . "cities where city_name='" . $arg . "'";
     $rs = mysqli_query($conn, $sql);
     $row = mysqli_fetch_array($rs);
     return $row;
@@ -39,7 +39,7 @@ function getCountCity()
 {
     global $conn;
 
-    $sql = "SELECT * FROM " . TBL . "cities ORDER BY city_id DESC";
+    $sql = "SELECT * FROM " . COUNTRY_PREFIX . "cities ORDER BY city_id DESC";
     $rs = mysqli_query($conn, $sql);
     $row = mysqli_num_rows($rs);
     return $row;

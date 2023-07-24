@@ -28,7 +28,7 @@ if (isset($_POST['country_submit'])) {
 //************ Expert City Name Already Exist Check Starts ***************
 
 
-        $country_name_exist_check = mysqli_query($conn, "SELECT * FROM " . TBL . "expert_cities  WHERE country_name='" . $country_name . "' ");
+        $country_name_exist_check = mysqli_query($conn, "SELECT * FROM " . COUNTRY_PREFIX . "expert_cities  WHERE country_name='" . $country_name . "' ");
 
         if (mysqli_num_rows($country_name_exist_check) > 0) {
 
@@ -44,7 +44,7 @@ if (isset($_POST['country_submit'])) {
 //************ Expert City Name Already Exist Check Ends ***************
 
 
-        $sql = mysqli_query($conn, "INSERT INTO  " . TBL . "expert_cities (country_name,country_cdt)
+        $sql = mysqli_query($conn, "INSERT INTO  " . COUNTRY_PREFIX . "expert_cities (country_name,country_cdt)
 VALUES ('$country_name','$curDate')");
 
     }

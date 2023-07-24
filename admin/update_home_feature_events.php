@@ -23,7 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 //************ event Name Already Exist Check Starts ***************
 
         if ($event_name != $event_name_old) {
-            $event_name_exist_check = mysqli_query($conn, "SELECT * FROM " . TBL . "top_events  WHERE event_name='" . $event_name . "' ");
+            $event_name_exist_check = mysqli_query($conn, "SELECT * FROM " . COUNTRY_PREFIX . "top_events  WHERE event_name='" . $event_name . "' ");
 
 
             if (mysqli_num_rows($event_name_exist_check) > 0) {
@@ -64,7 +64,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
 
 
-        $sql = mysqli_query($conn, "UPDATE  " . TBL . "top_events SET event_name='" . $event_name . "', event_status='" . $event_status . "'
+        $sql = mysqli_query($conn, "UPDATE  " . COUNTRY_PREFIX . "top_events SET event_name='" . $event_name . "', event_status='" . $event_status . "'
      , event_image='" . $event_image . "' , event_pos_id='" . $event_pos_id . "' 
      where event_id='" . $event_id . "'");
 

@@ -24,7 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $country_filter = $_POST['country_filter'];
 
 
-        $sql = mysqli_query($conn,"UPDATE  " . TBL . "all_listing_filters SET service_filter='" . $service_filter. "'
+        $sql = mysqli_query($conn,"UPDATE  " . COUNTRY_PREFIX . "all_listing_filters SET service_filter='" . $service_filter. "'
         , category_filter='" . $category_filter . "', feature_filter='" . $feature_filter . "', rating_filter='" . $rating_filter . "'
         , city_filter='" . $city_filter. "' , country_filter='" . $country_filter. "'
          where all_listing_filter_id='" . $all_listing_filter_id . "'");

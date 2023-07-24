@@ -463,7 +463,7 @@ if (isset($_REQUEST['city']) && !empty($_REQUEST['city'])) {
                     <!--END-->
                 </div>
                 <?php
-                $jobsql = "SELECT *  FROM " . TBL . "jobs WHERE job_status= 'Active' $category_search_query $sub_category_search_query $salary_search_query $job_type_search_query $job_location_search_query ORDER BY job_id DESC";
+                $jobsql = "SELECT *  FROM " . COUNTRY_PREFIX . "jobs WHERE job_status= 'Active' $category_search_query $sub_category_search_query $salary_search_query $job_type_search_query $job_location_search_query ORDER BY job_id DESC";
 
                 $jobrs = mysqli_query($conn, $jobsql);
                 $total_jobs = mysqli_num_rows($jobrs);
