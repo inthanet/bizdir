@@ -406,9 +406,9 @@ $BIZBOOK['HOM-BEST-SUB-TIT'] = "lacinia viverra lectus. Fusce imperdiet ullamcor
 
 $BIZBOOK['HOM-WHAT-SER'] = "What service do you need?";
 
-$BIZBOOK['HOM-WHAT-BIZ'] = "BizBook Directory";
+$BIZBOOK['HOM-WHAT-BIZ'] = "BizDir Directory";
 
-$BIZBOOK['HOM-WHAT-BIZ-BOOK-HELP-YOU'] = "BizBook will help you";
+$BIZBOOK['HOM-WHAT-BIZ-BOOK-HELP-YOU'] = "BizDir will help you";
 
 $BIZBOOK['HOM-WHAT-SUB-HEAD'] = "Tell us more about your requirements so that we can connect you to the right service provider.";
 
@@ -1342,7 +1342,7 @@ $BIZBOOK['HOM3-OW-LHS-CTA'] = "Add my business";
 
 $BIZBOOK['HOM3-OW-RHS-TIT'] = "Are you looking for service?";
 
-$BIZBOOK['HOM3-OW-RHS-SUB'] = "Get everything in your pocket, What service do you need? BizBook will help you.";
+$BIZBOOK['HOM3-OW-RHS-SUB'] = "Get everything in your pocket, What service do you need? BizDir will help you.";
 
 $BIZBOOK['HOM3-OW-RHS-CTA'] = "Create an account";
 
