@@ -61,7 +61,7 @@ if($isValidChecksum == "TRUE") {
         $amount_paid = $_POST["txnAmount"];
         $item_currency      = "INR";
 
-        $plan_type_details = mysqli_query($conn,"SELECT * FROM  " . COUNTRY_PREFIX . "plan_type where plan_type_price='" . $amount_paid . "'");
+        $plan_type_details = mysqli_query($conn,"SELECT * FROM  " . TBL . "plan_type where plan_type_price='" . $amount_paid . "'");
         $plan_type_details_row = mysqli_fetch_array($plan_type_details);
 
         $plan_type_id = $plan_type_details_row['plan_type_id'];  //Plan Type Id

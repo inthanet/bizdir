@@ -249,7 +249,7 @@ while ($exp_listrow = mysqli_fetch_array($exp_listrs)) {
 
     if($exp_user_plan != 0){
 
-    $exp_users_plan_type = "SELECT * FROM " . COUNTRY_PREFIX . "plan_type WHERE plan_type_id= '$exp_user_plan'";
+    $exp_users_plan_type = "SELECT * FROM " . TBL . "plan_type WHERE plan_type_id= '$exp_user_plan'";
     $exp_users_plan_type_rs = mysqli_query($conn,$exp_users_plan_type);
 
     $exp_users_plan_type_row = mysqli_fetch_array($exp_users_plan_type_rs);

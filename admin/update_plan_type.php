@@ -148,7 +148,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $plan_type_country_count =  $_POST['plan_type_country_count'];
 
 
-     $sql = mysqli_query($conn,"UPDATE  " . COUNTRY_PREFIX . "plan_type SET plan_type_name='" . $plan_type_name . "', plan_type_price='" . $plan_type_price. "'
+     $sql = mysqli_query($conn,"UPDATE  " . TBL . "plan_type SET plan_type_name='" . $plan_type_name . "', plan_type_price='" . $plan_type_price. "'
      , plan_type_duration='" . $plan_type_duration . "', plan_type_description='" . $plan_type_description . "', plan_type_contact='" . $plan_type_contact. "'
      , plan_type_listing_count='" . $plan_type_listing_count . "', plan_type_product_count='" . $plan_type_product_count . "', plan_type_event_count='" . $plan_type_event_count . "'
      , plan_type_blog_count='" . $plan_type_blog_count. "', plan_type_job_count='" . $plan_type_job_count. "', plan_type_coupon_count='" . $plan_type_coupon_count. "'
