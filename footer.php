@@ -110,7 +110,7 @@
         </div>
         <div class="row wed-foot-link">
             <div class="col-md-4 foot-tc-mar-t-o">
-                <h4><?php echo $BIZBOOK['FOOTER-TOP-CATEGORY']; ?></h4>
+                <h4 style="color:aqua;"><?php echo $BIZBOOK['FOOTER-TOP-CATEGORY']; ?></h4>
                 <ul>
                     <li><a href="<?php echo $ALL_LISTING_URL . urlModifier(getCategoryName(strtolower($footer_row['top_category_1']))); ?>"><?php echo getCategoryName($footer_row['top_category_1']); ?></a></li>
                     <li><a href="<?php echo $ALL_LISTING_URL . urlModifier(getCategoryName(strtolower($footer_row['top_category_2']))); ?>"><?php echo getCategoryName($footer_row['top_category_2']); ?></a></li>
@@ -123,7 +123,7 @@
                 </ul>
             </div>
             <div class="col-md-4">
-                <h4><?php echo $BIZBOOK['FOOTER-TRENDING-CATEGORY']; ?></h4>
+                <h4 style="color:aqua;"><?php echo $BIZBOOK['FOOTER-TRENDING-CATEGORY']; ?></h4>
                 <ul>
                     <li><a href="<?php echo $ALL_LISTING_URL . urlModifier(getCategoryName(strtolower($footer_row['trend_category_1']))); ?>"><?php echo getCategoryName($footer_row['trend_category_1']); ?></a></li>
                     <li><a href="<?php echo $ALL_LISTING_URL . urlModifier(getCategoryName(strtolower($footer_row['trend_category_2']))); ?>"><?php echo getCategoryName($footer_row['trend_category_2']); ?></a></li>
@@ -136,7 +136,7 @@
                 </ul>
             </div>
             <div class="col-md-4">
-                <h4><?php echo $BIZBOOK['FOOTER-HELP']; ?> &amp; <?php echo $BIZBOOK['FOOTER-SUPPORT']; ?></h4>
+                <h4 style="color:aqua;"><?php echo $BIZBOOK['FOOTER-HELP']; ?> &amp; <?php echo $BIZBOOK['FOOTER-SUPPORT']; ?></h4>
                 <ul>
                     <li><a href="<?php echo $slash; ?><?php echo $footer_row['footer_page_url_1']; ?>"><?php echo $footer_row['footer_page_name_1']; ?></a>
                     </li>
@@ -155,7 +155,7 @@
         <!-- POPULAR TAGS -->
         <div class="row wed-foot-link-pop">
             <div class="col-md-12">
-                <h4><?php echo $BIZBOOK['FOOTER-POPULAR-TAGS']; ?></h4>
+                <h4 style="color:aqua;"><?php echo $BIZBOOK['FOOTER-POPULAR-TAGS']; ?></h4>
                 <ul>
                     <?php
                     foreach (getAllPopularTags() as $popular_tags_row) {
@@ -169,10 +169,10 @@
         </div>
         <!-- POPULAR TAGS -->
 
-        <!-- POPULAR BIZDIR COUNTRY DIRECTORIES -->
+        <!-- POPULAR EXTERNAL LINKS -->
         <div class="row wed-foot-link-pop">
             <div class="col-md-12">
-                <h4 style="color:aqua;"><?php echo $BIZBOOK['FOOTER-POPULAR-BIZDIR']; ?></h4>
+                <h4 style="color:aqua;"><?php echo $BIZBOOK['FOOTER-POPULAR-LINKS']; ?></h4>
                 <ul>
                     <?php
                     foreach (getAllPopularTags(1) as $popular_tags_row) {
@@ -189,15 +189,15 @@
         <div class="row wed-foot-link-1">
             <?php if($footer_row['admin_get_in_touch_feature'] == 1) { ?>
             <div class="col-md-4">
-                <h4><?php echo $BIZBOOK['FOOTER-GET-IN-TOUCH']; ?></h4>
-                <p><?php echo $BIZBOOK['ADDRESS']; ?>: <?php echo $footer_row['footer_address']; ?></p>
+                <h4 style="color:aqua;"><?php echo $BIZBOOK['FOOTER-GET-IN-TOUCH']; ?></h4>
+                <p><?php echo $footer_row['footer_address']; ?></p>
                 <p><?php echo $BIZBOOK['PHONE']; ?>: <a href="tel:<?php echo $footer_row['footer_mobile']; ?>"><?php echo $footer_row['footer_mobile']; ?></a></p>
                 <p><?php echo $BIZBOOK['EMAIL']; ?>: <a href="mailto:<?php echo $footer_row['admin_primary_email']; ?>"><?php echo $footer_row['admin_primary_email']; ?></a></p>
             </div>
             <?php } ?>
             <?php if($footer_row['admin_footer_mobile_app_feature'] == 1) { ?>
             <div class="col-md-4 fot-app">
-                <h4><?php echo $BIZBOOK['FOOTER-DOWNLOAD-FREE-MOBILE-APPS']; ?></h4>
+                <h4 style="color:aqua;"><?php echo $BIZBOOK['FOOTER-DOWNLOAD-FREE-MOBILE-APPS']; ?></h4>
                 <ul>
                     <li><a href="<?php echo $footer_row['mobile_app_andriod']; ?>"><img loading="lazy" src="<?php echo $slash; ?>images/gstore.png" alt=""></a>
                     </li>
@@ -207,7 +207,7 @@
             </div>
             <?php } ?>
             <div class="col-md-4 fot-soc">
-                <h4><?php echo $BIZBOOK['FOOTER-SOCIAL-MEDIA']; ?></h4>
+                <h4 style="color:aqua;"><?php echo $BIZBOOK['FOOTER-SOCIAL-MEDIA']; ?></h4>
                 <ul>
                     <li><a target="_blank" href="<?php echo $footer_row['footer_linked_in']; ?>"><img loading="lazy" src="<?php echo $slash; ?>images/social/1.png" alt=""></a></li>
                     <li><a target="_blank" href="<?php echo $footer_row['footer_twitter']; ?>"><img loading="lazy" src="<?php echo $slash; ?>images/social/2.png" alt=""></a></li>
@@ -218,15 +218,50 @@
             </div>
         </div>
         <?php if($footer_row['admin_country_list_feature'] == 1) { ?>
+        
+        <div style="width:100%;text-align:center;position:relative;top: 47px;color: #0fcfed;font-weight: 700;">Country Directories</div>
         <div class="row foot-count">
             <ul>
-                <li><a target="_blank" href="http://<?php echo $footer_row['footer_country_url_1']; ?>"><?php echo $footer_row['footer_country_name_1']; ?></a></li>
-                <li><a target="_blank" href="http://<?php echo $footer_row['footer_country_url_2']; ?>"><?php echo $footer_row['footer_country_name_2']; ?></a></li>
-                <li><a target="_blank" href="http://<?php echo $footer_row['footer_country_url_3']; ?>"><?php echo $footer_row['footer_country_name_3']; ?></a></li>
-                <li><a target="_blank" href="http://<?php echo $footer_row['footer_country_url_4']; ?>"><?php echo $footer_row['footer_country_name_4']; ?></a></li>
-                <li><a target="_blank" href="http://<?php echo $footer_row['footer_country_url_5']; ?>"><?php echo $footer_row['footer_country_name_5']; ?></a></li>
-                <li><a target="_blank" href="http://<?php echo $footer_row['footer_country_url_6']; ?>"><?php echo $footer_row['footer_country_name_6']; ?></a></li>
-                <li><a target="_blank" href="http://<?php echo $footer_row['footer_country_url_7']; ?>"><?php echo $footer_row['footer_country_name_7']; ?></a></li>
+               <?php if(!empty($footer_row['footer_country_name_1'])){ ?> 
+                <li><a target="_blank" href="https://<?php echo $footer_row['footer_country_url_1']; ?>"><?php echo $footer_row['footer_country_name_1']; ?></a></li>
+               <?php } ?> 
+               
+               <?php if(!empty($footer_row['footer_country_name_2'])){ ?>
+                <li><a target="_blank" href="https://<?php echo $footer_row['footer_country_url_2']; ?>"><?php echo $footer_row['footer_country_name_2']; ?></a></li>
+               <?php } ?> 
+               
+               <?php if(!empty($footer_row['footer_country_name_3'])){ ?>
+                <li><a target="_blank" href="https://<?php echo $footer_row['footer_country_url_3']; ?>"><?php echo $footer_row['footer_country_name_3']; ?></a></li>
+               <?php } ?> 
+               
+               <?php if(!empty($footer_row['footer_country_name_4'])){ ?>                
+                <li><a target="_blank" href="https://<?php echo $footer_row['footer_country_url_4']; ?>"><?php echo $footer_row['footer_country_name_4']; ?></a></li>
+               <?php } ?> 
+               
+               <?php if(!empty($footer_row['footer_country_name_5'])){ ?>                
+                <li><a target="_blank" href="https://<?php echo $footer_row['footer_country_url_5']; ?>"><?php echo $footer_row['footer_country_name_5']; ?></a></li>
+               <?php } ?> 
+               
+               <?php if(!empty($footer_row['footer_country_name_6'])){ ?>                 
+                <li><a target="_blank" href="https://<?php echo $footer_row['footer_country_url_6']; ?>"><?php echo $footer_row['footer_country_name_6']; ?></a></li>
+               <?php } ?> 
+               
+               <?php if(!empty($footer_row['footer_country_name_7'])){ ?>                 
+                <li><a target="_blank" href="https://<?php echo $footer_row['footer_country_url_7']; ?>"><?php echo $footer_row['footer_country_name_7']; ?></a></li>
+               <?php } ?> 
+               
+               <?php if(!empty($footer_row['footer_country_name_8'])){ ?>                 
+                <li><a target="_blank" href="https://<?php echo $footer_row['footer_country_url_8']; ?>"><?php echo $footer_row['footer_country_name_8']; ?></a></li>
+               <?php } ?> 
+               
+               <?php if(!empty($footer_row['footer_country_name_9'])){ ?>                 
+                <li><a target="_blank" href="https://<?php echo $footer_row['footer_country_url_9']; ?>"><?php echo $footer_row['footer_country_name_9']; ?></a></li>
+               <?php } ?> 
+               
+               <?php if(!empty($footer_row['footer_country_name_10'])){ ?>                 
+                <li><a target="_blank" href="https://<?php echo $footer_row['footer_country_url_10']; ?>"><?php echo $footer_row['footer_country_name_10']; ?></a></li>
+               <?php } ?> 
+
             </ul>
         </div>
         <?php } ?>

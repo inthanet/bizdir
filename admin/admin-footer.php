@@ -559,6 +559,8 @@ include "header.php";
                                         </div>
                                     </td>
                                 </tr>
+
+
                                 <tr>
                                     <td></td>
                                     <td>Country name:</td>
@@ -575,12 +577,66 @@ include "header.php";
                                         </div>
                                     </td>
                                 </tr>
+
+
+
+                                <tr>
+                                    <td></td>
+                                    <td>Country name:</td>
+                                    <td>
+                                        <div class="form-group">
+                                            <input class="form-control" placeholder="Country name" name="footer_country_name_8" value="<?php echo $row_f['footer_country_name_8']; ?>">
+                                        </div>
+                                    </td>
+                                    <td>Country url:</td>
+                                    <td>
+                                        <div class="form-group">
+                                            <input class="form-control" placeholder="Country page full url"
+                                                   name="footer_country_url_8" value="<?php echo $row_f['footer_country_url_8']; ?>">
+                                        </div>
+                                    </td>
+                                </tr>
+                                
+                                <tr>
+                                    <td></td>
+                                    <td>Country name:</td>
+                                    <td>
+                                        <div class="form-group">
+                                            <input class="form-control" placeholder="Country name" name="footer_country_name_9" value="<?php echo $row_f['footer_country_name_9']; ?>">
+                                        </div>
+                                    </td>
+                                    <td>Country url:</td>
+                                    <td>
+                                        <div class="form-group">
+                                            <input class="form-control" placeholder="Country page full url"
+                                                   name="footer_country_url_9" value="<?php echo $row_f['footer_country_url_9']; ?>">
+                                        </div>
+                                    </td>
+                                </tr>                                
+
+                                <tr>
+                                    <td></td>
+                                    <td>Country name:</td>
+                                    <td>
+                                        <div class="form-group">
+                                            <input class="form-control" placeholder="Country name" name="footer_country_name_10" value="<?php echo $row_f['footer_country_name_10']; ?>">
+                                        </div>
+                                    </td>
+                                    <td>Country url:</td>
+                                    <td>
+                                        <div class="form-group">
+                                            <input class="form-control" placeholder="Country page full url"
+                                                   name="footer_country_url_10" value="<?php echo $row_f['footer_country_url_10']; ?>">
+                                        </div>
+                                    </td>
+                                </tr>                                
+
                             <tr>
                                 <td>Copyright</td>
                                 <td>Copyright year</td>
                                 <td colspan="3">
                                     <div class="form-group">
-                                        <input type="text" name="copyright_year" value="<?php echo $row_f['copyright_year']; ?>" class="form-control"
+                                        <input type="text" name="copyright_year" value="<?php echo date('Y'); ?>" class="form-control"
                                                placeholder="2023-2025">
                                     </div>
                                 </td>

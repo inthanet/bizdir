@@ -75,6 +75,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $footer_country_name_7 = $_POST['footer_country_name_7'];
         $footer_country_url_7 = $_POST['footer_country_url_7'];
 
+        $footer_country_name_8 = $_POST['footer_country_name_8'];
+        $footer_country_url_8 = $_POST['footer_country_url_8'];
+        $footer_country_name_9 = $_POST['footer_country_name_9'];
+        $footer_country_url_9 = $_POST['footer_country_url_9'];
+        $footer_country_name_10 = $_POST['footer_country_name_10'];
+        $footer_country_url_10 = $_POST['footer_country_url_10'];
+
+
+
         $copyright_year = $_POST['copyright_year'];
         $copyright_website = $_POST['copyright_website'];
         $copyright_website_link = $_POST['copyright_website_link'];
@@ -163,6 +172,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
      , footer_country_name_5='" . $footer_country_name_5 . "',footer_country_url_5='" . $footer_country_url_5 . "'
      , footer_country_name_6='" . $footer_country_name_6 . "',footer_country_url_6='" . $footer_country_url_6 . "'
      , footer_country_name_7='" . $footer_country_name_7 . "',footer_country_url_7='" . $footer_country_url_7 . "'
+     
+     , footer_country_name_8='" . $footer_country_name_8 . "',footer_country_url_7='" . $footer_country_url_8 . "'
+     , footer_country_name_9='" . $footer_country_name_9 . "',footer_country_url_7='" . $footer_country_url_9 . "'
+     , footer_country_name_10='" . $footer_country_name_10 . "',footer_country_url_7='" . $footer_country_url_10 . "'
+
      , copyright_year='" . $copyright_year . "',copyright_website='" . $copyright_website . "'
      , copyright_website_link='" . $copyright_website_link . "'
      
