@@ -85,7 +85,7 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
             $to1 = $user_email_id;
             $subject1 = "$admin_site_name Claim This Business Request";
 
-        $admin_sql_fetch = mysqli_query($conn,"SELECT * FROM " . TBL . "mail WHERE mail_id = 24 "); //Admin mail template fetch
+        $admin_sql_fetch = mysqli_query($conn,"SELECT * FROM " . COUNTRY_PREFIX . "mail WHERE mail_id = 24 "); //Admin mail template fetch
         $admin_sql_fetch_row = mysqli_fetch_array($admin_sql_fetch);
 
         $mail_template_admin = $admin_sql_fetch_row['mail_template'];

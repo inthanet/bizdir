@@ -97,7 +97,7 @@ if ($check == '0' || empty($check)) { // if new user . Insert a new record
         $USER_INSERT_ADMIN_SUBJECT = $BIZBOOK['USER_INSERT_ADMIN_SUBJECT'];
         $subject = "$admin_site_name $USER_INSERT_ADMIN_SUBJECT";
 
-        $admin_sql_fetch = mysqli_query($conn, "SELECT * FROM " . TBL . "mail  WHERE mail_id = 2 "); //Admin mail template fetch
+        $admin_sql_fetch = mysqli_query($conn, "SELECT * FROM " . COUNTRY_PREFIX . "mail  WHERE mail_id = 2 "); //Admin mail template fetch
         $admin_sql_fetch_row = mysqli_fetch_array($admin_sql_fetch);
 
         $mail_template_admin = $admin_sql_fetch_row['mail_template'];
@@ -123,7 +123,7 @@ if ($check == '0' || empty($check)) { // if new user . Insert a new record
         $USER_INSERT_CLIENT_SUBJECT = $BIZBOOK['USER_INSERT_CLIENT_SUBJECT'];
         $subject1 = "$admin_site_name $USER_INSERT_CLIENT_SUBJECT";
 
-        $client_sql_fetch = mysqli_query($conn, "SELECT * FROM " . TBL . "mail  WHERE mail_id = 1 "); //User mail template fetch
+        $client_sql_fetch = mysqli_query($conn, "SELECT * FROM " . COUNTRY_PREFIX . "mail  WHERE mail_id = 1 "); //User mail template fetch
         $client_sql_fetch_row = mysqli_fetch_array($client_sql_fetch);
 
         $mail_template_client = $client_sql_fetch_row['mail_template'];

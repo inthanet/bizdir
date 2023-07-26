@@ -96,7 +96,7 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
             $to = $admin_email;
             $subject = "$admin_site_name -New News has been created";
 
-            $admin_sql_fetch = mysqli_query($conn,"SELECT * FROM " . TBL . "mail WHERE mail_id = 15 "); //admin mail template fetch
+            $admin_sql_fetch = mysqli_query($conn,"SELECT * FROM " . COUNTRY_PREFIX . "mail WHERE mail_id = 15 "); //admin mail template fetch
             $admin_sql_fetch_row = mysqli_fetch_array($admin_sql_fetch);
 
             $mail_template_admin = $admin_sql_fetch_row['mail_template'];

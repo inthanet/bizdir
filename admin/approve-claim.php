@@ -66,7 +66,7 @@ if(isset($_GET['approveclaimrequestapproveclaimrequestapproveclaimrequestapprove
         $webpage_full_link_with_login = $webpage_full_link. "login";  //URL Login Link
         
 
-        $admin_sql_fetch = mysqli_query($conn,"SELECT * FROM " . TBL . "mail WHERE mail_id = 25 "); //Admin mail template fetch
+        $admin_sql_fetch = mysqli_query($conn,"SELECT * FROM " . COUNTRY_PREFIX . "mail WHERE mail_id = 25 "); //Admin mail template fetch
         $admin_sql_fetch_row = mysqli_fetch_array($admin_sql_fetch);
 
         $mail_template_admin = $admin_sql_fetch_row['mail_template'];

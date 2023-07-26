@@ -39,7 +39,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         $footer_id = 1;
 
-        $sql = mysqli_query($conn,"UPDATE  " . TBL . "mail SET mail_template ='" . $mail_template_data. "' where mail_id='" . $mail_id . "'");
+        $sql = mysqli_query($conn,"UPDATE  " . COUNTRY_PREFIX . "mail SET mail_template ='" . $mail_template_data. "' where mail_id='" . $mail_id . "'");
 
        
         if ($sql) {

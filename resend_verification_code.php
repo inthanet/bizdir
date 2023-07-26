@@ -57,7 +57,7 @@ if (mysqli_num_rows($activation) > 0) {
         $USER_INSERT_CLIENT_SUBJECT = $BIZBOOK['USER_VERIFICATION_RESENT_CLIENT_SUBJECT'];
         $subject1 = "$admin_site_name $USER_INSERT_CLIENT_SUBJECT";
 
-        $client_sql_fetch = mysqli_query($conn, "SELECT * FROM " . TBL . "mail WHERE mail_id = 22 "); //User mail template fetch
+        $client_sql_fetch = mysqli_query($conn, "SELECT * FROM " . COUNTRY_PREFIX . "mail WHERE mail_id = 22 "); //User mail template fetch
         $client_sql_fetch_row = mysqli_fetch_array($client_sql_fetch);
 
         $mail_template_client = $client_sql_fetch_row['mail_template'];

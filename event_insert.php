@@ -199,7 +199,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $EVENT_INSERT_ADMIN_SUBJECT = $BIZBOOK['EVENT_INSERT_ADMIN_SUBJECT'];
             $subject = "$admin_site_name $EVENT_INSERT_ADMIN_SUBJECT";
 
-            $admin_sql_fetch = mysqli_query($conn, "SELECT * FROM " . TBL . "mail  WHERE mail_id = 11 "); //admin mail template fetch
+            $admin_sql_fetch = mysqli_query($conn, "SELECT * FROM " . COUNTRY_PREFIX . "mail  WHERE mail_id = 11 "); //admin mail template fetch
             $admin_sql_fetch_row = mysqli_fetch_array($admin_sql_fetch);
 
             $mail_template_admin = $admin_sql_fetch_row['mail_template'];
@@ -226,7 +226,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $EVENT_INSERT_CLIENT_SUBJECT = $BIZBOOK['EVENT_INSERT_CLIENT_SUBJECT'];
             $subject1 = "$admin_site_name $EVENT_INSERT_CLIENT_SUBJECT";
 
-            $client_sql_fetch = mysqli_query($conn, "SELECT * FROM " . TBL . "mail  WHERE mail_id = 10 "); //User mail template fetch
+            $client_sql_fetch = mysqli_query($conn, "SELECT * FROM " . COUNTRY_PREFIX . "mail  WHERE mail_id = 10 "); //User mail template fetch
             $client_sql_fetch_row = mysqli_fetch_array($client_sql_fetch);
 
             $mail_template_client = $client_sql_fetch_row['mail_template'];

@@ -61,7 +61,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $subject = "$admin_site_name $FORGET_PASSWORD_ADMIN_SUBJECT";
 
 
-            $client_sql_fetch = mysqli_query($conn,"SELECT * FROM " . TBL . "mail  WHERE mail_id = 5 "); //User mail template fetch
+            $client_sql_fetch = mysqli_query($conn,"SELECT * FROM " . COUNTRY_PREFIX . "mail  WHERE mail_id = 5 "); //User mail template fetch
             $client_sql_fetch_row = mysqli_fetch_array($client_sql_fetch);
 
             $mail_template_client = $client_sql_fetch_row['mail_template'];
