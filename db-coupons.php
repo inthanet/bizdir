@@ -41,8 +41,10 @@ if (file_exists('config/coupon_page_authentication.php')) {
                         <ul>
                             <?php
                             $si = 1;
-                            foreach (getAllUserCoupons($_SESSION['user_id']) as $couponrow) {
 
+
+                            foreach (getAllUserCoupons($_SESSION['user_id']) as $couponrow) {
+                                
                                 $user_id = $couponrow['coupon_user_id'];
 
                                 $user_coupo_details_row = getUser($user_id);
