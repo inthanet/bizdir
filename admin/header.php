@@ -78,6 +78,9 @@ $all_texts_row = getAllTexts(); //Fetch All Text Data
                     <?php if ($footer_row['header_logo_width'] != NULL || $footer_row['header_logo_height'] != NULL){ ?>style="<?php if ($footer_row['header_logo_width'] != NULL) { ?>width: <?php echo $footer_row['header_logo_width']; ?>; <?php }
                     if ($footer_row['header_logo_height'] != NULL) { ?>height: <?php echo $footer_row['header_logo_height']; ?>;<?php } ?>"<?php } ?>
                     src="../images/home/<?php echo $footer_row['header_logo']; ?>">
+                <div style="font-weight:700;color:yellow;margin-left: 26px;">
+                   <?php if(COUNTRY_PREFIX == 'ww_'){ echo 'MAIN | '.COUNTRY_LANG; } else { echo COUNTRY_NAME.' | '.COUNTRY_LANG;}?>
+                </div>    
             </div>
         </div>
         <div class="head-s2">
