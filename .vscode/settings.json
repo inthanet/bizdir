@@ -1,4 +1,7 @@
 {
     "git.ignoreLimitWarning": false,
-    "workbench.activityBar.visible": true
-}
+    "workbench.activityBar.visible": true,
+    "[powershell]": {
+        "editor.wordSeparators": "`~!@$#%^&*()-=+[{]}\\|;:'\",.<>/?"
+    }
+}    
