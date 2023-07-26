@@ -610,7 +610,10 @@ function urlModifier($slug_url)
 {
     //return preg_replace('/\s+/', '-', strtolower($slug_url));
     //return str_replace(' ', '-', strtolower($slug_url));
-    return preg_replace("/[\s_]/", "-", strtolower($slug_url));
+    if(!empty($slug_url)){
+     return preg_replace("/[\s_]/", "-", strtolower($slug_url));
+    } 
+    return NULL;
 }
 
 # To add new string in existing comma separated string
