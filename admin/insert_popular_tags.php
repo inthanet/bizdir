@@ -13,6 +13,7 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
 // Basic Personal Details
         $popular_tags_name = $_POST["popular_tags_name"];
         $popular_tags_link = $_POST["popular_tags_link"];
+        $popular_tags_bizdir = $_POST["popular_tags_bizdir"];
         $popular_tags_status = "Active";
 
 
@@ -20,9 +21,9 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
 
 
         $sql_qry = "INSERT INTO " . COUNTRY_PREFIX . "popular_tags 
-					(popular_tags_name, popular_tags_link, popular_tags_status, popular_tags_cdt) 
+					(popular_tags_name, popular_tags_link, popular_tags_status, popular_tags_cdt, popular_tags_bizdir) 
 					VALUES 
-					('$popular_tags_name', '$popular_tags_link', '$popular_tags_status', '$curDate')";
+					('$popular_tags_name', '$popular_tags_link', '$popular_tags_status', '$curDate', '$popular_tags_bizdir')";
 
         $sql_res = mysqli_query($conn,$sql_qry);
 

@@ -44,6 +44,13 @@ include "header.php";
                                                         </div>
                                                     </div>
                                                 </div>
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <div class="form-group">
+                                                            <input type="text" value="<?php echo $popular_tag_row['popular_tags_bizdir']; ?>" required="required" name="popular_tags_bizdir" class="form-control" placeholder="Link">
+                                                        </div>
+                                                    </div>
+                                                </div>                                                
                                             </li>
                                         </ul>
                                         <button type="submit" name="popular_tags_submit" class="btn btn-primary">Submit</button>

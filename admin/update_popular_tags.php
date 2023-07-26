@@ -15,12 +15,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         $popular_tags_id = $_POST['popular_tags_id'];
 
-        $popular_tags_name = $_POST['popular_tags_name'];
-        $popular_tags_link = $_POST['popular_tags_link'];
+        $popular_tags_name   = $_POST['popular_tags_name'];
+        $popular_tags_link   = $_POST['popular_tags_link'];
+        $popular_tags_bizdir = $_POST["popular_tags_bizdir"];
 
 
-        $sql = mysqli_query($conn,"UPDATE  " . COUNTRY_PREFIX . "popular_tags SET  popular_tags_name='" . $popular_tags_name. "'
-        ,popular_tags_link='" . $popular_tags_link. "'
+        $sql = mysqli_query($conn,"UPDATE  " . COUNTRY_PREFIX . "popular_tags 
+              SET  popular_tags_name='" . $popular_tags_name. "'
+                  ,popular_tags_link='" . $popular_tags_link. "'
+                  ,popular_tags_bizdir='" . $popular_tags_bizdir. "'
         where popular_tags_id='" . $popular_tags_id . "'");
 
 

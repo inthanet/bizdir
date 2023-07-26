@@ -41,8 +41,7 @@ include "header.php";
                                 <td><?php echo $row['popular_tags_name']; ?> <span>Created: <?php  echo dateFormatconverter($row['popular_tags_cdt'])?></span></td>
                                 <td><a href="footer-edit-popular-tags.php?row=<?php echo $row['popular_tags_id']; ?>" class="db-list-edit">Edit</a></td>
                                 <td><a href="footer-delete-popular-tags.php?row=<?php echo $row['popular_tags_id']; ?>" class="db-list-edit">Delete</a></td>
-                                <td><a href="<?php echo $row['popular_tags_link']; ?>" class="db-list-edit"
-                                       target="_blank">Preview</a>
+                                <td><a href="<?php echo $row['popular_tags_link']; ?>" class="db-list-edit" target="_blank">Preview</a>
                                 </td>
                             </tr>
                             <?php

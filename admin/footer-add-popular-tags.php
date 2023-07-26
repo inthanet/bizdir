@@ -37,6 +37,14 @@ include "header.php";
                                                 </div>
                                             </div>
                                         </div>
+                                        <hr>
+                                         <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <input type="text" required="required" name="popular_tags_bizdir" class="form-control" placeholder="Is BizDir = 1">
+                                                </div>
+                                            </div>
+                                        </div>                                        
                                      </li>
                                  </ul>
                                 <button type="submit" name="popular_tags_submit" class="btn btn-primary">Submit</button>
