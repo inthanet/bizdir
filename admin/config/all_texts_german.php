@@ -2391,7 +2391,7 @@ $BIZBOOK['FOOTER-SUPPORT'] = "SUPPORT";
 
 $BIZBOOK['FOOTER-POPULAR-TAGS'] = "Trendbegriffe";
 
-$BIZBOOK['FOOTER-POPULAR-BIZDIR'] = "BizDir Länder - Verzeichnisse";
+$BIZBOOK['FOOTER-POPULAR-LINKS'] = "Populat Externe Links";
 
 $BIZBOOK['FOOTER-GET-IN-TOUCH'] = "Kontakt";
 

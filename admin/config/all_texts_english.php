@@ -2391,7 +2391,7 @@ $BIZBOOK['FOOTER-SUPPORT'] = "SUPPORT";
 
 $BIZBOOK['FOOTER-POPULAR-TAGS'] = "Popular Tags";
 
-$BIZBOOK['FOOTER-POPULAR-BIZDIR'] = "BizDir Country Directories";
+$BIZBOOK['FOOTER-POPULAR-LINKS'] = "Popular External Links";
 
 $BIZBOOK['FOOTER-GET-IN-TOUCH'] = "Get In Touch";
 
@@ -2915,9 +2915,11 @@ $BIZBOOK['pg_utype_gp7'] = "Payment invoices";
 
 $BIZBOOK['pg_utype_gp8'] = "Mange listing, event & blogs";
 
-//************************* POLICY & TERMS ***********
+//************************* POLICY & TERMS *********** 
 
 $BIZBOOK['pg_pri_tit'] = "Privacy Policy";
+$BIZBOOK['pg_pri_txt1'] = "Coming Soon";
+$BIZBOOK['pg_pri_txt2'] = "Coming Sooner";
 
 $BIZBOOK['pg_terms_tit'] = "Terms of Use";
 
