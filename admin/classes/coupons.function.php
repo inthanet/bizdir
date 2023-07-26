@@ -30,6 +30,7 @@ function getAllUserCoupons($arg)
 
     $sql = "SELECT * FROM " . COUNTRY_PREFIX . "coupons  WHERE coupon_user_id= '$arg' ORDER BY coupon_id DESC";
     $rs = mysqli_query($conn, $sql);
+
     return $rs;
 
 }
@@ -41,7 +42,7 @@ function getAllUserCouponsUsed($arg)
     global $conn;
     
     $sql = "SELECT coupon_name,coupon_user_id,SUBSTRING_INDEX(SUBSTRING_INDEX(t.coupon_use_members, ',', n.n), ',', -1) coupon_use_members
-  FROM vv_coupons as t CROSS JOIN 
+  FROM ". COUNTRY_PREFIX . "coupons as t CROSS JOIN 
   (
    SELECT a.N + b.N * 10 + 1 n
      FROM 
