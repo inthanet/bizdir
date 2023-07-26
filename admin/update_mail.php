@@ -23,6 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $footer_address = $row_f['footer_address'];
 
         $mail_template_data1 = $_POST['mail_template_data'];
+        $mail_template_name  = $_POST['mail_template_name'];
         $mail_template_data = addslashes(
             str_replace(array($website_name, 'Johxx', 'axx@gmxx.com', 'casxxz', $footer_copyright, $footer_address
             , $webpage_full_link,'axx@gmxx.com', 'DirectoryZZ', '987654xxxx', 'axx@gmxx.com','987654xxxx'
@@ -37,9 +38,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         $mail_id = $_POST['mail_id'];
 
-        $footer_id = 1;
+        $footer_id = 1; 
 
-        $sql = mysqli_query($conn,"UPDATE  " . COUNTRY_PREFIX . "mail SET mail_template ='" . $mail_template_data. "' where mail_id='" . $mail_id . "'");
+        $sql = mysqli_query($conn,"UPDATE  " . COUNTRY_PREFIX . "mail 
+               SET mail_template ='" . $mail_template_data. "', mail_template_name ='" . $mail_template_name. "'  where mail_id='" . $mail_id . "'");
 
        
         if ($sql) {

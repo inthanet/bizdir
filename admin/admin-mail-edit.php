@@ -14,12 +14,12 @@ include "header.php";
                 <div class="log-bor">&nbsp;</div>
                 <span class="udb-inst">Edit Email Template</span>
                 <div class="ud-cen-s2 add-list">
-
-                    <div id="email_content" contenteditable="true">
-                        <?php
+                <?php 
                         $mail_id = $_GET['row'];
 
                         $mail_row = getMailTemplate($mail_id);
+
+                        $mail_template_name = $mail_row['mail_template_name'];
 
                         $row_f = getAllFooter();
 
@@ -28,7 +28,16 @@ include "header.php";
                         $website_name = $row_f['website_address'];
                         $footer_copyright = $row_f['footer_copyright'];
                         $admin_primary_email = $row_f['admin_primary_email'];
-                        $footer_address = $row_f['footer_address'];
+                        $footer_address = $row_f['footer_address'];                
+                
+                ?>    
+                <form method="post" name="mail_template_form" id="mail_template_form" action="update_mail.php">
+                    <div style="width:100%; text-align:center;margin-bottom:30px;">
+                        <input style="width: 800px;font-size: 2em;padding: 3px;" type="text" id="mail_template_name" name="mail_template_name" value="<?php echo $mail_template_name; ?>"/>
+                    </div>
+                    <div id="email_content" contenteditable="true">
+                        <?php
+
 
                         echo stripslashes(str_replace(array('\'.$admin_site_name.\'', '\' . $first_name . \'', '\' . $email_id . \''
                         , '\' . $password . \'', '\'.$admin_footer_copyright.\'', '\'.$admin_address.\'', '\'.$webpage_full_link.\''
@@ -43,11 +52,12 @@ include "header.php";
 
                         ?>
                     </div>
-                    <form method="post" name="mail_template_form" id="mail_template_form" action="update_mail.php">
+                    
                         <input type="hidden" id="mail_template_data" name="mail_template_data"/>
                         <input type="hidden" id="mail_id" name="mail_id" value="<?php echo $mail_id; ?>"/>
-                        <button type="submit" name="mail_template_submit" class="btn-mpdf" id="mail_template">Update
-                            Mail Template
+                        
+                        <button type="submit" name="mail_template_submit" class="btn-mpdf" id="mail_template">
+                            Update Mail Template
                         </button>
                     </form>
                     <div class="ud-notes">
