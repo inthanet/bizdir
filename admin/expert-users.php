@@ -601,7 +601,14 @@ foreach (getAllExperts() as $expert_profile_row) {
 
     //To calculate the expiry date from user created date starts
 
+  
+    //<!--ui ?-->  
+    if(empty($expert_user_row['user_id']) OR empty($expert_user_row['user_cdt'])){
+        break;
+    }
+
     $start_date_timestamp = strtotime($expert_user_row['user_cdt']);
+
     $plan_type_duration = $plan_type_row['plan_type_duration'];
 
     $expiry_date_timestamp = strtotime("+$plan_type_duration months", $start_date_timestamp);
