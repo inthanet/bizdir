@@ -76,7 +76,8 @@ if($select_search != ''){
 //No results found section
 if (mysqli_num_rows($listings_query) <= 0 && mysqli_num_rows($event_query) <= 0 && mysqli_num_rows($blog_query) <= 0 && mysqli_num_rows($product_query) <= 0 && mysqli_num_rows($job_query) <= 0 && mysqli_num_rows($expert_query) <= 0 || $select_search == NULL || empty($select_search)) {
     ?>
-    <div class="container"><?php echo $BIZBOOK['SEARCH-RESULTS-OOPS-NO-RESULTS-FOUND']; ?> <b><?php echo $select_search; ?></b>. <?php echo $BIZBOOK['SEARCH-RESULTS-PLEASE-TRY-WITH-OTHER']; ?></div>
+    <div class="container">
+        <div class="oops"><?php echo $BIZBOOK['SEARCH-RESULTS-OOPS-NO-RESULTS-FOUND']; ?> <b><?php echo $select_search; ?></b>.</div> <?php echo $BIZBOOK['SEARCH-RESULTS-PLEASE-TRY-WITH-OTHER']; ?></div>
     <?php
 }
 else {

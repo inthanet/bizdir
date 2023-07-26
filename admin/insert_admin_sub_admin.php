@@ -258,7 +258,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             }
         }
 
-        $qry = "INSERT INTO " . TBL . "admin
+        $qry = "INSERT INTO " .  TBL . "admin
 					(admin_name,admin_email, admin_password
 					, admin_user_options, admin_listing_options, admin_event_options, admin_blog_options, admin_product_options
 					, admin_jobs_options , admin_service_expert_options , admin_news_options

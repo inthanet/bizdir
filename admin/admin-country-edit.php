@@ -27,10 +27,23 @@ include "header.php";
                                     <form name="country_form" id="country_form" method="post"
                                           action="update_country.php" enctype="multipart/form-data"
                                           class="cre-dup-form cre-dup-form-show">
-                                        <input type="hidden" class="validate" id="country_id" name="country_id"
-                                               value="<?php echo $row['country_id']; ?>" required="required">
+                                        
 
                                         <ul>
+                                           <li>
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <div class="form-group">
+                                                            <input type="hidden" name="old_country_id" value="<?php echo $row['country_id']; ?>">
+                                                            
+                                                            <input type="number" class="validate"  name="country_id"
+                                                                   value="<?php echo $row['country_id']; ?>"
+                                                                   class="form-control" placeholder="Country ID *"
+                                                                   required>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>                                            
                                             <li>
                                                 <div class="row">
                                                     <div class="col-md-12">
@@ -44,8 +57,7 @@ include "header.php";
                                                 </div>
                                             </li>
                                         </ul>
-                                        <button type="submit" name="country_submit" class="btn btn-primary">Update
-                                        </button>
+                                        <button type="submit" name="country_submit" class="btn btn-primary">Update</button>
                                     </form>
                                     <div class="col-md-12">
                                         <a href="admin-all-country.php" class="skip">Go to All Country >></a>

@@ -235,17 +235,28 @@ function placedetailpageview($news_id)
 function httpPost($url, $params)
 {
     $postData = '';
-    foreach ($params as $k => $v) {
-        $postData .= $k . '=' . $v . '&';
-    }
-    $postData = rtrim($postData, '&');
+
+    if(!empty($params)){
+        foreach ($params as $k => $v) {
+            $postData .= $k . '=' . $v . '&';
+        }   
+        $postData = rtrim($postData, '&');     
+        $CountPostData = count($postData);
+     } else {
+         $CountPostData = 0 ; 
+     }
+
+
+
+
+    
 
     $ch = curl_init();
 
     curl_setopt($ch, CURLOPT_URL, $url);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     curl_setopt($ch, CURLOPT_HEADER, false);
-    curl_setopt($ch, CURLOPT_POST, count($postData));
+    curl_setopt($ch, CURLOPT_POST, $CountPostData);
     curl_setopt($ch, CURLOPT_POSTFIELDS, $postData);
 
     $output = curl_exec($ch);
@@ -598,7 +609,7 @@ function filedateFormatconverter()
 function urlModifier($slug_url)
 {
     //return preg_replace('/\s+/', '-', strtolower($slug_url));
-   // return str_replace(' ', '-', strtolower($slug_url));
+    //return str_replace(' ', '-', strtolower($slug_url));
     return preg_replace("/[\s_]/", "-", strtolower($slug_url));
 }
 

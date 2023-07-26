@@ -40,7 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $promotion_page_url = $_POST["promotion_page_url"];
 
 
-        $sql = mysqli_query($conn, "UPDATE  " . TBL . "footer SET  all_listing_page_url='" . $all_listing_page_url . "'
+        $sql = mysqli_query($conn, "UPDATE  " . COUNTRY_PREFIX . "footer SET  all_listing_page_url='" . $all_listing_page_url . "'
         ,all_products_page_url='" . $all_products_page_url . "', all_jobs_page_url='" . $all_jobs_page_url . "'
         , all_experts_page_url='" . $all_experts_page_url . "', all_news_page_url='" . $all_news_page_url . "'
         , profile_page_url='" . $profile_page_url . "', listing_page_url='" . $listing_page_url . "'

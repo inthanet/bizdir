@@ -16,7 +16,7 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
         $src = $_POST["src"];
 
 
-        $login = mysqli_query($conn,"SELECT * FROM " . TBL . "admin WHERE admin_email = '$admin_email'");
+        $login = mysqli_query($conn,"SELECT * FROM " .  TBL . "admin WHERE admin_email = '$admin_email'");
         //Check whether the query was successful or not
         $row = mysqli_fetch_array($login);
 
@@ -27,7 +27,7 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
 
                 $admin_id = $row['admin_id'];
                 $_SESSION['admin_id'] = $admin_id;
-                $update = mysqli_query($conn,"UPDATE " . TBL . "admin SET admin_login=now() where admin_id=" . $_SESSION['admin_id'] . "");
+                $update = mysqli_query($conn,"UPDATE " .  TBL . "admin SET admin_login=now() where admin_id=" . $_SESSION['admin_id'] . "");
                 
                 
                 if ($src == '' || empty($src)) {

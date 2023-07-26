@@ -135,14 +135,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
                 $session_city = $_POST['geo_city'];
 
-                $city_details = mysqli_query($conn, "SELECT * FROM  " . TBL . "cities where city_name='" . $session_city . "'");
+                $city_details = mysqli_query($conn, "SELECT * FROM  " . COUNTRY_PREFIX . "cities where city_name='" . $session_city . "'");
                 $city_details_row = mysqli_fetch_array($city_details);
 
                 $city_id = $city_details_row['city_id'];  //City Id
 
                 if ($city_id == NULL) {
 
-                    $qry = "INSERT INTO " . TBL . "cities 
+                    $qry = "INSERT INTO " . COUNTRY_PREFIX . "cities 
                          (city_name, state_id, city_cdt) 
                          VALUES ('$session_city', 1, '$curDate')";
 
@@ -160,14 +160,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 //    Condition to get Country Id Starts
                 $session_country = $_POST['geo_country'];
 
-                $country_details = mysqli_query($conn, "SELECT * FROM  " . TBL . "countries where country_name='" . $session_country . "'");
+                $country_details = mysqli_query($conn, "SELECT * FROM  " . COUNTRY_PREFIX . "countries where country_name='" . $session_country . "'");
                 $country_details_row = mysqli_fetch_array($country_details);
 
                 $country_id = $country_details_row['country_id'];  //Country Id
 
                 if ($country_id == NULL) {
 
-                    $qry = "INSERT INTO " . TBL . "countries 
+                    $qry = "INSERT INTO " . COUNTRY_PREFIX . "countries 
                        (country_name, country_cdt) 
                        VALUES ('$session_country', '$curDate')";
 
@@ -585,7 +585,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         //****************************    Admin Primary email fetch starts    *************************
 
-        $admin_primary_email_fetch = mysqli_query($conn, "SELECT * FROM " . TBL . "footer  WHERE footer_id = '1' ");
+        $admin_primary_email_fetch = mysqli_query($conn, "SELECT * FROM " . COUNTRY_PREFIX . "footer  WHERE footer_id = '1' ");
         $admin_primary_email_fetchrow = mysqli_fetch_array($admin_primary_email_fetch);
         $admin_primary_email = $admin_primary_email_fetchrow['admin_primary_email'];
         $admin_footer_copyright = $admin_primary_email_fetchrow['footer_copyright'];

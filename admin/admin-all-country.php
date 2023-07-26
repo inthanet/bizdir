@@ -23,6 +23,7 @@ include "header.php";
 							<thead>
 								<tr>
 									<th>No</th>
+                                    <th>Country ID</th>
                                     <th>Country Name</th>
 									<th>Created date</th>
 									<th>Listings</th>
@@ -42,6 +43,7 @@ include "header.php";
                                 ?>
                                 <tr>
                                     <td><?php echo $si; ?></td>
+                                    <td><?php echo $row['country_id']; ?></td>
                                     <td><b class="db-list-rat"><?php echo $row['country_name']; ?></b></td>
                                     <td><?php echo dateFormatconverter($row['country_cdt']); ?></td>
                                     <td><span class="db-list-ststus" data-toggle="tooltip"

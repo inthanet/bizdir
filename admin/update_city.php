@@ -8,6 +8,10 @@ if (file_exists('config/info.php')) {
     include('config/info.php');
 }
 
+if (file_exists('config/google_api.php')) {
+    include('config/google_api.php');
+}
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     if (isset($_POST['city_submit'])) {
@@ -19,7 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 //************ city Name Already Exist Check Starts ***************
 
 
-        $city_name_exist_check = mysqli_query($conn, "SELECT * FROM " . TBL . "cities  WHERE city_name='" . $city_name . "' AND city_id != $city_id ");
+        $city_name_exist_check = mysqli_query($conn, "SELECT * FROM " . COUNTRY_PREFIX . "cities  WHERE city_name='" . $city_name . "' AND city_id != $city_id ");
 
         if (mysqli_num_rows($city_name_exist_check) > 0) {
 
@@ -57,11 +61,32 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $city_image = $city_image_old;
         }
 
+        $apiKey   = GOOGLE_MAPS_API_KEY;
+        $country  = COUNTRY_NAME;
+        $language = COUNTRY_LANG;
 
-        $sql = mysqli_query($conn, "UPDATE  " . TBL . "cities SET city_name='" . $city_name . "'
-     where city_id='" . $city_id . "'");
+        $result = getLatLngForCity($city_name, $country, $language, $apiKey);
+
+        if ($result) {
+
+            $sqlQuery = "UPDATE  " . COUNTRY_PREFIX . "cities 
+            SET country_id = '" . COUNTRY_ID . "', city_name = '" . $city_name . "' 
+              , city_lat = '" . $result['latitude'] . "', city_lng = '" . $result['longitude'] . "'
+              , state_id = '" .  $city_id . "', state_name = '" . $result['state'] . "'
+            where city_id='" . $city_id . "'";             
+
+        //    $logfile = fopen('/home/bizdir/public_html/logs/update-city.log', 'a'); 
+        //    fwrite($logfile, 'SQL :'.$sql."\n");
+
+           $sql = mysqli_query($conn, $sqlQuery);
+        } else {
+            
+            $sql = mysqli_query($conn, "UPDATE  " . COUNTRY_PREFIX . "cities 
+            SET city_name = '" . $city_name . "' where city_id = '" . $city_id . "'");
+        }
 
         if ($sql) {
+
 
             $_SESSION['status_msg'] = "city has been Updated Successfully!!!";
 

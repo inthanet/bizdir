@@ -76,7 +76,7 @@ if ($check == '0' || empty($check)) { // if new user . Insert a new record
 
     //****************************    Admin Primary email fetch starts    *************************
 
-    $admin_primary_email_fetch = mysqli_query($conn, "SELECT * FROM " . TBL . "footer  WHERE footer_id = '1' ");
+    $admin_primary_email_fetch = mysqli_query($conn, "SELECT * FROM " . COUNTRY_PREFIX . "footer  WHERE footer_id = '1' ");
     $admin_primary_email_fetchrow = mysqli_fetch_array($admin_primary_email_fetch);
     $admin_primary_email = $admin_primary_email_fetchrow['admin_primary_email'];
     $admin_footer_copyright = $admin_primary_email_fetchrow['footer_copyright'];

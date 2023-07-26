@@ -188,20 +188,27 @@ include "header.php";
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="form-group">
-                                                <select data-placeholder="Select your Cities" name="city_id[]" id="city_id"
+                                                <select data-placeholder="<?php echo $BIZBOOK['SELECT_YOUR_CITY']; ?>" name="city_id[]" id="city_id"
                                                         multiple required="required"
                                                         class="chosen-select form-control">
                                                     <?php
-                                                    $cityArray = explode(',', $listings_a_row['city_id']);
-                                                    foreach ($cityArray as $cit_Array) {
-                                                        ?>
-                                                        <option <?php
-                                                        echo "selected";
+                                                        // Get the selected city IDs as an array
+                                                        $selectedCities = explode(',', $listings_a_row['city_id']);
+                                                        $allCities = getAllCities();
 
-                                                        $city_row = getCity($cit_Array);
+                                                        foreach ($allCities as $city_row) {
+                                                            $city_id = $city_row['city_id'];
+                                                            $city_name = $city_row['city_name'];
 
-                                                        ?>
-                                                            value="<?php echo $city_row['city_id']; ?>"><?php echo $city_row['city_name']; ?></option>
+                                                            // Check if the city_id is present in the list of selected cities.
+                                                            // If found, mark the option as selected.
+                                                            if (in_array($city_id, $selectedCities)) {
+                                                                $selected = "selected";
+                                                            } else {
+                                                                $selected = "";
+                                                            }
+                                                            ?>
+                                                            <option value="<?php echo $city_id; ?>" <?php echo $selected; ?>><?php echo $city_name; ?></option>
                                                         <?php
                                                     }
                                                     ?>
@@ -211,6 +218,8 @@ include "header.php";
                                         </div>
                                     </div>
                                     <?php } ?>
+
+
                                     <!--FILED START-->
                                     <div class="row">
                                         <div class="col-md-12">
@@ -259,6 +268,8 @@ include "header.php";
                                         </div>
                                     </div>
                                     <!--FILED END-->
+
+                                    
                                     <!--FILED START-->
                                     <div class="row">
                                         <div class="col-md-12">

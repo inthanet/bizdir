@@ -18,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         
         $footer_id = 1;
 
-        $sql = mysqli_query($conn,"UPDATE  " . TBL . "footer SET  cost_per_point='" . $cost_per_point . "' where footer_id='" . $footer_id . "'");
+        $sql = mysqli_query($conn,"UPDATE  " . COUNTRY_PREFIX . "footer SET  cost_per_point='" . $cost_per_point . "' where footer_id='" . $footer_id . "'");
 
         if ($sql) {
 

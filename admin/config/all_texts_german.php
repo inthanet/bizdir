@@ -1256,7 +1256,7 @@ $BIZBOOK['PROFILE_PASSWORD'] = "Profile Password";
 
 $BIZBOOK['PROFILE_PICTURE'] = "Profile Picture";
 
-$BIZBOOK['PROFILE_PICTURE_COVER'] = "Profile Cover Image";
+$BIZBOOK['PROFILE_PICTURE_COVER'] = "Profil-Titelbild";
 
 $BIZBOOK['PROFILE_IDPROOF'] = "Photo ID Proof";
 
@@ -1617,7 +1617,7 @@ $BIZBOOK['JOB-INTERVIEW-JOB-PROFESSION-LABEL'] = "Job profession";
 
 $BIZBOOK['JOB-INTERVIEW-AVAILABLE-TIME-TO-TALK-LABEL'] = "Available time to talk";
 
-$BIZBOOK['JOB-INTERVIEW-PROFILE-COVER-IMAGE-LABEL'] = "Profile cover image";
+$BIZBOOK['JOB-INTERVIEW-PROFILE-COVER-IMAGE-LABEL'] = "Profil-Titelbild";
 
 $BIZBOOK['JOB-INTERVIEW-PROFILE-IMAGE-LABEL'] = "Job profile image";
 
@@ -2377,29 +2377,31 @@ $BIZBOOK['FEEDBACK-WHY-SEND-FEEDBACK-P-2'] = "Helping for customer feedback";
 
 //************************* FOOTER PAGE TEXT ***********
 
-$BIZBOOK['FOOTER-HELP-SUPPORT'] = "Help & Support";
+$BIZBOOK['FOOTER-HELP-SUPPORT'] = "Hilfe & Support";
 
-$BIZBOOK['FOOTER-FREE-SUPPORT'] = "Free support";
+$BIZBOOK['FOOTER-FREE-SUPPORT'] = "Kostenfreier support";
 
-$BIZBOOK['FOOTER-TOP-CATEGORY'] = "Top Category";
+$BIZBOOK['FOOTER-TOP-CATEGORY'] = "Top Kategorie";
 
-$BIZBOOK['FOOTER-TRENDING-CATEGORY'] = "Trending Category";
+$BIZBOOK['FOOTER-TRENDING-CATEGORY'] = "Trending Kategorie";
 
-$BIZBOOK['FOOTER-HELP'] = "HELP";
+$BIZBOOK['FOOTER-HELP'] = "HILFE";
 
 $BIZBOOK['FOOTER-SUPPORT'] = "SUPPORT";
 
-$BIZBOOK['FOOTER-POPULAR-TAGS'] = "Popular Tags";
+$BIZBOOK['FOOTER-POPULAR-TAGS'] = "Trendbegriffe";
 
-$BIZBOOK['FOOTER-GET-IN-TOUCH'] = "Get In Touch";
+$BIZBOOK['FOOTER-POPULAR-BIZDIR'] = "BizDir Länder - Verzeichnisse";
+
+$BIZBOOK['FOOTER-GET-IN-TOUCH'] = "Kontakt";
 
 $BIZBOOK['FOOTER-DOWNLOAD-FREE-MOBILE-APPS'] = "DOWNLOAD OUR FREE MOBILE APPS";
 
-$BIZBOOK['FOOTER-SOCIAL-MEDIA'] = "SOCIAL MEDIA";
+$BIZBOOK['FOOTER-SOCIAL-MEDIA'] = "SOZIALE NETZWERKE";
 
 $BIZBOOK['FOOTER-COPYRIGHT'] = "Copyright";
 
-$BIZBOOK['FOOTER-PROUDLY-POWERED-BY'] = "Proudly powered by";
+$BIZBOOK['FOOTER-PROUDLY-POWERED-BY'] = "Ein Service von";
 
 //************************* PROMOTE BUSINESS PAGE TEXT ***********
 
@@ -2409,13 +2411,13 @@ $BIZBOOK['PROMOTE-BUSINESS-START-NEW-PROMOTIONS'] = "Start new promotions";
 
 $BIZBOOK['PROMOTE-BUSINESS-CHOOSE-LISTING'] = "Choose Listing";
 
-$BIZBOOK['PROMOTE-BUSINESS-TOTAL-DAYS'] = "Total days";
+$BIZBOOK['PROMOTE-BUSINESS-TOTAL-DAYS'] = "Gesamtanzahl Tage";
 
-$BIZBOOK['PROMOTE-BUSINESS-COST-PER-DAY'] = "Cost Per Day";
+$BIZBOOK['PROMOTE-BUSINESS-COST-PER-DAY'] = "Preis pro Tag";
 
-$BIZBOOK['PROMOTE-BUSINESS-TOTAL-POINTS'] = "Total Points";
+$BIZBOOK['PROMOTE-BUSINESS-TOTAL-POINTS'] = "Gesamtpunkte";
 
-$BIZBOOK['PROMOTE-BUSINESS-TOTAL-COST'] = "Total Cost";
+$BIZBOOK['PROMOTE-BUSINESS-TOTAL-COST'] = "Gesamtpreis";
 
 $BIZBOOK['PROMOTE-LISTING-PROMOTIONS'] = "Listing promotions";
 
@@ -2423,17 +2425,17 @@ $BIZBOOK['PROMOTE-PROMOTIONS'] = "Promotions";
 
 //************************* SEARCH RESULTS PAGE TEXT ***********
 
-$BIZBOOK['SEARCH-RESULTS-SEARCH-RESULTS'] = "Search Results";
+$BIZBOOK['SEARCH-RESULTS-SEARCH-RESULTS'] = "Suchergebnis";
 
 $BIZBOOK['SEARCH-RESULTS-SEARCH-ANYTHING-PLACEHOLDER'] = "Search anything...";
 
-$BIZBOOK['SEARCH-RESULTS-OOPS-NO-RESULTS-FOUND'] = "Oops!!! No result(s) Found for";
+$BIZBOOK['SEARCH-RESULTS-OOPS-NO-RESULTS-FOUND'] = "Oops!!! Ergebnis gefunden für";
 
-$BIZBOOK['SEARCH-RESULTS-PLEASE-TRY-WITH-OTHER'] = "Please try with other!!!";
+$BIZBOOK['SEARCH-RESULTS-PLEASE-TRY-WITH-OTHER'] = "Versuchen Sie es mit einem anderen Suchbegriff!!!";
 
-$BIZBOOK['SEARCH-RESULTS-HURRAY'] = "Hurray!!!";
+$BIZBOOK['SEARCH-RESULTS-HURRAY'] = "Jetzt aber schnell!!!";
 
-$BIZBOOK['SEARCH-RESULTS-RESULTS-FOUND-FOR'] = "result(s) Found for";
+$BIZBOOK['SEARCH-RESULTS-RESULTS-FOUND-FOR'] = "Suchergebnis für";
 
 //************************* ALL ALERT & ERROR MESSAGES ***********
 

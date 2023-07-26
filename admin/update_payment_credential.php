@@ -42,32 +42,32 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         if($_POST['footer_path'] == "cod"){
 
-            $sql = mysqli_query($conn,"UPDATE  " . TBL . "footer SET  admin_cod_status='" . $admin_cod_status. "'  
+            $sql = mysqli_query($conn,"UPDATE  " . COUNTRY_PREFIX . "footer SET  admin_cod_status='" . $admin_cod_status. "'  
         where footer_id='" . $footer_id . "'");
 
         }elseif($_POST['footer_path'] == "paypal"){
 
-            $sql = mysqli_query($conn,"UPDATE  " . TBL . "footer SET admin_paypal_id='" . $admin_paypal_id. "'
+            $sql = mysqli_query($conn,"UPDATE  " . COUNTRY_PREFIX . "footer SET admin_paypal_id='" . $admin_paypal_id. "'
         , admin_paypal_status='" . $admin_paypal_status. "' , admin_paypal_currency_code='" . $admin_paypal_currency_code. "' 
         where footer_id='" . $footer_id . "'");
 
         }elseif($_POST['footer_path'] == "stripe"){
 
-            $sql = mysqli_query($conn,"UPDATE  " . TBL . "footer SET admin_stripe_id='" . $admin_stripe_id . "'
+            $sql = mysqli_query($conn,"UPDATE  " . COUNTRY_PREFIX . "footer SET admin_stripe_id='" . $admin_stripe_id . "'
         , admin_stripe_status='" . $admin_stripe_status. "' , admin_stripe_secret_id='" . $admin_stripe_secret_id. "' 
         , admin_stripe_currency_code='" . $admin_stripe_currency_code. "'  
         where footer_id='" . $footer_id . "'");
 
         }elseif($_POST['footer_path'] == "razor_pay"){
 
-            $sql = mysqli_query($conn,"UPDATE  " . TBL . "footer SET admin_razor_pay_key_id_secret='" . $admin_razor_pay_key_id_secret . "'
+            $sql = mysqli_query($conn,"UPDATE  " . COUNTRY_PREFIX . "footer SET admin_razor_pay_key_id_secret='" . $admin_razor_pay_key_id_secret . "'
         , admin_razor_pay_status='" . $admin_razor_pay_status. "' , admin_razor_pay_key_id='" . $admin_razor_pay_key_id. "' 
         , admin_razor_pay_currency_code='" . $admin_razor_pay_currency_code. "'  
         where footer_id='" . $footer_id . "'");
 
         }elseif($_POST['footer_path'] == "paytm"){
 
-            $sql = mysqli_query($conn,"UPDATE  " . TBL . "footer SET admin_paytm_merchant_id='" . $admin_paytm_merchant_id . "'
+            $sql = mysqli_query($conn,"UPDATE  " . COUNTRY_PREFIX . "footer SET admin_paytm_merchant_id='" . $admin_paytm_merchant_id . "'
         , admin_paytm_merchant_key='" . $admin_paytm_merchant_key. "' , admin_paytm_merchant_website='" . $admin_paytm_merchant_website. "' 
         , admin_paytm_status='" . $admin_paytm_status. "'  
         where footer_id='" . $footer_id . "'");

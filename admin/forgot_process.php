@@ -12,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         $email_id = $_POST['rec_email_id'];
 
-        $forgot = mysqli_query($conn,"SELECT * FROM " . TBL . "admin WHERE admin_recovery_email = '$email_id' ");
+        $forgot = mysqli_query($conn,"SELECT * FROM " .  TBL . "admin WHERE admin_recovery_email = '$email_id' ");
 
         if (mysqli_num_rows($forgot) > 0) {
 
@@ -35,14 +35,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $password = randomPassword();    //New Password
             $password_hash = md5($password);
 
-            $sql = mysqli_query($conn, "UPDATE  " . TBL . "admin SET admin_password='" . $password_hash . "' where admin_id='" . $admin_id . "'");
+            $sql = mysqli_query($conn, "UPDATE  " .  TBL . "admin SET admin_password='" . $password_hash . "' where admin_id='" . $admin_id . "'");
 
             $rec_email_id = $forgot_row['admin_recovery_email'];
             $user_name = $forgot_row['admin_email'];
 
             //****************************    Admin Primary email fetch starts    *************************
 
-            $admin_primary_email_fetch = mysqli_query($conn,"SELECT * FROM " . TBL . "footer  WHERE footer_id = 1 ");
+            $admin_primary_email_fetch = mysqli_query($conn,"SELECT * FROM " . COUNTRY_PREFIX . "footer  WHERE footer_id = 1 ");
             $admin_primary_email_fetchrow = mysqli_fetch_array($admin_primary_email_fetch);
             $admin_primary_email = $admin_primary_email_fetchrow['admin_primary_email'];
             $admin_footer_copyright = $admin_primary_email_fetchrow['footer_copyright'];

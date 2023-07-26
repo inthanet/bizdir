@@ -5,7 +5,11 @@
  */
 
 # Prevent warning. #
-error_reporting(0);
+//error_reporting(0);
+error_reporting(E_ALL & ~E_NOTICE & ~E_WARNING | E_STRICT);
+
+
+
 ob_start();
 
 define('DB_HOSTNAME', 'localhost');
@@ -20,19 +24,32 @@ $subdomain = substr($_SERVER['HTTP_HOST'], 0, strpos($_SERVER['HTTP_HOST'], '.')
 switch ($subdomain) {
     case 'en':
         define('COUNTRY_PREFIX', $subdomain.'_');
-        define('SUBDOMAIN_COUNTRY', $subdomain.'.');
+        define('COUNTRY_SUBDOMAIN', $subdomain.'.');
+        define('COUNTRY_FOLDER', '/'.$subdomain.'/');
+        define('COUNTRY_ID', '001'); 
+        define('COUNTRY_NAME', 'USA');
+        define('COUNTRY_LANG', 'en');        
+
         break;
     case 'de':
         define('COUNTRY_PREFIX', $subdomain.'_');
-        define('SUBDOMAIN_COUNTRY', $subdomain.'.');
+        define('COUNTRY_SUBDOMAIN', $subdomain.'.');
+        define('COUNTRY_FOLDER', '/'.$subdomain.'/');
+        define('COUNTRY_ID', '49');
+        define('COUNTRY_NAME', 'Germany');
+        define('COUNTRY_LANG', 'de');
         break;                
     default:
         //main prefix
         define('COUNTRY_PREFIX', 'ww_');
-        define('SUBDOMAIN_COUNTRY', $subdomain.'.');
+        define('COUNTRY_SUBDOMAIN', '');
+        define('COUNTRY_FOLDER', '');
+        define('COUNTRY_ID', '001'); 
+        define('COUNTRY_NAME', 'USA');
+        define('COUNTRY_LANG', 'en');
 }
 
-$webpage_full_link_url = "https://".SUBDOMAIN_COUNTRY."bizdir.online/";  #Important Please Paste your WebPage Full URL (i.e https://bizbookdirectorytemplate.com/)
+$webpage_full_link_url = "https://".COUNTRY_SUBDOMAIN."bizdir.online/";  #Important Please Paste your WebPage Full URL (i.e https://bizbookdirectorytemplate.com/)
 
 
 # Connection to the database. #

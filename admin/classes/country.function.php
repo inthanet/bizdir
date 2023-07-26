@@ -5,7 +5,7 @@ function getAllCountries()
 {
     global $conn;
 
-    $sql = "SELECT * FROM " . TBL . "countries ORDER BY country_id ASC";
+    $sql = "SELECT * FROM " . COUNTRY_PREFIX . "countries ORDER BY country_id ASC";
     $rs = mysqli_query($conn, $sql);
     return $rs;
 
@@ -16,7 +16,7 @@ function getCountry($arg)
 {
     global $conn;
 
-    $sql = "SELECT * FROM  " . TBL . "countries where country_id='".$arg."'";
+    $sql = "SELECT * FROM  " . COUNTRY_PREFIX . "countries where country_id='".$arg."'";
     $rs = mysqli_query($conn, $sql);
     $row = mysqli_fetch_array($rs);
     return $row;
@@ -28,7 +28,11 @@ function getMultipleCountry($arg)
 {
     global $conn;
 
-    $sql = "SELECT * FROM  " . TBL . "countries where country_id IN ( '".$arg."')";
+    $sql = "SELECT * FROM  " . COUNTRY_PREFIX . "countries where country_id IN ( '".$arg."')";
+
+        $logfile = fopen('/home/bizdir/public_html/logs/getMultipleCountry.log', 'a'); 
+        fwrite($logfile, '$sql :'.$sql."\n");
+
     $rs = mysqli_query($conn, $sql);
     return $rs;
 
@@ -39,7 +43,7 @@ function getCountCountry()
 {
     global $conn;
 
-    $sql = "SELECT * FROM " . TBL . "countries ORDER BY country_id DESC";
+    $sql = "SELECT * FROM " . COUNTRY_PREFIX . "countries ORDER BY country_id DESC";
     $rs = mysqli_query($conn, $sql);
     $row = mysqli_num_rows($rs);
     return $row;

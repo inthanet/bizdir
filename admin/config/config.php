@@ -33,6 +33,9 @@ define('CAT_HEIGHT', '32');
 
 # IMAGE FOLDER NAME #
 
+#API KEYS
+define('GOOGLE_MAPS_API_KEY','AIzaSyDRVWbnZ1Soy00ScazDV-pjFEFZ2YvC59U');
+
 # User Starts. #
 define('USER_IMG_ORGINAL_DIR', 'user_uploads/orginal/'); // User image, For Back End.
 define('USER_IMG_RESIZE_DIR', 'user_uploads/resize/');
@@ -155,8 +158,9 @@ $data_array['website_url'] = $webpage_full_link;
 
 ##### Page Redirect URl's
 
-//$footer_sql = "SELECT * FROM " . TBL . "footer WHERE footer_id = 1";
-$footer_sql = "SELECT * FROM de_footer WHERE footer_id = 1";
+//$footer_sql = "SELECT * FROM " . COUNTRY_PREFIX . "footer WHERE footer_id = 1";
+$footer_sql = "SELECT * FROM " . COUNTRY_PREFIX . "footer WHERE footer_id = 1";
+//$footer_sql = "SELECT * FROM de_footer WHERE footer_id = 1";
 $footer_rs = mysqli_query($conn, $footer_sql);
 $footer_row = mysqli_fetch_array($footer_rs);
 
@@ -358,10 +362,12 @@ function delBuyPoints()
         $exp_tupdate_sql = "DELETE FROM  " . TBL . "all_points_enquiry where all_points_enquiry_id ='$exp_tlisting_id' AND all_points_status != 'Paid'";
 
 
+
+
         $exp_tupdate_rs = mysqli_query($conn, $exp_tupdate_sql);
-
-        $exp_tupdate_row = mysqli_fetch_array($exp_tupdate_rs);
-
+        if($exp_tupdate_rs && $exp_tupdate_rs->num_rows > 0){
+            $exp_tupdate_row = mysqli_fetch_array($exp_tupdate_rs);
+        }
     }
     return true;
 }

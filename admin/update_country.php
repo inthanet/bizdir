@@ -13,24 +13,25 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (isset($_POST['country_submit'])) {
 
         $country_id = $_POST['country_id'];
+        $old_country_id = $_POST['old_country_id'];
         $country_name = $_POST['country_name'];
 
 
 //************ country Name Already Exist Check Starts ***************
 
 
-        $country_name_exist_check = mysqli_query($conn, "SELECT * FROM " . TBL . "countries  WHERE country_name='" . $country_name . "' AND country_id != $country_id ");
+        // $country_name_exist_check = mysqli_query($conn, "SELECT * FROM " . COUNTRY_PREFIX . "countries  WHERE country_name='" . $country_name . "' AND country_id != $country_id ");
 
-        if (mysqli_num_rows($country_name_exist_check) > 0) {
-
-
-            $_SESSION['status_msg'] = "The Given country name is Already Exist Try Other!!!";
-
-            header('Location: admin-country-edit.php?row=' . $country_id);
-            exit;
+        // if (mysqli_num_rows($country_name_exist_check) > 0) {
 
 
-        }
+        //     $_SESSION['status_msg'] = "The Given country name is Already Exist Try Other!!!";
+
+        //     header('Location: admin-country-edit.php?row=' . $old_country_id);
+        //     exit;
+
+
+        // }
 
 //************ country Name Already Exist Check Ends ***************
 
@@ -57,9 +58,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $country_image = $country_image_old;
         }
 
+$query = "UPDATE  " . COUNTRY_PREFIX . "countries 
+SET country_id= " . $country_id . ", country_name='" . $country_name . "'
+    where country_id= " . $country_id;
 
-        $sql = mysqli_query($conn, "UPDATE  " . TBL . "countries SET country_name='" . $country_name . "'
-     where country_id='" . $country_id . "'");
+            $logfile = fopen('/home/bizdir/public_html/logs/update-country.log', 'a'); 
+            fwrite($logfile, '$query :'.$query."\n");
+
+        $sql = mysqli_query($conn, "UPDATE  " . COUNTRY_PREFIX . "countries 
+                                               SET country_id= " . $country_id . ", country_name='" . $country_name . "'
+                                                   where country_id= " . $old_country_id);
 
         if ($sql) {
 

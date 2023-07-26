@@ -16,7 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $admin_google_analytics = addslashes($_POST["admin_google_analytics"]);
 
 
-        $sql = mysqli_query($conn, "UPDATE  " . TBL . "footer SET  admin_google_analytics='" . $admin_google_analytics . "'
+        $sql = mysqli_query($conn, "UPDATE  " . COUNTRY_PREFIX . "footer SET  admin_google_analytics='" . $admin_google_analytics . "'
      where footer_id= 1");
 
         if ($sql) {

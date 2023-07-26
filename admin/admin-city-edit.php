@@ -25,9 +25,17 @@ include "header.php";
 
                             ?>
                             <form name="city_form" id="city_form" method="post" action="update_city.php" enctype="multipart/form-data" class="cre-dup-form cre-dup-form-show">
-                                <input type="hidden" class="validate" id="city_id" name="city_id" value="<?php echo $row['city_id']; ?>" required="required">
-
                                 <ul>
+                                    <li>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <input type="number" name="city_id" value="<?php echo $row['city_id']; ?>" class="form-control" placeholder="city id *" required>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+
                                     <li>
                                         <div class="row">
                                             <div class="col-md-12">

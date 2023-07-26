@@ -200,7 +200,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $news_default_image = $news_default_image_old;
         }
 
-        $sql = mysqli_query($conn, "UPDATE  " . TBL . "footer SET user_default_image='" . $user_default_image . "'
+        $sql = mysqli_query($conn, "UPDATE  " . COUNTRY_PREFIX . "footer SET user_default_image='" . $user_default_image . "'
         ,listing_default_image='" . $listing_default_image . "'
         ,job_default_image='" . $job_default_image . "'
         ,product_default_image='" . $product_default_image . "'

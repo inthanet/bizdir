@@ -192,7 +192,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
 
 
-        $sql = mysqli_query($conn, "UPDATE  " . TBL . "footer SET  website_address='" . $website_address . "'
+        $sql = mysqli_query($conn, "UPDATE  " . COUNTRY_PREFIX . "footer SET  website_address='" . $website_address . "'
         , admin_primary_email='" . $admin_primary_email . "', currency_symbol='" . $currency_symbol . "'
         , currency_symbol_pos='" . $currency_symbol_pos . "'
         , admin_language='" . $admin_language . "', admin_countries='" . $admin_countries . "'
@@ -210,7 +210,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         , admin_coupon_show='" . $admin_coupon_show . "'
         where footer_id='" . $footer_id . "'");
 
-        $sql1 = mysqli_query($conn, "UPDATE  " . TBL . "admin SET admin_name='" . $admin_name . "', admin_email='" . $admin_email . "'
+        $sql1 = mysqli_query($conn, "UPDATE  " .  TBL . "admin SET admin_name='" . $admin_name . "', admin_email='" . $admin_email . "'
         , admin_password='" . $admin_password . "', admin_photo='" . $admin_photo . "' , admin_recovery_email='" . $admin_recovery_email . "'  where admin_id='" . $admin_id . "'");
 
         if ($sql && $sql1) {
@@ -219,7 +219,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 //            if($admin_countries != NULL) {
 //
-//                $countryy_rs = mysqli_query($conn, "SELECT * FROM " . TBL . "countries WHERE country_id NOT IN ($admin_countries)");
+//                $countryy_rs = mysqli_query($conn, "SELECT * FROM " . COUNTRY_PREFIX . "countries WHERE country_id NOT IN ($admin_countries)");
 //
 //                while ($countryy_row = mysqli_fetch_array($countryy_rs)) {
 //
@@ -231,13 +231,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 //
 //                        $statee_id = $statee_row['state_id'];
 //
-//                        $cityy_rs_del = mysqli_query($conn,"DELETE FROM  " . TBL . "cities where state_id = $statee_id ");
+//                        $cityy_rs_del = mysqli_query($conn,"DELETE FROM  " . COUNTRY_PREFIX . "cities where state_id = $statee_id ");
 //                    }
 //
 //                    $statee_rs_del = mysqli_query($conn,"DELETE FROM  " . COUNTRY_PREFIX . "states  where country_id= $countryy_id ");
 //                }
 //
-//                $countryy_rs_del = mysqli_query($conn,"DELETE FROM  " . TBL . "countries WHERE country_id NOT IN ($admin_countries)");
+//                $countryy_rs_del = mysqli_query($conn,"DELETE FROM  " . COUNTRY_PREFIX . "countries WHERE country_id NOT IN ($admin_countries)");
 //
 //            }
 

@@ -16,7 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $admin_google_ad_sense = addslashes($_POST["admin_google_ad_sense"]);
 
 
-        $sql = mysqli_query($conn, "UPDATE  " . TBL . "footer SET  admin_google_ad_sense='" . $admin_google_ad_sense . "'
+        $sql = mysqli_query($conn, "UPDATE  " . COUNTRY_PREFIX . "footer SET  admin_google_ad_sense='" . $admin_google_ad_sense . "'
      where footer_id= 1");
 
         if ($sql) {

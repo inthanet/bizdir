@@ -269,7 +269,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
 
 
-        $sql = mysqli_query($conn, "UPDATE  " . TBL . "admin SET admin_name='" . $admin_name . "', admin_email='" . $admin_email . "'
+        $sql = mysqli_query($conn, "UPDATE  " .  TBL . "admin SET admin_name='" . $admin_name . "', admin_email='" . $admin_email . "'
      , admin_password='" . $admin_password . "' , admin_photo='" . $admin_photo . "', admin_user_options='" . $admin_user_options . "'
     
      , admin_listing_options='" . $admin_listing_options . "' , admin_event_options='" . $admin_event_options . "', admin_blog_options='" . $admin_blog_options . "'

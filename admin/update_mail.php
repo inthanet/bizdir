@@ -14,7 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (isset($_POST['mail_template_submit'])) {
 
 
-       $sql_fetch = mysqli_query($conn,"SELECT * FROM " . TBL . "footer  WHERE footer_id = '1' ");
+       $sql_fetch = mysqli_query($conn,"SELECT * FROM " . COUNTRY_PREFIX . "footer  WHERE footer_id = '1' ");
         $row_f = mysqli_fetch_array($sql_fetch);
 
         $website_name = $row_f['website_address'];

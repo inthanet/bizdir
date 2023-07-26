@@ -15,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 
         $admin_qry =
-            " DELETE FROM  " . TBL . "admin  WHERE admin_id='" . $admin_id . "'";
+            " DELETE FROM  " .  TBL . "admin  WHERE admin_id='" . $admin_id . "'";
 
 
         $admin_res = mysqli_query($conn,$admin_qry);

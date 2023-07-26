@@ -21,18 +21,19 @@ if (isset($_POST['country_submit'])) {
 
     for ($i = 0; $i < $cnt; $i++) {
 
+        $country_id   = $_POST['country_id'][$i];
         $country_name = $_POST['country_name'][$i];
 
 
 //************ country Name Already Exist Check Starts ***************
 
 
-        $country_name_exist_check = mysqli_query($conn, "SELECT * FROM " . TBL . "countries  WHERE country_name='" . $country_name . "' ");
+        $country_name_exist_check = mysqli_query($conn, "SELECT * FROM " . COUNTRY_PREFIX . "countries  WHERE country_id='" . $country_id . "' ");
 
         if (mysqli_num_rows($country_name_exist_check) > 0) {
 
 
-            $_SESSION['status_msg'] = "The Given country name $country_name is Already Exist Try Other!!!";
+            $_SESSION['status_msg'] = "The Given country $country_id | $country_name Already Exist Try Other!!!";
 
             header('Location: admin-add-new-country.php');
             exit;
@@ -63,13 +64,13 @@ if (isset($_POST['country_submit'])) {
             }
         }
 
-        $sql = mysqli_query($conn, "INSERT INTO  " . TBL . "countries (country_name,country_cdt)
-VALUES ('$country_name','$curDate')");
+        $sql = mysqli_query($conn, "INSERT INTO  " . COUNTRY_PREFIX . "countries (country_id,country_name,country_cdt)
+            VALUES ('$country_id','$country_name','$curDate')");
 
         $country_id = mysqli_insert_id($conn);
 
         $sql2 = mysqli_query($conn, "INSERT INTO  " . COUNTRY_PREFIX . "states (state_name,country_id)
-VALUES ('$country_name','$country_id')");
+            VALUES ('$country_name','$country_id')");
 
 
     }

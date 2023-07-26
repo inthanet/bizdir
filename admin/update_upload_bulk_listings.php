@@ -36,7 +36,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 
                     //check whether city already exists in database with same city_name
-                    $prevQuery = mysqli_query($conn,"SELECT city_id FROM " . TBL . "cities WHERE city_name = '" . $city_name . "'");
+                    $prevQuery = mysqli_query($conn,"SELECT city_id FROM " . COUNTRY_PREFIX . "cities WHERE city_name = '" . $city_name . "'");
                     $prevResult = mysqli_fetch_array($prevQuery);
 
                     if (mysqli_num_rows($prevQuery) > 0) {
@@ -44,7 +44,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         $city_id = $prevResult['city_id'];
                     } else {
                         //insert city data into database
-                        $insert_city = mysqli_query($conn,"INSERT INTO " . TBL . "cities (city_name, state_id) VALUES ('" . $city_name . "','" . $state_id . "')");
+                        $insert_city = mysqli_query($conn,"INSERT INTO " . COUNTRY_PREFIX . "cities (city_name, state_id) VALUES ('" . $city_name . "','" . $state_id . "')");
                         $city_id = mysqli_insert_id($conn);
                     }
 

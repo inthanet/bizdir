@@ -18,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $footer_id = 1;
 
 
-        $sql = mysqli_query($conn,"UPDATE  " . TBL . "footer SET  admin_home_page='" . $admin_home_page. "'  
+        $sql = mysqli_query($conn,"UPDATE  " . COUNTRY_PREFIX . "footer SET  admin_home_page='" . $admin_home_page. "'  
         where footer_id='" . $footer_id . "'");
 
 

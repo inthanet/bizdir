@@ -138,7 +138,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
 
 
-        $sql = mysqli_query($conn, "UPDATE  " . TBL . "footer SET  footer_description='" . $footer_description . "', footer_address='" . $footer_address . "'
+        $sql = mysqli_query($conn, "UPDATE  " . COUNTRY_PREFIX . "footer SET  footer_description='" . $footer_description . "', footer_address='" . $footer_address . "'
      , footer_mobile='" . $footer_mobile . "', footer_fb='" . $footer_fb . "', footer_google_plus='" . $footer_google_plus . "'
      , footer_twitter='" . $footer_twitter . "', footer_linked_in='" . $footer_linked_in . "', footer_youtube='" . $footer_youtube . "'
      , footer_whatsapp='" . $footer_whatsapp . "', footer_payment_option='" . $footer_payment_option . "', header_logo='" . $header_logo . "'

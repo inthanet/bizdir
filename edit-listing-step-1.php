@@ -235,20 +235,27 @@ if (!isset($_SESSION['listing_codea']) || empty($_SESSION['listing_codea'])) {
                                                 name="city_id[]" id="city_id"
                                                 multiple required="required"
                                                 class="chosen-select form-control">
-                                            <?php
-                                            $cityArray = explode(',', $listings_a_row['city_id']);
-                                            foreach ($cityArray as $cit_Array) {
-                                                ?>
-                                                <option <?php
-                                                echo "selected";
-
-                                                $city_row = getCity($cit_Array);
-
-                                                ?>
-                                                    value="<?php echo $city_row['city_id']; ?>"><?php echo $city_row['city_name']; ?></option>
                                                 <?php
-                                            }
-                                            ?>
+                                                    // Get the selected city IDs as an array
+                                                    $selectedCities = explode(',', $listings_a_row['city_id']);
+                                                    $allCities = getAllCities();
+                                                    
+                                                    foreach ($allCities as $city_row) {
+                                                        $city_id = $city_row['city_id'];
+                                                        $city_name = $city_row['city_name'];
+
+                                                        // Check if the city_id is present in the list of selected cities.
+                                                        // If found, mark the option as selected.
+                                                        if (in_array($city_id, $selectedCities)) {
+                                                            $selected = "selected";
+                                                        } else {
+                                                            $selected = "";
+                                                        }
+                                                        ?>
+                                                        <option value="<?php echo $city_id; ?>" <?php echo $selected; ?>><?php echo $city_name; ?></option>
+                                                    <?php
+                                                    }
+                                                    ?>
 
                                         </select>
                                     </div>

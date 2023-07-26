@@ -8,7 +8,7 @@ $value1 = $_REQUEST['value1'];
 
 if(isset($_POST)){
 
-    $product_qry = "UPDATE  " . TBL . "footer  SET $id ='" . $value1 . "' where footer_id = 1";
+    $product_qry = "UPDATE  " . COUNTRY_PREFIX . "footer  SET $id ='" . $value1 . "' where footer_id = 1";
 
     $product_res = mysqli_query($conn,$product_qry);
 }

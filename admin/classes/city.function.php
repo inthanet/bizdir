@@ -1,11 +1,23 @@
 <?php
 
-//Get All Cities
+function getAllCitiesList($country)
+{
+    global $conn;
+
+    $sql = "SELECT * FROM " . COUNTRY_PREFIX . "cities WHERE country_id = '".$country."' ORDER BY city_name  ASC";
+    $rs = mysqli_query($conn, $sql);
+    
+    $logfile = fopen('/home/bizdir/public_html/logs/getAllCitiesList.log', 'a'); 
+    fwrite($logfile, $sql.'\n');
+
+    return $rs;
+}
+
 function getAllCities()
 {
     global $conn;
 
-    $sql = "SELECT * FROM " . COUNTRY_PREFIX . "cities GROUP BY city_name ORDER BY city_id  DESC";
+    $sql = "SELECT * FROM " . COUNTRY_PREFIX . "cities GROUP BY city_name ORDER BY city_name  ASC";
     $rs = mysqli_query($conn, $sql);
     return $rs;
 
@@ -45,3 +57,4 @@ function getCountCity()
     return $row;
 
 }
+

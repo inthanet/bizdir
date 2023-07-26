@@ -66,7 +66,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 // HTTP 200 indicates that the purchase code valid
         if ($response == 200) {
 
-            $sql = mysqli_query($conn, "UPDATE  " . TBL . "admin SET activation_date = '" . $curDate . "', expiry_date='" . $activation_expiry_date . "'
+            $sql = mysqli_query($conn, "UPDATE  " .  TBL . "admin SET activation_date = '" . $curDate . "', expiry_date='" . $activation_expiry_date . "'
         , activation_status ='" . $activation_status_activated . "', activation_code ='" . $purchase_code . "'  where admin_type = 'Super Admin'");
             
             $_SESSION['status_msg'] = "Activation code has been Updated Successfully!!!";

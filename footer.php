@@ -169,6 +169,22 @@
         </div>
         <!-- POPULAR TAGS -->
 
+        <!-- POPULAR BIZDIR COUNTRY DIRECTORIES -->
+        <div class="row wed-foot-link-pop">
+            <div class="col-md-12">
+                <h4 style="color:aqua;"><?php echo $BIZBOOK['FOOTER-POPULAR-BIZDIR']; ?></h4>
+                <ul>
+                    <?php
+                    foreach (getAllPopularTags(1) as $popular_tags_row) {
+                        ?>
+                        <li><a href="<?php echo $popular_tags_row['popular_tags_link']; ?>" target="_blank"><?php echo $popular_tags_row['popular_tags_name']; ?></a></li>
+                        <?php
+                    }
+                    ?>
+                </ul>
+            </div>
+        </div>
+        <!-- POPULAR BIZDIR COUNTRY DIRECTORIES -->
 
         <div class="row wed-foot-link-1">
             <?php if($footer_row['admin_get_in_touch_feature'] == 1) { ?>
@@ -222,7 +238,9 @@
     <div class="cr">
         <div class="container">
             <div class="row">
-                <p><?php echo $BIZBOOK['FOOTER-COPYRIGHT']; ?> © <?php echo $footer_row['copyright_year']; ?> <a href="<?php echo $footer_row['copyright_website_link']; ?>" target="_blank"><?php echo $footer_row['copyright_website']; ?></a>. <?php echo $BIZBOOK['FOOTER-PROUDLY-POWERED-BY']; ?> <a href="https://rn53themes.net/" target="_blank">Rn53Themes.net</a></p>
+                <p style="text-align:center">
+                    <?php echo $BIZBOOK['FOOTER-COPYRIGHT']; ?> © <?php echo date('Y'); ?> <a href="<?php echo $footer_row['copyright_website_link']; ?>" target="_blank"><?php echo $footer_row['copyright_website']; ?></a>.
+                    <div class="footer-link-copyright"><a href="https://itcs-asia.com<?=COUNTRY_FOLDER;?>" target="_blank" style="text-decoration: none;"><span style="color:yellow"><?php echo $BIZBOOK['FOOTER-PROUDLY-POWERED-BY']; ?> ITCS-Asia Limited</div></a></p>
             </div>
         </div>
     </div>
@@ -233,46 +251,46 @@
 <div class="fqui-menu">
 <ul>
     <?php if ($footer_row['admin_listing_show'] == 1) { ?>
-        <li><a href="<?php echo $webpage_full_link; ?>" ><img  src="<?php echo $slash; ?>images/icon/shop.png"><?php echo $BIZBOOK['HOME']; ?></a></li>
+        <li><a href="<?php echo $webpage_full_link; ?>"><img  src="<?php echo $slash; ?>images/icon/shop.png"><?php echo $BIZBOOK['HOME']; ?></a></li>
         <li><a href="<?php echo $webpage_full_link; ?>all-category"
-                class="act"><img        src="<?php echo $slash; ?>images/icon/shop.png"><?php echo $BIZBOOK['ALL_SERVICES']; ?>
+                class="act"><img src="<?php echo $slash; ?>images/icon/shop.png"><?php echo $BIZBOOK['ALL_SERVICES']; ?>
             </a></li>
     <?php }
     if ($footer_row['admin_expert_show'] == 1) { ?>
         <li><a href="<?php echo $webpage_full_link; ?>service-experts"
-                class="act"><img        src="<?php echo $slash; ?>images/icon/expert.png"><?php echo $BIZBOOK['SERVICE-EXPERTS']; ?>
+                class="act"><img src="<?php echo $slash; ?>images/icon/expert.png"><?php echo $BIZBOOK['SERVICE-EXPERTS']; ?>
             </a></li>
     <?php }
     if ($footer_row['admin_job_show'] == 1) { ?>
-        <li><a href="<?php echo $webpage_full_link; ?>jobs" class="act"><img        src="<?php echo $slash; ?>images/icon/employee.png"><?php echo $BIZBOOK['JOBS']; ?>
+        <li><a href="<?php echo $webpage_full_link; ?>jobs" class="act"><img src="<?php echo $slash; ?>images/icon/employee.png"><?php echo $BIZBOOK['JOBS']; ?>
             </a></li>
     <?php }
     if ($footer_row['admin_place_show'] == 1) { ?>
         <li><a href="<?php echo $webpage_full_link; ?>places"
-                class="act"><img        src="<?php echo $slash; ?>images/places/icons/hot-air-balloon.png"><?php echo $BIZBOOK['PLACE-MENU']; ?>
+                class="act"><img src="<?php echo $slash; ?>images/places/icons/hot-air-balloon.png"><?php echo $BIZBOOK['PLACE-MENU']; ?>
             </a></li>
     <?php }
     if ($footer_row['admin_news_show'] == 1) { ?>
-        <li><a href="<?php echo $webpage_full_link; ?>news"><img        src="<?php echo $slash; ?>images/icon/news.png"><?php echo $BIZBOOK['NEWS-MAGA']; ?>
+        <li><a href="<?php echo $webpage_full_link; ?>news"><img src="<?php echo $slash; ?>images/icon/news.png"><?php echo $BIZBOOK['NEWS-MAGA']; ?>
             </a></li>
     <?php }
     if ($footer_row['admin_event_show'] == 1) { ?>
-        <li><a href="<?php echo $webpage_full_link; ?>events"><img        src="<?php echo $slash; ?>images/icon/calendar.png"><?php echo $BIZBOOK['EVENTS']; ?>
+        <li><a href="<?php echo $webpage_full_link; ?>events"><img src="<?php echo $slash; ?>images/icon/calendar.png"><?php echo $BIZBOOK['EVENTS']; ?>
             </a></li>
     <?php }
     if ($footer_row['admin_product_show'] == 1) { ?>
-        <li><a href="<?php echo $webpage_full_link; ?>all-products"><img        src="<?php echo $slash; ?>images/icon/cart.png"><?php echo $BIZBOOK['PRODUCTS']; ?>
+        <li><a href="<?php echo $webpage_full_link; ?>all-products"><img src="<?php echo $slash; ?>images/icon/cart.png"><?php echo $BIZBOOK['PRODUCTS']; ?>
             </a></li>
     <?php }
     if ($footer_row['admin_coupon_show'] == 1) { ?>
-        <li><a href="<?php echo $webpage_full_link; ?>coupons"><img        src="<?php echo $slash; ?>images/icon/coupons.png"><?php echo $BIZBOOK['COUPONS_AND_DEALS']; ?>
+        <li><a href="<?php echo $webpage_full_link; ?>coupons"><img src="<?php echo $slash; ?>images/icon/coupons.png"><?php echo $BIZBOOK['COUPONS_AND_DEALS']; ?>
             </a></li>
     <?php }
     if ($footer_row['admin_blog_show'] == 1) { ?>
-        <li><a href="<?php echo $webpage_full_link; ?>blog-posts"><img        src="<?php echo $slash; ?>images/icon/blog1.png"><?php echo $BIZBOOK['BLOGS']; ?>
+        <li><a href="<?php echo $webpage_full_link; ?>blog-posts"><img src="<?php echo $slash; ?>images/icon/blog1.png"><?php echo $BIZBOOK['BLOGS']; ?>
             </a></li>
     <?php } ?>
-    <li><a href="<?php echo $webpage_full_link; ?>community"><img    src="<?php echo $slash; ?>images/icon/11.png"><?php echo $BIZBOOK['COMMUNITY']; ?>
+    <li><a href="<?php echo $webpage_full_link; ?>community"><img src="<?php echo $slash; ?>images/icon/11.png"><?php echo $BIZBOOK['COMMUNITY']; ?>
         </a></li>
         <li><span class="btn-ser-need-ani"><img loading="lazy" src="<?php echo $slash; ?>images/icon/how1.png"><?php echo $BIZBOOK['SUPPORT']; ?></span></li>
 </ul>

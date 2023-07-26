@@ -27,11 +27,20 @@ include "header.php";
                                         <div class="row">
                                             <div class="col-md-12">
                                                 <div class="form-group">
-                                                  <input type="text" name="country_name[]" class="form-control" placeholder="Country name *" required>
+                                                  <input type="number" name="country_id[]" class="form-control" placeholder="Country ID *" required>
                                                 </div>
                                             </div>
                                         </div>
                                      </li>
+                                     <li>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                  <input type="text" name="country_name[]" class="form-control" placeholder="Country name *" required>
+                                                </div>
+                                            </div>
+                                        </div>
+                                     </li>                                     
                                  </ul>
                                 <button type="submit" name="country_submit" class="btn btn-primary">Submit</button>
                             </form>

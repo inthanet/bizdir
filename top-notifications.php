@@ -39,8 +39,8 @@
                               + $all_reviews_notification_count + $all_listing_likes_notification_count + $all_user_notification_count;
 
     ?>
-    <span class="material-icons db-menu-noti"><i
-            id="noti-count"><?php echo AddingZero_BeforeNumber($total_notification_count); ?></i>notifications</span>
+    <span class="material-icons db-menu-noti">
+        <i id="noti-count"><?php echo $total_notification_count; ?></i>notifications</span>
     <div class="db-noti top-noti-win">
         <span class="material-icons db-menu-clo">close</span>
         <h4><?php echo $BIZBOOK['pg_utype_sp7']; ?></h4>

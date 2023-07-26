@@ -26,18 +26,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 //************ Email Already Exist Check Starts ***************
 
 
-        $email_exist_check = mysqli_query($conn, "SELECT * FROM " . TBL . "admin WHERE admin_email = '$admin_user_name' ");
+        $email_exist_check = mysqli_query($conn, "SELECT * FROM " .  TBL . "admin WHERE admin_email = '$admin_user_name' ");
 
 
         if (mysqli_num_rows($email_exist_check) > 0) {
 
-            $qry23 = mysqli_query($conn, "UPDATE  " . TBL . "admin SET  admin_password='" . $admin_user_password . "'
+            $qry23 = mysqli_query($conn, "UPDATE  " .  TBL . "admin SET  admin_password='" . $admin_user_password . "'
      where admin_email='" . $admin_user_name . "'");
 
 
         } else {
 
-            $qry23 = mysqli_query($conn, "UPDATE  " . TBL . "admin SET  admin_password='" . $admin_user_password . "'
+            $qry23 = mysqli_query($conn, "UPDATE  " .  TBL . "admin SET  admin_password='" . $admin_user_password . "'
      ,admin_email='" . $admin_user_name . "' where admin_id='" . $footer_id . "'");
 
         }
@@ -45,7 +45,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 //************ Email Already Exist Check Ends ***************
 
 
-        $qry = mysqli_query($conn, "UPDATE  " . TBL . "footer SET  website_complete_url='" . $website_url123 . "'
+        $qry = mysqli_query($conn, "UPDATE  " . COUNTRY_PREFIX . "footer SET  website_complete_url='" . $website_url123 . "'
         , website_address='" . $website_name . "', admin_primary_email='" . $admin_user_email_id . "'
         , currency_symbol='" . $admin_currency . "', admin_install_flag='" . $admin_install_flag . "'
      where footer_id='" . $footer_id . "'");

@@ -95,7 +95,10 @@ include "dashboard_left_pane.php";
 								</tr>
                                 <tr>
                                     <td><?php echo $BIZBOOK['PROFILE_LINK']; ?></td>
-                                    <td><a href="<?php echo $PROFILE_URL.urlModifier($user_details_row['user_slug']); ?>" target="_blank"><?php echo $PROFILE_URL.urlModifier($user_details_row['user_slug']); ?></a></td>
+                                    <td><a href="<?php echo $PROFILE_URL.urlModifier($user_details_row['user_slug']); ?>" target="_blank">
+                                            <?php echo $PROFILE_URL.urlModifier($user_details_row['user_slug']); ?>
+                                        </a>
+                                    </td>
 								</tr>
                                 <tr>
                                     <td><?php echo $BIZBOOK['FACEBOOK']; ?></td>

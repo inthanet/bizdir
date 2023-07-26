@@ -42,7 +42,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
 
 
-        $sql = mysqli_query($conn, "UPDATE  " . TBL . "footer SET  header_logo_width = '" . $header_logo_width . "'
+        $sql = mysqli_query($conn, "UPDATE  " . COUNTRY_PREFIX . "footer SET  header_logo_width = '" . $header_logo_width . "'
         ,header_logo_height = '" . $header_logo_height . "', header_logo = '" . $header_logo . "'
         where footer_id = '" . $footer_id . "'");
 

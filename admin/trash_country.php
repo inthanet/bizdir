@@ -15,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 
         $country_qry =
-            " DELETE FROM  " . TBL . "countries  WHERE country_id='" . $country_id . "'";
+            " DELETE FROM  " . COUNTRY_PREFIX . "countries  WHERE country_id='" . $country_id . "'";
 
 
         $country_res = mysqli_query($conn,$country_qry);

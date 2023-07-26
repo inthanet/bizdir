@@ -19,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         $footer_id = $_POST['footer_id'];
 
-        $sql1 = mysqli_query($conn, "UPDATE  " . TBL . "footer SET admin_service_expert_email='" . $admin_service_expert_email . "'
+        $sql1 = mysqli_query($conn, "UPDATE  " . COUNTRY_PREFIX . "footer SET admin_service_expert_email='" . $admin_service_expert_email . "'
         , admin_service_expert_mobile='" . $admin_service_expert_mobile . "'
         , admin_service_expert_whatsapp='" . $admin_service_expert_whatsapp . "'
          where footer_id ='" . $footer_id . "'");
