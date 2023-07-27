@@ -235,33 +235,27 @@ function placedetailpageview($news_id)
 function httpPost($url, $params)
 {
     $postData = '';
-
-    if(!empty($params)){
-        foreach ($params as $k => $v) {
-            $postData .= $k . '=' . $v . '&';
-        }   
-        $postData = rtrim($postData, '&');     
-        $CountPostData = count($postData);
-     } else {
-         $CountPostData = 0 ; 
-     }
-
-
-
-
-    
+    foreach ($params as $k => $v) {
+        $postData .= $k . '=' . $v . '&';
+    }
+    $postData = rtrim($postData, '&');
 
     $ch = curl_init();
 
     curl_setopt($ch, CURLOPT_URL, $url);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     curl_setopt($ch, CURLOPT_HEADER, false);
-    curl_setopt($ch, CURLOPT_POST, $CountPostData);
+    curl_setopt($ch, CURLOPT_POST, count($postData));
     curl_setopt($ch, CURLOPT_POSTFIELDS, $postData);
 
     $output = curl_exec($ch);
 
     curl_close($ch);
+
+    $debug = true;
+    if($debug) $logfile = fopen('/home/bizdir/public_html/logs/common-functions-L256.log', 'a'); 
+    if($debug) fwrite($logfile, print_r($output,true)."\n"); 
+    
     return $output;
 
 }
@@ -609,11 +603,8 @@ function filedateFormatconverter()
 function urlModifier($slug_url)
 {
     //return preg_replace('/\s+/', '-', strtolower($slug_url));
-    //return str_replace(' ', '-', strtolower($slug_url));
-    if(!empty($slug_url)){
-     return preg_replace("/[\s_]/", "-", strtolower($slug_url));
-    } 
-    return NULL;
+   // return str_replace(' ', '-', strtolower($slug_url));
+    return preg_replace("/[\s_]/", "-", strtolower($slug_url));
 }
 
 # To add new string in existing comma separated string
