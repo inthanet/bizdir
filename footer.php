@@ -223,43 +223,73 @@
         <div class="row foot-count">
             <ul>
                <?php if(!empty($footer_row['footer_country_name_1'])){ ?> 
-                <li><a target="_blank" href="https://<?php echo $footer_row['footer_country_url_1']; ?>"><?php echo $footer_row['footer_country_name_1']; ?></a></li>
+                <li>
+                    <img src="<?php echo $footer_row['footer_country_flag_url_1']; ?>" style="width: 15px; height: 15px;">
+                    <a target="_blank" href="https://<?php echo $footer_row['footer_country_url_1']; ?>"><?php echo $footer_row['footer_country_name_1']; ?></a>
+                </li>
                <?php } ?> 
                
                <?php if(!empty($footer_row['footer_country_name_2'])){ ?>
-                <li><a target="_blank" href="https://<?php echo $footer_row['footer_country_url_2']; ?>"><?php echo $footer_row['footer_country_name_2']; ?></a></li>
+                <li>
+                   <img src="<?php echo $footer_row['footer_country_flag_url_2']; ?>" style="width: 15px; height: 15px;">
+                    <a target="_blank" href="https://<?php echo $footer_row['footer_country_url_2']; ?>"><?php echo $footer_row['footer_country_name_2']; ?></a>
+                </li>
                <?php } ?> 
                
                <?php if(!empty($footer_row['footer_country_name_3'])){ ?>
-                <li><a target="_blank" href="https://<?php echo $footer_row['footer_country_url_3']; ?>"><?php echo $footer_row['footer_country_name_3']; ?></a></li>
+                <li>
+                    <img src="<?php echo $footer_row['footer_country_flag_url_3']; ?>" style="width: 15px; height: 15px;">
+                    <a target="_blank" href="https://<?php echo $footer_row['footer_country_url_3']; ?>"><?php echo $footer_row['footer_country_name_3']; ?></a>
+                </li>
                <?php } ?> 
                
                <?php if(!empty($footer_row['footer_country_name_4'])){ ?>                
-                <li><a target="_blank" href="https://<?php echo $footer_row['footer_country_url_4']; ?>"><?php echo $footer_row['footer_country_name_4']; ?></a></li>
+                <li>
+                    <img src="<?php echo $footer_row['footer_country_flag_url_4']; ?>" style="width: 15px; height: 15px;">
+                    <a target="_blank" href="https://<?php echo $footer_row['footer_country_url_4']; ?>"><?php echo $footer_row['footer_country_name_4']; ?></a>
+                </li>
                <?php } ?> 
                
                <?php if(!empty($footer_row['footer_country_name_5'])){ ?>                
-                <li><a target="_blank" href="https://<?php echo $footer_row['footer_country_url_5']; ?>"><?php echo $footer_row['footer_country_name_5']; ?></a></li>
+                <li>
+                    <img src="<?php echo $footer_row['footer_country_flag_url_5']; ?>" style="width: 15px; height: 15px;">
+                    <a target="_blank" href="https://<?php echo $footer_row['footer_country_url_5']; ?>"><?php echo $footer_row['footer_country_name_5']; ?></a>
+                </li>
                <?php } ?> 
                
                <?php if(!empty($footer_row['footer_country_name_6'])){ ?>                 
-                <li><a target="_blank" href="https://<?php echo $footer_row['footer_country_url_6']; ?>"><?php echo $footer_row['footer_country_name_6']; ?></a></li>
+                <li>
+                    <img src="<?php echo $footer_row['footer_country_flag_url_6']; ?>" style="width: 15px; height: 15px;">
+                    <a target="_blank" href="https://<?php echo $footer_row['footer_country_url_6']; ?>"><?php echo $footer_row['footer_country_name_6']; ?></a>
+                </li>
                <?php } ?> 
                
                <?php if(!empty($footer_row['footer_country_name_7'])){ ?>                 
-                <li><a target="_blank" href="https://<?php echo $footer_row['footer_country_url_7']; ?>"><?php echo $footer_row['footer_country_name_7']; ?></a></li>
+                <li>
+                    <img src="<?php echo $footer_row['footer_country_flag_url_7']; ?>" style="width: 15px; height: 15px;">
+                    <a target="_blank" href="https://<?php echo $footer_row['footer_country_url_7']; ?>"><?php echo $footer_row['footer_country_name_7']; ?></a>
+                </li>
                <?php } ?> 
                
                <?php if(!empty($footer_row['footer_country_name_8'])){ ?>                 
-                <li><a target="_blank" href="https://<?php echo $footer_row['footer_country_url_8']; ?>"><?php echo $footer_row['footer_country_name_8']; ?></a></li>
+                <li>
+                    <img src="<?php echo $footer_row['footer_country_flag_url_8']; ?>" style="width: 15px; height: 15px;">    
+                    <a target="_blank" href="https://<?php echo $footer_row['footer_country_url_8']; ?>"><?php echo $footer_row['footer_country_name_8']; ?></a>
+                </li>
                <?php } ?> 
                
                <?php if(!empty($footer_row['footer_country_name_9'])){ ?>                 
-                <li><a target="_blank" href="https://<?php echo $footer_row['footer_country_url_9']; ?>"><?php echo $footer_row['footer_country_name_9']; ?></a></li>
+                <li>
+                    <img src="<?php echo $footer_row['footer_country_flag_url_9']; ?>" style="width: 15px; height: 15px;">
+                    <a target="_blank" href="https://<?php echo $footer_row['footer_country_url_9']; ?>"><?php echo $footer_row['footer_country_name_9']; ?></a>
+                </li>
                <?php } ?> 
                
                <?php if(!empty($footer_row['footer_country_name_10'])){ ?>                 
-                <li><a target="_blank" href="https://<?php echo $footer_row['footer_country_url_10']; ?>"><?php echo $footer_row['footer_country_name_10']; ?></a></li>
+                <li>
+                    <img src="<?php echo $footer_row['footer_country_flag_url_10']; ?>" style="width: 15px; height: 15px;">
+                    <a target="_blank" href="https://<?php echo $footer_row['footer_country_url_10']; ?>"><?php echo $footer_row['footer_country_name_10']; ?></a>
+                </li>
                <?php } ?> 
 
             </ul>

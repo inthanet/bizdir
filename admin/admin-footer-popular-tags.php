@@ -25,6 +25,7 @@ include "header.php";
                         <thead>
                         <tr>
                             <th>No</th>
+                            <th>Special Link</th>
                             <th>Page</th>
                             <th>Edit</th>
                             <th>Delete</th>
@@ -38,6 +39,13 @@ include "header.php";
                             ?>
                             <tr>
                                 <td><?php echo $si; ?></td>
+
+                                <?php if($row['popular_tags_bizdir'] == 1){ ?>
+                                    <td style="text-align: center;"><span style="color:green;">✅</span></td>
+                                <?php } else { ?>
+                                    <td style="text-align: center;"><span style="color:darkgray;">❌</span></td>
+                                <?php } ?>    
+                                
                                 <td><?php echo $row['popular_tags_name']; ?> <span>Created: <?php  echo dateFormatconverter($row['popular_tags_cdt'])?></span></td>
                                 <td><a href="footer-edit-popular-tags.php?row=<?php echo $row['popular_tags_id']; ?>" class="db-list-edit">Edit</a></td>
                                 <td><a href="footer-delete-popular-tags.php?row=<?php echo $row['popular_tags_id']; ?>" class="db-list-edit">Delete</a></td>
