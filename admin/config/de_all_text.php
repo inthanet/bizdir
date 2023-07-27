@@ -374,13 +374,13 @@ $BIZBOOK['NO-NOTIFICATIONS-TO-SHOW']  = "No Notifications to Show";
 //************************* Home page *********************
 $BIZBOOK['HOM-BAN-TIT-CAT'] = "Find the Service Experts";
 
-$BIZBOOK['HOM-BAN-TIT'] = "Find your <span>Local needs <i></i></span>";
+$BIZBOOK['HOM-BAN-TIT'] = "Finden Sie Ihre <span>lokalen Bedürfnisse <i></i></span>";
 
-$BIZBOOK['HOM-BAN-SUB-TIT'] = "Restaurants, cafe's, and bars in New york";
+$BIZBOOK['HOM-BAN-SUB-TIT'] = "Restaurants, Cafés und Bars in Berlin";
 
-$BIZBOOK['HOM-POP-TIT'] = "Popular Services";
+$BIZBOOK['HOM-POP-TIT'] = "Beliebte Dienste";
 
-$BIZBOOK['HOM-POP-TIT1'] = "near you";
+$BIZBOOK['HOM-POP-TIT1'] = "nahe bei dir";
 
 $BIZBOOK['HOM-POP-SUB-TIT'] = "lacinia viverra lectus. Fusce imperdiet ullamcorper metus eu fringilla.";
 
@@ -404,7 +404,7 @@ $BIZBOOK['HOM-BEST-TIT1'] = "in your city";
 
 $BIZBOOK['HOM-BEST-SUB-TIT'] = "lacinia viverra lectus. Fusce imperdiet ullamcorper metus eu fringilla.";
 
-$BIZBOOK['HOM-WHAT-SER'] = "What service do you need?";
+$BIZBOOK['HOM-WHAT-SER'] = "Welchen Service benötigen Sie?";
 
 $BIZBOOK['HOM-WHAT-BIZ'] = "BizDir Directory";
 
