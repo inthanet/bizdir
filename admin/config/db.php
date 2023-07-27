@@ -38,7 +38,15 @@ switch ($subdomain) {
         define('COUNTRY_ID', '49');
         define('COUNTRY_NAME', 'Germany');
         define('COUNTRY_LANG', 'de');
-        break;                
+        break;     
+    case 'fr':
+        define('COUNTRY_PREFIX', $subdomain.'_');
+        define('COUNTRY_SUBDOMAIN', $subdomain.'.');
+        define('COUNTRY_FOLDER', '/'.$subdomain.'/');
+        define('COUNTRY_ID', '33');
+        define('COUNTRY_NAME', 'France');
+        define('COUNTRY_LANG', 'fr');
+        break;                     
     default:
         //main prefix
         define('COUNTRY_PREFIX', 'ww_');
