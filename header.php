@@ -97,11 +97,22 @@ if (isset($_GET['preview']) && isset($_GET['q']) && isset($_GET['type']) && isse
                     <div class="row">
                         <div class="hom-nav <?php if (!isset($_SESSION['user_name']) && empty($_SESSION['user_name'])) {
                         } else { ?> db-open <?php } ?>"><!--MOBILE MENU-->
-                            <a href="<?php echo $webpage_full_link; ?>" class="top-log"><img
-                                        src="<?php echo $slash; ?>images/home/<?php echo $footer_row['header_logo']; ?>"
+                            <div>
+                               <div style="float:left;"> 
+                                 <a href="<?php echo $webpage_full_link; ?>" target="_blank" class="top-log">
+                              
+                              
+                                 <img src="<?php echo $slash; ?>images/home/<?php echo $footer_row['header_logo']; ?>"
                                         <?php if ($footer_row['header_logo_width'] != NULL || $footer_row['header_logo_height'] != NULL){ ?>style="<?php if ($footer_row['header_logo_width'] != NULL) { ?>width: <?php echo $footer_row['header_logo_width']; ?>; <?php }
                                         if ($footer_row['header_logo_height'] != NULL) { ?>height: <?php echo $footer_row['header_logo_height']; ?>;<?php } ?>"<?php } ?>
                                         alt="" class="ic-logo"></a>
+                                        
+                                </div> 
+                                <div style="float: left; margin-left: 10px; margin-top: 10px;"> 
+                                    <img src="<?php echo $footer_row['directory_country_flag'];?>" style="width:20px; height:20px; position: relative;">            
+                                </div>
+                            </div>
+
                             <div class="menu">
                                 <h4><?php echo $BIZBOOK['EXPLORE']; ?></h4>
                             </div>
