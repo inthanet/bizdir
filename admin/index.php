@@ -61,6 +61,9 @@ if (!empty($_SESSION['admin_id'])) {
                 <span class="udb-inst">Super Admin</span>
                 <div class="log log-1">
                     <div class="login">
+                        <div style="width:100%; text-align:center;">
+                            <img src="<?php echo $footer_row['directory_country_flag'];?>" style="position: relative;top:-20px;">  
+                        </div>
                         <h4>Admin Login</h4>
                         <?php
                         if (isset($_SESSION['login_status_msg'])) {
