@@ -22,13 +22,16 @@ if (isset($_SESSION['user_name']) && !empty($_SESSION['user_name'])) {
                 <div class="log-bor">&nbsp;</div>
                 <div class="log log-1">
                     <div class="login login-new">
-                        <h4><?php echo $BIZBOOK['MEMBER_LOGIN']; ?></h4>
+                        <h4 style="position: relative; top: -20px;"><?php echo $BIZBOOK['MEMBER_LOGIN']; ?></h4>
+                        <div style="width:100%; text-align:center;position: relative; top: -10px;">
+                            <img src="<?php echo $footer_row['directory_country_flag'];?>" style="position: relative;top:-20px;">  
+                        </div> 
                         <?php
                         if (isset($_SESSION['login_status_msg'])) {
                             include "page_level_message.php";
                             unset($_SESSION['login_status_msg']);
                         }
-                        ?>
+                        ?> 
                         <form id="login_form" name="login_form" method="post" action="login_check.php">
                             <?php
                             if (isset($_GET['src'])) {
