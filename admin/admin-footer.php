@@ -811,6 +811,16 @@ include "header.php";
                                 </tr>
 
                                 <tr>
+                                    <td>Local Directory Country Flag</td>
+                                    <td>Flag url:</td>
+                                    <td colspan="3">
+                                        <div class="form-group">
+                                            <input type="text" name="directory_country_flag" value="<?php echo $row_f['directory_country_flag']; ?>"
+                                                class="form-control" placeholder="Flag for <?=COUNTRY_NAME;?>">
+                                        </div>
+                                    </td>                                    
+                                </tr>
+                                <tr>
                                     <td>Copyright</td>
                                     <td>Copyright year</td>
                                     <td colspan="3">
