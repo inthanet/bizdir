@@ -39,6 +39,8 @@ if (!empty($_SESSION['admin_id'])) {
     <link rel="stylesheet" href="../css/bootstrap.css">
     <link rel="stylesheet" href="css/admin-style.css">
     <link rel="stylesheet" href="../css/fonts.css">
+    
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -64,6 +66,7 @@ if (!empty($_SESSION['admin_id'])) {
                         <div style="width:100%; text-align:center;">
                             <img src="<?php echo $footer_row['directory_country_flag'];?>" style="position: relative;top:-20px;">  
                         </div>
+                        
                         <h4>Admin Login</h4>
                         <?php
                         if (isset($_SESSION['login_status_msg'])) {
@@ -88,8 +91,12 @@ if (!empty($_SESSION['admin_id'])) {
                                 <input type="password" name="admin_password" id="admin_password" class="form-control"
                                        placeholder="Enter password*" value="" required>
                             </div>
-                            <button type="submit" value="submit" name="admin_submit" class="btn btn-primary">Sign in
-                            </button>
+
+                            <!-- <div style="width:100%; text-align:center;">
+                                <div class="cf-turnstile" data-sitekey="0x4AAAAAAAH8J8a41-UqlWZm"></div>
+                            </div>                             -->
+                            
+                            <button type="submit" value="submit" name="admin_submit" class="btn btn-primary">Sign in</button>
                         </form>
                     </div>
                 </div>
@@ -112,6 +119,7 @@ if (!empty($_SESSION['admin_id'])) {
                             <button type="submit" name="forgot_submit" class="btn btn-primary">Submit</button>
                         </form>
                     </div>
+
                 </div>
                 <div class="log-bot">
                     <ul>
@@ -123,9 +131,15 @@ if (!empty($_SESSION['admin_id'])) {
                         </li>
                     </ul>
                 </div>
+
+
             </div>
         </div>
     </div>
+    <div style="width:100%; text-align:center;margin-top:50px;">
+       <div class="cf-turnstile" data-sitekey="0x4AAAAAAAH8J8a41-UqlWZm" data-callback="javascriptCallback"></div>
+    </div>        
+
 </section>
 <!--END PRICING DETAILS-->
 

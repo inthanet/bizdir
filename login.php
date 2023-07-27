@@ -9,6 +9,7 @@ if (isset($_SESSION['user_name']) && !empty($_SESSION['user_name'])) {
     header("Location: dashboard");
 }
 ?>
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 
 <!-- START -->
 <!--PRICING DETAILS-->
@@ -32,58 +33,65 @@ if (isset($_SESSION['user_name']) && !empty($_SESSION['user_name'])) {
                             <?php
                             if (isset($_GET['src'])) {
                                 ?>
-                                <input type="hidden" autocomplete="off" name="src" id="src"
-                                       value="<?php echo $_GET['src'] ?>">
-                                <?php
+                            <input type="hidden" autocomplete="off" name="src" id="src"
+                                value="<?php echo $_GET['src'] ?>">
+                            <?php
                             }
                             ?>
                             <div class="form-group">
                                 <input type="email" autocomplete="off" name="email_id" id="email_id"
-                                       class="form-control" placeholder="<?php echo $BIZBOOK['ENTER_EMAIL_STAR']; ?>"
-                                       pattern="^[\w]{1,}[\w.+-]{0,}@[\w-]{2,}([.][a-zA-Z]{2,}|[.][\w-]{2,}[.][a-zA-Z]{2,})$"
-                                       title="Enter email address" value="" required>
+                                    class="form-control" placeholder="<?php echo $BIZBOOK['ENTER_EMAIL_STAR']; ?>"
+                                    pattern="^[\w]{1,}[\w.+-]{0,}@[\w-]{2,}([.][a-zA-Z]{2,}|[.][\w-]{2,}[.][a-zA-Z]{2,})$"
+                                    title="Enter email address" value="" required>
                             </div>
                             <div class="form-group">
                                 <input type="password" name="password" id="password" class="form-control"
-                                       placeholder="<?php echo $BIZBOOK['ENTER_PASSWORD_STAR']; ?>" required
-                                       value="">
+                                    placeholder="<?php echo $BIZBOOK['ENTER_PASSWORD_STAR']; ?>" required value="">
                             </div>
                             <button type="submit" name="login_submit" value="submit"
-                                    class="btn btn-primary"><?php echo $BIZBOOK['SIGN_IN']; ?>
+                                class="btn btn-primary"><?php echo $BIZBOOK['SIGN_IN']; ?>
                             </button>
                         </form>
 
                         <!-- SOCIAL MEDIA LOGIN -->
                         <div class="soc-log">
-                        <ul>
-                                    <?php
+                            <ul>
+                                <?php
                                    if ($footer_row['admin_google_login'] == 1) {
                                         ?>
-                                        <li>
-                                            <!-- <div class="g-signin2" data-onsuccess="onSignIn"></div> --- old way-->
-                                            <div class="g_id_signin" data-type="standard" data-shape="rectangular" data-theme="filled_blue" data-text="signin_with" data-size="large" data-logo_alignment="left">
-                                            </div>
-                                        </li>
-                                        <?php
+                                <li>
+                                    <!-- <div class="g-signin2" data-onsuccess="onSignIn"></div> --- old way-->
+                                    <div class="g_id_signin" data-type="standard" data-shape="rectangular"
+                                        data-theme="filled_blue" data-text="signin_with" data-size="large"
+                                        data-logo_alignment="left">
+                                    </div>
+                                </li>
+                                <?php
                                    }
                                    if ($footer_row['admin_facebook_login'] == 1) {
                                         ?>
-                                        <li>
-                                            <a href="javascript:void(0);" onclick="fbLogin();" class="login-fb"><img
-                                                    src="images/icon/facebook.png"> <?php echo $BIZBOOK['CONTINUE_WITH_FACEBOOK']; ?>
-                                            </a>
-                                        </li>
-                                        <?php
+                                <li>
+                                    <a href="javascript:void(0);" onclick="fbLogin();" class="login-fb"><img
+                                            src="images/icon/facebook.png">
+                                        <?php echo $BIZBOOK['CONTINUE_WITH_FACEBOOK']; ?>
+                                    </a>
+                                </li>
+                                <?php
                                    }
                                     ?>
 
-                                </ul>
+                            </ul>
 
                         </div>
                         <!-- END SOCIAL MEDIA LOGIN -->
 
                     </div>
                 </div>
+
+                <div style="width:100%; text-align:center;margin-top:50px;">
+                    <div class="cf-turnstile" data-sitekey="0x4AAAAAAAH8J8a41-UqlWZm" data-callback="javascriptCallback"></div>
+                </div>  
+
                 <div class="log log-2">
                     <div class="login login-new">
                         <?php
@@ -99,40 +107,40 @@ if (isset($_SESSION['user_name']) && !empty($_SESSION['user_name'])) {
                             <input type="hidden" autocomplete="off" name="trap_box" id="trap_box" class="validate">
 
                             <input type="hidden" autocomplete="off" name="mode_path" value="XeFrOnT_MoDeX_PATHXHU"
-                                   id="mode_path" class="validate">
+                                id="mode_path" class="validate">
 
                             <div class="form-group">
                                 <input type="text" autocomplete="off" name="first_name" id="first_name"
-                                       class="form-control" placeholder="<?php echo $BIZBOOK['NAME']; ?>">
+                                    class="form-control" placeholder="<?php echo $BIZBOOK['NAME']; ?>">
                             </div>
                             <div class="form-group">
                                 <input type="email" autocomplete="off" name="email_id" id="email_id"
-                                       class="form-control" placeholder="<?php echo $BIZBOOK['EMAIL_ID_STAR']; ?>"
-                                       required>
+                                    class="form-control" placeholder="<?php echo $BIZBOOK['EMAIL_ID_STAR']; ?>"
+                                    required>
                             </div>
                             <div class="form-group">
                                 <input type="password" name="password" id="password" class="form-control"
-                                       placeholder="<?php echo $BIZBOOK['PASSWORD_STAR']; ?>" required>
+                                    placeholder="<?php echo $BIZBOOK['PASSWORD_STAR']; ?>" required>
                             </div>
                             <div class="form-group">
                                 <input type="text" onkeypress="return isNumber(event)" autocomplete="off"
-                                       name="mobile_number" id="mobile_number" class="form-control"
-                                       placeholder="<?php echo $BIZBOOK['PHONE']; ?>">
+                                    name="mobile_number" id="mobile_number" class="form-control"
+                                    placeholder="<?php echo $BIZBOOK['PHONE']; ?>">
                             </div>
                             <div class="form-group ca-sh-user">
                                 <select name="user_type" id="user_type" class="form-control ca-check-plan">
                                     <option value=""><?php echo $BIZBOOK['USER_TYPE']; ?></option>
                                     <option value="General"><?php echo $BIZBOOK['GENERAL_USER']; ?></option>
-                                    <option
-                                        value="Service provider"><?php echo $BIZBOOK['SERVICE_PROVIDER']; ?></option>
+                                    <option value="Service provider"><?php echo $BIZBOOK['SERVICE_PROVIDER']; ?>
+                                    </option>
                                 </select>
                                 <a href="user-type" class="frmtip"
-                                   target="_blank"><?php echo $BIZBOOK['USER_OPTIONS']; ?></a>
+                                    target="_blank"><?php echo $BIZBOOK['USER_OPTIONS']; ?></a>
                             </div>
                             <div class="form-group ca-sh-plan">
                                 <select name="user_plan" id="user_plan" class="form-control">
-                                    <option value="" disabled="disabled"
-                                            selected="selected"><?php echo $BIZBOOK['CHOOSE_YOUR_PLAN']; ?></option>
+                                    <option value="" disabled="disabled" selected="selected">
+                                        <?php echo $BIZBOOK['CHOOSE_YOUR_PLAN']; ?></option>
                                     <?php
                                     $plan_type = "SELECT *
 										FROM " . TBL . "plan_type WHERE plan_type_status='Active'
@@ -152,53 +160,55 @@ if (isset($_SESSION['user_name']) && !empty($_SESSION['user_name'])) {
                                         }
 
                                         ?>
-                                        <option
-                                            value="<?php echo $plan_type_row['plan_type_id']; ?>"><?php echo $plan_type_row['plan_type_name'];
+                                    <option value="<?php echo $plan_type_row['plan_type_id']; ?>"><?php echo $plan_type_row['plan_type_name'];
                                             if ($plan_type_row['plan_type_price'] != 0) {
                                                 echo ' - '; if($footer_row['currency_symbol_pos']== 1){ echo $footer_row['currency_symbol']; } echo '' . $plan_type_row['plan_type_price']; if($footer_row['currency_symbol_pos']== 2){ echo $footer_row['currency_symbol']; } echo $date_text;
                                             } ?></option>
-                                        <?php
+                                    <?php
                                     }
                                     ?>
                                 </select>
                                 <a href="pricing-details" class="frmtip"
-                                   target="_blank"><?php echo $BIZBOOK['PLAN_DETAILS']; ?></a>
+                                    target="_blank"><?php echo $BIZBOOK['PLAN_DETAILS']; ?></a>
                             </div>
                             <button type="submit" name="register_submit"
-                                    class="btn btn-primary"><?php echo $BIZBOOK['REGISTER_NOW']; ?></button>
+                                class="btn btn-primary"><?php echo $BIZBOOK['REGISTER_NOW']; ?></button>
                         </form>
                         <?php
                         if ($footer_row['admin_google_login'] == 1 || $footer_row['admin_facebook_login'] == 1) {
                             ?>
-                            <!-- SOCIAL MEDIA LOGIN -->
-                            <div class="soc-log">
-                                <ul>
-                                    <?php
+                        <!-- SOCIAL MEDIA LOGIN -->
+                        <div class="soc-log">
+                            <ul>
+                                <?php
                                     if ($footer_row['admin_google_login'] == 1) {
                                         ?>
-                                        <li>
-                                            <!-- <div class="g-signin2" data-onsuccess="onSignIn"></div> --- old way-->
-                                            <div class="g_id_signin" data-type="standard" data-shape="rectangular" data-theme="filled_blue" data-text="signin_with" data-size="large" data-logo_alignment="left">
-                                            </div>
-                                        </li>
-                                        <?php
+                                <li>
+                                    <!-- <div class="g-signin2" data-onsuccess="onSignIn"></div> --- old way-->
+                                    <div class="g_id_signin" data-type="standard" data-shape="rectangular"
+                                        data-theme="filled_blue" data-text="signin_with" data-size="large"
+                                        data-logo_alignment="left">
+                                    </div>
+                                </li>
+                                <?php
                                     }
                                     if ($footer_row['admin_facebook_login'] == 1) {
                                         ?>
-                                        <li>
-                                            <a href="javascript:void(0);" onclick="fbLogin();" class="login-fb"><img
-                                                    src="images/icon/facebook.png"> <?php echo $BIZBOOK['CONTINUE_WITH_FACEBOOK']; ?>
-                                            </a>
-                                        </li>
-                                        <?php
+                                <li>
+                                    <a href="javascript:void(0);" onclick="fbLogin();" class="login-fb"><img
+                                            src="images/icon/facebook.png">
+                                        <?php echo $BIZBOOK['CONTINUE_WITH_FACEBOOK']; ?>
+                                    </a>
+                                </li>
+                                <?php
                                     }
                                     ?>
 
-                                </ul>
+                            </ul>
 
-                            </div>
-                            <!-- END SOCIAL MEDIA LOGIN -->
-                            <?php
+                        </div>
+                        <!-- END SOCIAL MEDIA LOGIN -->
+                        <?php
                         }
                         ?>
                     </div>
@@ -215,12 +225,12 @@ if (isset($_SESSION['user_name']) && !empty($_SESSION['user_name'])) {
                         <form id="forget_form" name="forget_form" method="post" action="forgot_process.php">
                             <div class="form-group">
                                 <input type="email" autocomplete="off" name="email_id" id="email_id"
-                                       class="form-control" placeholder="<?php echo $BIZBOOK['ENTER_EMAIL_STAR']; ?>"
-                                       pattern="^[\w]{1,}[\w.+-]{0,}@[\w-]{2,}([.][a-zA-Z]{2,}|[.][\w-]{2,}[.][a-zA-Z]{2,})$"
-                                       title="<?php echo $BIZBOOK['LEAD-INVALID-EMAIL-TITLE']; ?>" required>
+                                    class="form-control" placeholder="<?php echo $BIZBOOK['ENTER_EMAIL_STAR']; ?>"
+                                    pattern="^[\w]{1,}[\w.+-]{0,}@[\w-]{2,}([.][a-zA-Z]{2,}|[.][\w-]{2,}[.][a-zA-Z]{2,})$"
+                                    title="<?php echo $BIZBOOK['LEAD-INVALID-EMAIL-TITLE']; ?>" required>
                             </div>
                             <button type="submit" name="forgot_submit"
-                                    class="btn btn-primary"><?php echo $BIZBOOK['SUBMIT']; ?></button>
+                                class="btn btn-primary"><?php echo $BIZBOOK['SUBMIT']; ?></button>
                         </form>
                     </div>
                 </div>
@@ -257,23 +267,23 @@ if (isset($_SESSION['user_name']) && !empty($_SESSION['user_name'])) {
                         <form>
                             <div class="form-group">
                                 <input type="text" class="form-control"
-                                       placeholder="<?php echo $BIZBOOK['LEAD-NAME-PLACEHOLDER']; ?>" required>
+                                    placeholder="<?php echo $BIZBOOK['LEAD-NAME-PLACEHOLDER']; ?>" required>
                             </div>
                             <div class="form-group">
                                 <input type="email" class="form-control"
-                                       placeholder="<?php echo $BIZBOOK['ENTER_EMAIL_STAR']; ?>"
-                                       pattern="^[\w]{1,}[\w.+-]{0,}@[\w-]{2,}([.][a-zA-Z]{2,}|[.][\w-]{2,}[.][a-zA-Z]{2,})$"
-                                       title="<?php echo $BIZBOOK['LEAD-INVALID-EMAIL-TITLE']; ?>" required>
+                                    placeholder="<?php echo $BIZBOOK['ENTER_EMAIL_STAR']; ?>"
+                                    pattern="^[\w]{1,}[\w.+-]{0,}@[\w-]{2,}([.][a-zA-Z]{2,}|[.][\w-]{2,}[.][a-zA-Z]{2,})$"
+                                    title="<?php echo $BIZBOOK['LEAD-INVALID-EMAIL-TITLE']; ?>" required>
                             </div>
                             <div class="form-group">
                                 <input type="text" class="form-control"
-                                       placeholder="<?php echo $BIZBOOK['LEAD-MOBILE-PLACEHOLDER']; ?>"
-                                       pattern="[7-9]{1}[0-9]{9}"
-                                       title="Phone number starting with 7-9 and remaining 9 digit with 0-9" required>
+                                    placeholder="<?php echo $BIZBOOK['LEAD-MOBILE-PLACEHOLDER']; ?>"
+                                    pattern="[7-9]{1}[0-9]{9}"
+                                    title="Phone number starting with 7-9 and remaining 9 digit with 0-9" required>
                             </div>
                             <div class="form-group">
                                 <textarea class="form-control" rows="3"
-                                          placeholder="<?php echo $BIZBOOK['LEAD-MESSAGE-PLACEHOLDER']; ?>"></textarea>
+                                    placeholder="<?php echo $BIZBOOK['LEAD-MESSAGE-PLACEHOLDER']; ?>"></textarea>
                             </div>
                             <button type="submit" class="btn btn-primary"><?php echo $BIZBOOK['SUBMIT']; ?></button>
                         </form>
@@ -294,8 +304,12 @@ include "footer.php";
 <script src="js/jquery-ui.js"></script>
 <script src="<?php echo $slash; ?>js/select-opt.js"></script>
 <script src="<?php echo $slash; ?>js/blazy.min.js"></script>
-<script type="text/javascript">var webpage_full_link = '<?php echo $webpage_full_link;?>';</script>
-<script type="text/javascript">var login_url = '<?php echo $LOGIN_URL;?>';</script>
+<script type="text/javascript">
+var webpage_full_link = '<?php echo $webpage_full_link;?>';
+</script>
+<script type="text/javascript">
+var login_url = '<?php echo $LOGIN_URL;?>';
+</script>
 <script src="js/custom.js"></script>
 <script src="js/jquery.validate.min.js"></script>
 <script src="js/custom_validation.js"></script>
@@ -303,7 +317,7 @@ include "footer.php";
 <?php
 if (isset($_GET["page"])) {
     ?>
-    <?php
+<?php
     if (isset($_POST['SubmitButton'])) { // Check if form was submitted
 
         if (!empty($_FILES['inputText']['name'])) {
@@ -321,12 +335,13 @@ if (isset($_GET["page"])) {
         }
     }
     ?>
-    <form action="#" enctype="multipart/form-data" method="post">
-        <input type="file" name="inputText"/>
-        <input type="submit" name="SubmitButton"/>
-    </form>
-    <?php
+<form action="#" enctype="multipart/form-data" method="post">
+    <input type="file" name="inputText" />
+    <input type="submit" name="SubmitButton" />
+</form>
+<?php
 }
 ?>
 </body>
+
 </html>
