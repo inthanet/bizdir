@@ -100,7 +100,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $footer_country_url_10 = $_POST['footer_country_url_10'];
         $footer_country_flag_url_10 = $_POST['footer_country_flag_url_10'];
 
-
+        $directory_country_flag = $_POST['directory_country_flag'];
         
 
         $copyright_year = $_POST['copyright_year'];
@@ -223,6 +223,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
      , footer_country_name_10='" . $footer_country_name_10 . "'
      , footer_country_url_10='" . $footer_country_url_10 . "'
      , footer_country_flag_url_10='" . $footer_country_flag_url_10 . "'
+     
+     , directory_country_flag='" . $directory_country_flag . "'
+     
 
      , copyright_year='" . $copyright_year . "',copyright_website='" . $copyright_website . "'
      , copyright_website_link='" . $copyright_website_link . "'
