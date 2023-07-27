@@ -224,70 +224,70 @@
             <ul>
                <?php if(!empty($footer_row['footer_country_name_1'])){ ?> 
                 <li>
-                    <img src="<?php echo $footer_row['footer_country_flag_url_1']; ?>" style="width: 15px; height: 15px;">
+                    <img class="footer-country-link-img" src="<?php echo $footer_row['footer_country_flag_url_1']; ?>">
                     <a target="_blank" href="https://<?php echo $footer_row['footer_country_url_1']; ?>"><?php echo $footer_row['footer_country_name_1']; ?></a>
                 </li>
                <?php } ?> 
                
                <?php if(!empty($footer_row['footer_country_name_2'])){ ?>
                 <li>
-                   <img src="<?php echo $footer_row['footer_country_flag_url_2']; ?>" style="width: 15px; height: 15px;">
+                   <img class="footer-country-link-img" src="<?php echo $footer_row['footer_country_flag_url_2']; ?>">
                     <a target="_blank" href="https://<?php echo $footer_row['footer_country_url_2']; ?>"><?php echo $footer_row['footer_country_name_2']; ?></a>
                 </li>
                <?php } ?> 
                
                <?php if(!empty($footer_row['footer_country_name_3'])){ ?>
                 <li>
-                    <img src="<?php echo $footer_row['footer_country_flag_url_3']; ?>" style="width: 15px; height: 15px;">
+                    <img class="footer-country-link-img" src="<?php echo $footer_row['footer_country_flag_url_3']; ?>">
                     <a target="_blank" href="https://<?php echo $footer_row['footer_country_url_3']; ?>"><?php echo $footer_row['footer_country_name_3']; ?></a>
                 </li>
                <?php } ?> 
                
                <?php if(!empty($footer_row['footer_country_name_4'])){ ?>                
                 <li>
-                    <img src="<?php echo $footer_row['footer_country_flag_url_4']; ?>" style="width: 15px; height: 15px;">
+                    <img class="footer-country-link-img" src="<?php echo $footer_row['footer_country_flag_url_4']; ?>">
                     <a target="_blank" href="https://<?php echo $footer_row['footer_country_url_4']; ?>"><?php echo $footer_row['footer_country_name_4']; ?></a>
                 </li>
                <?php } ?> 
                
                <?php if(!empty($footer_row['footer_country_name_5'])){ ?>                
                 <li>
-                    <img src="<?php echo $footer_row['footer_country_flag_url_5']; ?>" style="width: 15px; height: 15px;">
+                    <img class="footer-country-link-img" src="<?php echo $footer_row['footer_country_flag_url_5']; ?>">
                     <a target="_blank" href="https://<?php echo $footer_row['footer_country_url_5']; ?>"><?php echo $footer_row['footer_country_name_5']; ?></a>
                 </li>
                <?php } ?> 
                
                <?php if(!empty($footer_row['footer_country_name_6'])){ ?>                 
                 <li>
-                    <img src="<?php echo $footer_row['footer_country_flag_url_6']; ?>" style="width: 15px; height: 15px;">
+                    <img class="footer-country-link-img" src="<?php echo $footer_row['footer_country_flag_url_6']; ?>">
                     <a target="_blank" href="https://<?php echo $footer_row['footer_country_url_6']; ?>"><?php echo $footer_row['footer_country_name_6']; ?></a>
                 </li>
                <?php } ?> 
                
                <?php if(!empty($footer_row['footer_country_name_7'])){ ?>                 
                 <li>
-                    <img src="<?php echo $footer_row['footer_country_flag_url_7']; ?>" style="width: 15px; height: 15px;">
+                    <img class="footer-country-link-img" src="<?php echo $footer_row['footer_country_flag_url_7']; ?>">
                     <a target="_blank" href="https://<?php echo $footer_row['footer_country_url_7']; ?>"><?php echo $footer_row['footer_country_name_7']; ?></a>
                 </li>
                <?php } ?> 
                
                <?php if(!empty($footer_row['footer_country_name_8'])){ ?>                 
                 <li>
-                    <img src="<?php echo $footer_row['footer_country_flag_url_8']; ?>" style="width: 15px; height: 15px;">    
+                    <img class="footer-country-link-img" src="<?php echo $footer_row['footer_country_flag_url_8']; ?>">    
                     <a target="_blank" href="https://<?php echo $footer_row['footer_country_url_8']; ?>"><?php echo $footer_row['footer_country_name_8']; ?></a>
                 </li>
                <?php } ?> 
                
                <?php if(!empty($footer_row['footer_country_name_9'])){ ?>                 
                 <li>
-                    <img src="<?php echo $footer_row['footer_country_flag_url_9']; ?>" style="width: 15px; height: 15px;">
+                    <img class="footer-country-link-img" src="<?php echo $footer_row['footer_country_flag_url_9']; ?>">
                     <a target="_blank" href="https://<?php echo $footer_row['footer_country_url_9']; ?>"><?php echo $footer_row['footer_country_name_9']; ?></a>
                 </li>
                <?php } ?> 
                
                <?php if(!empty($footer_row['footer_country_name_10'])){ ?>                 
                 <li>
-                    <img src="<?php echo $footer_row['footer_country_flag_url_10']; ?>" style="width: 15px; height: 15px;">
+                    <img class="footer-country-link-img" src="<?php echo $footer_row['footer_country_flag_url_10']; ?>">
                     <a target="_blank" href="https://<?php echo $footer_row['footer_country_url_10']; ?>"><?php echo $footer_row['footer_country_name_10']; ?></a>
                 </li>
                <?php } ?> 
