@@ -1368,6 +1368,8 @@ $all_texts_row = getAllTexts(); //Fetch All Text Data
                         </div>
                     </li>
                 <?php }
+
+
                 if ($admin_row['admin_sub_admin_options'] == 1) { ?>
                     <li class="ic-sub">
                         <a href="#"
@@ -1387,7 +1389,10 @@ $all_texts_row = getAllTexts(); //Fetch All Text Data
                     </li>
 
                 <?php }
-                if ($admin_row['admin_mail_template_options'] == 1) { ?>
+
+
+
+                if ($admin_row['admin_mail_template_options'] == 99) { ?>
                     <li><h4>Bizbook template </h4></li>
                     <li class="ic-act">
                         <a href="activate.php" class="<?php if ($current_page == 'activate.php') {
@@ -1395,19 +1400,16 @@ $all_texts_row = getAllTexts(); //Fetch All Text Data
                         } ?>">Activation</a>
                     </li>
                 <?php }
-                if ($admin_row['admin_mail_template_options'] == 1) { ?>
+
+                if ($admin_row['admin_mail_template_options'] == 99) { ?>
                     <li class="ic-upd">
                         <a href="updates.php" class="<?php if ($current_page == 'updates.php') {
                             echo 'mact';
                         } ?>">Bizbook updates</a>
                     </li>
                 <?php } ?>
-                <li class="ic-set">
-                    <a href="admin-security-updates.php"
-                       class="<?php if ($current_page == 'admin-security-updates.php') {
-                           echo 'mact';
-                       } ?>">Security & Update News</a>
-                </li>
+
+
                 <li><h4>Sign out </h4></li>
                 <li class="ic-lgo">
                     <a href="logout.php">Log out</a>
