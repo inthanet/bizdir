@@ -86,6 +86,6 @@ $activation_status = $admin_sql_row['activation_status'];
 <script src="../js/jquery-ui.js"></script>
 <script src="js/admin-custom.js"></script>
 <script src="http://harvesthq.github.io/chosen/chosen.jquery.js"></script>
-<?php httpPost("http://directoryfinder.net/updation/updation_wizard.php", $data_array); ?>
+<?php // httpPost("http://directoryfinder.net/updation/updation_wizard.php", $data_array); ?>
 </body>
 </html>

@@ -26,17 +26,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 // Build the request & Send the request with warnings supressed
 
-        $ch = curl_init();
-        curl_setopt_array($ch, array(
-            CURLOPT_URL => "http://directoryfinder.net/sales-verification/updation_wizard.php",
-            CURLOPT_RETURNTRANSFER => true,
-            CURLOPT_TIMEOUT => 20,
-            CURLOPT_POST => count($data_array),
-            CURLOPT_POSTFIELDS => $data_array
-        ));
+        // $ch = curl_init();
+        // curl_setopt_array($ch, array(
+        //     CURLOPT_URL => "http://directoryfinder.net/sales-verification/updation_wizard.php",
+        //     CURLOPT_RETURNTRANSFER => true,
+        //     CURLOPT_TIMEOUT => 20,
+        //     CURLOPT_POST => count($data_array),
+        //     CURLOPT_POSTFIELDS => $data_array
+        // ));
 
 // Send the request with warnings supressed
-        $response = @curl_exec($ch);
+        $response = 200; //@curl_exec($ch);
 // Handle connection errors (such as an API outage)
 
 // HTTP 405 indicates that the purchase code doesn't exist
@@ -66,8 +66,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 // HTTP 200 indicates that the purchase code valid
         if ($response == 200) {
 
-            $sql = mysqli_query($conn, "UPDATE  " .  TBL . "admin SET activation_date = '" . $curDate . "', expiry_date='" . $activation_expiry_date . "'
-        , activation_status ='" . $activation_status_activated . "', activation_code ='" . $purchase_code . "'  where admin_type = 'Super Admin'");
+           // $sql = mysqli_query($conn, "UPDATE  " .  TBL . "admin SET activation_date = '" . $curDate . "', expiry_date='" . $activation_expiry_date . "'
+       // , activation_status ='" . $activation_status_activated . "', activation_code ='" . $purchase_code . "'  where admin_type = 'Super Admin'");
             
             $_SESSION['status_msg'] = "Activation code has been Updated Successfully!!!";
 

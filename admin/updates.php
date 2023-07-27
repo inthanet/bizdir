@@ -37,7 +37,7 @@ include "header.php";
 <script src="../js/bootstrap.min.js"></script>
 <script src="../js/jquery-ui.js"></script>
 <script src="js/admin-custom.js"></script> <script src="../js/select-opt.js"></script>
-<?php httpPost("http://directoryfinder.net/updation/updation_wizard.php",$data_array); ?>
+<?php // httpPost("http://directoryfinder.net/updation/updation_wizard.php",$data_array); ?>
 </body>
 
 </html>
