@@ -39,7 +39,6 @@ if (!empty($_SESSION['admin_id'])) {
     <link rel="stylesheet" href="../css/bootstrap.css">
     <link rel="stylesheet" href="css/admin-style.css">
     <link rel="stylesheet" href="../css/fonts.css">
-    
     <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
