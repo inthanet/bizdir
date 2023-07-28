@@ -1,0 +1,14 @@
+{
+	"sitemap_ww": {
+		"prefix": "ww",
+		"categories": "listing,job,service-expert,place,news-detail,event,product,coupons,blog"
+	},
+	"sitemap_de": {
+		"prefix": "de",
+		"categories": "listing,job,service-expert,place,news-detail,event,product,coupons,blog"
+	},
+	"sitemap_fr": {
+		"prefix": "fr",
+		"categories": "listing,job,service-expert,place,news-detail,event,product,coupons,blog"
+	}
+}
