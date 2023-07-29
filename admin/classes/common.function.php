@@ -604,7 +604,23 @@ function urlModifier($slug_url)
 {
     //return preg_replace('/\s+/', '-', strtolower($slug_url));
    // return str_replace(' ', '-', strtolower($slug_url));
-    return preg_replace("/[\s_]/", "-", strtolower($slug_url));
+   // return preg_replace("/[\s_]/", "-", strtolower($slug_url));
+    $replacements = array(
+        ' ' => '-',
+        '.' => '',
+        '(' => '',
+        ')' => '',
+        '--' => '-',
+        'ü' => 'ue', 
+        'ö' => 'oe',
+        'ä' => 'ae',
+        'ß' => 'ss'
+    );
+
+    $slug = str_replace(array_keys($replacements), array_values($replacements), strtolower($slug_url));
+    return preg_replace("/[^a-z0-9\-]/", '', $slug);
+
+
 }
 
 # To add new string in existing comma separated string
