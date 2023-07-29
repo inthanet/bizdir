@@ -43,7 +43,6 @@ function getSlugListing($arg)
     $rs = mysqli_query($conn, $sql);
     $row = mysqli_fetch_array($rs);
     return $row;
-
 }
 
 //Get particular Listing Using Listing Code
