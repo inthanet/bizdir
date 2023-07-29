@@ -56,7 +56,7 @@ for ($i = 0; $i < count($country_sitemaps); $i++) {
 
   $prefix = $country_sitemaps[$i]['prefix'];
 
-  // Set the appropriate country prefix based on the subdomain
+  //ui Set the appropriate country prefix based on the subdomain
   switch ($prefix) {
     case 'ww':
         $COUNTRY_PREFIX = $prefix.'_'; 
