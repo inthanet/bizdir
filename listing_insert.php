@@ -264,8 +264,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
 
 
-        $listing_name1 = trim(preg_replace('/[^A-Za-z0-9]/', ' ', $listing_name));
-        $listing_slug = checkListingSlug($listing_name1);
+        if(COUNTRY_REQUIRED_LISTING_NAME_EN){
+            $listing_name1 = trim(preg_replace('/[^A-Za-z0-9]/', ' ', $listing_name_en));
+            $listing_slug = checkListingSlug($listing_name1);
+        } else {
+            $listing_name1 = trim(preg_replace('/[^A-Za-z0-9]/', ' ', $listing_name));
+            $listing_slug = checkListingSlug($listing_name1);
+        }
 
 //    Condition to get User Id starts
 
