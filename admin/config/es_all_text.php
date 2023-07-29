@@ -892,7 +892,11 @@ $BIZBOOK['CREATE_DUPLICATE_LISTING_LABEL'] = "Create duplicate listing";
 
 $BIZBOOK['NEW_LISTING_NAME_STAR'] = "New Listing Name*";
 
+$BIZBOOK['NEW_LISTING_NAME_EN_STAR'] = "New Listing Name (English) *";
+
 $BIZBOOK['LISTING_NAME_STAR'] = "Listing Name*";
+
+$BIZBOOK['LISTING_NAME_EN_STAR'] = "Listing Name (English) *";
 
 $BIZBOOK['CREATE_NOW'] = "Create Now";
 
