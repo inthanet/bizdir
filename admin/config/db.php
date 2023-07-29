@@ -6,16 +6,14 @@ error_reporting(E_ALL & ~E_NOTICE & ~E_WARNING | E_STRICT);
 ob_start();
  
 define('DB_HOSTNAME', 'localhost');
-define('DB_USERNAME', 'bizdir_adm');//ENTER YOUR DB USERNAME
+define('DB_USERNAME', 'bizdir_adm');  //ENTER YOUR DB USERNAME
 define('DB_PASSWORD', 'p01c2kr_2561');//ENTER YOUR DB PASSWORD
-define('DB_NAME', 'bizdir_dbase');//ENTER YOUR DB NAME
+define('DB_NAME'    , 'bizdir_dbase');//ENTER YOUR DB NAME
 
-# SUB DOMAIN
+# CHECK SUB DOMAIN USED
 $subdomain = substr($_SERVER['HTTP_HOST'], 0, strpos($_SERVER['HTTP_HOST'], '.')); 
 
-
-
-// Set the appropriate country prefix based on the subdomain
+//ui Set the appropriate country prefix based on the subdomain
 switch ($subdomain) {
     case 'en':
         define('COUNTRY_PREFIX', $subdomain.'_');
@@ -26,7 +24,6 @@ switch ($subdomain) {
         define('COUNTRY_LANG', 'en');   
         define('COUNTRY_TIMEZONE', 'Europe/London');      
         define('COUNTRY_REQUIRED_LISTING_NAME_EN', false);  
-
         break;
     case 'de':
         define('COUNTRY_PREFIX', $subdomain.'_');
@@ -60,9 +57,9 @@ switch ($subdomain) {
         define('COUNTRY_REQUIRED_LISTING_NAME_EN', false);  
 }
 
-// Print user-defined constants
-// echo "User-defined constants:<br>";
-// $constants = get_defined_constants(true);
+//! Test comment colors
+//? echo "User-defined constants:<br>";
+//todo $constants = get_defined_constants(true);
 // foreach ($constants['user'] as $name => $value) {
 //     echo "$name = $value.'<br>";
 // }
