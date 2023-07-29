@@ -8,6 +8,7 @@ li{list-style-type:none}
 .material-icons{font-family:'Material Icons';font-weight:400;font-style:normal;font-size:24px;line-height:1;letter-spacing:normal;text-transform:none;display:inline-block;white-space:nowrap;word-wrap:normal;direction:ltr;-webkit-font-feature-settings:liga;-webkit-font-smoothing:antialiased}
 :before{font-family:"Material Icons";position:absolute;font-size:18px;color:#929eac;font-weight:500}
 :after{font-family:"Material Icons";position:absolute;font-size:18px;color:#6a717f;font-weight:500}
+::placeholder {color: red!important;} /* Change the color of the placeholder text */
 a{-webkit-transition:all .5s ease;-moz-transition:all .5s ease;-o-transition:all .5s ease;transition:all .5s ease;text-decoration:none}
 a:hover{-webkit-transition:all .5s ease;-moz-transition:all .5s ease;-o-transition:all .5s ease;transition:all .5s ease;text-decoration:none}
 ::-webkit-scrollbar{width:0}

@@ -2,3 +2,4 @@
 .oops{margin-top:10px;color: red;font-size:1.3em;}
 .footer-link-copyright{color:yellow; font-size:10px;margin-top:-10px;width:100%;text-align:center}
 .footer-country-link-img{width: 15px; height: 15px; position:relative;right:3px;top:-2px;}
+::placeholder {color: red!important;} /* Change the color of the placeholder text */
