@@ -106,6 +106,18 @@ include "header.php";
                                                 </div>
                                             </div>
                                         </div>
+
+                                        <?php if(COUNTRY_REQUIRED_LISTING_NAME_EN){ ?>
+                                          <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <input readonly="readonly" id="listing_name_en" name="listing_name_en" type="text" required="required"
+                                                           value="<?php echo $listings_a_row['listing_name_en']; ?>"
+                                                           class="form-control" placeholder="Listing name english required *">
+                                                </div>
+                                            </div>
+                                          </div>                    
+                                        <?php } ?>                                        
                                         <!--FILED END-->
                                         <!--FILED START-->
                                         <div class="row">

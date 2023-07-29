@@ -101,6 +101,18 @@ if($listing_count_user >= $plan_type_listing_count){
                                     </div>
                                 </div>
                             </div>
+
+                            <?php if(COUNTRY_REQUIRED_LISTING_NAME_EN){ ?>
+                              <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <input id="listing_name_en" name="listing_name_en" type="text" required="required"
+                                               class="form-control" value="<?php echo $_SESSION['listing_name_en'] ?>"
+                                               placeholder="<?php echo $BIZBOOK['LISTING_NAME_EN_STAR']; ?>">
+                                    </div>
+                                </div>
+                              </div>                   
+                            <?php } ?>                             
                             <!--FILED END-->
                             <!--FILED START-->
                             <div class="row">

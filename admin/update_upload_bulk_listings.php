@@ -100,16 +100,21 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     // }
 
 
-        $listing_name1 = trim(preg_replace('/[^A-Za-z0-9]/', ' ', $listing_name));
-        $listing_slug = $listing_name1;
+                    // if(COUNTRY_REQUIRED_LISTING_NAME_EN){
+                    //     $listing_name1 = trim(preg_replace('/[^A-Za-z0-9]/', ' ', $listing_name_en));
+                    //     $listing_slug = checkListingSlug($listing_name1);
+                    // } else {
+                    //     $listing_name1 = trim(preg_replace('/[^A-Za-z0-9]/', ' ', $listing_name));
+                    //     $listing_slug = checkListingSlug($listing_name1);
+                    // }
 
                     if (mysqli_num_rows($listrs) <= 0) {
 
                         $listing_qry = "INSERT INTO " . COUNTRY_PREFIX . "listings 
-					(user_id, listing_type_id, listing_name, listing_address, listing_mobile, country_id, state_id, city_id, category_id, listing_status, listing_slug
+					(user_id, listing_type_id, listing_name, listing_name_en, listing_address, listing_mobile, country_id, state_id, city_id, category_id, listing_status, listing_slug
 					, payment_status, listing_cdt) 
 					VALUES 
-					('$user_id', '$listing_type_id', '$listing_name', '$listing_address', '$listing_mobile', '$country_id', '$state_id', '$city_id', '$category_id', '$listing_status'
+					('$user_id', '$listing_type_id', '$listing_name', '$listing_name_en', '$listing_address', '$listing_mobile', '$country_id', '$state_id', '$city_id', '$category_id', '$listing_status'
 					, '$listing_slug', '$payment_status', '$curDate')";
 
                         $listing_res = mysqli_query($conn,$listing_qry);

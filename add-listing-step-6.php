@@ -105,11 +105,19 @@ $listing_row = getListing($listing_codea);
                                     <a href="db-all-listing"
                                        class="btn btn-primary"><?php echo $BIZBOOK['GO_TO_ALL_LISTING']; ?></a>
                                 </div>
-                                <div class="col-md-6">
-                                    <a target="_blank"
-                                       href="<?php echo $LISTING_URL . urlModifier($listing_row['listing_slug']); ?>"
-                                       class="btn btn-primary"><?php echo $BIZBOOK['LISTING_PREVIEW']; ?></a>
-                                </div>
+                                <?php if(COUNTRY_REQUIRED_LISTING_NAME_EN){ ?>
+                                    <div class="col-md-6">
+                                        <a target="_blank"
+                                        href="<?php echo $LISTING_URL . urlModifier($listing_row['listing_slug_en']); ?>"
+                                        class="btn btn-primary"><?php echo $BIZBOOK['LISTING_PREVIEW']; ?></a>
+                                    </div>
+                                } else {
+                                    <div class="col-md-6">
+                                        <a target="_blank"
+                                        href="<?php echo $LISTING_URL . urlModifier($listing_row['listing_slug']); ?>"
+                                        class="btn btn-primary"><?php echo $BIZBOOK['LISTING_PREVIEW']; ?></a>
+                                    </div>                                    
+                                }
                             </div>
                             <!--FILED END-->
                         </form>

@@ -10,7 +10,7 @@ if (file_exists('config/info.php')) {
 if ($_SERVER['REQUEST_METHOD']=='POST') {
     if (isset($_POST['listing_submit'])) {
 
-        $listing_code = $_POST["listing_id"];
+        $listing_id = $_POST["listing_id"];
         $user_code = $_POST["user_code"];
 
         $listing_name = $_POST["listing_name"];
@@ -20,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
 
         $user_id = $user_details_row['user_id'];  //User Id
         
-        $listings_a = mysqli_query($conn,"SELECT * FROM  " . COUNTRY_PREFIX . "listings where listing_code='" . $listing_code . "'");
+        $listings_a = mysqli_query($conn,"SELECT * FROM  " . COUNTRY_PREFIX . "listings where listing_code='" . $listing_id . "'");
         $listings_a_row = mysqli_fetch_array($listings_a);
 
 // Basic Personal Details
@@ -136,7 +136,7 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
         // $listing_status = "Pending";
         $payment_status = "Pending";
 
-        function checkListingSlug($link, $counter=1){
+        function checkListingSlug($link, $listing_id, $counter=1){
             global $conn;
             $newLink = $link;
             do{
@@ -152,14 +152,19 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
             return $newLink;
         }
 
+        if(COUNTRY_REQUIRED_LISTING_NAME_EN){
+            $listing_name1 = trim(preg_replace('/[^A-Za-z0-9]/', ' ', $listing_name_en));
+            $listing_slug = checkListingSlug($listing_name1, $listing_id);
+        } else {
+            $listing_name1 = trim(preg_replace('/[^A-Za-z0-9]/', ' ', $listing_name));
+            $listing_slug = checkListingSlug($listing_name1, $listing_id);
+        }
 
-        $listing_name1 = trim(preg_replace('/[^A-Za-z0-9]/', ' ', $listing_name));
-        $listing_slug = checkListingSlug($listing_name1);
 
 //    Listing Insert Part Starts
 
         $listing_qry = "INSERT INTO " . COUNTRY_PREFIX . "listings
-					(user_id, category_id, sub_category_id, service_id, service_image, listing_type_id, listing_name, listing_mobile, listing_email
+					(user_id, category_id, sub_category_id, service_id, service_image, listing_type_id, listing_name, listing_name_en, listing_mobile, listing_email
 					, listing_website, listing_whatsapp, listing_description, listing_address, listing_lat, listing_lng, service_locations
 					, listing_products, listing_events, country_id, state_id, city_id, profile_image, cover_image
 					, gallery_image, opening_days, opening_time, closing_time, fb_link, twitter_link, gplus_link, google_map

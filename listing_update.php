@@ -87,6 +87,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 // Common Listing Details
             $listing_name = $_POST["listing_name"];
+            $listing_name_en = $_POST["listing_name_en"];
             $listing_mobile = $_POST["listing_mobile"];
             $listing_email = $_POST["listing_email"];
             $listing_website = $_POST["listing_website"];
@@ -219,9 +220,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 return $newLink;
             }
 
+            if(COUNTRY_REQUIRED_LISTING_NAME_EN){
+                $listing_name1 = trim(preg_replace('/[^A-Za-z0-9]/', ' ', $listing_name_en));
+                $listing_slug = checkListingSlug($listing_name1, $listing_id);
+            } else {
+                $listing_name1 = trim(preg_replace('/[^A-Za-z0-9]/', ' ', $listing_name));
+                $listing_slug = checkListingSlug($listing_name1, $listing_id);
+            }
 
-            $listing_name1 = trim(preg_replace('/[^A-Za-z0-9]/', ' ', $listing_name));
-            $listing_slug = checkListingSlug($listing_name1, $listing_id);
 
 
 //************************  Profile Image Upload starts  **************************
@@ -275,7 +281,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $listing_qry =
                 "UPDATE  " . COUNTRY_PREFIX . "listings  SET user_id='" . $user_id . "', category_id='" . $category_id . "', sub_category_id='" . $sub_category_id . "',
                  listing_type_id='" . $listing_type_id . "', listing_mobile='" . $listing_mobile . "', listing_email='" . $listing_email . "', service_locations='" . $service_locations . "' 
-    , listing_website='" . $listing_website . "', listing_whatsapp='" . $listing_whatsapp . "', listing_name='" . $listing_name . "',listing_description='" . $listing_description . "', listing_address='" . $listing_address . "'
+    , listing_website='" . $listing_website . "', listing_whatsapp='" . $listing_whatsapp . "', listing_name='" . $listing_name . "', listing_name_en='" . $listing_name_en . "',listing_description='" . $listing_description . "', listing_address='" . $listing_address . "'
     , listing_lat='" . $listing_lat . "', listing_lng='" . $listing_lng . "', listing_slug ='" . $listing_slug . "'
     ,country_id='" . $country_id . "',state_id='" . $state_id . "',city_id='" . $city_id . "',profile_image='" . $profile_image . "', cover_image='" . $cover_image . "' 
     ,mon_is_open='" . $mon_is_open . "',mon_open_time='" . $mon_open_time . "',mon_close_time='" . $mon_close_time . "'
@@ -667,6 +673,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 // Common Listing Details
                 unset($_SESSION['listing_name']);
+                unset($_SESSION['listing_name_en']);
                 unset($_SESSION['listing_mobile']);
                 unset($_SESSION['listing_email']);
                 unset($_SESSION['listing_website']);
@@ -741,6 +748,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 // Common Listing Details
                 unset($_SESSION['listing_name']);
+                unset($_SESSION['listing_name_en']);
                 unset($_SESSION['listing_mobile']);
                 unset($_SESSION['listing_email']);
                 unset($_SESSION['listing_website']);

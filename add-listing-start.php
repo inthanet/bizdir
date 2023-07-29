@@ -88,6 +88,17 @@ if ($listing_count_user >= $plan_type_listing_count) {
                                     </div>
                                 </div>
                             </div>
+
+                            <?php if(COUNTRY_REQUIRED_LISTING_NAME_EN){ ?>
+                              <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <input type="text" name="listing_name_en" required="required" class="form-control"
+                                               placeholder="<?php echo $BIZBOOK['NEW_LISTING_EN_NAME_STAR']; ?>">
+                                    </div>
+                                </div>
+                              </div>                     
+                            <?php } ?>
                             <!--FILED END-->
                             <button type="submit" name="listing_submit"
                                     class="btn btn-primary"><?php echo $BIZBOOK['CREATE_NOW']; ?></button>

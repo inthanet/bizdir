@@ -69,11 +69,21 @@ include "header.php";
                                  <!--FILED START-->
                                     <div class="row">
                                         <div class="col-md-12">
-                                            <div class="form-group">
+                                           <div class="form-group">
                                               <input type="text" name="listing_name" required="required" class="form-control" placeholder="Listing name *">
                                             </div>
                                         </div>
                                     </div>
+
+                                    <?php if(COUNTRY_REQUIRED_LISTING_NAME_EN){ ?>
+                                      <div class="row">
+                                        <div class="col-md-12">
+                                           <div class="form-group">
+                                              <input type="text" name="listing_name_en" required="required" class="form-control" placeholder="Listing name english required *">
+                                            </div>
+                                        </div>
+                                      </div>                
+                                    <?php } ?>                                    
                                     <!--FILED END-->
                                 <button type="submit" name="listing_submit" class="btn btn-primary">Create Now</button>
                             </form>

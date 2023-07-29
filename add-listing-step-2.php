@@ -218,6 +218,11 @@ if (isset($_POST['listing_submit'])) {
                                    value="<?php echo $_SESSION['listing_name']; ?>"
                                    required="required" class="validate">
 
+                            <?php if(COUNTRY_REQUIRED_LISTING_NAME_EN){ ?>
+                                <input id="listing_name_en" name="listing_name_en" type="hidden"
+                                   value="<?php echo $_SESSION['listing_name_en']; ?>"
+                                   required="required" class="validate">                      
+                            <?php } ?>   
                             <input id="listing_mobile" name="listing_mobile" type="hidden"
                                    value="<?php echo $_SESSION['listing_mobile']; ?>"
                                    required="required" class="validate">

@@ -85,6 +85,18 @@ include "header.php";
                                             </div>
                                         </div>
                                     </div>
+
+                                    <?php if(COUNTRY_REQUIRED_LISTING_NAME_EN){ ?>
+                                      <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <input id="listing_name_en" name="listing_name_en" type="text" required="required"
+                                                       value="<?php echo $listings_a_row['listing_name_en']; ?>"
+                                                       class="form-control" placeholder="Listing name english required *">
+                                            </div>
+                                        </div>
+                                      </div>                    
+                                    <?php } ?>                                     
                                     <!--FILED END-->
                                     <!--FILED START-->
                                     <div class="row">
@@ -1022,7 +1034,7 @@ include "header.php";
                                                             <div class="form-group">
                                                                 <input type="text" class="form-control"
                                                                        name="listing_info_question[]" value="<?php echo $tuple[0]; ?>"
-                                                                       placeholder="Experience">
+                                                                       placeholder="Type your Information">
                                                             </div>
                                                         </div>
                                                         <div class="col-md-2">
@@ -1034,7 +1046,7 @@ include "header.php";
                                                             <div class="form-group">
                                                                 <input type="text" class="form-control"
                                                                        name="listing_info_answer[]" value="<?php echo $tuple[1]; ?>"
-                                                                       placeholder="20 years">
+                                                                       placeholder="Replace with your data">
                                                             </div>
                                                         </div>
                                                     </div>

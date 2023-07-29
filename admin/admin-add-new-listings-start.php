@@ -52,6 +52,19 @@ include "header.php";
                                                 </div>
                                             </div>
                                         </div>
+
+                                        <?php if(COUNTRY_REQUIRED_LISTING_NAME_EN){ ?>
+                                         <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <input id="listing_name_en" name="listing_name_en" type="text"
+                                                           required="required" class="form-control"
+                                                           placeholder="Listing name english required *">
+                                                </div>
+                                            </div>
+                                          </div>
+                                        <?php } ?>                                            
+
                                         <!--FILED END-->
                                         <!--FILED START-->
                                         <div class="row">

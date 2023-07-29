@@ -20,6 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 // Common Listing Details
         $listing_name = $_POST["listing_name"];
+        $listing_name_en = $_POST["listing_name_en"];
         $listing_mobile = $_POST["listing_mobile"];
         $listing_email = $_POST["listing_email"];
         $listing_website = $_POST["listing_website"];
@@ -261,8 +262,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
 
 
-        $listing_name1 = trim(preg_replace('/[^A-Za-z0-9]/', ' ', $listing_name));
-        $listing_slug = checkListingSlug($listing_name1);
+        if(COUNTRY_REQUIRED_LISTING_NAME_EN){
+            $listing_name1 = trim(preg_replace('/[^A-Za-z0-9]/', ' ', $listing_name_en));
+            $listing_slug = checkListingSlug($listing_name1);
+        } else {
+            $listing_name1 = trim(preg_replace('/[^A-Za-z0-9]/', ' ', $listing_name));
+            $listing_slug = checkListingSlug($listing_name1);
+        }
 
 //    Condition to get User Id starts
 
@@ -471,7 +477,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 //    Listing Insert Part Starts
 
         $listing_qry = "INSERT INTO " . COUNTRY_PREFIX . "listings
-					(user_id, category_id, sub_category_id, service_id, service_image, listing_type_id, listing_name, listing_mobile, listing_email
+					(user_id, category_id, sub_category_id, service_id, service_image, listing_type_id, listing_name, listing_name_en, listing_mobile, listing_email
 					, listing_website, listing_whatsapp, listing_description, listing_address, listing_lat, listing_lng, service_locations, country_id, state_id, city_id, profile_image, cover_image
 					, gallery_image, opening_days, opening_time, closing_time, fb_link, twitter_link, gplus_link, google_map
 					, 360_view, listing_video, service_1_name, service_1_price, service_1_detail, service_1_image, service_1_view_more, service_2_name,service_2_price, service_2_image, service_3_name,service_3_price, service_3_image
@@ -481,7 +487,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 					, sun_is_open,sun_open_time, sun_close_time
 					, listing_info_question , listing_info_answer, payment_status, listing_slug, listing_cdt) 
 					VALUES 
-					('$user_id', '$category_id', '$sub_category_id', '$service_id', '$service_image', '$listing_type_id', '$listing_name', '$listing_mobile', '$listing_email', '$listing_website', '$listing_whatsapp', '$listing_description'
+					('$user_id', '$category_id', '$sub_category_id', '$service_id', '$service_image', '$listing_type_id', '$listing_name', '$listing_name_en', '$listing_mobile', '$listing_email', '$listing_website', '$listing_whatsapp', '$listing_description'
 					, '$listing_address', '$listing_lat', '$listing_lng', '$service_locations', '$country_id'
 					, '$state_id', '$city_id', '$profile_image', '$cover_image'
 					,'$gallery_image', '$opening_days', '$opening_time', '$closing_time', '$fb_link', '$twitter_link', '$gplus_link', '$google_map'

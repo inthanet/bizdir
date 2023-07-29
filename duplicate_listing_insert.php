@@ -13,6 +13,7 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
         $listing_code = $_POST["listing_id"];
 
         $listing_name = $_POST["listing_name"];
+        $listing_name_en = $_POST["listing_name_en"];
 
         $listings_a = mysqli_query($conn,"SELECT * FROM  " . COUNTRY_PREFIX . "listings where listing_code='" . $listing_code . "'");
         $listings_a_row = mysqli_fetch_array($listings_a);
@@ -72,7 +73,7 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
 
         $country_id = $listings_a_row["country_id"];
 
-        $state_id = "1";
+        $state_id = "1"; //ui ???
 
         $city_id = $listings_a_row["city_id"];
 
@@ -146,8 +147,13 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
         }
 
 
-        $listing_name1 = trim(preg_replace('/[^A-Za-z0-9]/', ' ', $listing_name));
-        $listing_slug = checkListingSlug($listing_name1);
+        if(COUNTRY_REQUIRED_LISTING_NAME_EN){
+            $listing_name1 = trim(preg_replace('/[^A-Za-z0-9]/', ' ', $listing_name_en));
+            $listing_slug = checkListingSlug($listing_name1);
+        } else {
+            $listing_name1 = trim(preg_replace('/[^A-Za-z0-9]/', ' ', $listing_name));
+            $listing_slug = checkListingSlug($listing_name1);
+        }
 
 //    Listing Insert Part Starts
 
