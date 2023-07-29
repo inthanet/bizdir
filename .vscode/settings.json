@@ -4,5 +4,6 @@
     "emmet.triggerExpansionOnTab": true,
     "[powershell]": {
         "editor.wordSeparators": "`~!@$#%^&*()-=+[{]}\\|;:'\",.<>/?"
-    }
+    },
+    "editor.codeLens": false
 }    
