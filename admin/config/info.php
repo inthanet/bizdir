@@ -1,8 +1,4 @@
 <?php
-/**
- * Created by Vignesh.
- * User: Vignesh
- */
 
 if(file_exists('config/db.php'))
 {
