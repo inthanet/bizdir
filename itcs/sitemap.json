@@ -1,14 +1,26 @@
-{
-	"sitemap_ww": {
+[
+	{
 		"prefix": "ww",
-		"categories": "listing,job,service-expert,place,news-detail,event,product,coupons,blog"
+		"categories": "listings,products,experts,jobs,places,events,news,blogs",
+		"category_url_slugs": "listing,product,service-expert,job,place,event,news-detail,blog",
+		"db_status_column": "listing_status,product_status,expert_status,job_status,place_status,event_status,news_status,blog_status",
+		"db_slug_column": "listing_slug,product_slug,expert_slug,job_slug,place_slug,event_slug,news_slug,blog_slug",
+		"sitemap_priority": "1.0,0.9,0.8,0.8,0.7,0.7,0.6,0.6"
 	},
-	"sitemap_de": {
+	{
 		"prefix": "de",
-		"categories": "listing,job,service-expert,place,news-detail,event,product,coupons,blog"
+		"categories": "listings,products,experts,jobs,places,events,news,blogs",
+		"category_url_slugs": "listing,product,service-expert,job,place,event,news-detail,blog",
+		"db_status_column": "listing_status,product_status,expert_status,job_status,place_status,event_status,news_status,blog_status",
+		"db_slug_column": "listing_slug,product_slug,expert_slug,job_slug,place_slug,event_slug,news_slug,blog_slug",
+		"sitemap_priority": "1.0,0.9,0.8,0.8,0.7,0.7,0.6,0.6"
 	},
-	"sitemap_fr": {
+	{
 		"prefix": "fr",
-		"categories": "listing,job,service-expert,place,news-detail,event,product,coupons,blog"
+		"categories": "listings,products,experts,jobs,places,events,news,blogs",
+		"category_url_slugs": "listing,product,service-expert,job,place,event,news-detail,blog",
+		"db_status_column": "listing_status,product_status,expert_status,job_status,place_status,event_status,news_status,blog_status",
+		"db_slug_column": "listing_slug,product_slug,expert_slug,job_slug,place_slug,event_slug,news_slug,blog_slug",
+		"sitemap_priority": "1.0,0.9,0.8,0.8,0.7,0.7,0.6,0.6"
 	}
-}
+]
