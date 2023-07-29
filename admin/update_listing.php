@@ -30,6 +30,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 // Common Listing Details
         $listing_name = $_POST["listing_name"];
+        $listing_name_en = $_POST["listing_name_en"];
         $listing_mobile = $_POST["listing_mobile"];
         $listing_email = $_POST["listing_email"];
         $listing_website = $_POST["listing_website"];
@@ -266,9 +267,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             return $newLink;
         }
 
+        if(COUNTRY_REQUIRED_LISTING_NAME_EN){
+            $listing_name1 = trim(preg_replace('/[^A-Za-z0-9]/', ' ', $listing_name_en));
+            $listing_slug = checkListingSlug($listing_name1, $listing_id);
+        } else {
+            $listing_name1 = trim(preg_replace('/[^A-Za-z0-9]/', ' ', $listing_name));
+            $listing_slug = checkListingSlug($listing_name1, $listing_id);
+        }
 
-        $listing_name1 = trim(preg_replace('/[^A-Za-z0-9]/', ' ', $listing_name));
-        $listing_slug = checkListingSlug($listing_name1, $listing_id);
 
 //    Condition to get User Id starts
 
@@ -500,7 +506,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             "UPDATE  " . COUNTRY_PREFIX . "listings  SET user_id='" . $user_id . "', category_id='" . $category_id . "', sub_category_id='" . $sub_category_id . "', service_id='" . $service_id . "'
             , service_image='" . $service_image . "', listing_type_id='" . $listing_type_id . "', listing_mobile='" . $listing_mobile . "', listing_email='" . $listing_email . "'
             , service_locations='" . $service_locations . "', listing_lat='" . $listing_lat . "', listing_lng='" . $listing_lng . "'
-    , listing_website='" . $listing_website . "', listing_whatsapp='" . $listing_whatsapp . "', listing_name='" . $listing_name . "',listing_description='" . $listing_description . "', listing_address='" . $listing_address . "'
+    , listing_website='" . $listing_website . "', listing_whatsapp='" . $listing_whatsapp . "', listing_name='" . $listing_name . "', listing_name_en='" . $listing_name_en . "',listing_description='" . $listing_description . "', listing_address='" . $listing_address . "'
     ,country_id='" . $country_id . "',state_id='" . $state_id . "',city_id='" . $city_id . "',profile_image='" . $profile_image . "', cover_image='" . $cover_image . "'
     ,gallery_image='" . $gallery_image . "',opening_days='" . $opening_days . "', opening_time='" . $opening_time . "'
     , closing_time='" . $closing_time . "',fb_link='" . $fb_link . "',twitter_link='" . $twitter_link . "'
