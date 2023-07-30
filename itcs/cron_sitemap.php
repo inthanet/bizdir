@@ -1,13 +1,29 @@
 <?php
+//GENERATE SITEMAP
+//Author: ITCS-Asia, U.Inthanet, 2023-07-30 18:47:28
 
-$test = true; //Only first 10 images
-$debug = true; //error_reporting(E_ALL & ~E_NOTICE);
+$test  = false; //! If `true` Database LIMIT 10
+$debug = false; //error_reporting(E_ALL & ~E_NOTICE);
 
+//ui SITEMAP, PING TO GOOGLE & BING 
 $google_sitmap_ping = false;
-$bing_sitmap_ping = false;
+$bing_sitmap_ping   = false;
 
-$now = date('Y-m-d H:i:s', time());
-$dayOffWeek = date('N', date(time())); //1 = Monday,... 5 = Friday,... 0 = Sunday
+$logBasePath = '/home/bizdir/public_html/logs';
+$logFolder   = 'crons';
+$logFileName = 'cron-generate-sitmap';
+$_log_content_new = "";
+$_log_content_old = "";
+
+if($test){
+  cronLog('GENERATE SITEMAP [Test, Limit 10]','open');
+} else {
+  cronLog('GENERATE SITEMAP','open');
+}
+
+
+//$now = date('Y-m-d H:i:s', time());
+//$dayOffWeek = date('N', date(time())); //1 = Monday,... 5 = Friday,... 0 = Sunday
 
 $country_sitemaps = array();
 if (file_exists('/home/bizdir/public_html/itcs/sitemap.json')) {
@@ -15,21 +31,16 @@ if (file_exists('/home/bizdir/public_html/itcs/sitemap.json')) {
   $country_sitemaps = json_decode($json_data, true);
   
 } else {
+
+  cronLog('ERROR, File: `sitemap.json` not exists','close');
   die('oops');
+
 }
-
-
 
 $updates = 0;
 $tagupdates = 0;
-date_default_timezone_set('Asia/Hong_Kong');
-
-$now = date('Y-m-d\TH:i:sP',time());
-
 
 require_once('dbconnect.php');
-
-
 
 
 //**********************************  XML BLACK  **********************************
@@ -42,21 +53,19 @@ $xmlHeader = '
 
 $xmlFooter = "</urlset>";
 
-
-
-//if($debug) echo "<hr><hr><hr>CRON GENERATE PRODUCT SITEMAP<br>";
-
-
-
 $limit = '';
-if ($test)
+if ($test){
   $limit = ' LIMIT 10';
+
+} 
 
 for ($i = 0; $i < count($country_sitemaps); $i++) {
 
+  //* Set the appropriate country prefix based on the subdomain
   $prefix = $country_sitemaps[$i]['prefix'];
 
-  //ui Set the appropriate country prefix based on the subdomain
+  cronLog("\n\n".'PREFIX = `'.$prefix.'`'."\n");
+
   switch ($prefix) {
     case 'ww':
         $COUNTRY_PREFIX = $prefix.'_'; 
@@ -94,29 +103,33 @@ for ($i = 0; $i < count($country_sitemaps); $i++) {
   $categories_list = $country_sitemaps[$i]['categories'];
   $categories = explode(',',$categories_list);
   if($debug) echo $categories_list.'<br>';
+  cronLog('--> categories_list: '.$categories_list);
 
   $category_slug_list = $country_sitemaps[$i]['category_url_slugs'];
   $category_slug = explode(',',$category_slug_list);
   if($debug) echo $category_slug_list.'<br>';
+  cronLog('--> category_slug_list: '.$category_slug_list);
 
   $priority_list = $country_sitemaps[$i]['sitemap_priority'];
   $xml_priority = explode(',',$priority_list);
   if($debug) echo $priority_list.'<br>';
+  cronLog('--> priority_list: '.$priority_list);
   
   $status_list = $country_sitemaps[$i]['db_status_column'];
   $status = explode(',',$status_list);
   if($debug) echo $status_list.'<br>';
+  cronLog('--> status_list: '.$status_list);
 
   $slug_list = $country_sitemaps[$i]['db_slug_column'];
   $slug = explode(',',$slug_list);
   if($debug) echo $status_list.'<br>';
+  cronLog('--> slug_list: '.$slug_list."\n");
   
   //if($debug) print_r($categories);
 
   $cnt_categories = count($categories);
 
   for ($c = 0; $c < count($categories); $c++) {
-
 
     $Sql = "SELECT * FROM " . $COUNTRY_PREFIX. $categories[$c] ."
                      WHERE ".$status[$c]." = 'Active' " . $limit;
@@ -138,8 +151,8 @@ for ($i = 0; $i < count($country_sitemaps); $i++) {
 
       $xml_file = "/home/bizdir/public_html/sitemap-" . $COUNTRY_XML_FILE . $categories[$c] . ".xml";
       $siteMapFile = fopen($xml_file , "w");  //XML FILE: /home/bizdir/public_html/sitemap-listings.xml      
-
       $siteMapUrl = 'https://' . $COUNTRY_SUBDOMAIN . 'bizdir.online/sitemap-' . $COUNTRY_XML_FILE . $categories[$c] . '.xml';
+
       if($debug) echo 'TIMEZONE: '.date_default_timezone_get().'<br>';
       if($debug) echo 'XML FILE: '. $xml_file.'<br>';
       if($debug) echo 'Sitemap File URL: '.$siteMapUrl.'<br><br>';
@@ -147,6 +160,7 @@ for ($i = 0; $i < count($country_sitemaps); $i++) {
       $_data = $xmlHeader . "\n";
       fwrite($siteMapFile, $_data);
 
+      $cnt = 0;
 
       while ($row = $result->fetch_array()) {
         $url = 'https://' . $COUNTRY_SUBDOMAIN . 'bizdir.online/'.$category_slug[$c].'/' . Get_Slug($row[$slug[$c]]);
@@ -159,22 +173,31 @@ for ($i = 0; $i < count($country_sitemaps); $i++) {
         $xmlBlock .= " </url>\n";
 
         fwrite($siteMapFile, $xmlBlock);
+        $cnt++;
       }
 
       fwrite($siteMapFile, $xmlFooter);
-
       fclose($siteMapFile);
+
+      cronLog('=> `'.$category_slug[$c].'` Total URLs: '.$cnt);
+
 
       if($google_sitmap_ping){
         //result_google = urlPing('http://www.google.com/webmasters/sitemaps/ping?sitemap='.$siteMapUrl);
         $sitemapUrl = $siteMapUrl;
-        pingGoogle($sitemapUrl);        
+        $response = pingGoogle($sitemapUrl); 
+        cronLog('=> google_sitmap_ping response: '.print_r($response,true));       
+      } else {
+        cronLog('=> google_sitmap_ping not active');
       }
 
       if($bing_sitmap_ping){
         // $result_bing = urlPing('http://www.bing.com/webmaster/ping.aspx?siteMap='.$siteMapUrl);
         $sitemapUrl = $siteMapUrl;
-        pingBing($sitemapUrl);       
+        $response = pingBing($sitemapUrl);  
+        cronLog('=> bing_sitmap_ping response: '.print_r($response,true));     
+      } else {
+        cronLog('=> bing_sitmap_ping not active');
       }
 
 
@@ -185,6 +208,14 @@ for ($i = 0; $i < count($country_sitemaps); $i++) {
 }
 
 $conn->close();
+
+if ($debug) echo 'END GENERATE SITEMAP';
+cronLog("\n".'END GENERATE SITEMAP'."\n".str_repeat('=',80)."\n\n",'close');
+
+
+/*****************************  F U N C T I O N   *****************************/
+/******                             GET SLUG                            *******/
+/******************************************************************************/
 function Get_Slug($slug)
 {
       $replacements = array(
@@ -204,6 +235,9 @@ function Get_Slug($slug)
   
 }
 
+/*****************************  F U N C T I O N   *****************************/
+/******                            PING GOOGLE                          *******/
+/******************************************************************************/
 function pingGoogle($sitemapUrl) {
   $googlePingUrl = 'http://www.google.com/ping?sitemap=' . urlencode($sitemapUrl);
 
@@ -214,9 +248,13 @@ function pingGoogle($sitemapUrl) {
   curl_close($curl);
 
   // Optionally, you can check the response for success or errors
-
+  return $response;
 }
 
+
+/*****************************  F U N C T I O N   *****************************/
+/******                            PING BING                            *******/
+/******************************************************************************/
 function pingBing($sitemapUrl) {
   $bingPingUrl = 'http://www.bing.com/ping?sitemap=' . urlencode($sitemapUrl);
 
@@ -227,6 +265,41 @@ function pingBing($sitemapUrl) {
   curl_close($curl);
 
   // Optionally, you can check the response for success or errors
+  return $response;
 }
 
+
+
+/*****************************  F U N C T I O N   *****************************/
+/******                             CRON LOG                            *******/
+/******************************************************************************/
+function cronLog($txt,$action=''){
+    global $_log_content_new, $_log_content_old, $logBasePath, $logFolder, $logFileName, $debug;
+
+    if($action == 'open'){
+
+        $_log_content_new = "";
+        $_log_content_old = "";
+        $_log_content_new .= $txt.' | '.date("F j, Y, g:i a")."\n";
+
+    } elseif($action == 'close'){
+        $_log_content_new .= $txt."\n\n";
+
+        $cronJobLog = $logBasePath."/".$logFolder."/".$logFileName."-".date('Ym').".log";
+
+        if(file_exists($cronJobLog)){
+            $_log_content_old = file_get_contents($cronJobLog);
+        }
+
+        $cronLogHandle = fopen($cronJobLog, "w");
+        $_txt = $_log_content_new.$_log_content_old;
+        fwrite($cronLogHandle, $_txt);
+        fclose($cronLogHandle);
+
+
+    } else {
+        $_log_content_new .= $txt."\n";
+    }
+
+}
 ?>
