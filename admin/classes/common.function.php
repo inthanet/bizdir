@@ -252,7 +252,7 @@ function httpPost($url, $params)
 
     curl_close($ch);
 
-    $debug = true;
+    $debug = false;
     if($debug) $logfile = fopen('/home/bizdir/public_html/logs/common-functions-L256.log', 'a'); 
     if($debug) fwrite($logfile, print_r($output,true)."\n"); 
     
