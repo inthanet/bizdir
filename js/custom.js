@@ -5,6 +5,10 @@ $(document).ready(function () {
     "use strict";
     //getsource();
     
+    // $(".ads").click(function(){
+    //     var url = $(this).data('url'); // Retrieve the URL from the data-url attribute
+    //     window.open(url, '_blank');    // Open the URL in a new window
+    // })    
 
     $(".ban-short-links").addClass("ani");
     setTimeout(function () {
@@ -1253,5 +1257,6 @@ $('#noti-clr-noti').click(function() {
         }
     });
 });
+
 
 //Clear All Notifications button On Click ajax call ends
