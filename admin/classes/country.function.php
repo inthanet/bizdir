@@ -30,9 +30,6 @@ function getMultipleCountry($arg)
 
     $sql = "SELECT * FROM  " . COUNTRY_PREFIX . "countries where country_id IN ( '".$arg."')";
 
-        $logfile = fopen('/home/bizdir/public_html/logs/getMultipleCountry.log', 'a'); 
-        fwrite($logfile, '$sql :'.$sql."\n");
-
     $rs = mysqli_query($conn, $sql);
     return $rs;
 
