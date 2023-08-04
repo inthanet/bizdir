@@ -3,7 +3,7 @@
 	"enableQuickPick": true,
 	"uploadOnSave": false,
 	"autoDelete": true,
-	"checkGitignore": false,
+	"checkGitignore": true,
 	"activeTargets": [
 		"BIZDIR"
 	],
