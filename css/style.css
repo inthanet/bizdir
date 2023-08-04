@@ -878,7 +878,7 @@ to{background-position:100% 0}
 .ads-box{position:relative;border-radius:7px;box-shadow:0 16px 11px -7px rgba(0,0,0,0.3);transition:all .5s ease}
 .ads-box:hover{transition:all .5s ease;transform:translateY(-5px)}
 .ads-box img{width:100%}
-.ads-box span,.ban-ati-com span{position:absolute;color:#fff;font-size:10px;padding:1px 3px;border-radius:2px}
+.ads-box span,.ban-ati-com span{position:absolute;color:#fff;font-size:10px;padding:1px 3px;border-radius:2px;cursor: help;}
 .hom-ads{padding:40px 0 0;position:relative;overflow:hidden;float:left;width:100%;margin-bottom:50px}
 .hom-ads .ads-box{width:100%;margin:0 auto;padding:0 50px}
 .hom-ads .ads-box img{width:100%;float:left;transition:all .5s ease;cursor:pointer}
