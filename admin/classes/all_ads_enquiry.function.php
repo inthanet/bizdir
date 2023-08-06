@@ -66,6 +66,25 @@ function getAds($arg)
 
 }
 
+function getMyAdsCode($zone_prefix, $ad_width)
+{
+    global $conn;
+
+    $sql = "SELECT * FROM " . TBL . "myads where zone_prefix IN " . $zone_prefix . " AND ad_with = '" . $ad_width . "' LIMIT 1";
+    $rs = mysqli_query($conn, $sql);
+    $row = mysqli_fetch_array($rs);
+    if($row){
+        //$logfile = fopen('/home/bizdir/public_html/logs/debug.log', 'a'); 
+        //fwrite($logfile,$sql."\n");
+        //fwrite($logfile,$row['zone_code']."\n");
+        return $row['zone_code'];
+    } else {
+        return false;
+    }
+
+
+}
+
 //Get All Ad Request Count
 function getCountAds()
 {
