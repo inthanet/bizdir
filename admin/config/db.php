@@ -13,7 +13,7 @@ define('DB_NAME'    , 'bizdir_dbase');//ENTER YOUR DB NAME
 # CHECK SUB DOMAIN USED
 $subdomain = substr($_SERVER['HTTP_HOST'], 0, strpos($_SERVER['HTTP_HOST'], '.')); 
 
-//ui Set the appropriate country prefix based on the subdomain
+//ui Set the appropriate country prefix based on the subdomain 
 switch ($subdomain) {
     case 'en':
         define('COUNTRY_PREFIX', $subdomain.'_');
@@ -56,6 +56,12 @@ switch ($subdomain) {
         define('COUNTRY_TIMEZONE', 'America/New_York');
         define('COUNTRY_REQUIRED_LISTING_NAME_EN', false);  
 }
+
+if(COUNTRY_PREFIX == 'ww_'){
+    include('en_all_text.php');
+ } else {
+    include(COUNTRY_PREFIX.'all_text.php');
+ }
 
 //! Test comment colors
 //? echo "User-defined constants:<br>";
