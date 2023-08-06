@@ -151,6 +151,16 @@ define('SMS_UNAME', 'directory_finder'); # SMS USER NAME.
 define('SMS_PWORD', '123'); # SMS PASSWORD.
 define('SENDER_ID', 'BIZGO'); # SMS PASSWORD.
 
+# SWITCHES HOME PAGE SECTIONS
+define('SLIDER_SECTION','off');
+define('FEATURED_SERVICES','off');
+define('WHAT_YOU_ARE_LOOKING_FOR','off');
+define('TOP_SERVICE_PROVIDER_CITY','off');
+define('FEATURE_EVENTS_CITY','off');
+
+#DATABASE EXPORT PREFIXES
+define('DB_EXPORT_PREFIX','<option value="all">all</option> <option value="de_">de_</option> <option value="fr_">fr_</option>');
+
 # Data Array
 $data_array = array();
 
@@ -158,9 +168,8 @@ $data_array['website_url'] = $webpage_full_link;
 
 ##### Page Redirect URl's
 
-//$footer_sql = "SELECT * FROM " . COUNTRY_PREFIX . "footer WHERE footer_id = 1";
+
 $footer_sql = "SELECT * FROM " . COUNTRY_PREFIX . "footer WHERE footer_id = 1";
-//$footer_sql = "SELECT * FROM de_footer WHERE footer_id = 1";
 $footer_rs = mysqli_query($conn, $footer_sql);
 $footer_row = mysqli_fetch_array($footer_rs);
 
@@ -258,9 +267,9 @@ while ($exp_listrow = mysqli_fetch_array($exp_listrs)) {
 
     $listing_inactive_status = "Inactive";
 
-    $exp_update_sql = "UPDATE  " . COUNTRY_PREFIX . "listings SET listing_status='$listing_inactive_status'
-    where listing_id='$exp_listing_id'
-AND listing_cdt < DATE_SUB(NOW(), INTERVAL $exp_plan_type_duration MONTH)";
+    $exp_update_sql = "UPDATE " . COUNTRY_PREFIX . "listings SET listing_status='$listing_inactive_status'
+                        WHERE listing_id='$exp_listing_id'
+                          AND listing_cdt < DATE_SUB(NOW(), INTERVAL $exp_plan_type_duration MONTH)";
 
     $exp_update_rs = mysqli_query($conn,$exp_update_sql);
 
