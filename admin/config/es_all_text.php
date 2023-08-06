@@ -580,6 +580,8 @@ $BIZBOOK['UN_FOLLOW'] = "Un-follow";
 
 $BIZBOOK['AD_SUMMARY'] = "Ad Summary";
 
+$BIZBOOK['ADVERTISING'] = "Advertising";
+
 $BIZBOOK['CHECK_OUT'] = "Payment & plan";
 
 $BIZBOOK['PAYMENT_INVOICE'] = "Payment invoice";
@@ -2924,6 +2926,9 @@ $BIZBOOK['pg_utype_gp8'] = "Mange listing, event & blogs";
 $BIZBOOK['pg_pri_tit'] = "Privacy Policy";
 
 $BIZBOOK['pg_terms_tit'] = "Terms of Use";
+
+//************************* ITCS SPECIAL LINKS ***********
+$BIZBOOK['pg_advert_tit'] = "BizDir Advertising";
 
 
 //************************* NEWS & MAGAZINES ***********

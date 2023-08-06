@@ -582,6 +582,8 @@ $BIZBOOK['UN_FOLLOW'] = "Un-follow";
 
 $BIZBOOK['AD_SUMMARY'] = "Ad Summary";
 
+$BIZBOOK['ADVERTISING'] = "Werbebanner";
+
 $BIZBOOK['CHECK_OUT'] = "Payment & plan";
 
 $BIZBOOK['PAYMENT_INVOICE'] = "Payment invoice";
@@ -2922,11 +2924,10 @@ $BIZBOOK['pg_utype_gp7'] = "Payment invoices";
 $BIZBOOK['pg_utype_gp8'] = "Mange listing, event & blogs";
 
 //************************* POLICY & TERMS ***********
-
 $BIZBOOK['pg_pri_tit'] = "Privacy Policy";
-
 $BIZBOOK['pg_terms_tit'] = "Terms of Use";
-
+//************************* ITCS SPECIAL LINKS ***********
+$BIZBOOK['pg_advert_tit'] = "BizDir Werbung";
 
 //************************* NEWS & MAGAZINES ***********
 

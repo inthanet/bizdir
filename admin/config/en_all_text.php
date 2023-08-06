@@ -578,7 +578,9 @@ $BIZBOOK['FOLLOWINGS'] = "Followings";
 
 $BIZBOOK['UN_FOLLOW'] = "Un-follow";
 
-$BIZBOOK['AD_SUMMARY'] = "Ad Summary";
+$BIZBOOK['AD_SUMMARY'] = "Advertising";
+
+$BIZBOOK['ADVERTISING'] = "Advertising";
 
 $BIZBOOK['CHECK_OUT'] = "Payment & plan";
 
@@ -2926,6 +2928,9 @@ $BIZBOOK['pg_pri_txt1'] = "Coming Soon";
 $BIZBOOK['pg_pri_txt2'] = "Coming Sooner";
 
 $BIZBOOK['pg_terms_tit'] = "Terms of Use";
+
+//************************* ITCS SPECIAL LINKS ***********
+$BIZBOOK['pg_advert_tit'] = "BizDir Advertising";
 
 
 //************************* NEWS & MAGAZINES ***********
