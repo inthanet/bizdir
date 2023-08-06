@@ -4,35 +4,69 @@
 include "config/info.php";
 
 //ENTER THE RELEVANT INFO BELOW
-$mysqlUserName = DB_USERNAME;                    //DB Username
-$mysqlPassword = DB_PASSWORD;                        //DB Password
-$mysqlHostName = DB_HOSTNAME;               //DB Hostname
-$DbName = DB_NAME;                //DB Name
-
-$backup_name = "Directory_Finder_Database";                //Backup Download file Name
-//$tables             = "Your tables";
-$tables = array('vv_admin', 'vv_advertisement', 'vv_all_ads_enquiry', 'vv_all_ads_price', 'vv_all_featured_filters', 'vv_all_listing_filters', 'vv_all_texts', 'vv_blogs', 'vv_categories', 'vv_cities', 'vv_countries', 'vv_enquiries', 'vv_events', 'vv_featured_cities'
-, 'vv_featured_listings', 'vv_footer', 'vv_index_ad', 'vv_listing_likes', 'vv_listing_other_info', 'vv_listings', 'vv_messages', 'vv_notifications', 'vv_page_views', 'vv_plan_type', 'vv_price_table'
-, 'vv_reviews', 'vv_services', 'vv_states', 'vv_sub_categories', 'vv_top_categories', 'vv_top_events', 'vv_top_service_providers', 'vv_transactions', 'vv_trend_categories', 'vv_trending_listings', 'vv_users'); //add all table names here
+$mysqlUserName = DB_USERNAME; 
+$mysqlPassword = DB_PASSWORD; 
+$mysqlHostName = DB_HOSTNAME; 
+$DbName = DB_NAME;            
 
 
-//or add 5th parameter(array) of specific tables:    array("mytable1","mytable2","mytable3") for multiple tables
 
-Export_Database($mysqlHostName, $mysqlUserName, $mysqlPassword, $DbName, $tables = false, $backup_name);
+if(empty($_POST['table_prefix'])){
+    $_SESSION['msg'] = 'Table Prefix missing';
+    header("location:admin-export.php");
+    exit;
+}
 
-function Export_Database($host, $user, $pass, $name, $tables = false, $backup_name)
+
+$table_prefix = $_POST['table_prefix'];
+if(!empty($_POST['table_prefix']) AND $_POST['table_prefix'] != 'all'){
+    $table_prefix = $_POST['table_prefix'];
+  } else {
+    $table_prefix = $_POST['table_prefix'].'_';  
+  }
+
+
+if(!empty($_POST['new_table_prefix']) AND $table_prefix != 'all_'){
+  $new_table_prefix = $_POST['new_table_prefix'];
+} else {
+  $new_table_prefix = $table_prefix;  
+}  
+
+
+$backup_name  = $new_table_prefix."BizDir_Database_";  //Backup Download file Name
+
+Export_Database($mysqlHostName, $mysqlUserName, $mysqlPassword, $DbName, $tables = false, $backup_name, $table_prefix, $new_table_prefix);
+
+function Export_Database($host, $user, $pass, $name, $tables = false, $backup_name, $table_prefix, $new_table_prefix)
 {
+
+    //$logfile = fopen('/home/bizdir/public_html/logs/db-export.log', 'w'); 
+    //fwrite($logfile, $table_prefix.' | '. $new_table_prefix ."\n"); 
+
     $mysqli = new mysqli($host, $user, $pass, $name);
     $mysqli->select_db($name);
     $mysqli->query("SET NAMES 'utf8'");
+    
+    if($table_prefix == 'all_'){
+        $sql = "SHOW TABLES";
+    } else {
+        $sql = "SHOW TABLES LIKE '".$table_prefix."%'";
+    }
+    
+    //fwrite($logfile,$sql ."\n");
 
-    $queryTables = $mysqli->query('SHOW TABLES');
+    $queryTables = $mysqli->query($sql);
+       
+
     while ($row = $queryTables->fetch_row()) {
         $target_tables[] = $row[0];
     }
     if ($tables !== false) {
         $target_tables = array_intersect($target_tables, $tables);
     }
+
+    //fwrite($logfile,print_r($target_tables,true) ."\n");
+
     foreach ($target_tables as $table) {
         $result = $mysqli->query('SELECT * FROM ' . $table);
         $fields_amount = $result->field_count;
@@ -48,7 +82,8 @@ function Export_Database($host, $user, $pass, $name, $tables = false, $backup_na
                 }
                 $content .= "\n(";
                 for ($j = 0; $j < $fields_amount; $j++) {
-                    $row[$j] = str_replace("\n", "\\n", addslashes($row[$j]));
+                    //$row[$j] = str_replace("\n", "\\n", addslashes($row[$j]));
+                    
                     if (isset($row[$j])) {
                         $content .= '"' . $row[$j] . '"';
                     } else {
@@ -70,12 +105,19 @@ function Export_Database($host, $user, $pass, $name, $tables = false, $backup_na
         }
         $content .= "\n\n\n";
     }
-    $backup_name = $backup_name ? $backup_name . "__(" . date('d-m-Y') . ")" . ".sql" : $name . "__(" . date('d-m-Y') . ")" . ".sql";
-    // $backup_name = $backup_name ? $backup_name : $name.".sql";
+    $backup_name .= date('Y-m-d').".sql";
     header('Content-Type: application/octet-stream');
     header("Content-Transfer-Encoding: Binary");
     header("Content-disposition: attachment; filename=\"" . $backup_name . "\"");
-    echo $content;
+
+    if($table_prefix == 'all_'){
+        $export_data = $content;
+    } else {
+        $export_data = str_replace($table_prefix, $new_table_prefix, $content);
+    }
+
+    echo $export_data;
+
     exit;
 
 }
