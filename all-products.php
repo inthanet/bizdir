@@ -284,13 +284,14 @@ if (!empty($w)) {
                                             <input type="checkbox" class="sub_cat_check" name="sub_cat_check"
                                                    value="<?php echo $hyphend_sub_category_name2; ?>"
                                                 <?php
-                                                $subcategory_id_new = explode(',', $_GET['subcategory']);
-                                                if (in_array($hyphend_sub_category_name2, $subcategory_id_new)) {
-                                                    echo "checked";
-                                                } ?>
+                                                if (isset($_GET['subcategory'])) {
+                                                    $subcategory_id_new = explode(',', $_GET['subcategory']);
+                                                    if (in_array($hyphend_sub_category_name2, $subcategory_id_new)) {
+                                                        echo "checked";
+                                                    } 
+                                                }?>
                                                    id="<?php echo $sub_category_row['sub_category_name']; ?>"/>
-                                            <label
-                                                    for="<?php echo $sub_category_row['sub_category_name']; ?>"><?php echo $sub_category_row['sub_category_name']; ?></label>
+                                            <label for="<?php echo $sub_category_row['sub_category_name']; ?>"><?php echo $sub_category_row['sub_category_name']; ?></label>
                                         </div>
                                     </li>
                                     <?php
@@ -309,10 +310,12 @@ if (!empty($w)) {
                                         <input type="checkbox" name="price_check"
                                                value="10000"
                                             <?php
-                                            $price_new = explode(',', $_GET['price']);
-                                            if (in_array(10000, $price_new)) {
-                                                echo "checked";
-                                            } ?>
+                                            if (isset($_GET['price'])) {
+                                                $price_new = explode(',', $_GET['price']);
+                                                if (in_array(10000, $price_new)) {
+                                                    echo "checked";
+                                                } 
+                                            }?>
                                                class="price_check"
                                                id="price_check5"/>
                                         <label
@@ -328,10 +331,12 @@ if (!empty($w)) {
                                         <input type="checkbox" name="price_check"
                                                value="501-1000"
                                             <?php
-                                            $price_new = explode(',', $_GET['price']);
-                                            if (in_array('501-1000', $price_new)) {
-                                                echo "checked";
-                                            } ?>
+                                            if (isset($_GET['price'])) {
+                                                $price_new = explode(',', $_GET['price']);
+                                                if (in_array('501-1000', $price_new)) {
+                                                    echo "checked";
+                                                } 
+                                            }?>
                                                class="price_check"
                                                id="price_check4"/>
                                         <label
@@ -351,14 +356,15 @@ if (!empty($w)) {
                                         <input type="checkbox" name="price_check"
                                                value="251-500"
                                             <?php
-                                            $price_new = explode(',', $_GET['price']);
-                                            if (in_array('251-500', $price_new)) {
-                                                echo "checked";
-                                            } ?>
+                                            if (isset($_GET['price'])) {
+                                                $price_new = explode(',', $_GET['price']);
+                                                if (in_array('251-500', $price_new)) {
+                                                    echo "checked";
+                                                } 
+                                            }?>
                                                class="price_check"
                                                id="price_check3"/>
-                                        <label
-                                                for="price_check3"><?php if ($footer_row['currency_symbol_pos'] == 1) {
+                                        <label for="price_check3"><?php if ($footer_row['currency_symbol_pos'] == 1) {
                                                 echo $footer_row['currency_symbol'];
                                             } ?>251<?php if ($footer_row['currency_symbol_pos'] == 2) {
                                                 echo $footer_row['currency_symbol'];
@@ -374,14 +380,15 @@ if (!empty($w)) {
                                         <input type="checkbox" name="price_check"
                                                value="101-250"
                                             <?php
-                                            $price_new = explode(',', $_GET['price']);
-                                            if (in_array('101-250', $price_new)) {
-                                                echo "checked";
+                                            if (isset($_GET['price'])) {
+                                                $price_new = explode(',', $_GET['price']);
+                                                if (in_array('101-250', $price_new)) {
+                                                    echo "checked";
+                                                }
                                             } ?>
                                                class="price_check"
                                                id="price_check2"/>
-                                        <label
-                                                for="price_check2"><?php if ($footer_row['currency_symbol_pos'] == 1) {
+                                        <label for="price_check2"><?php if ($footer_row['currency_symbol_pos'] == 1) {
                                                 echo $footer_row['currency_symbol'];
                                             } ?>101<?php if ($footer_row['currency_symbol_pos'] == 2) {
                                                 echo $footer_row['currency_symbol'];
@@ -397,14 +404,15 @@ if (!empty($w)) {
                                         <input type="checkbox" name="price_check"
                                                value="below-100"
                                             <?php
-                                            $price_new = explode(',', $_GET['price']);
-                                            if (in_array('below-100', $price_new)) {
-                                                echo "checked";
+                                            if (isset($_GET['price'])) {
+                                                $price_new = explode(',', $_GET['price']);
+                                                if (in_array('below-100', $price_new)) {
+                                                    echo "checked";
+                                                }
                                             } ?>
                                                class="price_check"
                                                id="price_check1"/>
-                                        <label
-                                                for="price_check1"><?php echo $BIZBOOK['BELOW']; ?> <?php if ($footer_row['currency_symbol_pos'] == 1) {
+                                        <label for="price_check1"><?php echo $BIZBOOK['BELOW']; ?> <?php if ($footer_row['currency_symbol_pos'] == 1) {
                                                 echo $footer_row['currency_symbol'];
                                             } ?>100<?php if ($footer_row['currency_symbol_pos'] == 2) {
                                                 echo $footer_row['currency_symbol'];
@@ -425,10 +433,12 @@ if (!empty($w)) {
                                         <input type="checkbox" name="discount_check"
                                                value="130"
                                             <?php
-                                            $discount_new = explode(',', $_GET['discount']);
-                                            if (in_array(130, $discount_new)) {
-                                                echo "checked";
-                                            } ?>
+                                            if (isset($_GET['discount'])) {
+                                                $discount_new = explode(',', $_GET['discount']);
+                                                if (in_array(130, $discount_new)) {
+                                                    echo "checked";
+                                                } 
+                                            }?>
                                                class="discount_check"
                                                id="discount_check5"/>
                                         <label
@@ -440,14 +450,15 @@ if (!empty($w)) {
                                         <input type="checkbox" name="discount_check"
                                                value="70"
                                             <?php
-                                            $discount_new = explode(',', $_GET['discount']);
-                                            if (in_array(70, $discount_new)) {
-                                                echo "checked";
-                                            } ?>
+                                            if (isset($_GET['discount'])) {
+                                                $discount_new = explode(',', $_GET['discount']);
+                                                if (in_array(70, $discount_new)) {
+                                                    echo "checked";
+                                                } 
+                                            }?>
                                                class="discount_check"
                                                id="discount_check4"/>
-                                        <label
-                                                for="discount_check4">51% - 70%</label>
+                                        <label for="discount_check4">51% - 70%</label>
                                     </div>
                                 </li>
                                 <li>
@@ -455,14 +466,15 @@ if (!empty($w)) {
                                         <input type="checkbox" name="discount_check"
                                                value="50"
                                             <?php
-                                            $discount_new = explode(',', $_GET['discount']);
-                                            if (in_array(50, $discount_new)) {
-                                                echo "checked";
-                                            } ?>
+                                            if (isset($_GET['discount'])) {
+                                                $discount_new = explode(',', $_GET['discount']);
+                                                if (in_array(50, $discount_new)) {
+                                                    echo "checked";
+                                                } 
+                                            }?>
                                                class="discount_check"
                                                id="discount_check3"/>
-                                        <label
-                                                for="discount_check3">26% - 50%</label>
+                                        <label for="discount_check3">26% - 50%</label>
                                     </div>
                                 </li>
                                 <li>
@@ -470,10 +482,12 @@ if (!empty($w)) {
                                         <input type="checkbox" name="discount_check"
                                                value="25"
                                             <?php
-                                            $discount_new = explode(',', $_GET['discount']);
-                                            if (in_array(25, $discount_new)) {
-                                                echo "checked";
-                                            } ?>
+                                            if (isset($_GET['discount'])) {
+                                                $discount_new = explode(',', $_GET['discount']);
+                                                if (in_array(25, $discount_new)) {
+                                                    echo "checked";
+                                                } 
+                                            }?>
                                                class="discount_check"
                                                id="discount_check2"/>
                                         <label
@@ -485,10 +499,12 @@ if (!empty($w)) {
                                         <input type="checkbox" name="discount_check"
                                                value="10"
                                             <?php
-                                            $discount_new = explode(',', $_GET['discount']);
-                                            if (in_array(10, $discount_new)) {
-                                                echo "checked";
-                                            } ?>
+                                            if (isset($_GET['discount'])) {
+                                                $discount_new = explode(',', $_GET['discount']);
+                                                if (in_array(10, $discount_new)) {
+                                                    echo "checked";
+                                                } 
+                                            }?>
                                                class="discount_check"
                                                id="discount_check1"/>
                                         <label
@@ -508,9 +524,9 @@ if (!empty($w)) {
                                         $get_ad_row = getAds($ad_position_id);
                                         $ad_enquiry_photo = $get_ad_row['ad_enquiry_photo'];
                                         ?>
+                                        <span onclick="window.open('advertising.php', '_blank');">AD Info</span>
                                         <a href="<?php echo stripslashes($get_ad_row['ad_link']); ?>">
-                                            <span><?php echo $BIZBOOK['AD']; ?></span>
-
+    
                                             <img
                                                     src="<?php echo $slash; ?>images/ads/<?php if ($ad_enquiry_photo != NULL || !empty($ad_enquiry_photo)) {
                                                         echo $ad_enquiry_photo;

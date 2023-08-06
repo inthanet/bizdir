@@ -2,6 +2,11 @@
 include "job-config-info.php";
 include "../header.php";
 
+//todo ui
+$logfile = fopen('/home/bizdir/public_html/logs/debug.log', 'w'); 
+fwrite($logfile, 'COUNTRY_PREFIX: '. COUNTRY_PREFIX."\n");
+fwrite($logfile, print_r($BIZBOOK,true)."\n");
+
 if (isset($_SESSION['user_id'])) {
     $session_user_id = $_SESSION['user_id'];
 }
@@ -290,9 +295,11 @@ if (isset($_REQUEST['city']) && !empty($_REQUEST['city'])) {
                                         <input type="checkbox" class="sub_cat_check" name="sub_cat_check"
                                                value="<?php echo $hyphend_sub_category_name; ?>"
                                             <?php
-                                            $subcategory_id_new = explode(',', $get_subcategory);
-                                            if (in_array($hyphend_sub_category_name, $subcategory_id_new)) {
-                                                echo "checked";
+                                            if (isset($get_subcategory)) {
+                                                $subcategory_id_new = explode(',', $get_subcategory);
+                                                if (in_array($hyphend_sub_category_name, $subcategory_id_new)) {
+                                                    echo "checked";
+                                                } 
                                             } ?>
                                                id="<?php echo $sub_category_row['sub_category_name']; ?>"/>
                                         <label
@@ -313,40 +320,52 @@ if (isset($_REQUEST['city']) && !empty($_REQUEST['city'])) {
                             <li>
                                 <div class="chbox">
                                     <input type="checkbox" name="job_type" <?php
-                                    $get_job_type_check_new = explode(',', $get_job_type);
-                                    if (in_array('permanent', $get_job_type_check_new)) {
-                                        echo 'checked';
-                                    } ?> value="permanent" class="job_type" id="j1">
+                                    if (isset($get_job_type)) {
+                                        $get_job_type_check_new = explode(',', $get_job_type);
+                                        if (in_array('permanent', $get_job_type_check_new)) {
+                                            echo 'checked';
+                                        }
+                                    } ?> 
+                                    value="permanent" class="job_type" id="j1">
                                     <label for="j1"><?php echo $BIZBOOK['JOB-PERMANENT']; ?></label>
                                 </div>
                             </li>
                             <li>
                                 <div class="chbox">
                                     <input type="checkbox" name="job_type" <?php
-                                    $get_job_type_check_new = explode(',', $get_job_type);
-                                    if (in_array('contract', $get_job_type_check_new)) {
-                                        echo 'checked';
-                                    } ?> value="contract" class="job_type" id="j2">
+                                    if (isset($get_job_type)) {
+                                        $get_job_type_check_new = explode(',', $get_job_type);
+                                        if (in_array('contract', $get_job_type_check_new)) {
+                                            echo 'checked';
+                                        }
+                                    } ?> 
+                                    value="contract" class="job_type" id="j2">
                                     <label for="j2"><?php echo $BIZBOOK['JOB-CONTRACT']; ?></label>
                                 </div>
                             </li>
                             <li>
                                 <div class="chbox">
                                     <input type="checkbox" name="job_type" <?php
-                                    $get_job_type_check_new = explode(',', $get_job_type);
-                                    if (in_array('part-time', $get_job_type_check_new)) {
-                                        echo 'checked';
-                                    } ?> value="part-time" class="job_type" id="j3">
+                                    if (isset($get_job_type)) {
+                                        $get_job_type_check_new = explode(',', $get_job_type);
+                                        if (in_array('part-time', $get_job_type_check_new)) {
+                                            echo 'checked';
+                                        }
+                                    } ?> 
+                                    value="part-time" class="job_type" id="j3">
                                     <label for="j3"><?php echo $BIZBOOK['JOB-PART-TIME']; ?></label>
                                 </div>
                             </li>
                             <li>
                                 <div class="chbox">
                                     <input type="checkbox" name="job_type" <?php
-                                    $get_job_type_check_new = explode(',', $get_job_type);
-                                    if (in_array('freelance', $get_job_type_check_new)) {
-                                        echo 'checked';
-                                    } ?> value="freelance" class="job_type" id="j4">
+                                    if (isset($get_job_type)) {
+                                        $get_job_type_check_new = explode(',', $get_job_type);
+                                        if (in_array('freelance', $get_job_type_check_new)) {
+                                            echo 'checked';
+                                        }
+                                    } ?> 
+                                    value="freelance" class="job_type" id="j4">
                                     <label for="j4"><?php echo $BIZBOOK['JOB-FREELANCE']; ?></label>
                                 </div>
                             </li>
@@ -372,8 +391,9 @@ if (isset($_REQUEST['city']) && !empty($_REQUEST['city'])) {
                                 <li>
                                     <div class="chbox">
                                         <input type="checkbox" name="city_check" <?php
-                                        $get_city_new = explode(',', $get_city);
-                                        if ($get_city_new != NULL) {
+                                        if ($get_city != NULL) {
+                                            $get_city_new = explode(',', $get_city);
+                                        
                                             if (in_array($hyphend_city_name, $get_city_new)) {
                                                 echo 'checked';
                                             }
@@ -395,42 +415,53 @@ if (isset($_REQUEST['city']) && !empty($_REQUEST['city'])) {
                             <li>
                                 <div class="chbox">
                                     <input type="checkbox" name="job_salary" <?php
-                                    $get_job_salary_new = explode(',', $get_job_salary);
-                                    if (in_array(1000, $get_job_salary_new)) {
-                                        echo 'checked';
-                                    } ?> value="1000" class="job_salary" id="sal1">
+                                    if (isset($get_job_salary)) {
+                                        $get_job_salary_new = explode(',', $get_job_salary);
+                                        if (in_array(1000, $get_job_salary_new)) {
+                                            echo 'checked';
+                                        }
+                                    } ?> 
+                                    value="1000" class="job_salary" id="sal1">
                                     <label for="sal1"><?php if($footer_row['currency_symbol_pos']== 1){ echo $footer_row['currency_symbol']; } ?> 0 - 1000 <?php if($footer_row['currency_symbol_pos']== 2){ echo $footer_row['currency_symbol']; } ?></label>
                                 </div>
                             </li>
                             <li>
                                 <div class="chbox">
                                     <input type="checkbox" name="job_salary" <?php
-                                    $get_job_salary_new = explode(',', $get_job_salary);
-                                    if (in_array(5000, $get_job_salary_new)) {
-                                        echo 'checked';
-                                    } ?> value="5000" class="job_salary" id="sal2">
+                                    if (isset($get_job_salary)) {
+                                        $get_job_salary_new = explode(',', $get_job_salary);
+                                        if (in_array(5000, $get_job_salary_new)) {
+                                            echo 'checked';
+                                        }
+                                    } ?> 
+                                    value="5000" class="job_salary" id="sal2">
                                     <label for="sal2"><?php if($footer_row['currency_symbol_pos']== 1){ echo $footer_row['currency_symbol']; } ?> 1000 - 5000 <?php if($footer_row['currency_symbol_pos']== 2){ echo $footer_row['currency_symbol']; } ?></label>
                                 </div>
                             </li>
                             <li>
                                 <div class="chbox">
                                     <input type="checkbox" name="job_salary" <?php
-                                    $get_job_salary_new = explode(',', $get_job_salary);
-                                    if (in_array(15000, $get_job_salary_new)) {
-                                        echo 'checked';
-                                    } ?> value="15000" class="job_salary" id="sal3">
+                                    if (isset($get_job_salary)) {
+                                        $get_job_salary_new = explode(',', $get_job_salary);
+                                        if (in_array(15000, $get_job_salary_new)) {
+                                            echo 'checked';
+                                        }
+                                    } ?> 
+                                    value="15000" class="job_salary" id="sal3">
                                     <label for="sal3"><?php if($footer_row['currency_symbol_pos']== 1){ echo $footer_row['currency_symbol']; } ?> 5000 - 15000 <?php if($footer_row['currency_symbol_pos']== 2){ echo $footer_row['currency_symbol']; } ?></label>
                                 </div>
                             </li>
                             <li>
                                 <div class="chbox">
                                     <input type="checkbox" name="job_salary" <?php
-                                    $get_job_salary_new = explode(',', $get_job_salary);
-                                    if (in_array(15001, $get_job_salary_new)) {
-                                        echo 'checked';
-                                    } ?> value="15001" class="job_salary" id="sal4">
-                                    <label for="sal4"><?php if($footer_row['currency_symbol_pos']== 1){ echo $footer_row['currency_symbol']; } ?> 15000 -
-                                        above <?php if($footer_row['currency_symbol_pos']== 2){ echo $footer_row['currency_symbol']; } ?></label>
+                                    if (isset($get_job_salary)) {
+                                        $get_job_salary_new = explode(',', $get_job_salary);
+                                        if (in_array(15001, $get_job_salary_new)) {
+                                            echo 'checked';
+                                        }
+                                    } ?> 
+                                    value="15001" class="job_salary" id="sal4">
+                                    <label for="sal4"><?php if($footer_row['currency_symbol_pos']== 1){ echo $footer_row['currency_symbol']; } ?> 15000 - above <?php if($footer_row['currency_symbol_pos']== 2){ echo $footer_row['currency_symbol']; } ?></label>
                                 </div>
                             </li>
                         </ul>
@@ -446,9 +477,8 @@ if (isset($_REQUEST['city']) && !empty($_REQUEST['city'])) {
                                     $get_ad_row = getAds($ad_position_id);
                                     $ad_enquiry_photo = $get_ad_row['ad_enquiry_photo'];
                                     ?>
+                                    <span onclick="window.open('advertising.php', '_blank');">AD Info</span>
                                     <a href="<?php echo stripslashes($get_ad_row['ad_link']); ?>">
-                                        <span><?php echo $BIZBOOK['AD']; ?></span>
-
                                         <img
                                                 src="<?php echo $slash; ?>images/ads/<?php if ($ad_enquiry_photo != NULL || !empty($ad_enquiry_photo)) {
                                                     echo $ad_enquiry_photo;
