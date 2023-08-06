@@ -12,7 +12,7 @@ include "header.php";
             <div class="ad-dash leftpadd">
                 <div class="ud-cen">
 				<div class="log-bor">&nbsp;</div>
-				<span class="udb-inst">Settings</span>
+				<span style="font-size:1.3em;" class="udb-inst">Settings <?=COUNTRY_PREFIX;?></span>
                  <div class="ud-cen-s2 ud-pro-edit">
                     <h2>Admin details</h2>
                      <?php include "../page_level_message.php"; ?>
