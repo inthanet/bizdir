@@ -513,15 +513,46 @@ function listing_total_like_count($listing_id)
 
 # Getting Formatted Current Date Ago Function #  i.e  5 Days ago
 
+// function time_elapsed_string($datetime, $full = false) {
+//     $now = new DateTime;
+//     $ago = new DateTime($datetime);
+//     $diff = $now->diff($ago);
+
+//     $diff->w = floor($diff->d / 7);
+//     $diff->d -= $diff->w * 7;
+
+//     $string = array(
+//         'y' => 'Year',
+//         'm' => 'Month',
+//         'w' => 'Week',
+//         'd' => 'Day',
+//         'h' => 'Hour',
+//         'i' => 'Minute',
+//         's' => 'Second',
+//     );
+//     foreach ($string as $k => &$v) {
+//         if ($diff->$k) {
+//             $v = $diff->$k . ' ' . $v . ($diff->$k > 1 ? 's' : '');
+//         } else {
+//             unset($string[$k]);
+//         }
+//     }
+
+//     if (!$full) $string = array_slice($string, 0, 1);
+//     return $string ? implode(', ', $string) . ' ago' : 'Just now';
+// }
+
 function time_elapsed_string($datetime, $full = false) {
     $now = new DateTime;
     $ago = new DateTime($datetime);
     $diff = $now->diff($ago);
 
-    $diff->w = floor($diff->d / 7);
-    $diff->d -= $diff->w * 7;
+    $days = $diff->days + ($diff->y * 365) + ($diff->m * 30);
 
-    $string = array(
+    $weeks = floor($days / 7);
+    $days -= $weeks * 7;
+
+    $strings = [
         'y' => 'Year',
         'm' => 'Month',
         'w' => 'Week',
@@ -529,18 +560,23 @@ function time_elapsed_string($datetime, $full = false) {
         'h' => 'Hour',
         'i' => 'Minute',
         's' => 'Second',
-    );
-    foreach ($string as $k => &$v) {
-        if ($diff->$k) {
-            $v = $diff->$k . ' ' . $v . ($diff->$k > 1 ? 's' : '');
-        } else {
-            unset($string[$k]);
+    ];
+
+    $elapsed_strings = [];
+    foreach ($strings as $key => $value) {
+        if ($diff->$key) {
+            $elapsed_strings[] = $diff->$key . ' ' . $value . ($diff->$key > 1 ? 's' : '');
         }
     }
 
-    if (!$full) $string = array_slice($string, 0, 1);
-    return $string ? implode(', ', $string) . ' ago' : 'Just now';
+    if (!$full) {
+        $elapsed_strings = array_slice($elapsed_strings, 0, 1);
+    }
+
+    return $elapsed_strings ? implode(', ', $elapsed_strings) . ' ago' : 'Just now';
 }
+
+
 
 # Getting Formatted Whole Date Function #  i.e  29, Sep 2023
 
@@ -602,7 +638,10 @@ function filedateFormatconverter()
 
 function urlModifier($slug_url)
 {
-    //return preg_replace('/\s+/', '-', strtolower($slug_url));
+//    IF(empty($slug_ur)){  //todo check why `$slug_url` empty
+//     return false;
+//    }
+   //return preg_replace('/\s+/', '-', strtolower($slug_url));
    // return str_replace(' ', '-', strtolower($slug_url));
    // return preg_replace("/[\s_]/", "-", strtolower($slug_url));
     $replacements = array(
@@ -616,8 +655,8 @@ function urlModifier($slug_url)
         'ä' => 'ae',
         'ß' => 'ss'
     );
-
-    $slug = str_replace(array_keys($replacements), array_values($replacements), strtolower($slug_url));
+    $slug_url = strtolower($slug_url);
+    $slug = str_replace(array_keys($replacements), array_values($replacements), $slug_url);
     return preg_replace("/[^a-z0-9\-]/", '', $slug);
 
 
