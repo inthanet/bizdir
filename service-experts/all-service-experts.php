@@ -441,8 +441,8 @@ if (isset($_REQUEST['city']) && !empty($_REQUEST['city'])) {
                                     $get_ad_row = getAds($ad_position_id);
                                     $ad_enquiry_photo = $get_ad_row['ad_enquiry_photo'];
                                     ?>
+                                    <span onclick="window.open('advertising.php', '_blank');">AD Info</span>    
                                     <a href="<?php echo stripslashes($get_ad_row['ad_link']); ?>">
-                                        <span><?php echo $BIZBOOK['AD']; ?></span>
 
                                         <img
                                                 src="<?php echo $slash; ?>images/ads/<?php if ($ad_enquiry_photo != NULL || !empty($ad_enquiry_photo)) {

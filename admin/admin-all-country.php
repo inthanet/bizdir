@@ -13,7 +13,7 @@ include "header.php";
 				<div class="log-bor">&nbsp;</div>
 				<span class="udb-inst">Country</span>
                 <div class="ud-cen-s2">
-                    <h2>All Country</h2>
+                    <h2>All Countries (<i style="color:red;">BizDir <?=COUNTRY_PREFIX;?></i> ) </h2>
                     <?php include "../page_level_message.php"; ?>
                     <div class="ad-int-sear">
                         <input type="text" id="pg-sear" placeholder="Search this page..">
