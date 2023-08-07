@@ -401,6 +401,22 @@ $(document).ready(function () {
 
 });
 
+//EQUALHEIGHT
+$(document).ready(function() {
+    equalHeight($(".equalHeight"));
+ });
+
+ function equalHeight(group) {
+    tallest = 0;
+    group.each(function() {
+       thisHeight = $(this).height();
+       if(thisHeight > tallest) {
+          tallest = thisHeight;
+       }
+    });
+    group.height(tallest);
+ }
+
 //COMMON DATEPICKER
 $( function() {
     $( "#newdate" ).datepicker({ minDate: 0});
