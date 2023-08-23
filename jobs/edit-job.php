@@ -145,7 +145,13 @@ if (file_exists('../config/job_page_authentication.php')) {
                                     <label class="tit"><?php echo $BIZBOOK['JOB-TYPE-LABEL']; ?></label>
                                     <select class="chosen-select" name="job_type">
                                         <option <?php if ($job_a_row['job_type'] == 1) { echo "selected"; } ?> value="1"><?php echo $BIZBOOK['JOB-PERMANENT']; ?></option>
-                                        <option <?php if ($job_a_row['job_type'] == 2) { echo "selected"; } ?> value="2"><?php echo $BIZBOOK['JOB-CONTRACT']; ?></option>
+                                        <option <?php if ($job_a_row['job_type'] == 20) { echo "selected"; } ?> value="20"><?php echo $BIZBOOK['JOB-CONTRACT'].' '.$BIZBOOK['JOB_1_MONTHS']; ?></option>
+                                        <option <?php if ($job_a_row['job_type'] == 21) { echo "selected"; } ?> value="21"><?php echo $BIZBOOK['JOB-CONTRACT'].' '.$BIZBOOK['JOB_2_MONTHS']; ?></option>
+                                        <option <?php if ($job_a_row['job_type'] == 22) { echo "selected"; } ?> value="22"><?php echo $BIZBOOK['JOB-CONTRACT'].' '.$BIZBOOK['JOB_3_MONTHS']; ?></option>
+                                        <option <?php if ($job_a_row['job_type'] == 23) { echo "selected"; } ?> value="23"><?php echo $BIZBOOK['JOB-CONTRACT'].' '.$BIZBOOK['JOB_6_MONTHS']; ?></option>
+                                        <option <?php if ($job_a_row['job_type'] == 24) { echo "selected"; } ?> value="24"><?php echo $BIZBOOK['JOB-CONTRACT'].' '.$BIZBOOK['JOB_1_YEAR']; ?></option>
+                                        <option <?php if ($job_a_row['job_type'] == 25) { echo "selected"; } ?> value="25"><?php echo $BIZBOOK['JOB-CONTRACT'].' '.$BIZBOOK['JOB_1_YEAR'].'+'; ?></option>
+                                        <option <?php if ($job_a_row['job_type'] == 26) { echo "selected"; } ?> value="26"><?php echo $BIZBOOK['JOB-CONTRACT'].' '.$BIZBOOK['JOB-CONTRACT-PROJECT']; ?></option>
                                         <option <?php if ($job_a_row['job_type'] == 3) { echo "selected"; } ?> value="3"><?php echo $BIZBOOK['JOB-PART-TIME']; ?></option>
                                         <option <?php if ($job_a_row['job_type'] == 4) { echo "selected"; } ?> value="4"><?php echo $BIZBOOK['JOB-FREELANCE']; ?></option>
                                     </select>

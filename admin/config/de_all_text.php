@@ -1,32 +1,43 @@
 <?php
+//********************       ITCS ADVERTISING       *****************
+$BIZBOOK['ADS_TITLE'] = "Bannerwerbung hier";
+$BIZBOOK['ADS_SUPPORT'] = "Bei Fragen steht Inen unser Service Team 24/7 via eTicket System zu Verfügung.<hr>";
 
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+$BIZBOOK['ADS_HEADLINE'] = "ITCS-ASIA Online Banner Werbung";
+$BIZBOOK['ADS_SUBHEADLINE'] = "Steigern Sie Ihre Reichweite mit inspirierender ITCS-ASIA Online Banner Werbung.<br>Erreichen Sie neue Höhen der Effektivität und Erfolg!";
+$BIZBOOK['ADS_INTRO_HL'] = "Die Macht der Online Banner Werbung: <u>Neue Horizonte für Ihren Erfolg!</u>";
+$BIZBOOK['ADS_INTRO_1'] = "In der heutigen digitalen Ära hat sich die Werbelandschaft drastisch verändert, und Unternehmen haben erkannt, dass Online Banner Werbung ein entscheidender Faktor ist, um ihre Zielgruppe zu erreichen und den Unternehmenserfolg zu steigern. Durch die geschickte Platzierung inspirierender Banner können Unternehmen ihre Reichweite erheblich erweitern und potenzielle Kunden auf eine kreative und ansprechende Art und Weise ansprechen.";
+$BIZBOOK['ADS_INTRO_2'] = "Der größte Vorteil der Online Banner Werbung liegt in ihrer enormen Sichtbarkeit. Im Gegensatz zu traditionellen Werbemitteln, die oft auf lokale Zielgruppen beschränkt sind, haben Online Banner die Fähigkeit, eine globale Präsenz zu schaffen. Mit einer strategischen Platzierung auf relevanten Websites, sozialen Medien und Suchmaschinen können Unternehmen ihre Botschaften über Grenzen hinweg verbreiten und gezielt ihre Zielgruppen ansprechen.";
+$BIZBOOK['ADS_INTRO_3'] = "Ein weiterer unschätzbarer Vorteil ist die Interaktivität von Online Bannern. Moderne Technologien ermöglichen es, ansprechende und interaktive Elemente in die Banner zu integrieren, die das Publikum auf einzigartige Weise ansprechen und fesseln können. Von animierten Grafiken über Call-to-Action-Buttons bis hin zu personalisierten Inhalten - die Möglichkeiten sind grenzenlos und erlauben es den Unternehmen, eine emotionale Verbindung zu ihren potenziellen Kunden herzustellen.";
+$BIZBOOK['ADS_INTRO_4'] = "Darüber hinaus bieten Online Banner Werbung umfangreiche Tracking- und Analysemöglichkeiten. Durch die Verwendung von Tools wie Google Analytics können Unternehmen die Leistung ihrer Bannerkampagnen genau überwachen und wertvolle Einblicke in das Verhalten ihrer Zielgruppe gewinnen. Dies ermöglicht es ihnen, ihre Werbestrategien kontinuierlich zu optimieren und ihre Ressourcen effizient einzusetzen.";
+$BIZBOOK['ADS_INTRO_5'] = "Inspirierende Online Banner Werbung kann auch die Kreativität und Innovationskraft eines Unternehmens zum Ausdruck bringen. Indem sie Geschichten erzählen, Markenwerte vermitteln und unvergessliche visuelle Eindrücke hinterlassen, schaffen diese Banner eine bleibende Erinnerung und fördern die Markenbindung.";
+$BIZBOOK['ADS_INTRO_6'] = "Insgesamt bietet Online Banner Werbung eine Vielzahl von Vorteilen, die weit über die traditionellen Werbemethoden hinausgehen. Mit ihrer globalen Reichweite, Interaktivität, Tracking-Möglichkeiten und kreativen Potenzialen eröffnen sie Unternehmen die Chance, ihre Erfolgsziele zu übertreffen und eine nachhaltige Wirkung auf ihre Zielgruppen zu erzielen. Es ist an der Zeit, die Macht der Online Banner Werbung zu nutzen und das Potenzial Ihres Unternehmens in die nächste Dimension zu führen.";
 
-/***************************************************************************
+$BIZBOOK['ADS_HOW_TIT'] = "Wie funktioniert es?";
+$BIZBOOK['ADS_HOW_SUB_TIT'] = "In 4 einfachen Schritten zum Online Werbeerfolg";
+$BIZBOOK['ADS_HOW_TXT_1'] = "Lorem Ipsum ist ein einfacher Demo-Text für die Print- und Schriftindustrie. Lorem Ipsum ist in der Industrie bereits der Standard Demo-Text seit 1500, als ein unbekannter Schriftsteller eine Hand voll Wörter nahm und diese durcheinander warf um ein Musterbuch zu erstellen.";
+$BIZBOOK['ADS_'] = "";
+$BIZBOOK['ADS_'] = "";
+$BIZBOOK['ADS_'] = "";
+$BIZBOOK['ADS_'] = "";
+$BIZBOOK['ADS_HOW_TXT_2'] = "Lorem Ipsum ist ein einfacher Demo-Text für die Print- und Schriftindustrie.";
+$BIZBOOK['ADS_HOW_FOOTER'] = "Bei Fragen steht Inen unser Service Team 24/7 via eTicket System zu Verfügung.<hr>";
 
-This file helps you to update or change the text on the website.
+$BIZBOOK['ADS_HOWMUCH_TIT'] = "Wieviel kostet es?";
+$BIZBOOK['ADS_HOWMUCH_SUB_TIT'] = "Für unter 100 Euro können Sie 365 Tage online Werben!";
+$BIZBOOK['ADS_HOWMUCH_TXT_1'] = "Lorem Ipsum ist ein einfacher Demo-Text für die Print- und Schriftindustrie. Lorem Ipsum ist in der Industrie bereits der Standard Demo-Text seit 1500, als ein unbekannter Schriftsteller eine Hand voll Wörter nahm und diese durcheinander warf um ein Musterbuch zu erstellen.";
+$BIZBOOK['ADS_HOWMUCH_YOU_GET'] = "<br><br>Nachfolgend gelisted was Sie bekommen";
+$BIZBOOK['ADS_HOWMUCH'] = "";
+$BIZBOOK['ADS_HOWMUCH'] = "";
+$BIZBOOK['ADS_HOWMUCH'] = "";
 
--- First Find the text using CTRL+F.
--- Then replace the text with new one within the double quotes.
-
-(i.e) If i needs to update the text Apple To Orange means
-
--- Find the text Apple in this page
-
-+ $BIZBOOK['APPLE'] = "Apple";   //Old Value
-
--- Update the Apple value to Orange
-
-+ $BIZBOOK['APPLE'] = "Orange";  //New Value
-
--- Finally Save this file.
-
- *************************************************************************/
 
 //************************* ITCS New Added ***************************
 $BIZBOOK['SELECT_AN_OPTION'] = "Auswahl treffen";
 
-//************************* All Common Texts Starts ***************************
+
+
+//************************* All Common Texts Starts ******************
 
 $BIZBOOK['NAME'] = "Name";
 
@@ -76,19 +87,21 @@ $BIZBOOK['JOBS'] = "Jobs";
 
 $BIZBOOK['JOB'] = "Job";
 
+$BIZBOOK['MY_JOB_POSTS'] = "Meine Job Angebote";
+
 $BIZBOOK['JOBS_BRACKET'] = "job(s)";
 
 $BIZBOOK['LEADS'] = "Leads";
 
 $BIZBOOK['UNLIMITED'] = "Unlimited";
 
-$BIZBOOK['YEAR-S'] = "year(s)";
+$BIZBOOK['YEAR-S'] = "Jahr(e)";
 
-$BIZBOOK['MONTH-S'] = "month(s)";
+$BIZBOOK['MONTH-S'] = "Monat(e)";
 
-$BIZBOOK['ENQUIRIES'] = "Enquiries";
+$BIZBOOK['ENQUIRIES'] = "Anfragen";
 
-$BIZBOOK['ENQUIRY'] = "Enquiry";
+$BIZBOOK['ENQUIRY'] = "Anfrage";
 
 $BIZBOOK['COMMUNITY'] = "Community";
 
@@ -102,103 +115,103 @@ $BIZBOOK['PROMOTIONS'] = "Promotions";
 
 $BIZBOOK['POINTS_HISTORY'] = "Points History";
 
-$BIZBOOK['MESSAGES'] = "Messages";
+$BIZBOOK['MESSAGES'] = "Nachrichten";
 
-$BIZBOOK['MESSAGE'] = "Message";
+$BIZBOOK['MESSAGE'] = "Nachricht";
 
 $BIZBOOK['COUPONS_AND_DEALS'] = "Rabatte & Angebote";
 
-$BIZBOOK['USER'] = "User";
+$BIZBOOK['USER'] = "Nutzer";
 
-$BIZBOOK['SUBMIT'] = "Submit";
+$BIZBOOK['SUBMIT'] = "Senden";
 
-$BIZBOOK['SUBMIT_NOW'] = "Submit Now";
+$BIZBOOK['SUBMIT_NOW'] = "Jetzt Senden";
 
 $BIZBOOK['SUBMIT_REQUIREMENTS'] = "Submit Requirements";
 
-$BIZBOOK['SEARCH'] = "Search";
+$BIZBOOK['SEARCH'] = "Suchen";
 
-$BIZBOOK['SEND'] = "Send";
+$BIZBOOK['SEND'] = "Senden";
 
-$BIZBOOK['BACK'] = "Back";
+$BIZBOOK['BACK'] = "Zurück";
 
-$BIZBOOK['CHANGE'] = "Change";
+$BIZBOOK['CHANGE'] = "Ändern";
 
-$BIZBOOK['AMOUNT'] = "Amount";
+$BIZBOOK['AMOUNT'] = "Wert";
 
 $BIZBOOK['DOWNLOAD'] = "Download";
 
 $BIZBOOK['PROFILE'] = "Profile";
 
-$BIZBOOK['YEARS'] = "Years";
+$BIZBOOK['YEARS'] = "Jahre";
 
 $BIZBOOK['YEARS_EXP'] = "yearsExp.";
 
 $BIZBOOK['CASH_ON_DELIVERY'] = "Cash on delivery";
 
-$BIZBOOK['CONGRATULATIONS'] = "Congratulations";
+$BIZBOOK['CONGRATULATIONS'] = "Glückwunsch";
 
-$BIZBOOK['ADD_BUSINESS'] = "Add business";
+$BIZBOOK['ADD_BUSINESS'] = "Business hinzufügen";
 
 $BIZBOOK['FOLLOWERS'] = "Followers";
 
-$BIZBOOK['TAX'] = "Tax";
+$BIZBOOK['TAX'] = "Steuer";
 
 $BIZBOOK['LISTING_NAME'] = "Listing Name";
 
-$BIZBOOK['S_NO'] = "No";
+$BIZBOOK['S_NO'] = "Nein";
 
-$BIZBOOK['MESSAGE'] = "Message";
+$BIZBOOK['MESSAGE'] = "Nachricht";
 
 $BIZBOOK['FOLLOW'] = "Follow";
 
-$BIZBOOK['RATING'] = "Rating";
+$BIZBOOK['RATING'] = "Bewertung";
 
-$BIZBOOK['RATINGS'] = "Ratings";
+$BIZBOOK['RATINGS'] = "Bewrtungen";
 
-$BIZBOOK['VIEWS'] = "Views";
+$BIZBOOK['VIEWS'] = "Angesehen";
 
-$BIZBOOK['CLICKS'] = "Clicks";
+$BIZBOOK['CLICKS'] = "Klicks";
 
 $BIZBOOK['STATUS'] = "Status";
 
-$BIZBOOK['EDIT'] = "Edit";
+$BIZBOOK['EDIT'] = "Bearbeiten";
 
-$BIZBOOK['DELETE'] = "Delete";
+$BIZBOOK['DELETE'] = "Löschen";
 
-$BIZBOOK['VIEW'] = "View";
+$BIZBOOK['VIEW'] = "Ansegen";
 
-$BIZBOOK['PREVIEW'] = "Preview";
+$BIZBOOK['PREVIEW'] = "Vorschau";
 
-$BIZBOOK['ADDRESS'] = "Address";
+$BIZBOOK['ADDRESS'] = "Adresse";
 
 $BIZBOOK['TYPE'] = "Type";
 
-$BIZBOOK['VERIFIED'] = "Verified";
+$BIZBOOK['VERIFIED'] = "Geprüft";
 
-$BIZBOOK['DATE'] = "Date";
+$BIZBOOK['DATE'] = "Datum";
 
-$BIZBOOK['DAYS'] = "Days";
+$BIZBOOK['DAYS'] = "Tage";
 
-$BIZBOOK['TIME'] = "Time";
+$BIZBOOK['TIME'] = "Uhrzeit";
 
-$BIZBOOK['CITY'] = "City";
+$BIZBOOK['CITY'] = "Stadt";
 
-$BIZBOOK['CITIES'] = "Cities";
+$BIZBOOK['CITIES'] = "Städte";
 
-$BIZBOOK['STATE'] = "State";
+$BIZBOOK['STATE'] = "Bundesland";
 
-$BIZBOOK['COUNTRY'] = "Country";
+$BIZBOOK['COUNTRY'] = "Land";
 
-$BIZBOOK['NEXT'] = "Next";
+$BIZBOOK['NEXT'] = "Weiter";
 
-$BIZBOOK['PREVIOUS'] = "Previous";
+$BIZBOOK['PREVIOUS'] = "Zurück";
 
 $BIZBOOK['FINISH'] = "Finish";
 
-$BIZBOOK['PRICE'] = "Price";
+$BIZBOOK['PRICE'] = "Preis";
 
-$BIZBOOK['SKIP_THIS'] = "Skip this";
+$BIZBOOK['SKIP_THIS'] = "Überspringen";
 
 $BIZBOOK['CREATED'] = "Created";
 
@@ -481,6 +494,8 @@ $BIZBOOK['HOM-WHAT-LOOK-CTA'] = "Get experts";
 $BIZBOOK['HOM-FEW-REASON-LOVE'] = "A few reasons you’ll love Online Business Directory";
 
 $BIZBOOK['HOM-CALL-US-ON'] = "Call us on: +01 6214 6548";
+
+$BIZBOOK['HOM-SUPPORT-DESK'] = "eTicket Kundendienst 24/7";
 
 $BIZBOOK['HOM-NO1-BEST-CHOICE'] = "#1 Best choice";
 
@@ -842,7 +857,7 @@ $BIZBOOK['COMMUNITY_MEMBERS_TITLE'] = "Follow your favorite business users and g
 
 //************************* Company profile ***********
 
-$BIZBOOK['COMP-PRO'] = "Company profile";
+$BIZBOOK['COMP-PRO'] = "Detail Company Profile";
 
 $BIZBOOK['COMP-PRO-EDIT'] = "Edit company profile";
 
@@ -1330,7 +1345,7 @@ $BIZBOOK['FOOT-BAN-ADD'] = "Add my business";
 
 //************************* HOME PAGE 3 ***********
 
-$BIZBOOK['HOM3-OW-TIT'] = "Join us Now";
+$BIZBOOK['HOM3-OW-TIT'] = "Jetzt kostenfrei registrieren";
 
 $BIZBOOK['HOM3-OW-POSTED-BY'] = "Posted by";
 
@@ -1338,7 +1353,7 @@ $BIZBOOK['HOM3-OW-POSTED-ON'] = "Posted on";
 
 $BIZBOOK['HOM3-OW-USER-REVIEW'] = "Our user reviews";
 
-$BIZBOOK['HOM3-OW-TIT-SUB'] = "We connect with targeted customers for greater business conversion";
+$BIZBOOK['HOM3-OW-TIT-SUB'] = "Wir verbinden Sie mit gezielten Kunden für eine höhere Geschäftskonversion";
 
 $BIZBOOK['HOM3-OW-LHS-TIT'] = "Are you a business owner?";
 
@@ -1579,7 +1594,9 @@ $BIZBOOK['COMMUNITY-PAGE-START-A-NEW-CHAT'] = "Start A New Chat!!! Now";
 
 //************************* COMPANY PROFILE PAGE TEXT ***********
 
-$BIZBOOK['COMPANY-PROFILE-HEADING-LABEL'] = "About company";
+$BIZBOOK['COMPANY-PROFILE-HEADING-LABEL'] = "Das Unternehmen";
+
+$BIZBOOK['COMPANY-PROFILE-BRIEF-LABEL'] = "Brief Profile";
 
 $BIZBOOK['COMPANY-PROFILE-LOGO-LABEL'] = "Header top logo(size 200X35)";
 
@@ -1597,91 +1614,93 @@ $BIZBOOK['COMPANY-PROFILE-SEO-LABEL'] = "SEO Settings";
 
 //************************* JOB PAGE TEXT ***********
 
-$BIZBOOK['JOB-TITLE-LABEL'] = "Job Title";
+$BIZBOOK['JOB-TITLE-LABEL'] = "Job Titel";
 
-$BIZBOOK['JOB-SALARY-LABEL'] = "Salary";
+$BIZBOOK['JOB-SALARY-LABEL'] = "Gehalt";
 
-$BIZBOOK['JOB-NO-OF-OPENINGS-LABEL'] = "No of openings";
+$BIZBOOK['JOB-NO-OF-OPENINGS-LABEL'] = "Anzahl Stellen";
 
-$BIZBOOK['JOB-INTERVIEW-DATE-LABEL'] = "Interview Date";
+$BIZBOOK['JOB-INTERVIEW-DATE-LABEL'] = "Stellenausschreibung offen bis (Datum)";
 
-$BIZBOOK['JOB-INTERVIEW-TIME-LABEL'] = "Interview Time";
+$BIZBOOK['JOB-INTERVIEW-TIME-LABEL'] = "Stellenausschreibung offen bis (Uhrzeit)";
 
-$BIZBOOK['JOB-INTERVIEW-ROLE-LABEL'] = "Role";
+$BIZBOOK['JOB-INTERVIEW-ROLE-LABEL'] = "Position";
 
-$BIZBOOK['JOB-INTERVIEW-EDUCATIONAL-LABEL'] = "Education & Qualification";
+$BIZBOOK['JOB-INTERVIEW-EDUCATIONAL-LABEL'] = "Ausbildung & Qualifikation";
 
-$BIZBOOK['JOB-INTERVIEW-EXPERIENCE-DETAILS-LABEL'] = "Experience Details";
+$BIZBOOK['JOB-INTERVIEW-EXPERIENCE-DETAILS-LABEL'] = "Erfahrungs Details";
 
-$BIZBOOK['JOB-INTERVIEW-EMPLOYEE-NAME-LABEL'] = "Employee Name";
+$BIZBOOK['JOB-INTERVIEW-EMPLOYEE-NAME-LABEL'] = "Mitarbeitername";
 
-$BIZBOOK['JOB-INTERVIEW-EMPLOYEE-DETAILS-LABEL'] = "Employee details";
+$BIZBOOK['JOB-INTERVIEW-EMPLOYEE-DETAILS-LABEL'] = "Mitarbeiterdetails";
 
-$BIZBOOK['JOB-INTERVIEW-CURRENT-COMPANY-LABEL'] = "Current company";
+$BIZBOOK['JOB-INTERVIEW-CURRENT-COMPANY-LABEL'] = "Derzeitige Firma";
 
-$BIZBOOK['JOB-INTERVIEW-NOTICE-PERIOD-LABEL'] = "Notice period";
+$BIZBOOK['JOB-INTERVIEW-NOTICE-PERIOD-LABEL'] = "Kündigungsfrist";
 
 $BIZBOOK['JOB-INTERVIEW-JOB-PROFESSION-LABEL'] = "Job profession";
 
-$BIZBOOK['JOB-INTERVIEW-AVAILABLE-TIME-TO-TALK-LABEL'] = "Available time to talk";
+$BIZBOOK['JOB-INTERVIEW-AVAILABLE-TIME-TO-TALK-LABEL'] = "Verfügbarkeit";
 
-$BIZBOOK['JOB-INTERVIEW-PROFILE-COVER-IMAGE-LABEL'] = "Profile cover image";
+$BIZBOOK['JOB-INTERVIEW-PROFILE-COVER-IMAGE-LABEL'] = "Profile Cover Bild";
 
-$BIZBOOK['JOB-INTERVIEW-PROFILE-IMAGE-LABEL'] = "Job profile image";
+$BIZBOOK['JOB-INTERVIEW-PROFILE-IMAGE-LABEL'] = "Job Profilbild";
 
-$BIZBOOK['JOB-INTERVIEW-ADDITIONAL-INFORMATION-LABEL'] = "Additional information";
+$BIZBOOK['JOB-INTERVIEW-ADDITIONAL-INFORMATION-LABEL'] = "Weitere Informationen";
 
-$BIZBOOK['JOB-INTERVIEW-EMPLOYEE-PROFILE-LABEL'] = "Employee profile";
+$BIZBOOK['JOB-INTERVIEW-EMPLOYEE-PROFILE-LABEL'] = "Mitarbeiterprofil";
 
-$BIZBOOK['JOB-COMPANY-LOGO-LABEL'] = "Company logo";
+$BIZBOOK['JOB-COMPANY-LOGO-LABEL'] = "Firmenlogo";
 
-$BIZBOOK['JOB-COMPANY-NAME-LABEL'] = "Company Name";
+$BIZBOOK['JOB-COMPANY-NAME-LABEL'] = "Firmenname";
 
-$BIZBOOK['JOB-CATEGORY-LABEL'] = "Job category";
+$BIZBOOK['JOB-CATEGORY-LABEL'] = "Job Kategorie";
 
-$BIZBOOK['JOB-SUB-CATEGORY-LABEL'] = "Job sub-category";
+$BIZBOOK['JOB-SUB-CATEGORY-LABEL'] = "Job Sub-Kategorie";
 
 $BIZBOOK['JOB-TYPE-LABEL'] = "Job Type";
 
-$BIZBOOK['JOB-LOCATION-LABEL'] = "Job Location";
+$BIZBOOK['JOB-LOCATION-LABEL'] = "Job Standort";
 
-$BIZBOOK['JOB-YEARS-OF-EXPERIENCE-LABEL'] = "Year(s) of experience";
+$BIZBOOK['JOB-YEARS-OF-EXPERIENCE-LABEL'] = "Erfahrung in Jahre";
 
-$BIZBOOK['JOB-CONTACT-NO-LABEL'] = "Contact no";
+$BIZBOOK['JOB-CONTACT-NO-LABEL'] = "Kontakt-Nr";
 
-$BIZBOOK['JOB-CONTACT-PERSON-LABEL'] = "Contact person";
+$BIZBOOK['JOB-CONTACT-PERSON-LABEL'] = "Gesprächspartner";
 
-$BIZBOOK['JOB-INTERVIEW-LOCATION-LABEL'] = "Interview location";
+$BIZBOOK['JOB-INTERVIEW-LOCATION-LABEL'] = "Ort Vorstellungsgesprächs";
 
-$BIZBOOK['JOB-SKILL-SET-LABEL'] = "Skill set";
+$BIZBOOK['JOB-SKILL-SET-LABEL'] = "Erforderliche Fähigkeiten";
 
-$BIZBOOK['JOB-DESCRIPTION-LABEL'] = "Job Descriptions";
+$BIZBOOK['JOB-DESCRIPTION-LABEL'] = "Job Beschreibung";
 
-$BIZBOOK['JOB-SMALL-DESCRIPTION-LABEL'] = "About your company(small description)";
+$BIZBOOK['JOB-SMALL-DESCRIPTION-LABEL'] = "Über Ihr Unternehmen (Kurzbeschreibung)";
 
-$BIZBOOK['JOB-SELECT-JOB-LOCATION-LABEL'] = "Select Job Location";
+$BIZBOOK['JOB-SELECT-JOB-LOCATION-LABEL'] = "Wählen Sie den Arbeitsort aus";
 
-$BIZBOOK['JOB-PERMANENT'] = "Permanent";
+$BIZBOOK['JOB-PERMANENT'] = "Dauerhaft";
 
-$BIZBOOK['JOB-CONTRACT'] = "Contract";
+$BIZBOOK['JOB-CONTRACT'] = "Vertrag";
 
-$BIZBOOK['JOB-PART-TIME'] = "Part time";
+$BIZBOOK['JOB-PART-TIME'] = "Teilzeit";
 
-$BIZBOOK['JOB-FREELANCE'] = "Freelance";
+$BIZBOOK['JOB-FREELANCE'] = "Freiberuflich";
 
-$BIZBOOK['JOB-POST-NEW-JOB'] = "Post New Job";
+$BIZBOOK['JOB-CONTRACT-PROJECT'] = "Projektbezogen";
 
-$BIZBOOK['JOB-EDIT-THIS-JOB'] = "Edit This Job";
+$BIZBOOK['JOB-POST-NEW-JOB'] = "Neuen Job erstellen";
 
-$BIZBOOK['JOB-DELETE-THIS-JOB'] = "Delete This Job";
+$BIZBOOK['JOB-EDIT-THIS-JOB'] = "Job Bearbeiten";
 
-$BIZBOOK['ADD_NEW_JOB'] = "Add New Job";
+$BIZBOOK['JOB-DELETE-THIS-JOB'] = "Job löschen";
+
+$BIZBOOK['ADD_NEW_JOB'] = "Job hinzufügen";
 
 $BIZBOOK['JOB_NAME'] = "Job Name";
 
-$BIZBOOK['JOB_APPLICANTS'] = "Job Applicants";
+$BIZBOOK['JOB_APPLICANTS'] = "Job Bewerber";
 
-$BIZBOOK['JOB_APPLICANT_PROFILE'] = "Job Applicant Profiles";
+$BIZBOOK['JOB_APPLICANT_PROFILE'] = "Job Bewerber Profile";
 
 $BIZBOOK['JOB_DETAILS'] = "Job Details";
 
@@ -1691,7 +1710,7 @@ $BIZBOOK['JOB-UPDATE-NOW'] = "Update Now";
 
 $BIZBOOK['JOB_ALL_APPLI_PROFILE'] = "All Applicants Profile";
 
-$BIZBOOK['JOB_APPLI_NAME'] = "Applicant Name";
+$BIZBOOK['JOB_APPLI_NAME'] = "Bewerber Name";
 
 $BIZBOOK['JOB_APPLI_PHONE'] = "Mobile";
 
@@ -1703,19 +1722,19 @@ $BIZBOOK['JOB_APPLI_RESUME'] = "Resume";
 
 $BIZBOOK['JOB_IMMEDIATE_JOINEE'] = "Immediate joinee";
 
-$BIZBOOK['JOB_15_DAYS'] = "15 Days";
+$BIZBOOK['JOB_15_DAYS'] = "15 Tage";
 
-$BIZBOOK['JOB_1_MONTH'] = "1 Month";
+$BIZBOOK['JOB_1_MONTH'] = "1 Monat";
 
-$BIZBOOK['JOB_2_MONTHS'] = "2 Months";
+$BIZBOOK['JOB_2_MONTHS'] = "2 Monate";
 
-$BIZBOOK['JOB_3_MONTHS'] = "3 Months";
+$BIZBOOK['JOB_3_MONTHS'] = "3 Monate";
 
-$BIZBOOK['JOB_6_MONTHS'] = "6 Months";
+$BIZBOOK['JOB_6_MONTHS'] = "6 Monate";
 
-$BIZBOOK['JOB_1_YEAR'] = "1 Year";
+$BIZBOOK['JOB_1_YEAR'] = "1 Jahr";
 
-$BIZBOOK['JOB_2_YEARS'] = "2 Years";
+$BIZBOOK['JOB_2_YEARS'] = "2 Jahre";
 
 $BIZBOOK['JOB_EXTRA_COURSES'] = "Extra courses";
 
@@ -1725,79 +1744,83 @@ $BIZBOOK['JOB_OTHERS_1'] = "Others 1";
 
 $BIZBOOK['JOB_OTHERS_2'] = "Others 2";
 
-$BIZBOOK['JOB_APPLY_THIS_JOB_NOW'] = "Apply this job now";
+$BIZBOOK['JOB_APPLY_THIS_JOB_NOW'] = "Bewerben Sie sich für diesen Job";
 
-$BIZBOOK['JOB_ALREADY_APPLIED_THIS_JOB'] = "Already Applied this job";
+$BIZBOOK['JOB_ALREADY_APPLIED_THIS_JOB'] = "Sie haben sich bereits für diesen Job beworben";
 
-$BIZBOOK['JOB_APPLY_THIS_JOB'] = "Apply this job";
+$BIZBOOK['JOB_APPLY_THIS_JOB'] = "Bewerben Sie sich für diesen Job";
 
-$BIZBOOK['JOB_SUMMARY'] = "Job Summary";
+$BIZBOOK['JOB_MIN_EXPERIANCE_YEARS'] = "Jahre Erfahrung";
+
+$BIZBOOK['APPLICATION_OPEN_UNTIL'] = "BEWERBUNGSFRIST";
+
+$BIZBOOK['JOB_SUMMARY'] = "Job Zusammenfassung";
 
 $BIZBOOK['JOB_GENDER'] = "Gender";
 
-$BIZBOOK['JOB_EDUCATION'] = "Education";
+$BIZBOOK['JOB_EDUCATION'] = "Bildungsgrad";
 
-$BIZBOOK['JOB_PUBLISHED_ON'] = "Published on";
+$BIZBOOK['JOB_PUBLISHED_ON'] = "Veröffentlicht am";
 
-$BIZBOOK['JOB_APPLY_NOW'] = "Apply now";
+$BIZBOOK['JOB_APPLY_NOW'] = "Jetzt Bewerben";
 
-$BIZBOOK['JOB_ALREADY_APPLIED'] = "Already Applied";
+$BIZBOOK['JOB_ALREADY_APPLIED'] = "Bereits beworben!";
 
 $BIZBOOK['JOB_SHARE'] = "Share";
 
-$BIZBOOK['JOB_RELATED_JOB_OPENINGS'] = "Related job openings";
+$BIZBOOK['JOB_RELATED_JOB_OPENINGS'] = "Verwandte Stellenangebote";
 
-$BIZBOOK['JOB_MORE_DETAILS'] = "More details";
+$BIZBOOK['JOB_MORE_DETAILS'] = "Mehr Details";
 
-$BIZBOOK['JOB_OPENINGS'] = "Openings";
+$BIZBOOK['JOB_OPENINGS'] = "Stellenangebote";
 
-$BIZBOOK['APPLICANTS'] = "Applicants";
+$BIZBOOK['APPLICANTS'] = "Bewerber";
 
-$BIZBOOK['JOB-HEADER-H1'] = "Find your next job now";
+$BIZBOOK['JOB-HEADER-H1'] = "Finden Sie jetzt Ihren nächsten Job";
 
-$BIZBOOK['JOB-HEADER-P'] = "Over 100,000+ jobs are waiting for you";
+$BIZBOOK['JOB-HEADER-P'] = "Viele Jobs warten auf Sie";
 
-$BIZBOOK['JOB-POSTED'] = "Job Posted";
+$BIZBOOK['JOB-POSTED'] = "Jobangebot veröffentlicht";
 
-$BIZBOOK['JOB-COMPANIES'] = "Companies";
+$BIZBOOK['JOB-COMPANIES'] = "Unternehmen";
 
-$BIZBOOK['JOB-EMPLOYEES'] = "Employees";
+$BIZBOOK['JOB-EMPLOYEES'] = "Mitarbeiter";
 
-$BIZBOOK['JOB-HEADER-H2'] = "Popular Categories";
+$BIZBOOK['JOB-HEADER-H2'] = "Beliebte Kategorien";
 
-$BIZBOOK['JOB-HEADER-P2'] = "Find jobs from various domain";
+$BIZBOOK['JOB-HEADER-P2'] = "Finden Sie Jobs aus verschiedenen Bereichen";
 
-$BIZBOOK['JOB-HEADER-H3'] = "Trending Jobs";
+$BIZBOOK['JOB-HEADER-H3'] = "Trendjobs";
 
 $BIZBOOK['JOB-HEADER-P3'] = "lacinia viverra lectus. Fusce imperdiet ullamcorper metus eu fringilla.";
 
 $BIZBOOK['JOB-HEADER-H4'] = "Premium Jobs";
 
-$BIZBOOK['JOB-SHOWING'] = "Showing";
+$BIZBOOK['JOB-SHOWING'] = "Angezeigt";
 
-$BIZBOOK['JOB-VACANCY'] = "Vacancy";
+$BIZBOOK['JOB-VACANCY'] = "Offene Stellen";
 
-$BIZBOOK['JOB-PROFILE-H1'] = "Get Personalised Jobs";
+$BIZBOOK['JOB-PROFILE-H1'] = "Erhalten Sie personalisierte Jobs";
 
 $BIZBOOK['JOB-PROFILE-P'] = "Tell us what kind of a job you are looking for and stay updated with latest opportunities.";
 
-$BIZBOOK['JOB-PROFILE-A'] = "Register for free";
+$BIZBOOK['JOB-PROFILE-A'] = "Kostenfrei Registrieren";
 
 $BIZBOOK['JOB-RELATED-PROFILES'] = "Related profiles";
 
-$BIZBOOK['JOB-PROFILE-POST-H1'] = "Post your job";
+$BIZBOOK['JOB-PROFILE-POST-H1'] = "Jobangebot veröffentlichen";
 
 $BIZBOOK['JOB-PROFILE-POST-P'] = "Post your job openings and hire more professional employee";
 
 $BIZBOOK['JOB-PROFILE-POST-A'] = "Post job";
 
-$BIZBOOK['JOB-HOME-JOIN-COMP-TIT'] = "Post a Job & Hire best candidates ";
-$BIZBOOK['JOB-HOME-JOIN-COMP-SUB-TIT'] = "Post your job openings and hire more professional candidates";
-$BIZBOOK['JOB-HOME-JOIN-COMP-CTA'] = "Post a Job";
+$BIZBOOK['JOB-HOME-JOIN-COMP-TIT'] = "Jobangebot veröffenlichen & und die besten Kandidaten finden";
+$BIZBOOK['JOB-HOME-JOIN-COMP-SUB-TIT'] = "Veröffentlichen Sie Ihre Stellenangebote und stellen Sie mehr professionelle Kandidaten ein";
+$BIZBOOK['JOB-HOME-JOIN-COMP-CTA'] = "Jobangebot veröffenlichen";
 
-$BIZBOOK['JOB-HOME-JOIN-EMP-TIT'] = "Are you looking for a job?";
-$BIZBOOK['JOB-HOME-JOIN-EMP-SUB-TIT'] = "Tell us what kind of a job you are looking for and stay updated with latest opportunities.";
-$BIZBOOK['JOB-HOME-JOIN-EMP-CTA'] = "Register for free";
+$BIZBOOK['JOB-HOME-JOIN-EMP-TIT'] = "Suchen Sie eine Arbeitsstelle?";
+$BIZBOOK['JOB-HOME-JOIN-EMP-SUB-TIT'] = "Teilen Sie uns mit, nach welcher Art von Stelle Sie suchen, und bleiben Sie über die neuesten Stellenangebote auf dem Laufenden.";
+$BIZBOOK['JOB-HOME-JOIN-EMP-CTA'] = "Jetzt Kostenlos registrieren";
 
 
 //************************* SERVICE EXPERT PAGE TEXT ***********
@@ -2067,7 +2090,7 @@ $BIZBOOK['NEWS-COPY-TEXT'] = "Copy text";
 
 $BIZBOOK['NEWS-COPIED'] = "Copied";
 
-$BIZBOOK['NEWS-HOMEPAGE-BANNER-H1-TEXT-1'] = "Bizbook";
+$BIZBOOK['NEWS-HOMEPAGE-BANNER-H1-TEXT-1'] = "BizDir";
 
 $BIZBOOK['NEWS-HOMEPAGE-BANNER-H1-TEXT-2'] = "News & Magazines";
 
@@ -2092,7 +2115,7 @@ $BIZBOOK['PLACE-HOME-H-1'] = "Explore your Travel";
 
 $BIZBOOK['PLACE-HOME-P-1-1'] = "Plan your travel with";
 
-$BIZBOOK['PLACE-HOME-B-1-1'] = "Bizbook";
+$BIZBOOK['PLACE-HOME-B-1-1'] = "BizDir";
 
 $BIZBOOK['PLACE-HOME-SEARCH-OPTION-1'] = "Find your place now";
 
@@ -2102,7 +2125,7 @@ $BIZBOOK['PLACE-HOME-H-2-1'] = "Travel places";
 
 $BIZBOOK['PLACE-HOME-P-2-1'] = "Start planning your next trip with a little help from ";
 
-$BIZBOOK['PLACE-HOME-B-2-1'] = "Bizbook";
+$BIZBOOK['PLACE-HOME-B-2-1'] = "BizDir";
 
 $BIZBOOK['PLACE-MORE-DETAILS'] = "More details";
 
@@ -2172,25 +2195,25 @@ $BIZBOOK['PLACE-TOP-NEARBY-SERVICES'] = "Top Near by Services";
 
 $BIZBOOK['PLACE-TOP-NEARBY-SERVICES-P'] = "Start planning your next trip with a little help from";
 
-$BIZBOOK['PLACE-TOP-NEARBY-SERVICES-B'] = "Bizbook";
+$BIZBOOK['PLACE-TOP-NEARBY-SERVICES-B'] = "BizDir";
 
 $BIZBOOK['PLACE-EVENTS-H2'] = "Events in";
 
 $BIZBOOK['PLACE-EVENTS-P'] = "Start planning your next trip with a little help from";
 
-$BIZBOOK['PLACE-EVENTS-B'] = "Bizbook";
+$BIZBOOK['PLACE-EVENTS-B'] = "BizDir";
 
 $BIZBOOK['PLACE-EXPERTS-H2'] = "Services Experts in";
 
 $BIZBOOK['PLACE-EXPERTS-P'] = "Start planning your next trip with a little help from";
 
-$BIZBOOK['PLACE-EXPERTS-B'] = "Bizbook";
+$BIZBOOK['PLACE-EXPERTS-B'] = "BizDir";
 
 $BIZBOOK['PLACE-NEWS-H2'] = "News & Articles in";
 
 $BIZBOOK['PLACE-NEWS-P'] = "Start planning your next trip with a little help from";
 
-$BIZBOOK['PLACE-NEWS-B'] = "Bizbook";
+$BIZBOOK['PLACE-NEWS-B'] = "BizDir";
 
 //************************* COUPON PAGE TEXT ***********
 
@@ -2350,10 +2373,7 @@ $BIZBOOK['DB-PAYMENTS-PAYTM-IS-RAZOR'] = "What is PayTm?";
 
 $BIZBOOK['DB-PAYMENTS-FOOTER-NOTES'] = "Notes";
 
-$BIZBOOK['DB-PAYMENTS-FOOTER-NOTES-MESSAGE'] = "Hi, Before start \"Ads Payment\" you must know the pricing details and positions and all.
-                    You just click the \"Pricing and other details\" button in this same page and you know the all
-                    details. If your payment done means your invoice automatically received your \"Payment invoice\" page
-                    and you never stop your Ads till the end date.";
+$BIZBOOK['DB-PAYMENTS-FOOTER-NOTES-MESSAGE'] = "DB-PAYMENTS-FOOTER-NOTES-MESSAGE";
 
 //************************* E-BOOK PAGE TEXT ***********
 
@@ -2368,6 +2388,16 @@ $BIZBOOK['EVENT-DETAILS-EVENT-INFORMATION'] = "Event information";
 $BIZBOOK['EVENT-DETAILS-SHARE-THIS-EVENT'] = "Share this event";
 
 $BIZBOOK['EVENT-DETAILS-RELATED-EVENTS'] = "Related Events";
+
+$BIZBOOK['EVENT-HOMEPAGE-BANNER-H1-TEXT-1'] = "BizDir";
+
+$BIZBOOK['EVENT-HOMEPAGE-BANNER-H1-TEXT-2'] = "Events";
+
+$BIZBOOK['EVENT-HOMEPAGE-BANNER-P-TEXT'] = "All Events updates in one place.";
+
+$BIZBOOK['EVENT-HOMEPAGE-BANNER-P-TEXT-1'] = "All";
+
+$BIZBOOK['EVENT-HOMEPAGE-BANNER-P-TEXT-2'] = "events in one place.";
 
 //************************* FEEDBACK PAGE TEXT ***********
 
@@ -2409,7 +2439,7 @@ $BIZBOOK['FOOTER-SOCIAL-MEDIA'] = "SOCIAL MEDIA";
 
 $BIZBOOK['FOOTER-COPYRIGHT'] = "Copyright";
 
-$BIZBOOK['FOOTER-PROUDLY-POWERED-BY'] = "Proudly powered by";
+$BIZBOOK['FOOTER-PROUDLY-POWERED-BY'] = "Service bereitgestellt von";
 
 //************************* PROMOTE BUSINESS PAGE TEXT ***********
 
@@ -2712,7 +2742,7 @@ $BIZBOOK['EVENT_INSERT_CLIENT_SUBJECT'] = "- Event Creation Successful";
 
 //************************* ABOUT US PAGE ***********
 
-$BIZBOOK['pg_abo_ban_tit'] = "About us";
+$BIZBOOK['pg_abo_ban_tit'] = "Über Uns";
 
 $BIZBOOK['pg_abo_ban_sub_tit'] = "injected humourThere are many variations of passages of Lorem Ipsum available now";
 

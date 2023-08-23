@@ -4,8 +4,46 @@ include "header.php";
 if ($footer_row['admin_event_show'] != 1) {
     header("Location: " . $webpage_full_link . "dashboard");
 }
-
 ?>
+
+<!-- START -->
+<section class="event-hom-ban">
+    <div class="event-hom-ban-inn">
+        <h1><b><?php echo $BIZBOOK['EVENT-HOMEPAGE-BANNER-H1-TEXT-1']; ?></b> <?php echo $BIZBOOK['EVENT-HOMEPAGE-BANNER-H1-TEXT-2']; ?></h1>
+        <p><?php echo $BIZBOOK['EVENT-HOMEPAGE-BANNER-P-TEXT']; ?></p>
+    </div>
+</section>
+<!--END-->
+
+<!-- START --> 
+<section class="news-hom-top">
+    <div class="news-hom-top-inn">
+        <div class="container">
+            <div class="row">
+                <div class="filt-com lhs-ads">
+                  <ul>
+                    <li>  
+                        <!-- START MyAds  -->
+                        <?php
+                            //*Ad Position: Home Page Middle
+                            $zone_prefix = '(2)';
+                            $ad_width    = 1170;
+                            $ad_code = getMyAdsCode( $zone_prefix, $ad_width );
+                            if ( $ad_code ) { ?>
+                                <i onclick="window.open('advertising.php', '_blank');"><img src="<?=SITE_ICON;?>/info-x32.png" alt="Ad Info" title="<?=$BIZBOOK['ADS_TITLE'];?>"></i>
+                                <div class='ads-box'>
+                                    <?php echo $ad_code; ?>
+                                </div>
+                            <?php } ?>
+                        <!-- END MyAds-->  
+                     </li>
+                   </ul>  
+                 </div>  
+            </div>
+        </div>    
+    </div>        
+</section>  
+
 <?php
 if (isset($_GET['category']) && !empty($_REQUEST['category'])) {
 
@@ -129,6 +167,8 @@ if (isset($_REQUEST['calendar-date']) && !empty($_REQUEST['calendar-date'])  && 
 </section>
 <!--END-->
 
+<div style="height:50px;background-color: #f8f9fb; max-width: 1200px; margin: 0 auto;"></div>
+
 <!-- START -->
 <section class="<?php if ($footer_row['admin_language'] == 2) {
     echo "lg-arb";
@@ -213,32 +253,76 @@ if (isset($_REQUEST['calendar-date']) && !empty($_REQUEST['calendar-date'])  && 
                     </ul>
                 </form>
             </div>
-        </br>
+            </br>
             <!--START-->
-            <div class="filt-com lhs-ads">
+            <div class="filt-com lhs-ads" style="padding: 13px!important;">
                 <ul>
                     <li>
-                        <div class="ads-box">
-                            <?php
-                            $ad_position_id = 13;   //Ad position on All Events page left
-                            $get_ad_row = getAds($ad_position_id);
-                            $ad_enquiry_photo = $get_ad_row['ad_enquiry_photo'];
-                            ?>
-                            <a href="<?php echo stripslashes($get_ad_row['ad_link']); ?>">
-                                <span><?php echo $BIZBOOK['AD']; ?></span>
-
-                                <img
-                                        src="<?php echo $slash; ?>images/ads/<?php if ($ad_enquiry_photo != NULL || !empty($ad_enquiry_photo)) {
-                                            echo $ad_enquiry_photo;
-                                        } else {
-                                            echo "ads1.jpg";
-                                        } ?>" alt="">
-                            </a>
-                        </div>
+                        <!-- START MyAds Sitebar  -->
+                        <?php
+                            //*Ad Position: Events Page Left Sitebar
+                            $zone_prefix = '(2)';
+                            $ad_width    = 270;
+                            $ad_code = getMyAdsCode( $zone_prefix, $ad_width );
+                            if ( $ad_code ) { ?>
+                                <i onclick="window.open('advertising.php', '_blank');"><img src="<?=SITE_ICON;?>/info-x32.png" alt="Ad Info" title="<?=$BIZBOOK['ADS_TITLE'];?>"></i>
+                                <div class="ads-box"  style="padding: 11px!important;">
+                                    <?php echo $ad_code; ?>
+                                </div>
+                            <?php } ?>
+                        <!-- END MyAds-->  
                     </li>
                 </ul>
             </div>
             <!--END-->
+
+            </br>
+            <!--START-->
+            <div class="filt-com lhs-ads" style="padding: 13px!important;">
+                <ul>
+                    <li>
+                        <!-- START MyAds Sitebar  -->
+                        <?php
+                            //*Ad Position: Events Page Left Sitebar
+                            $zone_prefix = '(2)';
+                            $ad_width    = 225;
+                            $ad_code = getMyAdsCode( $zone_prefix, $ad_width );
+                            if ( $ad_code ) { ?>
+                                <i onclick="window.open('advertising.php', '_blank');"><img src="<?=SITE_ICON;?>/info-x32.png" alt="Ad Info" title="<?=$BIZBOOK['ADS_TITLE'];?>"></i>
+                                <div class="ads-box"  style="padding: 11px!important;">
+                                    <?php echo $ad_code; ?>
+                                </div>
+                            <?php } ?>
+                        <!-- END MyAds-->  
+                    </li>
+                </ul>
+            </div>
+            <!--END-->
+
+            </br>
+            <!--START-->
+            <div class="filt-com lhs-ads" style="padding: 13px!important;">
+                <ul>
+                    <li>
+                        <!-- START MyAds Sitebar  -->
+                        <?php
+                            //*Ad Position: Events Page Left Sitebar
+                            $zone_prefix = '(2)';
+                            $ad_width    = 270;
+                            $ad_code = getMyAdsCode( $zone_prefix, $ad_width );
+                            if ( $ad_code ) { ?>
+                                <i onclick="window.open('advertising.php', '_blank');"><img src="<?=SITE_ICON;?>/info-x32.png" alt="Ad Info" title="<?=$BIZBOOK['ADS_TITLE'];?>"></i>
+                                <div class="ads-box"  style="padding: 11px!important;">
+                                    <?php echo $ad_code; ?>
+                                </div>
+                            <?php } ?>
+                        <!-- END MyAds-->  
+                    </li>
+                </ul>
+            </div>
+            <!--END-->            
+            
+            
         </div>
 
         <div class="us-ppg-com">
@@ -455,10 +539,11 @@ include "footer.php";
      });*/
     $('.multiple-items1').slick({
         infinite: true,
-        slidesToShow: 5,
+        slidesToShow: 3,
         slidesToScroll: 1,
         autoplay: true,
         autoplaySpeed: 3000,
+        lazyLoad: false,
         responsive: [{
             breakpoint: 992,
             settings: {

@@ -1,8 +1,8 @@
 <?php
 # Prevent warning. #
 //error_reporting(0);
-error_reporting(E_ALL & ~E_NOTICE & ~E_WARNING | E_STRICT);
-
+error_reporting(E_ALL & ~E_NOTICE & ~E_WARNING & E_STRICT & ~E_DEPRECATED);
+//error_reporting(E_ALL);
 ob_start();
  
 define('DB_HOSTNAME', 'localhost');
@@ -22,7 +22,8 @@ switch ($subdomain) {
         define('COUNTRY_ID', '001'); 
         define('COUNTRY_NAME', 'USA');
         define('COUNTRY_LANG', 'en');   
-        define('COUNTRY_TIMEZONE', 'Europe/London');      
+        define('COUNTRY_TIMEZONE', 'Europe/London');  
+        define('COUNTRY_DATETIME', 'Y-m-d H:i:s');     
         define('COUNTRY_REQUIRED_LISTING_NAME_EN', false);  
         break;
     case 'de':
@@ -33,6 +34,7 @@ switch ($subdomain) {
         define('COUNTRY_NAME', 'Germany');
         define('COUNTRY_LANG', 'de');
         define('COUNTRY_TIMEZONE', 'Europe/Berlin');
+        define('COUNTRY_DATETIME', 'd-m-Y H:i:s'); 
         define('COUNTRY_REQUIRED_LISTING_NAME_EN', false);  
         break;     
     case 'fr':
@@ -43,6 +45,7 @@ switch ($subdomain) {
         define('COUNTRY_NAME', 'France');
         define('COUNTRY_LANG', 'fr');
         define('COUNTRY_TIMEZONE', 'Europe/Paris');
+        define('COUNTRY_DATETIME', 'd-m-Y H:i:s');
         define('COUNTRY_REQUIRED_LISTING_NAME_EN', false);  
         break;                     
     default:
@@ -54,6 +57,7 @@ switch ($subdomain) {
         define('COUNTRY_NAME', 'USA');
         define('COUNTRY_LANG', 'en');
         define('COUNTRY_TIMEZONE', 'America/New_York');
+        define('COUNTRY_DATETIME', 'Y-m-d H:i:s'); 
         define('COUNTRY_REQUIRED_LISTING_NAME_EN', false);  
 }
 
@@ -73,7 +77,7 @@ if(COUNTRY_PREFIX == 'ww_'){
 
 
 $webpage_full_link_url = "https://".COUNTRY_SUBDOMAIN."bizdir.online/";  #Important Please Paste your WebPage Full URL (i.e https://bizbookdirectorytemplate.com/)
-
+define('SITE_ICON',$webpage_full_link_url.'images/icon');
 
 # Connection to the database. #
 $conn = mysqli_connect(DB_HOSTNAME, DB_USERNAME, DB_PASSWORD)

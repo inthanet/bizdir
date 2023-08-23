@@ -403,9 +403,11 @@ if (isset($query['city']) && !empty($query['city'])) {
                                                     <input type="checkbox" class="sub_cat_check" name="sub_cat_check"
                                                            value="<?php echo $hyphend_sub_category_name2; ?>"
                                                         <?php
-                                                        $subcategory_id_new = explode(',', $_GET['subcategory']);
-                                                        if (in_array($hyphend_sub_category_name2, $subcategory_id_new)) {
-                                                            echo "checked";
+                                                        if(isset($_GET['subcategory'])){
+                                                            $subcategory_id_new = explode(',', $_GET['subcategory']);
+                                                            if (in_array($hyphend_sub_category_name2, $subcategory_id_new)) {
+                                                                echo "checked";
+                                                            } 
                                                         } ?>
                                                            id="<?php echo $sub_category_row['sub_category_name']; ?>"/>
                                                     <label
@@ -437,10 +439,12 @@ if (isset($query['city']) && !empty($query['city'])) {
                                                     <input type="checkbox" name="feature_check"
                                                            value="<?php echo $featuredfilterrow['all_featured_filter_value']; ?>"
                                                         <?php
-                                                        $feature_new = explode(',', $_GET['feature']);
-                                                        if (in_array($hyphend_feature_name, $feature_new)) {
-                                                            echo "checked";
-                                                        } ?>
+                                                        if(isset($_GET['feature'])){
+                                                            $feature_new = explode(',', $_GET['feature']);
+                                                            if (in_array($hyphend_feature_name, $feature_new)) {
+                                                                echo "checked";
+                                                            }
+                                                         } ?>
                                                            class="feature_check"
                                                            id="<?php echo $featuredfilterrow['all_featured_filter_value']; ?>"/>
                                                     <label
@@ -552,28 +556,23 @@ if (isset($query['city']) && !empty($query['city'])) {
                             }
                             ?>
                             <!--START-->
-                            <div class="filt-com lhs-ads">
+                            <div class="filt-com lhs-ads" style="padding: 13px!important;">
                                 <ul>
                                     <li>
-                                        <div class="ads-box">
-                                            <?php
-                                            $ad_position_id = 4;   //Ad position on All Listing page Left
-                                            $get_ad_row = getAds($ad_position_id);
-                                            $ad_enquiry_photo = $get_ad_row['ad_enquiry_photo'];
-                                            ?>
-                                            <a href="<?php echo stripslashes($get_ad_row['ad_link']); ?>">
-                                                <span><?php echo $BIZBOOK['AD']; ?></span>
-
-                                                <img
-                                                src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class="b-lazy" data-src="<?php echo $slash; ?>images/ads/<?php if ($ad_enquiry_photo != NULL || !empty($ad_enquiry_photo)) {
-                                                            echo $ad_enquiry_photo;
-                                                        } else {
-                                                            echo "ads1.jpg";
-                                                        } ?>" alt="">
-                                            </a>
-                                        </div>
+                                        <!-- START MyAds Sitebar -->
+                                        <?php
+                                            //*Ad Position: Blog Post Page Left Sitebar
+                                            $zone_prefix = '(2)';
+                                            $ad_width    = 270;
+                                            $ad_code = getMyAdsCode( $zone_prefix, $ad_width );
+                                            if ( $ad_code ) { ?>
+                                                <i onclick="window.open('advertising.php', '_blank');"><img src="<?=SITE_ICON;?>/info-x32.png" alt="Ad Info" title="<?=$BIZBOOK['ADS_TITLE'];?>"></i>
+                                                <div class="ads-box"  style="padding: 11px!important;">
+                                                    <?php echo $ad_code; ?>
+                                                </div>
+                                            <?php } ?>
+                                        <!-- END MyAds-->  
                                     </li>
-
                                 </ul>
                             </div>
                             <!--END-->
@@ -716,21 +715,29 @@ if (isset($query['city']) && !empty($query['city'])) {
                         </ul>
                     </div>-->
                         <!-- END LISTING INN FILTER -->
-                        <!--ADS-->
-                        <div class="ban-ati-com ads-all-list">
-                            <?php
-                            $ad_position_id = 2;   //Ad position on All Listing page Top
-                            $get_ad_row = getAds($ad_position_id);
-                            $ad_enquiry_photo = $get_ad_row['ad_enquiry_photo'];
-                            ?>
-                            <a href="<?php echo stripslashes($get_ad_row['ad_link']); ?>"><span><?php echo $BIZBOOK['AD']; ?></span><img
-                                        src="<?php echo $slash; ?>images/ads/<?php if ($ad_enquiry_photo != NULL || !empty($ad_enquiry_photo)) {
-                                            echo $ad_enquiry_photo;
-                                        } else {
-                                            echo "59040boat-728x90.png";
-                                        } ?>"></a>
-                        </div>
-                        <!--ADS-->
+                        <!-- START MyAds  -->
+                        <?php
+                            //*Ad Position: Home Page Middle
+                            $zone_prefix = '(2)';
+                            $ad_width    = 728;
+                            $ad_code = getMyAdsCode( $zone_prefix, $ad_width );
+                            if ( $ad_code ) { ?>
+                                <section>
+                                    <div class='container'>
+                                        <div class='hom-ads'>
+                                            <div class='row'>
+                                                <div class='filt-com lhs-ads'>
+                                                    <i onclick="window.open('advertising.php', '_blank');"><img src="<?=SITE_ICON;?>/info-x32.png" alt="Ad Info" title="<?=$BIZBOOK['ADS_TITLE'];?>"></i>
+                                                    <div class='ads-box'>
+                                                        <?php echo $ad_code; ?>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+                            <?php } ?>
+                        <!-- END MyAds--> >
 
                         <!--RESULTS SELECTED FILTER-->
                         <div class="listng-res">

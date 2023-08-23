@@ -108,7 +108,7 @@ if ($current_page == "company-profile.php") {
 }
 if ($current_page == "target-listing.php") {
 
-    if ($_GET['code'] == NULL && empty($_GET['code'])) {
+    if (!isset($_GET['code']) OR $_GET['code']  == NULL OR empty($_GET['code'])) {
 
         header("Location: dashboard");
     }

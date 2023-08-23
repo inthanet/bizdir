@@ -54,7 +54,7 @@
                                    class="<?php if ($current_page == "db-jobs.php") {
                                        echo "db-lact";
                                    } ?>"><img loading="lazy" src="<?php echo $slash; ?>images/icon/employee.png"
-                                              alt=""/><?php echo $BIZBOOK['JOBS']; ?></a>
+                                              alt=""/><?php echo $BIZBOOK['MY_JOB_POSTS']; ?></a>
                             </li>
                         <?php } ?>
                         <?php if ($footer_row['admin_product_show'] == 1 && $user_details_row['setting_product_show'] == 1) { ?>
@@ -144,11 +144,12 @@
                                           alt=""/><?php echo $BIZBOOK['POINTS_HISTORY']; ?></a>
                         </li>
                         <li>
-                            <a href="<?php echo $slash; ?>db-post-ads"
-                               class="<?php if ($current_page == "db-post-ads.php") {
+                            <!-- db-post-ads.php -->
+                            <a href="<?php echo $slash; ?>advertising.php" target="_blank"
+                               class="<?php if ($current_page == "advertising.php") {
                                    echo "db-lact";
                                } ?>"><img loading="lazy" src="<?php echo $slash; ?>images/icon/dbl11.png"
-                                          alt=""/><?php echo $BIZBOOK['AD_SUMMARY']; ?></a>
+                                          alt=""/><?php echo $BIZBOOK['ADVERTISING']; ?></a>
                         </li>
                         <li>
                             <a href="<?php echo $slash; ?>db-invoice-all"

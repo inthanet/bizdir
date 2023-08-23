@@ -1,28 +1,35 @@
 <?php
+//********************       ITCS ADVERTISING       *****************
+$BIZBOOK['ADS_TITLE'] = "Your Banner Ads Here";
+$BIZBOOK['ADS_SUPPORT'] = "Bei Fragen steht Inen unser Service Team 24/7 via eTicket System zu Verfügung.<hr>";
 
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+$BIZBOOK['ADS_HEADLINE'] = "ITCS-ASIA Online Banner Werbung";
+$BIZBOOK['ADS_SUBHEADLINE'] = "Steigern Sie Ihre Reichweite mit inspirierender ITCS-ASIA Online Banner Werbung.<br>Erreichen Sie neue Höhen der Effektivität und Erfolg!";
+$BIZBOOK['ADS_INTRO_HL'] = "Die Macht der Online Banner Werbung: <u>Neue Horizonte für Ihren Erfolg!</u>";
+$BIZBOOK['ADS_INTRO_1'] = "In der heutigen digitalen Ära hat sich die Werbelandschaft drastisch verändert, und Unternehmen haben erkannt, dass Online Banner Werbung ein entscheidender Faktor ist, um ihre Zielgruppe zu erreichen und den Unternehmenserfolg zu steigern. Durch die geschickte Platzierung inspirierender Banner können Unternehmen ihre Reichweite erheblich erweitern und potenzielle Kunden auf eine kreative und ansprechende Art und Weise ansprechen.";
+$BIZBOOK['ADS_INTRO_2'] = "Der größte Vorteil der Online Banner Werbung liegt in ihrer enormen Sichtbarkeit. Im Gegensatz zu traditionellen Werbemitteln, die oft auf lokale Zielgruppen beschränkt sind, haben Online Banner die Fähigkeit, eine globale Präsenz zu schaffen. Mit einer strategischen Platzierung auf relevanten Websites, sozialen Medien und Suchmaschinen können Unternehmen ihre Botschaften über Grenzen hinweg verbreiten und gezielt ihre Zielgruppen ansprechen.";
+$BIZBOOK['ADS_INTRO_3'] = "Ein weiterer unschätzbarer Vorteil ist die Interaktivität von Online Bannern. Moderne Technologien ermöglichen es, ansprechende und interaktive Elemente in die Banner zu integrieren, die das Publikum auf einzigartige Weise ansprechen und fesseln können. Von animierten Grafiken über Call-to-Action-Buttons bis hin zu personalisierten Inhalten - die Möglichkeiten sind grenzenlos und erlauben es den Unternehmen, eine emotionale Verbindung zu ihren potenziellen Kunden herzustellen.";
+$BIZBOOK['ADS_INTRO_4'] = "Darüber hinaus bieten Online Banner Werbung umfangreiche Tracking- und Analysemöglichkeiten. Durch die Verwendung von Tools wie Google Analytics können Unternehmen die Leistung ihrer Bannerkampagnen genau überwachen und wertvolle Einblicke in das Verhalten ihrer Zielgruppe gewinnen. Dies ermöglicht es ihnen, ihre Werbestrategien kontinuierlich zu optimieren und ihre Ressourcen effizient einzusetzen.";
+$BIZBOOK['ADS_INTRO_5'] = "Inspirierende Online Banner Werbung kann auch die Kreativität und Innovationskraft eines Unternehmens zum Ausdruck bringen. Indem sie Geschichten erzählen, Markenwerte vermitteln und unvergessliche visuelle Eindrücke hinterlassen, schaffen diese Banner eine bleibende Erinnerung und fördern die Markenbindung.";
+$BIZBOOK['ADS_INTRO_6'] = "Insgesamt bietet Online Banner Werbung eine Vielzahl von Vorteilen, die weit über die traditionellen Werbemethoden hinausgehen. Mit ihrer globalen Reichweite, Interaktivität, Tracking-Möglichkeiten und kreativen Potenzialen eröffnen sie Unternehmen die Chance, ihre Erfolgsziele zu übertreffen und eine nachhaltige Wirkung auf ihre Zielgruppen zu erzielen. Es ist an der Zeit, die Macht der Online Banner Werbung zu nutzen und das Potenzial Ihres Unternehmens in die nächste Dimension zu führen.";
 
-/***************************************************************************
+$BIZBOOK['ADS_HOW_TIT'] = "Wie funktioniert es?";
+$BIZBOOK['ADS_HOW_SUB_TIT'] = "In 4 einfachen Schritten zum Online Werbeerfolg";
+$BIZBOOK['ADS_HOW_TXT_1'] = "Lorem Ipsum ist ein einfacher Demo-Text für die Print- und Schriftindustrie. Lorem Ipsum ist in der Industrie bereits der Standard Demo-Text seit 1500, als ein unbekannter Schriftsteller eine Hand voll Wörter nahm und diese durcheinander warf um ein Musterbuch zu erstellen.";
+$BIZBOOK['ADS_'] = "";
+$BIZBOOK['ADS_'] = "";
+$BIZBOOK['ADS_'] = "";
+$BIZBOOK['ADS_'] = "";
+$BIZBOOK['ADS_HOW_TXT_2'] = "Lorem Ipsum ist ein einfacher Demo-Text für die Print- und Schriftindustrie.";
+$BIZBOOK['ADS_HOW_FOOTER'] = "Bei Fragen steht Inen unser Service Team 24/7 via eTicket System zu Verfügung.<hr>";
 
-This file helps you to update or change the text on the website.
-
--- First Find the text using CTRL+F.
--- Then replace the text with new one within the double quotes.
-
-(i.e) If i needs to update the text Apple To Orange means
-
--- Find the text Apple in this page
-
-+ $BIZBOOK['APPLE'] = "Apple";   //Old Value
-
--- Update the Apple value to Orange
-
-+ $BIZBOOK['APPLE'] = "Orange";  //New Value
-
--- Finally Save this file.
-
- *************************************************************************/
-
+$BIZBOOK['ADS_HOWMUCH_TIT'] = "Wieviel kostet es?";
+$BIZBOOK['ADS_HOWMUCH_SUB_TIT'] = "Für unter 100 Euro können Sie 365 Tage online Werben!";
+$BIZBOOK['ADS_HOWMUCH_TXT_1'] = "Lorem Ipsum ist ein einfacher Demo-Text für die Print- und Schriftindustrie. Lorem Ipsum ist in der Industrie bereits der Standard Demo-Text seit 1500, als ein unbekannter Schriftsteller eine Hand voll Wörter nahm und diese durcheinander warf um ein Musterbuch zu erstellen.";
+$BIZBOOK['ADS_HOWMUCH_YOU_GET'] = "<br><br>Nachfolgend gelisted was Sie bekommen";
+$BIZBOOK['ADS_HOWMUCH'] = "";
+$BIZBOOK['ADS_HOWMUCH'] = "";
+$BIZBOOK['ADS_HOWMUCH'] = "";
 
 //************************* All Common Texts Starts ***************************
 
@@ -73,6 +80,8 @@ $BIZBOOK['BLOG'] = "Blog";
 $BIZBOOK['JOBS'] = "Jobs";
 
 $BIZBOOK['JOB'] = "Job";
+
+$BIZBOOK['MY_JOB_POSTS'] = "My Job Posts";
 
 $BIZBOOK['JOBS_BRACKET'] = "job(s)";
 
@@ -479,6 +488,8 @@ $BIZBOOK['HOM-WHAT-LOOK-CTA'] = "Get experts";
 $BIZBOOK['HOM-FEW-REASON-LOVE'] = "A few reasons you’ll love Online Business Directory";
 
 $BIZBOOK['HOM-CALL-US-ON'] = "Call us on: +01 6214 6548";
+
+$BIZBOOK['HOM-SUPPORT-DESK'] = "eTicket Support 24/7";
 
 $BIZBOOK['HOM-NO1-BEST-CHOICE'] = "#1 Best choice";
 
@@ -1667,6 +1678,8 @@ $BIZBOOK['JOB-PART-TIME'] = "Part time";
 
 $BIZBOOK['JOB-FREELANCE'] = "Freelance";
 
+$BIZBOOK['JOB-CONTRACT-PROJECT'] = "Project ralated";
+
 $BIZBOOK['JOB-POST-NEW-JOB'] = "Post New Job";
 
 $BIZBOOK['JOB-EDIT-THIS-JOB'] = "Edit This Job";
@@ -1738,6 +1751,10 @@ $BIZBOOK['JOB_EDUCATION'] = "Education";
 $BIZBOOK['JOB_PUBLISHED_ON'] = "Published on";
 
 $BIZBOOK['JOB_APPLY_NOW'] = "Apply now";
+
+$BIZBOOK['JOB_MIN_EXPERIANCE_YEARS'] = "Years Experiance";
+
+$BIZBOOK['APPLICATION_OPEN_UNTIL'] = "APPLICATION OPEN UNTIL";
 
 $BIZBOOK['JOB_ALREADY_APPLIED'] = "Already Applied";
 
@@ -2065,7 +2082,7 @@ $BIZBOOK['NEWS-COPY-TEXT'] = "Copy text";
 
 $BIZBOOK['NEWS-COPIED'] = "Copied";
 
-$BIZBOOK['NEWS-HOMEPAGE-BANNER-H1-TEXT-1'] = "Bizbook";
+$BIZBOOK['NEWS-HOMEPAGE-BANNER-H1-TEXT-1'] = "BizDir";
 
 $BIZBOOK['NEWS-HOMEPAGE-BANNER-H1-TEXT-2'] = "News & Magazines";
 
@@ -2090,7 +2107,7 @@ $BIZBOOK['PLACE-HOME-H-1'] = "Explore your Travel";
 
 $BIZBOOK['PLACE-HOME-P-1-1'] = "Plan your travel with";
 
-$BIZBOOK['PLACE-HOME-B-1-1'] = "Bizbook";
+$BIZBOOK['PLACE-HOME-B-1-1'] = "BizDir";
 
 $BIZBOOK['PLACE-HOME-SEARCH-OPTION-1'] = "Find your place now";
 
@@ -2100,7 +2117,7 @@ $BIZBOOK['PLACE-HOME-H-2-1'] = "Travel places";
 
 $BIZBOOK['PLACE-HOME-P-2-1'] = "Start planning your next trip with a little help from ";
 
-$BIZBOOK['PLACE-HOME-B-2-1'] = "Bizbook";
+$BIZBOOK['PLACE-HOME-B-2-1'] = "BizDir";
 
 $BIZBOOK['PLACE-MORE-DETAILS'] = "More details";
 
@@ -2108,7 +2125,7 @@ $BIZBOOK['PLACE-HOME-H-3-1'] = "Start adding a new place";
 
 $BIZBOOK['PLACE-HOME-P-3-1'] = "You can send the suggestion or request to the";
 
-$BIZBOOK['PLACE-HOME-B-3-1'] = "Bizbook Admin";
+$BIZBOOK['PLACE-HOME-B-3-1'] = "BizDir Admin";
 
 $BIZBOOK['PLACE-HOME-SPAN-3-1'] = "Submit a place";
 
@@ -2170,25 +2187,25 @@ $BIZBOOK['PLACE-TOP-NEARBY-SERVICES'] = "Top Near by Services";
 
 $BIZBOOK['PLACE-TOP-NEARBY-SERVICES-P'] = "Start planning your next trip with a little help from";
 
-$BIZBOOK['PLACE-TOP-NEARBY-SERVICES-B'] = "Bizbook";
+$BIZBOOK['PLACE-TOP-NEARBY-SERVICES-B'] = "BizDir";
 
 $BIZBOOK['PLACE-EVENTS-H2'] = "Events in";
 
 $BIZBOOK['PLACE-EVENTS-P'] = "Start planning your next trip with a little help from";
 
-$BIZBOOK['PLACE-EVENTS-B'] = "Bizbook";
+$BIZBOOK['PLACE-EVENTS-B'] = "BizDir";
 
 $BIZBOOK['PLACE-EXPERTS-H2'] = "Services Experts in";
 
 $BIZBOOK['PLACE-EXPERTS-P'] = "Start planning your next trip with a little help from";
 
-$BIZBOOK['PLACE-EXPERTS-B'] = "Bizbook";
+$BIZBOOK['PLACE-EXPERTS-B'] = "BizDir";
 
 $BIZBOOK['PLACE-NEWS-H2'] = "News & Articles in";
 
 $BIZBOOK['PLACE-NEWS-P'] = "Start planning your next trip with a little help from";
 
-$BIZBOOK['PLACE-NEWS-B'] = "Bizbook";
+$BIZBOOK['PLACE-NEWS-B'] = "BizDir";
 
 //************************* COUPON PAGE TEXT ***********
 
@@ -2348,10 +2365,7 @@ $BIZBOOK['DB-PAYMENTS-PAYTM-IS-RAZOR'] = "What is PayTm?";
 
 $BIZBOOK['DB-PAYMENTS-FOOTER-NOTES'] = "Notes";
 
-$BIZBOOK['DB-PAYMENTS-FOOTER-NOTES-MESSAGE'] = "Hi, Before start \"Ads Payment\" you must know the pricing details and positions and all.
-                    You just click the \"Pricing and other details\" button in this same page and you know the all
-                    details. If your payment done means your invoice automatically received your \"Payment invoice\" page
-                    and you never stop your Ads till the end date.";
+$BIZBOOK['DB-PAYMENTS-FOOTER-NOTES-MESSAGE'] = "DB-PAYMENTS-FOOTER-NOTES-MESSAGE";
 
 //************************* E-BOOK PAGE TEXT ***********
 
@@ -2366,6 +2380,16 @@ $BIZBOOK['EVENT-DETAILS-EVENT-INFORMATION'] = "Event information";
 $BIZBOOK['EVENT-DETAILS-SHARE-THIS-EVENT'] = "Share this event";
 
 $BIZBOOK['EVENT-DETAILS-RELATED-EVENTS'] = "Related Events";
+
+$BIZBOOK['EVENT-HOMEPAGE-BANNER-H1-TEXT-1'] = "BizDir";
+
+$BIZBOOK['EVENT-HOMEPAGE-BANNER-H1-TEXT-2'] = "Events";
+
+$BIZBOOK['EVENT-HOMEPAGE-BANNER-P-TEXT'] = "All Events updates in one place.";
+
+$BIZBOOK['EVENT-HOMEPAGE-BANNER-P-TEXT-1'] = "All";
+
+$BIZBOOK['EVENT-HOMEPAGE-BANNER-P-TEXT-2'] = "events in one place.";
 
 //************************* FEEDBACK PAGE TEXT ***********
 
@@ -2407,7 +2431,7 @@ $BIZBOOK['FOOTER-SOCIAL-MEDIA'] = "SOCIAL MEDIA";
 
 $BIZBOOK['FOOTER-COPYRIGHT'] = "Copyright";
 
-$BIZBOOK['FOOTER-PROUDLY-POWERED-BY'] = "Proudly powered by";
+$BIZBOOK['FOOTER-PROUDLY-POWERED-BY'] = "Service provided by";
 
 //************************* PROMOTE BUSINESS PAGE TEXT ***********
 
@@ -2936,7 +2960,6 @@ $BIZBOOK['pg_advert_tit'] = "BizDir Advertising";
 //************************* NEWS & MAGAZINES ***********
 
 $BIZBOOK['NEWS-MAGA'] = "News & Magazines";
-
 $BIZBOOK['NEWS'] = "News";
 
 $BIZBOOK['SEARCHBOX_LABEL_SER'] = "Select Services";

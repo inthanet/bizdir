@@ -59,14 +59,15 @@ $usersqlrow = getUser($job_user_id); // To Fetch particular User Data
                     </div>
                     <div class="job-comp-soc">
                         <ul>
-                            <li class="ic-web"><a href="<?php echo $job_row['contact_website']; ?>" target="_blank"><?php echo $job_row['contact_website']; ?></a></li>
-                            <li class="ic-user"><?php echo $job_row['contact_person']; ?></li>
-                            <li class="ic-eml"><?php echo $job_row['contact_email_id']; ?></li>
-                            <li class="ic-pho"><?php echo $job_row['contact_number']; ?></li>
-
+                            <?php if(!empty($job_row['job_company_name'])){ echo '<li class="ic-building"><b>'.$job_row['job_company_name'].'</b></li>'; } ?>
+                            <?php if(!empty($job_row['contact_person']))  { echo '<li class="ic-web"><a href="'.$job_row['contact_website'].'" target="_blank">'.$job_row['contact_website'].'</a></li>'; } ?>
+                            <?php if(!empty($job_row['contact_person']))  { echo '<li class="ic-user">'.$job_row['contact_person'].'</li>'; } ?>
+                            <?php if(!empty($job_row['contact_email_id'])){ echo '<li class="ic-eml">'.$job_row['contact_email_id'].'</li>'; } ?>
+                            <?php if(!empty($job_row['contact_number']))  { echo '<li class="ic-pho">'.$job_row['contact_number'].'</li>'; } ?>
                         </ul>
                     </div>
                     <div class="job-comp-abo">
+                        <h5 class="job-lhs-tit"><?php echo $BIZBOOK['COMPANY-PROFILE-BRIEF-LABEL']; ?></h5>
                         <p><?php echo stripslashes($job_row['job_small_description']); ?></p>
                         <a href="<?php echo $job_row['contact_website']; ?>" target="_blank"
                            class="cta"><?php echo $BIZBOOK['COMP-PRO']; ?></a>
@@ -126,39 +127,53 @@ $usersqlrow = getUser($job_user_id); // To Fetch particular User Data
                         <div class="job-summ">
                             <h4><?php echo $BIZBOOK['JOB_SUMMARY']; ?></h4>
                             <ul>
-                                <li><span><?php echo $BIZBOOK['JOB-VACANCY']; ?>
+                                <li><span class="yellow"><?php echo $BIZBOOK['JOB_PUBLISHED_ON']; ?>
+                                        :</span> <?php echo dateFormatconverter($job_row['job_cdt']); ?></li>                                
+                                <li><span class="yellow"><?php echo $BIZBOOK['JOB-VACANCY']; ?>
                                         :</span> <?php echo AddingZero_BeforeNumber($job_row['no_of_openings']); ?></li>
-                                <li><span><?php echo $BIZBOOK['JOB-TYPE-LABEL']; ?>:</span> <?php
+                                <li><span class="yellow"><?php echo $BIZBOOK['JOB-TYPE-LABEL']; ?>:</span> <?php
                                     $job_type = $job_row['job_type'];
                                     if ($job_type == 1) {
                                         echo $BIZBOOK['JOB-PERMANENT'];
-                                    } elseif ($job_type == 2) {
-                                        echo $BIZBOOK['JOB-CONTRACT'];
+                                    } elseif ($job_type == 20) {
+                                        echo $BIZBOOK['JOB-CONTRACT'].' '.$BIZBOOK['JOB_1_MONTHS'];
+                                    } elseif ($job_type == 21) {
+                                        echo $BIZBOOK['JOB-CONTRACT'].' '.$BIZBOOK['JOB_2_MONTHS'];
+                                    } elseif ($job_type == 22) {
+                                        echo $BIZBOOK['JOB-CONTRACT'].' '.$BIZBOOK['JOB_3_MONTHS'];
+                                    } elseif ($job_type == 23) {
+                                        echo $BIZBOOK['JOB-CONTRACT'].' '.$BIZBOOK['JOB_6_MONTHS'];
+                                    } elseif ($job_type == 24) {
+                                        echo $BIZBOOK['JOB-CONTRACT'].' '.$BIZBOOK['JOB_1_YEAR'];
+                                    } elseif ($job_type == 25) {
+                                        echo $BIZBOOK['JOB-CONTRACT'].' '.$BIZBOOK['JOB_1_YEAR'].'+';      
+                                    } elseif ($job_type == 26) {
+                                        echo $BIZBOOK['JOB-CONTRACT'].' '.$BIZBOOK['JOB-CONTRACT-PROJECT'];                                                                                                                                                                                                                                         
                                     } elseif ($job_type == 3) {
                                         echo $BIZBOOK['JOB-PART-TIME'];
                                     } elseif ($job_type == 4) {
                                         echo $BIZBOOK['JOB-FREELANCE'];
                                     }
                                     ?></li>
-                                <li><span><?php echo $BIZBOOK['OTHER_INFORMATIONS_PLACEHOLDER_LEFT']; ?>
-                                        :</span> <?php echo $job_row['years_of_experience']; ?></li>
-                                <li><span><?php echo $BIZBOOK['JOB-LOCATION-LABEL']; ?>
+                                <li><span class="yellow"><?php echo $BIZBOOK['JOB_MIN_EXPERIANCE_YEARS']; ?>
+                                        :</span> <?php echo $job_row['years_of_experience']; ?>+</li>
+                                <li><span class="yellow"><?php echo $BIZBOOK['JOB-LOCATION-LABEL']; ?>
                                         :</span> <?php $job_location_row = getJobCity($job_row['job_location']); echo $job_location_row['city_name']; ?></li>
-                                <li><span><?php echo $BIZBOOK['JOB-SALARY-LABEL']; ?>
-                                        :</span> <?php if($footer_row['currency_symbol_pos']== 1){ echo $footer_row['currency_symbol']; } ?><?php echo $job_row['job_salary']; ?><?php if($footer_row['currency_symbol_pos']== 2){ echo $footer_row['currency_symbol']; } ?>
+                                <li><span class="yellow"><?php echo $BIZBOOK['JOB-SALARY-LABEL']; ?>
+                                        :</span> <?php if($footer_row['currency_symbol_pos']== 1){ echo $footer_row['currency_symbol']; } ?><?php echo $job_row['job_salary'].' +/-'; ?><?php if($footer_row['currency_symbol_pos']== 2){ echo $footer_row['currency_symbol']; } ?>
                                 </li>
-                                <li><span><?php echo $BIZBOOK['JOB-INTERVIEW-ROLE-LABEL']; ?>
+                                <li><span class="yellow"><?php echo $BIZBOOK['JOB-INTERVIEW-ROLE-LABEL']; ?>
                                         :</span> <?php echo $job_row['job_role']; ?></li>
-                                <li><span><?php echo $BIZBOOK['JOB_GENDER']; ?>:</span> Any</li>
-                                <li><span><?php echo $BIZBOOK['JOB_EDUCATION']; ?>
+                                <!-- <li><span><?php echo $BIZBOOK['JOB_GENDER']; ?>:</span> Any</li> -->
+                                <li><span class="yellow"><?php echo $BIZBOOK['JOB_EDUCATION']; ?>
                                         :</span> <?php echo $job_row['educational_qualification']; ?></li>
-                                <li><span><?php echo $BIZBOOK['DATE']; ?>
+                                <li class="light-blue" style="text-align:left;"><?php echo $BIZBOOK['APPLICATION_OPEN_UNTIL']; ?></li>
+                                <li><span class="yellow"><?php echo $BIZBOOK['DATE']; ?>
                                         :</span> <?php echo dateFormatconverter($job_row['job_interview_date']); ?>
                                 </li>
-                                <li><span><?php echo $BIZBOOK['TIME']; ?>
+                                <li><span class="yellow"><?php echo $BIZBOOK['TIME']; ?>
                                         :</span><?php echo timeFormatconverter($job_row['job_interview_time']); ?></li>
-                                <li><span><?php echo $BIZBOOK['JOB_PUBLISHED_ON']; ?>
-                                        :</span> <?php echo dateFormatconverter($job_row['job_cdt']); ?></li>
+                                <li><hr></li>        
                             </ul>
                             <?php
                             if (getCountJobAppliedProfileJob($session_user_id, $job_id) == 0) {

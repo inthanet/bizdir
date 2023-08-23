@@ -275,28 +275,29 @@ if ( $current_home_page == '1' ) {
 <?php } ?>
 <!-- END -->
 
-<!-- START MyAds-->
+<!-- START MyAds  -->
 <?php
-$zone_prefix = '(2)';
-$ad_width = 1170;
-$ad_code = getMyAdsCode($zone_prefix, $ad_width);
-if ($ad_code) { ?>
-<section>
-    <div class='container'>
-        <div class='hom-ads'>
-            <div class='row'>
-                <div class='filt-com lhs-ads'>
-                    <div class='ads-box'>
-                        <span style='border: solid 2px yellow;' onclick="window.open('advertising.php', '_blank');">AD Info</span>
-                        <?php echo $ad_code; ?>
+    //*Ad Position: Home Page Middle
+    $zone_prefix = '(2)';
+    $ad_width    = 1170;
+    $ad_code = getMyAdsCode( $zone_prefix, $ad_width );
+    if ( $ad_code ) { ?>
+        <section>
+            <div class='container'>
+                <div class='hom-ads'>
+                    <div class='row'>
+                        <div class='filt-com lhs-ads'>
+                            <i onclick="window.open('advertising.php', '_blank');"><img src="<?=SITE_ICON;?>/info-x32.png" alt="Ad Info" title="<?=$BIZBOOK['ADS_TITLE'];?>"></i>
+                            <div class='ads-box'>
+                                <?php echo $ad_code; ?>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-</section>
-<?php } ?>
-<!-- END MyAds--> 
+        </section>
+    <?php } ?>
+<!-- END MyAds-->  
 
 <!-- START ITCS SLIDER -->
 <?php if(SLIDER_SECTION == 'on'){ ?>

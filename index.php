@@ -12,31 +12,28 @@ if ($current_home_page != '2' && $current_home_page != '3'){
 ?>
 
 <div class="ban-ql">
-<div class="container">
-            <div class="row">
-                            <ul>
-                                <?php
-                                foreach (getAllHomePageTopSection() as $home_page_top_section_row) {
-                                    ?>
-                                    <li>
-                                        <div>
-                                            <img
-                                                src="<?php echo $webpage_full_link; ?>images/icon/<?php echo $home_page_top_section_row['top_section_image']; ?>"
-                                                alt="">
-                                            <h4><?php echo $home_page_top_section_row['top_section_title']; ?></h4>
-                                            <p><?php echo $home_page_top_section_row['top_section_description']; ?></p>
-                                            <a href="<?php echo $home_page_top_section_row['top_section_link']; ?>"><?php echo $home_page_top_section_row['top_section_link_text']; ?></a>
-                                        </div>
-                                    </li>
-                                    <?php
-                                }
-                                ?>
+    <div class="container">
+        <div class="row">
+            <ul>
+                <?php
+                foreach (getAllHomePageTopSection() as $home_page_top_section_row) {
+                ?>
+                <li>
+                    <div class="equalHeight" style="min-height:270px;display: flex;flex-direction: column;">
+                        <img src="<?php echo $webpage_full_link; ?>images/icon/<?php echo $home_page_top_section_row['top_section_image']; ?>" alt="" />
+                        <h4><?php echo $home_page_top_section_row['top_section_title']; ?></h4>
+                        <p style="flex: 1;margin-bottom: 15px;"><?php echo $home_page_top_section_row['top_section_description']; ?></p>
+                        <a href="<?php echo $home_page_top_section_row['top_section_link']; ?>"><?php echo $home_page_top_section_row['top_section_link_text']; ?></a>
+                    </div>
+                </li>
+                <?php
+                }
+                ?>
+            </ul>
+        </div>
+    </div>
+</div>
 
-                            </ul>
-
-                        </div>
-                        </div>
-                        </div>
 
 <!-- START --> 
 <section>
@@ -103,7 +100,7 @@ if ($current_home_page != '2' && $current_home_page != '3'){
                         ?>
                     </ul>
                 </div>
-                <div class="hom-cate-more"">
+                <div class="hom-cate-more">
                 <?php if ($current_home_page == '1' || $current_home_page == '2') { ?>
                     <a href="all-category" class="cta-new-blue"><?php echo $BIZBOOK['HOM-VI-ALL-SER']; ?></a>
                     <?php } ?>
@@ -118,34 +115,30 @@ if ($current_home_page != '2' && $current_home_page != '3'){
 include "home_page_mid_section.php"
 ?>
 
-<!-- START -->
-<section>
-    <div class="hom-ads">
-        <div class="container">
-            <div class="row">
-                <div class="filt-com lhs-ads">
-                    <div class="ads-box">
-                        <?php
-                        $ad_position_id = 1;   //Ad position on home page bottom
-                        $get_ad_row = getAds($ad_position_id);
-                        $ad_enquiry_photo = $get_ad_row['ad_enquiry_photo'];
-                        ?>
-                        <a href="<?php echo stripslashes($get_ad_row['ad_link']); ?>">
-                            <span><?php echo $BIZBOOK['AD']; ?></span>
-
-                            <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class="b-lazy" data-src="<?php echo $webpage_full_link; ?>images/ads/<?php if ($ad_enquiry_photo != NULL || !empty($ad_enquiry_photo)) {
-                                echo $ad_enquiry_photo;
-                            } else {
-                                echo "ads2.jpg";
-                            } ?>" alt="">
-                        </a>
+<!-- START MyAds  -->
+<?php
+    //*Ad Position: on Listing Detail Bottom
+    $zone_prefix = '(2)';
+    $ad_width    = 728;
+    $ad_code = getMyAdsCode( $zone_prefix, $ad_width );
+    if ( $ad_code ) { ?>
+        <section>
+            <div class='container'>
+                <div class='hom-ads'>
+                    <div class='row'>
+                        <div class='filt-com lhs-ads'>
+                            <i onclick="window.open('advertising.php', '_blank');"><img src="<?=SITE_ICON;?>/info-x32.png" alt="Ad Info" title="<?=$BIZBOOK['ADS_TITLE'];?>"></i>
+                            <div class='ads-box'>
+                                <?php echo $ad_code; ?>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-</section>
-<!-- END -->
+        </section>
+    <?php } ?>
+<!-- END MyAds-->  
+
 
 <!-- START -->
 <div class="ani-quo">

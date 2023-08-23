@@ -1,4 +1,8 @@
 <?php
+//! | db-post-ads replaced by MyAds Service   | 2023-08-05 13:45:02
+header("Location: advertising.php");
+exit;
+
 include "header.php";
 
 if (file_exists('config/user_authentication.php')) {

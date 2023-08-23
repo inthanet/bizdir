@@ -617,12 +617,13 @@ function dbUpdateDrop($conn)
     return true;
 }
 
-# Getting Formatted Time Only Function #  i.e  12:01 PM
+# Getting Formatted Time Only Function #  i.e  12:01 PM / 00:01
 
-function timeFormatconverter($date)
+function timeFormatconverter($time)
 {
-    $phpdate = strtotime($date);
-    return date("g:i A", $phpdate);
+    $phptime = strtotime($time);
+    //return date("g:i A", $phpdate); //todo ui ???
+    return date("H:i", $phptime);
 }
 
 # Getting Formatted File Date Function for last modified #  i.e  29, Sep 2023
@@ -638,10 +639,10 @@ function filedateFormatconverter()
 
 function urlModifier($slug_url)
 {
-//    IF(empty($slug_ur)){  //todo check why `$slug_url` empty
+//    IF(empty($slug_ur)){  //todo | check why `$slug_url` empty
 //     return false;
 //    }
-   //return preg_replace('/\s+/', '-', strtolower($slug_url));
+   // return preg_replace('/\s+/', '-', strtolower($slug_url));
    // return str_replace(' ', '-', strtolower($slug_url));
    // return preg_replace("/[\s_]/", "-", strtolower($slug_url));
     $replacements = array(

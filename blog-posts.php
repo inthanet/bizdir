@@ -136,28 +136,24 @@ if (isset($_REQUEST['sort_by']) && !empty($_REQUEST['sort_by'])) {
                     </ul>
                 </form>
             </div>
-        </br>
+            </br>
             <!--START-->
-            <div class="filt-com lhs-ads">
+            <div class="filt-com lhs-ads" style="padding: 13px!important;">
                 <ul>
                     <li>
-                        <div class="ads-box">
-                            <?php
-                            $ad_position_id = 14;   //Ad position on All Blogs page left
-                            $get_ad_row = getAds($ad_position_id);
-                            $ad_enquiry_photo = $get_ad_row['ad_enquiry_photo'];
-                            ?>
-                            <a href="<?php echo stripslashes($get_ad_row['ad_link']); ?>">
-                                <span><?php echo $BIZBOOK['AD']; ?></span>
-
-                                <img
-                                        src="<?php echo $slash; ?>images/ads/<?php if ($ad_enquiry_photo != NULL || !empty($ad_enquiry_photo)) {
-                                            echo $ad_enquiry_photo;
-                                        } else {
-                                            echo "ads1.jpg";
-                                        } ?>" alt="">
-                            </a>
-                        </div>
+                        <!-- START MyAds  -->
+                        <?php
+                            //*Ad Position: Blog Post Page Left Sitebar
+                            $zone_prefix = '(2)';
+                            $ad_width    = 225;
+                            $ad_code = getMyAdsCode( $zone_prefix, $ad_width );
+                            if ( $ad_code ) { ?>
+                                <i onclick="window.open('advertising.php', '_blank');"><img src="<?=SITE_ICON;?>/info-x32.png" alt="Ad Info" title="<?=$BIZBOOK['ADS_TITLE'];?>"></i>
+                                <div class="ads-box"  style="padding: 11px!important;">
+                                    <?php echo $ad_code; ?>
+                                </div>
+                            <?php } ?>
+                        <!-- END MyAds-->  
                     </li>
                 </ul>
             </div>

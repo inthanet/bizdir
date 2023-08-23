@@ -1,6 +1,7 @@
 <?php
 include "news-config-info.php";
 include "../header.php";
+//todo ui Check first test data correct!
 
 if (file_exists('../config/news_page_authentication.php')) {
     include('../config/news_page_authentication.php');
@@ -64,42 +65,95 @@ if (file_exists('../config/news_page_authentication.php')) {
 </section>
 <!--END-->
 
-<!-- START -->
+<!-- START --> 
 <section class="news-hom-top">
     <div class="news-hom-top-inn">
         <div class="container">
             <div class="row">
-                <div class="news-hom-ban-ads">
-                    <?php
-                    $ad_position_id = 7;   //Ad position on News Home Page Top
-                    $get_ad_row = getAds($ad_position_id);
-                    $ad_enquiry_photo = $get_ad_row['ad_enquiry_photo'];
-                    ?>
-                    <a href="<?php echo stripslashes($get_ad_row['ad_link']); ?>"><img loading="lazy" src="<?php echo $slash; ?>images/ads/<?php if ($ad_enquiry_photo != NULL || !empty($ad_enquiry_photo)) {
-                            echo $ad_enquiry_photo;
-                        } else {
-                            echo "ads1.png";
-                        } ?>" alt=""></a>
+                <div class="filt-com lhs-ads">
+                  <ul>
+                    <li>  
+                        <!-- START MyAds  -->
+                        <?php
+                            //*Ad Position: Home Page Middle
+                            $zone_prefix = '(2)';
+                            $ad_width    = 1170;
+                            $ad_code = getMyAdsCode( $zone_prefix, $ad_width );
+                            if ( $ad_code ) { ?>
+                                <i onclick="window.open('advertising.php', '_blank');"><img src="<?=SITE_ICON;?>/info-x32.png" alt="Ad Info" title="<?=$BIZBOOK['ADS_TITLE'];?>"></i>
+                                <div class='ads-box'>
+                                    <?php echo $ad_code; ?>
+                                </div>
+                            <?php } ?>
+                        <!-- END MyAds-->  
+                     </li>
+                   </ul>  
+                 </div>  
+            </div>
+        </div>    
+    </div>        
+</section>        
+
+
+
+<section class="news-hom-ban-sli">
+    <div class="news-hom-ban-sli-inn">
+        <ul class="multiple-items1">
+            <?php foreach (getAllNewsSlider() as $home_page_slider_row) {
+                    $home_page_slider_news_id = $home_page_slider_row['news_id'];
+                    $home_page_slider_news_slider_id = $home_page_slider_row['news_slider_id'];
+                    $home_page_slider_news_sql_row = getIdNews($home_page_slider_news_id);
+                    $home_page_slider_category_id = $home_page_slider_news_sql_row['category_id'];
+                    $home_page_slider_category_row = getNewsCategory($home_page_slider_category_id);
+                    $home_page_slider_category_name = $home_page_slider_category_row['category_name'];
+            ?>
+            <li>
+                <div class="news-hban-box">
+                    <div class="im">
+                        <img
+                            src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                            class="b-lazy"
+                            data-src="<?php echo $slash; ?>/news/images/news/<?php echo $home_page_slider_news_sql_row['news_image']; ?>"
+                            alt=""
+                        />
+                    </div>
+                    <div class="txt">
+                        <span class="news-cate"><?php echo $home_page_slider_category_name; ?></span>
+                        <h2><?php echo stripslashes($home_page_slider_news_sql_row['news_title']); ?></h2>
+                        <span class="news-date"><?php echo dateFormatconverter($home_page_slider_news_sql_row['news_cdt']); ?></span>
+                    </div>
+                    <a href="<?php echo $NEWS_DETAIL_URL . urlModifier($home_page_slider_news_sql_row['news_slug']); ?>" class="fclick"></a>
                 </div>
+            </li>
+            <?php
+    }
+    ?>
+        </ul>
+    </div>
+</section>
+<!--END-->
+
+
+
+<section class="news-hom-big">
+    <!-- <div class="news-hom-top-inn"> -->
+        <div class="container">
+            <div class="row">
+
+
                 <div class="news-com-tit">
-                    <h2><?php echo $BIZBOOK['NEWS-TRENDINGS']; ?></h2>
+                    <h2><?php echo $BIZBOOK['NEWS-LATEST-POPULAR']; ?></h2>
                 </div>
+                
                 <?php
                 $news_si = 1;
                 foreach (getAllNewsTrending() as $home_page_trending_row) {
-
-                $home_page_trending_news_id = $home_page_trending_row['news_id'];
-
-                $home_page_trending_news_trending_id = $home_page_trending_row['trending_news_id'];
-
-                $home_page_trending_news_sql_row = getIdNews($home_page_trending_news_id);
-
-                $home_page_trending_category_id = $home_page_trending_news_sql_row['category_id'];
-
-                $home_page_trending_category_row = getNewsCategory($home_page_trending_category_id);
-
-                $home_page_trending_category_name = $home_page_trending_category_row['category_name'];
-
+                    $home_page_trending_news_id = $home_page_trending_row['news_id'];
+                    $home_page_trending_news_trending_id = $home_page_trending_row['trending_news_id'];
+                    $home_page_trending_news_sql_row = getIdNews($home_page_trending_news_id);
+                    $home_page_trending_category_id = $home_page_trending_news_sql_row['category_id'];
+                    $home_page_trending_category_row = getNewsCategory($home_page_trending_category_id);
+                    $home_page_trending_category_name = $home_page_trending_category_row['category_name'];
                 ?>
                 <?php
                 if ($news_si == 1 || $news_si == 4){
@@ -142,51 +196,7 @@ if (file_exists('../config/news_page_authentication.php')) {
                 </div>
             </div>
         </div>
-</section>
-<!--END-->
-
-<!-- START -->
-<section class="news-hom-ban-sli">
-    <div class="news-hom-ban-sli-inn">
-        <ul class="multiple-items1">
-            <?php
-            foreach (getAllNewsSlider() as $home_page_slider_row) {
-
-                $home_page_slider_news_id = $home_page_slider_row['news_id'];
-
-                $home_page_slider_news_slider_id = $home_page_slider_row['news_slider_id'];
-
-                $home_page_slider_news_sql_row = getIdNews($home_page_slider_news_id);
-
-                $home_page_slider_category_id = $home_page_slider_news_sql_row['category_id'];
-
-                $home_page_slider_category_row = getNewsCategory($home_page_slider_category_id);
-
-                $home_page_slider_category_name = $home_page_slider_category_row['category_name'];
-
-                ?>
-                <li>
-                    <div class="news-hban-box">
-                        <div class="im">
-                            <img
-                                src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class="b-lazy" data-src="<?php echo $slash; ?>/news/images/news/<?php echo $home_page_slider_news_sql_row['news_image']; ?>"
-                                alt="">
-                        </div>
-                        <div class="txt">
-                            <span class="news-cate"><?php echo $home_page_slider_category_name; ?></span>
-                            <h2><?php echo stripslashes($home_page_slider_news_sql_row['news_title']); ?></h2>
-                            <span
-                                class="news-date"><?php echo dateFormatconverter($home_page_slider_news_sql_row['news_cdt']); ?></span>
-                        </div>
-                        <a href="<?php echo $NEWS_DETAIL_URL . urlModifier($home_page_slider_news_sql_row['news_slug']); ?>"
-                           class="fclick"></a>
-                    </div>
-                </li>
-                <?php
-            }
-            ?>
-        </ul>
-    </div>
+    <!-- </div> -->
 </section>
 <!--END-->
 
@@ -197,20 +207,15 @@ if (file_exists('../config/news_page_authentication.php')) {
 
             <div class="col-md-8">
                 <div class="news-com-tit">
-                    <h2><?php echo $BIZBOOK['NEWS-LATEST-POPULAR']; ?></h2>
+                    <h2><?php echo $BIZBOOK['NEWS-TRENDINGS']; ?></h2>
                 </div>
                 <?php
                 $latest_news_si = 1;
                 foreach (getAllTopViewsPremiumActiveNews() as $latest_newsrow) {
-
                     $latest_news_id = $latest_newsrow['news_id'];
-
                     $latest_news_category_id = $latest_newsrow['category_id'];
-
                     $latset_news_category_row = getNewsCategory($latest_news_category_id);
-
                     $latest_news_category_name = $latset_news_category_row['category_name'];
-
                     ?>
                     <!--BIG POST START-->
                     <div class="news-home-box <?php if($latest_news_si != 1 && $latest_news_si != 2 ){ ?>news-home-box1 <?php } ?>">
@@ -286,11 +291,8 @@ if (file_exists('../config/news_page_authentication.php')) {
                             <?php
                             $news_si = 1;
                             foreach (getAllNewsTrending() as $right_section_trending_row) {
-
                                 $right_section_trending_news_id = $right_section_trending_row['news_id'];
-
                                 $right_section_trending_news_sql_row = getIdNews($right_section_trending_news_id);
-
                                 ?>
                                 <li>
                                     <div class="hot-page2-hom-pre-1">
@@ -317,12 +319,19 @@ if (file_exists('../config/news_page_authentication.php')) {
                     ?>
                     <div class="news-rhs-ads-ban">
                         <div class="ban-ati-com">
-                            <a href="<?php echo stripslashes($get_ad_row_1['ad_link']); ?>"><span><?php echo $BIZBOOK['AD']; ?></span><img
-                                    src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class="b-lazy" data-src="<?php echo $slash; ?>images/ads/<?php if ($ad_enquiry_photo_1 != NULL || !empty($ad_enquiry_photo_1)) {
-                                        echo $ad_enquiry_photo_1;
-                                    } else {
-                                        echo "ads2.jpg";
-                                    } ?>"></a>
+                        <!-- START MyAds  -->
+                        <?php
+                            //*Ad Position: Home Page Middle
+                            $zone_prefix = '(2)';
+                            $ad_width    = 225;
+                            $ad_code = getMyAdsCode( $zone_prefix, $ad_width );
+                            if ( $ad_code ) { ?>
+                                <i onclick="window.open('advertising.php', '_blank');"><img src="<?=SITE_ICON;?>/info-x32.png" alt="Ad Info" title="<?=$BIZBOOK['ADS_TITLE'];?>"></i>
+                                <div class='ads-box'>
+                                    <?php echo $ad_code; ?>
+                                </div>
+                            <?php } ?>
+                        <!-- END MyAds-->  
                         </div>
                     </div>
                     <!-- ADS END-->
@@ -331,18 +340,27 @@ if (file_exists('../config/news_page_authentication.php')) {
                     $get_ad_row_2 = getAds($ad_position_id_2);
                     $ad_enquiry_photo_2 = $get_ad_row_2['ad_enquiry_photo'];
                     ?>
+
                     <!-- ADS START-->
                     <div class="news-rhs-ads-ban">
                         <div class="ban-ati-com">
-                            <a href="<?php echo stripslashes($get_ad_row_2['ad_link']); ?>"><span><?php echo $BIZBOOK['AD']; ?></span><img
-                                    src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class="b-lazy" data-src="<?php echo $slash; ?>images/ads/<?php if ($ad_enquiry_photo_2 != NULL || !empty($ad_enquiry_photo_2)) {
-                                        echo $ad_enquiry_photo_2;
-                                    } else {
-                                        echo "ads1.jpg";
-                                    } ?>"></a>
+                        <!-- START MyAds  -->
+                        <?php
+                            //*Ad Position: Home Page Middle
+                            $zone_prefix = '(2)';
+                            $ad_width    = 270;
+                            $ad_code = getMyAdsCode( $zone_prefix, $ad_width );
+                            if ( $ad_code ) { ?>
+                                <i onclick="window.open('advertising.php', '_blank');"><img src="<?=SITE_ICON;?>/info-x32.png" alt="Ad Info" title="<?=$BIZBOOK['ADS_TITLE'];?>"></i>
+                                <div class='ads-box'>
+                                    <?php echo $ad_code; ?>
+                                </div>
+                            <?php } ?>
+                        <!-- END MyAds-->  
                         </div>
                     </div>
                     <!-- ADS END-->
+
                     <!-- SUBSCRIBE START-->
                     <div class="news-subsc">
                         <div class="ud-rhs-poin1">
@@ -437,10 +455,11 @@ include "../footer.php";
 <script>
     $('.multiple-items1').slick({
         infinite: true,
-        slidesToShow: 5,
+        slidesToShow: 3,
         slidesToScroll: 1,
         autoplay: true,
         autoplaySpeed: 3000,
+        lazyLoad: false,
         responsive: [{
             breakpoint: 992,
             settings: {

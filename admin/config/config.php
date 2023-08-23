@@ -1,9 +1,4 @@
 <?php
-/**
- * Created by Vignesh.
- * User: Vignesh
- */
-
 # ADMIN FOLDER NAME #
 define('ADMIN_FOLDER_NAME', 'admin');
 

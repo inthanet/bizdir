@@ -146,10 +146,12 @@ $all_texts_row = getAllTexts(); //Fetch All Text Data
                     <li><a href="admin-notification-all.php">All notifications</a></li>
                     <li><a href="admin-create-notification.php">Send new notifications</a></li>
                     <li><a href="admin-create-notification.php">Create new notifications</a></li>
+                    <!--ui |  Ads replaced by MyAds  | 2023-08-05 14:02:33 
                     <li><a href="admin-current-ads.php">Current ads</a></li>
                     <li><a href="admin-create-ads.php">Create new ads</a></li>
                     <li><a href="admin-ads-request.php">Ads request and enquiry</a></li>
                     <li><a href="admin-ads-price.php">Ads pricing</a></li>
+                    -->
                     <li><a href="admin-home-category.php">Home page edit optins</a></li>
                     <li><a href="admin-home-category.php">Home page category edit</a></li>
                     <li><a href="admin-trending-category.php">Home page trending category edit</a></li>
@@ -1155,6 +1157,7 @@ $all_texts_row = getAllTexts(); //Fetch All Text Data
                            } ?>">Ads</a>
                         <div>
                             <ol>
+                                <!--ui |  Ads replaced by MyAds  | 2023-08-05 14:02:33 
                                 <li>
                                     <a href="admin-current-ads.php">Current Ads</a>
                                 </li>
@@ -1167,6 +1170,7 @@ $all_texts_row = getAllTexts(); //Fetch All Text Data
                                 <li>
                                     <a href="admin-ads-price.php">Ad Pricing</a>
                                 </li>
+                                -->
                                 <li>
                                     <a href="seo-google-adsense.php">Google AdSense</a>
                                 </li>

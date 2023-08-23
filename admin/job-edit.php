@@ -260,7 +260,7 @@ include "header.php";
                                                     <div class="row">
                                                         <div class="col-md-12">
                                                             <div class="form-group">
-                                                                <label class="tit">Year(s) of experience</label>
+                                                                <label class="tit">Minimum Year(s) of experience</label>
                                                                 <input type="text" onkeypress="return isNumber(event)"
                                                                        value="<?php echo $job_a_row['years_of_experience']; ?>"
                                                                        name="years_of_experience" class="form-control">
@@ -361,8 +361,8 @@ include "header.php";
                                                         <div class="col-md-12">
                                                             <div class="form-group">
                                                                 <label class="tit">Job Descriptions</label>
-                                    <textarea name="job_description" class="form-control"
-                                              id="job_description"><?php echo $job_a_row['job_description']; ?></textarea>
+                                                                <textarea name="job_description" class="form-control" minlength="250" maxlength="500"
+                                                                    id="job_description"><?php echo $job_a_row['job_description']; ?></textarea>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -370,10 +370,9 @@ include "header.php";
                                                     <div class="row">
                                                         <div class="col-md-12">
                                                             <div class="form-group">
-                                                                <label class="tit">About your company(small
-                                                                    description)</label>
-                                                <textarea name="job_small_description"
-                                                          class="form-control"><?php echo $job_a_row['job_small_description']; ?></textarea>
+                                                                <label class="tit">About your company(Briefly Description)</label>
+                                                                <textarea name="job_small_description"  minlength="50"  maxlength="150"
+                                                                        class="form-control"><?php echo $job_a_row['job_small_description']; ?></textarea>
                                                             </div>
                                                         </div>
                                                     </div>

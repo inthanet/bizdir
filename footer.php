@@ -89,7 +89,7 @@
     <div class="full-bot-book">
         <div class="container">
             <div class="row">
-                <?php if($footer_row['admin_install_flag'] == 0) { kwohereza($SHYIRAMO); }?>
+                <?php // if($footer_row['admin_install_flag'] == 0) { kwohereza($SHYIRAMO); }?>
                 <div class="bot-book">
                     <div class="col-md-12 bb-text">
                         <h4><?php echo $BIZBOOK['FOOT-BAN-TIT']; ?></h4>
@@ -102,7 +102,9 @@
     </div>
 </section>
 <!-- END -->
-<?php if($footer_row['admin_install_flag'] == 1) { unlink("install1.php"); unlink("install2.php"); } ?>
+
+<?php // if($footer_row['admin_install_flag'] == 1) { unlink("install1.php"); unlink("install2.php"); } ?>
+<!-- START -->
 <section class="<?php if($footer_row['admin_language']== 2){ echo "lg-arb";}?> wed-hom-footer">
     <div class="container">
         <div class="row foot-supp">
@@ -148,6 +150,8 @@
                     </li>
                     <li><a href="privacy-policy.php"><?php echo $BIZBOOK['pg_pri_tit']; ?></a></li>
                     <li><a href="terms-of-use.php"><?php echo $BIZBOOK['pg_terms_tit']; ?></a></li>
+                    
+                    <li><a href="advertising.php"><?php echo $BIZBOOK['pg_advert_tit']; ?></a></li>
                 </ul>
             </div>
         </div>
@@ -297,6 +301,7 @@
         <?php } ?>
     </div>
 </section>
+<!-- END -->
 
 <!-- START -->
 <section>

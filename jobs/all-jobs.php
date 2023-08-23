@@ -150,7 +150,7 @@ if (isset($_REQUEST['job_type']) && !empty($_REQUEST['job_type'])) {
             $get_job_type1 = 3;
         } elseif ($get_job_type == 'freelance') {
             $get_job_type1 = 4;
-        }
+    }
 
         $job_type_search_query = 'AND (FIND_IN_SET(' . $get_job_type1 . ',job_type))';
 
@@ -467,30 +467,33 @@ if (isset($_REQUEST['city']) && !empty($_REQUEST['city'])) {
                         </ul>
                     </div>
                     <!--- END --->
-                    <!--START-->
-                    <div class="filt-com lhs-ads">
-                        <ul>
-                            <li>
-                                <div class="ads-box">
-                                    <?php
-                                    $ad_position_id = 12;   //Ad position on All Jobs page left
-                                    $get_ad_row = getAds($ad_position_id);
-                                    $ad_enquiry_photo = $get_ad_row['ad_enquiry_photo'];
-                                    ?>
-                                    <span onclick="window.open('advertising.php', '_blank');">AD Info</span>
-                                    <a href="<?php echo stripslashes($get_ad_row['ad_link']); ?>">
-                                        <img
-                                                src="<?php echo $slash; ?>images/ads/<?php if ($ad_enquiry_photo != NULL || !empty($ad_enquiry_photo)) {
-                                                    echo $ad_enquiry_photo;
-                                                } else {
-                                                    echo "ads1.jpg";
-                                                } ?>" alt="">
-                                    </a>
+
+
+                    <!-- START MyAds  -->
+                    <?php
+                        //*Ad Position: Jobs Bottom
+                        $zone_prefix = '(2)';
+                        $ad_width    = 1170;
+                        $ad_code = getMyAdsCode( $zone_prefix, $ad_width );
+                        if ( $ad_code ) { ?>
+                            <section>
+                                <div class='container'>
+                                    <div class='hom-ads'>
+                                        <div class='row'>
+                                            <div class='filt-com lhs-ads'>
+                                                <i onclick="window.open('advertising.php', '_blank');"><img src="<?=SITE_ICON;?>/info-x32.png" alt="Ad Info" title="<?=$BIZBOOK['ADS_TITLE'];?>"></i>
+                                                <div class='ads-box'>
+                                                    <?php echo $ad_code; ?>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                            </li>
-                        </ul>
-                    </div>
-                    <!--END-->
+                            </section>
+                        <?php } ?>
+                    <!-- END MyAds-->  
+                    
+
                 </div>
                 <?php
                 $jobsql = "SELECT *  FROM " . COUNTRY_PREFIX . "jobs WHERE job_status= 'Active' $category_search_query $sub_category_search_query $salary_search_query $job_type_search_query $job_location_search_query ORDER BY job_id DESC";

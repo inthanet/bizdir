@@ -67,13 +67,13 @@ seopageview($page_id); //Function To Find Page View
                                     <div class="near-ser-list">
                                         <ul>
                                             <?php
-                                            $nearby_listsql = "SELECT " . COUNTRY_PREFIX . "listings.*, " . TBL . "users.user_plan FROM " . COUNTRY_PREFIX . "listings
+                                            $nearby_listsql = "SELECT " . TBL . "listings.*, " . TBL . "users.user_plan FROM " . TBL . "listings
 
-                                            LEFT JOIN " . TBL . "users ON " . COUNTRY_PREFIX . "listings.user_id = " . TBL . "users.user_id  WHERE " . COUNTRY_PREFIX . "listings.listing_status= 'Active'
+                                            LEFT JOIN " . TBL . "users ON " . TBL . "listings.user_id = " . TBL . "users.user_id  WHERE " . TBL . "listings.listing_status= 'Active'
 
-                                            AND " . COUNTRY_PREFIX . "listings.listing_is_delete != '2' $category_search_query 
+                                            AND " . TBL . "listings.listing_is_delete != '2' $category_search_query 
 
-                                            ORDER BY " . TBL . "users.user_plan DESC," . COUNTRY_PREFIX . "listings.listing_id DESC LIMIT 5 ";
+                                            ORDER BY " . TBL . "users.user_plan DESC," . TBL . "listings.listing_id DESC LIMIT 5 ";
 
                                             $nearby_listrs = mysqli_query($conn, $nearby_listsql);
                                             while ($nearby_listrow = mysqli_fetch_array($nearby_listrs)) {
@@ -288,26 +288,22 @@ seopageview($page_id); //Function To Find Page View
                             }
                             ?>
                             <!--START-->
-                            <div class="filt-com lhs-ads">
+                            <div class="filt-com lhs-ads" style="padding: 13px!important;">
                                 <ul>
                                     <li>
-                                        <div class="ads-box">
-                                            <?php
-                                            $ad_position_id = 4;   //Ad position on All Listing page Left
-                                            $get_ad_row = getAds($ad_position_id);
-                                            $ad_enquiry_photo = $get_ad_row['ad_enquiry_photo'];
-                                            ?>
-                                            <a href="<?php echo stripslashes($get_ad_row['ad_link']); ?>">
-                                                <span><?php echo $BIZBOOK['AD']; ?></span>
-
-                                                <img
-                                                    src="<?php echo $slash; ?>images/ads/<?php if ($ad_enquiry_photo != NULL || !empty($ad_enquiry_photo)) {
-                                                        echo $ad_enquiry_photo;
-                                                    } else {
-                                                        echo "ads1.jpg";
-                                                    } ?>" alt="">
-                                            </a>
-                                        </div>
+                                        <!-- START MyAds Sitebar -->
+                                        <?php
+                                            //*Ad Position: Blog Post Page Left Sitebar
+                                            $zone_prefix = '(2)';
+                                            $ad_width    = 270;
+                                            $ad_code = getMyAdsCode( $zone_prefix, $ad_width );
+                                            if ( $ad_code ) { ?>
+                                                <i onclick="window.open('advertising.php', '_blank');"><img src="<?=SITE_ICON;?>/info-x32.png" alt="Ad Info" title="<?=$BIZBOOK['ADS_TITLE'];?>"></i>
+                                                <div class="ads-box"  style="padding: 11px!important;">
+                                                    <?php echo $ad_code; ?>
+                                                </div>
+                                            <?php } ?>
+                                        <!-- END MyAds-->  
                                     </li>
                                 </ul>
                             </div>
@@ -451,18 +447,26 @@ seopageview($page_id); //Function To Find Page View
                         <!--ADS-->
                         <div class="ban-ati-com ads-all-list">
                             <?php
-                            $ad_position_id = 2;   //Ad position on All Listing page Top
-                            $get_ad_row = getAds($ad_position_id);
-                            $ad_enquiry_photo = $get_ad_row['ad_enquiry_photo'];
-                            ?>
-                            <a href="<?php echo stripslashes($get_ad_row['ad_link']); ?>"><span><?php echo $BIZBOOK['AD']; ?></span><img
-                                    src="<?php echo $slash; ?>images/ads/<?php if ($ad_enquiry_photo != NULL || !empty($ad_enquiry_photo)) {
-                                        echo $ad_enquiry_photo;
-                                    } else {
-                                        echo "59040boat-728x90.png";
-                                    } ?>"></a>
+                            //*Ad Position: Home Page Middle
+                            $zone_prefix = '(2)';
+                            $ad_width    = 728;
+                            $ad_code = getMyAdsCode( $zone_prefix, $ad_width );
+                            if ( $ad_code ) { ?>
+                                <div class='hom-ads'>
+                                    <div class='row'>
+                                        <div class='filt-com lhs-ads'>
+                                            <i onclick="window.open('advertising.php', '_blank');"><img src="<?=SITE_ICON;?>/info-x32.png" alt="Ad Info" title="<?=$BIZBOOK['ADS_TITLE'];?>"></i>
+                                            <div class='ads-box'>
+                                                <?php echo $ad_code; ?>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            <?php } ?>
                         </div>
                         <!--ADS-->
+
+
                         <ul>
                             <?php
 
@@ -753,21 +757,29 @@ seopageview($page_id); //Function To Find Page View
 
                         </ul>
 
-                        <!--ADS-->
-                        <div class="ban-ati-com ads-all-list">
-                            <?php
-                            $ad_position_id = 3;   //Ad position on All Listing page Bottom
-                            $get_ad_row = getAds($ad_position_id);
-                            $ad_enquiry_photo = $get_ad_row['ad_enquiry_photo'];
-                            ?>
-                            <a href="<?php echo stripslashes($get_ad_row['ad_link']); ?>"><span><?php echo $BIZBOOK['AD']; ?></span><img
-                                    src="<?php echo $slash; ?>images/ads/<?php if ($ad_enquiry_photo != NULL || !empty($ad_enquiry_photo)) {
-                                        echo $ad_enquiry_photo;
-                                    } else {
-                                        echo "59040boat-728x90.png";
-                                    } ?>"></a>
-                        </div>
-                        <!--ADS-->
+                    <!-- START MyAds  -->
+                    <?php
+                        //*Ad Position: Home Page Middle
+                        $zone_prefix = '(2)';
+                        $ad_width    = 728;
+                        $ad_code = getMyAdsCode( $zone_prefix, $ad_width );
+                        if ( $ad_code ) { ?>
+                            <section>
+                                <div class='container'>
+                                    <div class='hom-ads'>
+                                        <div class='row'>
+                                            <div class='filt-com lhs-ads'>
+                                                <i onclick="window.open('advertising.php', '_blank');"><img src="<?=SITE_ICON;?>/info-x32.png" alt="Ad Info" title="<?=$BIZBOOK['ADS_TITLE'];?>"></i>
+                                                <div class='ads-box'>
+                                                    <?php echo $ad_code; ?>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                        <?php } ?>
+                    <!-- END MyAds-->  
                     </div>
                 </div>
             </div>

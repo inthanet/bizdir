@@ -400,35 +400,31 @@ if($footer_row['admin_expert_show'] != 1) {
 <!-- END -->
 
 
-<!-- START -->
-<section>
-    <div class="hom-ads">
-        <div class="container">
-            <div class="row">
-                <div class="filt-com lhs-ads">
-                    <div class="ads-box">
-                        <?php
-                        $ad_position_id = 1;   //Ad position on home page bottom
-                        $get_ad_row = getAds($ad_position_id);
-                        $ad_enquiry_photo = $get_ad_row['ad_enquiry_photo'];
-                        ?>
-                        <a href="<?php echo stripslashes($get_ad_row['ad_link']); ?>">
-                            <span>Ad</span>
-
-                            <img
-                                src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class="b-lazy" data-src="<?php echo $slash; ?>images/ads/<?php if ($ad_enquiry_photo != NULL || !empty($ad_enquiry_photo)) {
-                                    echo $ad_enquiry_photo;
-                                } else {
-                                    echo "ads2.jpg";
-                                } ?>" alt="">
-                        </a>
+<!-- START MyAds  -->
+<?php
+    //*Ad Position: Service-Experts Page Bottom
+    $zone_prefix = '(2)';
+    $ad_width    = 1170;
+    $ad_code = getMyAdsCode( $zone_prefix, $ad_width );
+    if ( $ad_code ) { ?>
+        <section>
+            <div class='container'>
+                <div class='hom-ads'>
+                    <div class='row'>
+                        <div class='filt-com lhs-ads'>
+                            <i onclick="window.open('advertising.php', '_blank');"><img src="<?=SITE_ICON;?>/info-x32.png" alt="Ad Info" title="<?=$BIZBOOK['ADS_TITLE'];?>"></i>
+                            <div class='ads-box'>
+                                <?php echo $ad_code; ?>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-</section>
-<!-- END -->
+        </section>
+    <?php } ?>
+<!-- END MyAds-->  
+ 
+
 
 <!-- START -->
 <div class="ani-quo">

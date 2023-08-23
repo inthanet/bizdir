@@ -7,8 +7,10 @@ $apiKey = GOOGLE_MAPS_API_KEY;
 $country = COUNTRY_NAME;
 $language = COUNTRY_LANG;
 $city = 'Andernach';
+
 $result = getLatLngForCity( $city, $country, $language, $apiKey );
 
+//* Check Result
 if ( $result ) {
     echo '<b>City:</b> '.$city. ', <b>Latitude:</b> ' . $result[ 'latitude' ] . ', <b>Longitude:</b> ' . $result[ 'longitude' ]. ', <b>State:</b> ' . $result[ 'state' ];
 } else {

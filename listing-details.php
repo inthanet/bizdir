@@ -735,9 +735,9 @@ $review_count = getCountListingReview($listing_id); //Listing Reviews Count
                             </div>
                         </div>
                         <!--END LISTING DETAILS: LEFT PART 10-->
-                        <?php
-                    }
-                    ?>
+                        <?php } ?>
+
+                      
                     <!--ADS-->
                     <div class="ban-ati-com ads-det-page">
                         <?php
@@ -755,6 +755,7 @@ $review_count = getCountListingReview($listing_id); //Listing Reviews Count
                                     } ?>" loading="lazy"></a>
                     </div>
                     <!--ADS-->
+
                 </div>
                 <!-- LHS END  -->
                 <div class="list-pg-lt list-page-com-p">
@@ -1479,28 +1480,33 @@ $review_count = getCountListingReview($listing_id); //Listing Reviews Count
                         }
                         ?>
 
-                        <?php
-                    }
-                    ?>
+                        <?php } ?>
                     <!--END LISTING DETAILS: LEFT PART 5-->
 
-                    <!--ADS-->
-                    <div class="ban-ati-com ads-det-page">
-                        <?php
-                        $ad_position_id = 6;   //Ad position on Listing Detail Bottom
-                        $get_ad_row = getAds($ad_position_id);
-                        $ad_enquiry_photo = $get_ad_row['ad_enquiry_photo'];
-                        ?>
-                        <a href="<?php echo stripslashes($get_ad_row['ad_link']); ?>"><span><?php echo $BIZBOOK['AD']; ?></span><img
-                                    src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-                                    class="b-lazy"
-                                    data-src="<?php echo $slash; ?>images/ads/<?php if ($ad_enquiry_photo != NULL || !empty($ad_enquiry_photo)) {
-                                        echo $ad_enquiry_photo;
-                                    } else {
-                                        echo "59040boat-728x90.png";
-                                    } ?>" loading="lazy"></a>
-                    </div>
-                    <!--ADS-->
+                    <!-- START MyAds  -->
+                    <?php
+                        //*Ad Position: on Listing Detail Bottom
+                        $zone_prefix = '(2)';
+                        $ad_width    = 728;
+                        $ad_code = getMyAdsCode( $zone_prefix, $ad_width );
+                        if ( $ad_code ) { ?>
+                            <section>
+                                <div class='container'>
+                                    <div class='hom-ads'>
+                                        <div class='row'>
+                                            <div class='filt-com lhs-ads'>
+                                                <i onclick="window.open('advertising.php', '_blank');"><img src="<?=SITE_ICON;?>/info-x32.png" alt="Ad Info" title="<?=$BIZBOOK['ADS_TITLE'];?>"></i>
+                                                <div class='ads-box'>
+                                                    <?php echo $ad_code; ?>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                        <?php } ?>
+                    <!-- END MyAds-->  
+
                 </div>
 
                 <!--RELATED PREMIUM LISTINGS-->

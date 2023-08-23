@@ -570,8 +570,8 @@ include "header.php";
                         $get_ad_row = getAds($ad_position_id);
                         $ad_enquiry_photo = $get_ad_row['ad_enquiry_photo'];
                         ?>
+                        <span onclick="window.open('advertising.php', '_blank');">AD Info</span>
                         <a href="<?php echo stripslashes($get_ad_row['ad_link']); ?>">
-                            <span>Ad</span>
 
                             <img loading="lazy" src="images/ads/<?php if ($ad_enquiry_photo != NULL || !empty($ad_enquiry_photo)) {
                                 echo $ad_enquiry_photo;

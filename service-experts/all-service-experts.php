@@ -431,31 +431,33 @@ if (isset($_REQUEST['city']) && !empty($_REQUEST['city'])) {
                     </div>
                     <!--- END --->
 
-                    <!--START-->
-                    <div class="filt-com lhs-ads">
-                        <ul>
-                            <li>
-                                <div class="ads-box">
-                                    <?php
-                                    $ad_position_id = 11;   //Ad position on All Experts page left
-                                    $get_ad_row = getAds($ad_position_id);
-                                    $ad_enquiry_photo = $get_ad_row['ad_enquiry_photo'];
-                                    ?>
-                                    <span onclick="window.open('advertising.php', '_blank');">AD Info</span>    
-                                    <a href="<?php echo stripslashes($get_ad_row['ad_link']); ?>">
 
-                                        <img
-                                                src="<?php echo $slash; ?>images/ads/<?php if ($ad_enquiry_photo != NULL || !empty($ad_enquiry_photo)) {
-                                                    echo $ad_enquiry_photo;
-                                                } else {
-                                                    echo "ads1.jpg";
-                                                } ?>" alt="">
-                                    </a>
+                    <!-- START MyAds  -->
+                    <?php
+                        //*Ad Position: Expert Page Bottom
+                        $zone_prefix = '(2)';
+                        $ad_width    = 1170;
+                        $ad_code = getMyAdsCode( $zone_prefix, $ad_width );
+                        if ( $ad_code ) { ?>
+                            <section>
+                                <div class='container'>
+                                    <div class='hom-ads'>
+                                        <div class='row'>
+                                            <div class='filt-com lhs-ads'>
+                                                <i onclick="window.open('advertising.php', '_blank');"><img src="<?=SITE_ICON;?>/info-x32.png" alt="Ad Info" title="<?=$BIZBOOK['ADS_TITLE'];?>"></i>
+                                                <div class='ads-box'>
+                                                    <?php echo $ad_code; ?>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                            </li>
-                        </ul>
-                    </div>
-                    <!--END-->
+                            </section>
+                        <?php } ?>
+                    <!-- END MyAds-->  
+ 
+
+
                 </div>
                 <?php
                 $expertssql = "SELECT T1.* $service_start_search_query $service_rating_start_query FROM " . COUNTRY_PREFIX . "experts AS T1 $service_end_search_query $service_rating_end_query WHERE T1.expert_status= 'Active' $category_search_query $service_availability_search_query $expert_location_search_query $service_verified_search_query $service_rating_search_query $service_sort_by_search_query $service_sort_by_search_order_query";
