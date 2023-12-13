@@ -723,6 +723,7 @@ if (isset($_GET['preview']) && isset($_GET['q']) && isset($_GET['type']) && isse
                                             <?php } ?>
                                         </select>
                                     </li>
+                                    
                                     <li class="sr-cit"> <!--ui -->
                                         <select id="city_check" name="city_check" class="chosen-select">
                                             <option value=""><?php echo $BIZBOOK['SELECT_CITY']; ?></option>
@@ -758,9 +759,9 @@ if (isset($_GET['preview']) && isset($_GET['q']) && isset($_GET['type']) && isse
                                             ?>
                                         </select>
                                     </li>
+                                    
                                     <li class="sr-nor">
-                                        <select class="chosen-select" id="expert-select-search"
-                                                name="expert-select-search">
+                                        <select class="chosen-select" id="expert-select-search" name="expert-select-search">
                                             <option value=""><?php echo $BIZBOOK['SEARCHBOX_LABEL']; ?></option>
                                             <?php
                                             foreach (getAllCategoriesPos() as $expert_search_categories_row) {

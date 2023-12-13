@@ -31,6 +31,12 @@ $BIZBOOK['ADS_HOWMUCH'] = "";
 $BIZBOOK['ADS_HOWMUCH'] = "";
 $BIZBOOK['ADS_HOWMUCH'] = "";
 
+
+//************************* ITCS New Added ***************************
+$BIZBOOK['SELECT_SOME_OPTIONS'] = "Select some options";
+$BIZBOOK['SELECT_AN_OPTION'] = "Select sn option";
+$BIZBOOK['NO_RESULT_MATCH'] = "No result match";
+
 //************************* All Common Texts Starts ***************************
 
 $BIZBOOK['NAME'] = "Name";

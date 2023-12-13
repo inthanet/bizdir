@@ -163,7 +163,8 @@ include "footer.php";
 <script src="<?php echo $webpage_full_link; ?>js/popper.min.js"></script>
 <script src="<?php echo $webpage_full_link; ?>js/bootstrap.min.js"></script>
 <script src="<?php echo $webpage_full_link; ?>js/jquery-ui.js"></script>
-<script src="<?php echo $webpage_full_link; ?>js/select-opt.js"></script>
+<!-- <script src="<?php echo $webpage_full_link; ?>js/select-opt.js"></script> -->
+<?php include "select_opt_js.php"; ?>
 <script src="<?php echo $webpage_full_link; ?>js/blazy.min.js"></script>
 <script type="text/javascript">var webpage_full_link = '<?php echo $webpage_full_link;?>';</script>
 <script type="text/javascript">var login_url = '<?php echo $LOGIN_URL;?>';</script>

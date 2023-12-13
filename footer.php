@@ -148,10 +148,10 @@
                     </li>
                     <li><a href="<?php echo $slash; ?><?php echo $footer_row['footer_page_url_4']; ?>"><?php echo $footer_row['footer_page_name_4']; ?></a>
                     </li>
-                    <li><a href="privacy-policy.php"><?php echo $BIZBOOK['pg_pri_tit']; ?></a></li>
-                    <li><a href="terms-of-use.php"><?php echo $BIZBOOK['pg_terms_tit']; ?></a></li>
+                    <li><a href="/privacy-policy.php"><?php echo $BIZBOOK['pg_pri_tit']; ?></a></li>
+                    <li><a href="/terms-of-use.php"><?php echo $BIZBOOK['pg_terms_tit']; ?></a></li>
                     
-                    <li><a href="advertising.php"><?php echo $BIZBOOK['pg_advert_tit']; ?></a></li>
+                    <li><a href="/advertising.php"><?php echo $BIZBOOK['pg_advert_tit']; ?></a></li>
                 </ul>
             </div>
         </div>

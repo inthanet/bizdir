@@ -1,6 +1,5 @@
 {
     "git.ignoreLimitWarning": false,
-    "workbench.activityBar.visible": true,
     "emmet.triggerExpansionOnTab": true,
     "[powershell]": {
         "editor.wordSeparators": "`~!@$#%^&*()-=+[{]}\\|;:'\",.<>/?"

@@ -33,7 +33,9 @@ $BIZBOOK['ADS_HOWMUCH'] = "";
 
 
 //************************* ITCS New Added ***************************
+$BIZBOOK['SELECT_SOME_OPTIONS'] = "Wählen Sie einige Optionen aus";
 $BIZBOOK['SELECT_AN_OPTION'] = "Auswahl treffen";
+$BIZBOOK['NO_RESULT_MATCH'] = "Suche war erfolglos";
 
 
 
@@ -351,7 +353,7 @@ $BIZBOOK['TRENDING_POSTS'] = "Trending Posts";
 
 //************************* Header Texts Starts ***************************
 
-$BIZBOOK['SEARCHBOX_LABEL'] = "What are you looking for?";
+$BIZBOOK['SEARCHBOX_LABEL'] = "Wonach suchen Sie?";
 
 $BIZBOOK['4K+_USERS'] = "Community";
 

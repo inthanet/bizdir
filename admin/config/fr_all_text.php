@@ -31,6 +31,12 @@ $BIZBOOK['ADS_HOWMUCH'] = "";
 $BIZBOOK['ADS_HOWMUCH'] = "";
 $BIZBOOK['ADS_HOWMUCH'] = "";
 
+
+//************************* ITCS New Added ***************************
+$BIZBOOK['SELECT_SOME_OPTIONS'] = "Sélectionnez quelques options";
+$BIZBOOK['SELECT_AN_OPTION'] = "Choisir une option";
+$BIZBOOK['NO_RESULT_MATCH'] = "Aucun résultat ne correspond";
+
 //************************* All Common Texts Starts ***************************
 
 $BIZBOOK['NAME'] = "Name";
@@ -345,7 +351,7 @@ $BIZBOOK['TRENDING_POSTS'] = "Trending Posts";
 
 //************************* Header Texts Starts ***************************
 
-$BIZBOOK['SEARCHBOX_LABEL'] = "What are you looking for?";
+$BIZBOOK['SEARCHBOX_LABEL'] = "Qu'est-ce que tu cherches??";
 
 $BIZBOOK['4K+_USERS'] = "Community";
 
@@ -951,7 +957,7 @@ $BIZBOOK['SELECT_YOUR_CITY'] = "Select your Cities";
 
 $BIZBOOK['SELECT_CATEGORY'] = "Select Category";
 
-$BIZBOOK['SELECT_CITY'] = "Select City";
+$BIZBOOK['SELECT_CITY'] = "Sélectionnez une ville";
 
 $BIZBOOK['ALL_CITIES'] = "All Cities";
 
@@ -2961,7 +2967,7 @@ $BIZBOOK['NEWS-MAGA'] = "News & Magazines";
 
 $BIZBOOK['NEWS'] = "News";
 
-$BIZBOOK['SEARCHBOX_LABEL_SER'] = "Select Services";
+$BIZBOOK['SEARCHBOX_LABEL_SER'] = "Choisir une prestation";
 $BIZBOOK['EXPL-MORE-FEA'] = "Explore our more Services";
 
 //****** HOME PAGE MODULES ***** */
